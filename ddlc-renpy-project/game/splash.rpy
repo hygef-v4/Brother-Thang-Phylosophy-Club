@@ -1,7 +1,7 @@
 init python:
     menu_trans_time = 1
 
-    splash_message_default = "This game is not suitable for children\nor those who are easily disturbed."
+    splash_message_default = "Tu game nay chi mang tinh chat giai tri\nmong moi nguoi choi game vui ve."
 
     splash_messages = [
         "You are my sunshine,\nMy only sunshine",
