@@ -1,0 +1,31 @@
+# Log files
+*.log
+log.txt
+traceback.txt
+errors.txt
+
+# Ren'Py compiled files
+*.rpyc
+*.rpymc
+*.rpyb
+*.pyc
+*.pyo
+
+# Cache and temporary files
+game/cache/
+game/saves/
+tmp/
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Game specific
+game/firstrun
