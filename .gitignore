@@ -1,8 +1,8 @@
 # Log files
 *.log
-ddlc-renpy-project/log.txt
-ddlc-renpy-project/traceback.txt
-ddlc-renpy-project/errors.txt
+log.txt
+traceback.txt
+errors.txt
 
 # Ren'Py compiled files
 *.rpyc
@@ -12,8 +12,8 @@ ddlc-renpy-project/errors.txt
 *.pyo
 
 # Cache and temporary files
-ddlc-renpy-project/game/cache/
-ddlc-renpy-project/game/saves/
+game/cache/
+game/saves/
 tmp/
 *.tmp
 
@@ -28,4 +28,4 @@ __pycache__/
 *$py.class
 
 # Game specific
-ddlc-renpy-project/game/firstrun
+game/firstrun
