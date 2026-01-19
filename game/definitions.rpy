@@ -139,7 +139,9 @@ image end:
     truecenter
     "gui/end.png"
 image bg residential_day = "bg/residential.png"
-image bg class_day = "bg/class.png"
+image bg class_day:
+    "bg/class.png"
+    zoom 0.75
 image bg corridor = "bg/corridor.png"
 image bg club_day = "bg/club.png"
 image bg club_day2:
