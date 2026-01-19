@@ -12,7 +12,7 @@ label ch1_day1:
     $ current_chapter = 1
     
     stop music fadeout 2.0
-    scene bg residential_day with dissolve_scene_full
+    scene bg mc_room with dissolve_scene_full
     
     play music daily_life fadein 1.0
     
@@ -43,13 +43,11 @@ label ch1_day1:
     
     "Cánh cửa mở."
     
-    show monika 2a at t11
+    show dad at t11
     
     dad "\"Trượt rồi à?\""
     
     mc "\"Vâng… con thấy mình làm bài cũng ổn áp mà nhỉ.\""
-    
-    show monika 2c
     
     dad "\"Ừ. Ổn cái đầu mày ý!\""
     
@@ -60,15 +58,13 @@ label ch1_day1:
     
     mc "\"Nhưng…\""
     
-    show monika 2h
-    
     dad "\"Nhưng nhị cái gì!\""
     dad "\"Mày có nghe lời tao không thì bảo hả?\""
     
     mc "\"….\""
     mc "\"Dạ vâng ạ...\""
     
-    hide monika with dissolve
+    hide dad with dissolve
     
     # ========================================
     # SCENE 2: SÂN TRƯỜNG - SÁNG
