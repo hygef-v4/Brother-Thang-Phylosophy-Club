@@ -1,0 +1,681 @@
+CHƯƠNG 1: EIKASIA (ẢO ẢNH)
+________________________________________
+CẢNH 1: (NHÀ – ĐÊM)
+Đêm khuya.
+Main:
+(lo lắng) “Ok… check điểm nào…”
+Click.
+Danh sách trúng tuyển dài đằng đẵng hiện ra.
+Nhưng lại… không có tên mình.
+Main:
+(thở dài)
+“…Hầy.”
+Không buồn.
+Không sốc.
+Chỉ là cảm giác quen quen… Như mấy lần mở ví ra dù biết trước nó trống trơn.
+Main:
+(Chắc do hội đồng không đủ trình để hiểu nghệ thuật của mình…)
+Cánh cửa mở.
+Bố:
+“Trượt rồi à?”
+Main:
+“Vâng… con thấy mình làm bài cũng ổn áp mà nhỉ.”
+Bố:
+“Ừ. Ổn cái đầu mày ý!”
+Main:
+“…?”
+Bố:
+“Thôi. Trượt rồi thì vào FPT mà học đi.”
+“Ít nhất cũng phải lấy được cái bằng Đại học.”
+Main:
+“Nhưng…
+Bố:
+“Nhưng nhị cái gì!”
+“Mày có nghe lời tao không thì bảo hả?”
+Main:
+“….” 
+“Dạ vâng ạ...”
+________________________________________
+CẢNH 2: - NGÀY 1 (SÂN – SÁNG)
+Tại sân trường FPT.
+Sân trường đông nghịt.
+Ai cũng trông như nhân vật chính của cuộc đời mình.
+Còn mình thì như một thằng NPC vừa spawn vậy.
+Main:
+(Đông quá!)
+(Đông thế này chắc không ai để ý mình đâu nhỉ.)
+KHUẤT QUANG HƯƠNG:
+“Alo Thắng à, anh có phải là Thắng không?”
+Tôi quay đầu lại, bất chợt thấy một bóng dáng quen thuộc.
+Main:
+“Ủa Hương? Sao em ở đây?”
+KHUẤT QUANG HƯƠNG:
+“Em thi vượt cấp để được vào đây cùng anh đó.”
+Main:
+“Vậy sao…”
+Đây là Khuất Quang Hương, bạn thuở nhỏ của tôi. Một hacker thần đồng nghìn năm có một. Cơ mà tính cách ẻm có hơi dị dị….
+KHUẤT QUANG HƯƠNG:
+“Anh Thắng à, anh tính bỏ em đi mà trốn lên tận cái trường này sao?”
+Main:
+“Không anh đâu có...”
+KHUẤT QUANG HƯƠNG:
+“Ui, thôi anh đừng có chối, thông tin về chiều cao, cân nặng, sở thích, địa chỉ nhà trọ, lịch sinh hoạt của anh,… em có cả rồi ở đây rồi. Anh có cần em đọc cho nghe một số thông tin không?”
+Main:
+“Hả? Thôi thôi xin em…”
+KHUẤT QUANG HƯƠNG:
+“Nếu muốn em tha cho thì… Đăng ký vào CLB triết của trường này đi”
+(thì thầm) “Đăng ký vào rồi anh đừng có hòng mà thoát khỏi tay em.”
+Main:
+(Mình không muốn vào đó đâu, nghe chán lắm!)
+(Nhưng nếu Hương đã bảo vậy thì… Thử vào xem sao…)
+CHOICE
+[Có] – “Ừ… được rồi”
+KHUẤT QUANG HƯƠNG:
+“Ngoan~ Học xong nhớ lên đăng ký đi nhé. Em đi trước đây.”
+________________________________________
+CẢNH 3: (CLB – TRƯA)
+Mở cửa ra, trước mặt là một người con gái đứng nhìn xuống dưới sân trường.
+Đó có lẽ là hội trưởng CLB Triết học Plato – Đào Chí Ischyros.
+ĐÀO CHÍ ISCHYROS:
+“Eikasia.”
+Main:
+“..?”
+(Nghe giống như tên một món vũ khí trong game RPG nào đó vậy.)
+ĐÀO CHÍ ISCHYROS:
+“Là cấp độ thấp nhất của nhận thức.”
+Hội Trưởng quay lại, nhìn thẳng vào main.
+ĐÀO CHÍ ISCHYROS:
+“Cậu kia. Cậu thấy bầu trời màu gì?”
+Main:
+(bối rối) “Ờ… màu xanh ạ.”
+ĐÀO CHÍ ISCHYROS:
+“Thiển cận!” 
+“Mặt trời không chỉ phát ra một màu, mà là cả một phổ ánh sáng.”
+“Nếu tôi nói… Bầu trời thực chất chỉ là khoảng đen của vũ trụ.”
+Main:
+“…Hả?”
+ĐÀO CHÍ ISCHYROS:
+“Bầu trời vốn không hề xanh.”
+“Màu xanh cậu thấy… Là ánh sáng bị tán xạ… Chỉ lá ảo ảnh mà cậu tạo ra để diễn giải về thế giới.”
+Một khoảng im lặng…
+ĐÀO CHÍ ISCHYROS: 
+“Vậy cậu đến đây làm gì?”
+Main:
+(Gượng cười) “Dạ em muốn gia nhập CLB ạ!”
+ĐÀO CHÍ ISCHYROS:
+“…”
+“Được thôi… Cậu được nhận.”
+________________________________________
+CẢNH 4: 
+(SÂN – CHIỀU)
+Main:
+“Tan học rồi, về thôi”
+“Thôi chết, chìa khoá đâu rồi”
+“Hình như mình để quên trên phòng CLB rồi”
+(CLB – CHIỀU)
+Vừa bước vào phòng đã thấy một đàn chị nằm trên ghế sofa.
+Vũ Hải Nữ:
+“Này.”
+Main:
+“Dạ?”
+VŨ HẢI NỮ:
+“Giúp tôi mấy việc.”
+CHOICE
+[Có] – “Dạ vâng ạ…”
+Sắp xếp tài liệu.
+Dọn dẹp nhà cửa.
+Mấy việc lặt vặt nhưng làm rất mệt.
+Trong khi đó đàn chị vẫn cứ ung dung ngồi nghỉ trên sofa?
+VŨ HẢI NỮ:
+“Tôi là Vũ Hải Nữ, thủ quỹ của CLB này”
+“Cậu là thành viên mới hả, rảnh chứ?”
+Main:
+“Dạ… rảnh ạ…”
+VŨ HẢI NỮ:
+“Được! Vậy làm việc cho tôi.”
+“Chỉ cần làm những việc mà hội trưởng giao cho tôi là được!”
+“Tất nhiên tôi sẽ trả tiền.”
+Main:
+“Tiền… thật chứ?”
+VŨ HẢI NỮ:
+“Tôi không rảnh để đùa.”
+CHOICE
+[Có] – “Việc tốt thế này tất nhiên em nhận rồi!" 
+________________________________________
+CẢNH 5: (KTX – TỐI)
+VÕ MINH XỈU:
+“Ê cu.”
+Main:
+“Dạ?”
+VÕ MINH XỈU:
+(cười đểu) “Tân sinh viên hả?”
+“Muốn chơi một trò chơi đêm muộn khiến bao con người thổn thức chứ?”
+Main:
+(Đỏ mặt) “Dạ?”
+VÕ MINH XỈU:
+“Đùa xíu thôi! Tối nay đang có trận MU đá với MC, cu em có muốn vào xem cùng chị không nào?”
+“Cơ mà chỉ xem thôi thì chán phèo, hay là chị em mình làm trận cá cược đi nhỉ?”
+“Nhóc thấy thế nào?”
+Main:
+(Nghe có vẻ nguy hiểm. Cơ mà có tận 50% cơ hội thắng mà, hay thử xíu nhỉ?)
+CHOICE
+[Có] – “Chơi thì chơi, sợ gì?”
+VÕ MINH XỈU:
+“Có chí khí đấy, vậy cu em theo đội nào?”
+CHOICE
+[0] – “ALL IN MU!!!”
+[1] – “ALL IN MC!!!”
+Main:
+“Dạo này MU đá đần lắm… Thôi thì theo MC vậy!”
+VÕ MINH XỈU:
+“OK! OK! Vậy thì chị theo MU.”
+VÕ MINH XỈU:
+[0] – “Ây da! Thua mất rồi! Lần này coi như em gặp may.”
+“Cu em được đấy! Lần sau lại chơi tiếp nhá.” 
+“Chị là Võ Minh Xỉu, phòng ở bên cạnh, nếu cần gì cứ sang gọi chị nhá!”
+________________________________________
+CẢNH KẾT: (KTX – TỐI)
+Main:
+(ngáp) “Ôi mệt quá…”
+“Hôm nay quả thật là một ngày dài…”
+“Ngày mai… Mong mọi chuyện vẫn ổn…"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CHƯƠNG 2: PISTIS (NIỀM TIN)
+________________________________________
+CẢNH ĐẦU: – NGÀY 2 (KTX - SÁNG)
+Chuông báo thức reo.
+Main:
+(ngáp) “Buồn ngủ quá… Qua thức xem stream anh Độ hơi khuya rồi…”
+“Tài khoản tự nhiên được cộng thêm tiền này! Là từ chị thủ quỹ tối qua sao?”
+“Chà… Người đâu mà đã xinh đẹp, giàu có lại tốt tính. Phú bà của cuộc đời ta đây rồi!”
+(SÂN - SÁNG)
+Main:
+“Buổi đầu tiên có lẽ mình nên đến CLB xem thử…”
+________________________________________
+CẢNH 1: (CLB – SÁNG)
+Vừa bước vào phòng CLB, tình cờ thế nào lại gặp lại chị gái tối qua. 
+VÕ MINH XỈU:
+“Ô! Xem ai đây kìa! Cu em là thành viên mới của cái CLB tẻ nhạt này à?”
+“Trùng hợp ghê, chị cũng là thành viên đó!”
+“Hữu duyên thế này thì tối này chị em ta lại phải làm ván cá độ rồi!”
+CHOICE
+[Có] – “Dạ vâng…”
+ĐÀO CHÍ ISCHYROS:
+“XỈU!!!”
+Hội trưởng bước vào.
+ĐÀO CHÍ ISCHYROS:
+“BÀ LẠI ĐỊNH ĐI LỪA THÀNH VIÊN MỚI NỮA ĐẤY HẢ? CÓ BIẾT BAO NHIÊU NGƯỜI CHẠY KHỎI CLB MÌNH VÌ BỊ BÀ LỪA CHO HẾT TIỀN RỒI KHÔNG HẢ?”
+VÕ MINH XỈU:
+(lủi mất) “Đùa tí, làm gì căng.”
+ĐÀO CHÍ ISCHYROS:
+“Còn cả cậu nữa, ai rủ gì cậu cũng làm à? Chính kiến của cậu đâu hả?”
+Main:
+“Dạ…. Dạ…. Tại em nghĩ chỉ chơi cho vui thôi chứ đâu có biết là lừa đảo….”
+ĐÀO CHÍ ISCHYROS:
+“…. Thật là một niềm tin mù quáng….”
+“Sống trên đời phải biết nghi ngờ, nếu không thì chả khác nào mấy thằng nghe lời người ta cầm 2 tỷ đầu tư vào HDPE để rồi tán gia bại sản”
+“Thôi được rồi… nay cậu về đì.”
+(HÀNH LANG – SÁNG)
+VÕ MINH XỈU:
+“Cu em chịu khó ngồi nghe cái bà hội trưởng đấy lảm nhảm thế nhỉ?”
+“Phải chị chị làm vội ba giấc rồi!”
+“Thế kèo của chị em mình tối nay chú tính thế nào? Chơi hay không chơi nói một lời nào.”
+Main:
+(Thắng ăn cả mà thua thì ăn ***, có lẽ mình nên suy nghĩ cẩn thận một chút…)
+CHOICE
+[Có] – “Chơi thì chơi, sợ gì?”
+[Không] – ”Thôi, nay em xin kiếu!”
+VÕ MINH XỈU:
+[Có] – “Ngon, thắng rồi! Tiền cu em chị xin nhá!”
+[Không] – “Chậc... Tuỳ cu.”
+________________________________________
+(CLB – SÁNG TRƯA CHIỀU)
+[Nói chuyện với Hội Trưởng]
+ĐÀO CHÍ ISCHYROS:
+“Cậu… Có vẻ đã thoát khỏi cái hang của mình rồi nhỉ?”
+Main:
+(bối rối) “Ơ… Dạ?”
+"…"
+"Chuyện lần trước… Cảm ơn chị đã nhắc em về trò lừa bịp của chị Xỉu.”
+ĐÀO CHÍ ISCHYROS:
+“Không có gì."
+Main:
+“…"
+"Mạn phép cho em hỏi, cái từ mà lần trước chị nói khi mới gặp em ấy. Eika… gì ấy nhở?"
+ĐÀO CHÍ ISCHYROS:
+“Eikasia."
+Main:
+“Nó là gì vậy ạ?"
+ĐÀO CHÍ ISCHYROS:
+“…”
+“Cậu biết ngụ ngôn về cái hang của Plato chứ?”
+Main:
+“Dạ không.”
+ĐÀO CHÍ ISCHYROS:
+“Ngày xửa ngày xưa, có vài người cổ đại sống ở dưới đáy của một cái hang động.”
+“Cái hang đấy có một cái lỗ nhỏ, nơi một ít ánh sáng lọt vào.”
+“Từ cái lỗ đó, có những cái bóng lấp ló hắt lên trên bức tường của cái hang.”
+“Những người cổ đại nhìn thấy nó và đặt tên cho những ảo ảnh này và tin rằng vạn vật chỉ là những cái bóng.”
+“Một ngày nọ, một người cổ đại tìm được cách thoát ra khỏi cái hang.”
+“Lần đầu tiên trong đời, anh ta thấy được hình dạng thực của những cái bóng.”
+“Anh ta vui mừng quay lại hang động và kể cho những người bạn nghe.”
+“Tuy nhiên, những người bạn lại nghĩ anh ta bị điên… Và thế là họ... Cô lập anh ta đến chết.”
+Main:
+“Thật là một câu chuyện bi thảm."
+ĐÀO CHÍ ISCHYROS:
+“…”
+“Những người cổ đại, họ chỉ thấy những cái bóng.” 
+“Họ bị kẹt trong cái gọi là Eikasia. Họ chỉ nhìn thấy những thứ được cho nhìn thấy.”
+“Vậy theo cậu, người đàn ông tìm được đường ra khỏi hang liệu đã thấy được hình dạng thật của những chiếc bóng?”
+CHOICE
+[Có] – “Nhìn thấy được rồi thì tức là thật!”
+[Không] – ”Có lẽ là chưa….”
+(cười mỉm) “Thật ra thì, cái hang của nằm trong một khu bảo tồn người cổ đại!” 
+“Những thứ mà người đàn ông đó thấy chỉ là những đồ giả mà thôi.”
+“Vì vậy, anh ta vẫn chưa thoát khỏi ý niệm của bản thân, vẫn bị kẹt trong Pistis…”
+Bàn luận về triết học cùng Hội Trưởng tới hết buổi + BUỔI
+[Nói chuyện với Hải Nữ]
+HẢI NỮ: 
+“Cậu tới đúng lúc lắm, hội trưởng vừa bảo tôi kiểm toán lại chi tiêu tháng vừa rồi.”
+“Tôi để sổ sách đằng kia, cậu ra làm đi.”
+CHOICE
+[Có] – “Dạ vâng, em làm ngay!”
+[Không] – ”Xin lỗi, nay em hơi bận xíu….”
+[Có] – Cả một núi sổ sách phải giải quyết, đến lúc xong thì đã sang buổi + BUỔI++
+[Không] – Hải Nữ: ”Hừ! Vậy thôi!”
+________________________________________
+(THƯ VIỆN – SÁNG TRƯA CHIỀU)
+[Nói chuyện với Hương]
+Main:
+“Em đang làm gì vậy Hương?”
+Hương vội che đi màn hình máy tính.
+KHUẤT QUANG HƯƠNG:
+“Không có gì đâu anh, em chỉ đang làm bùa… À không, hỗ trợ các bạn học sinh trong trường học tập thôi.”
+Main:
+“Vậy sao, em giỏi thật đấy. Nghe bảo một kỳ em học tận 20 lớp mà vẫn có thời gian giúp bạn bè vậy hả?”
+KHUẤT QUANG HƯƠNG:
+“Dạ vâng, em được các bạn nhờ thôi. Vậy dạo này anh học hành có ổn không, cần em giúp gì không nào?”
+Main:
+“Anh cũng ổn. Cơ mà nhiều môn phải học quá, học trên lớp rồi lại còn học coursera online nữa. Anh còn chưa có thời gian ngồi làm coursera đây này.”
+KHUẤT QUANG HƯƠNG:
+“Coursera á? Thế ảnh hỏi đúng người rồi đấy. Em có mẹo này có thể giúp anh này. Anh có muốn biết không?”
+Main:
+“Mẹo gì cơ?”
+Ngồi trò chuyện vui vẻ với Hương cả buổi + BUỔI.
+[Học bài] Giở sách ra ôn lại bài cũ.
+Main:
+[Học tập < 20] – “Ra là thế… Chả hiểu gì cả.”
+[Học tập < 50] – “Hừm…. Bài này khó hiểu quá…”
+[Học tập < 80] – “Có một số chỗ chưa hiểu lắm, lần sau lên lớp hỏi lại cô vậy.”
+[Học tập < 100] – “Ồ, kiến thức mới đã được tiếp thu.”
+[Học tập == 100] – “Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.”
+________________________________________
+(GYM – SÁNG TRƯA CHIỀU)
+[Nâng tạ] Nâng tạ rèn luyện cơ tay.
+[Chạy bộ] Chạy bộ rèn luyện cơ chân.
+Main:
+[Sức khoẻ < 20] – “Mệt quá… Chịu rồi...”
+[Sức khoẻ < 50] – “Phù… Nay đến đây thôi vậy”
+[Sức khoẻ < 80] – “Cố thêm… Một xíu nữa thôi…”
+[Sức khoẻ < 100] – “Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.”
+[Sức khoẻ == 100] – “Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?”
+________________________________________
+(KTX – TỐI)
+[Nói chuyện với Xỉu]
+VÕ MINH XỈU:
+“Chào mừng đến với dịch vụ Campuchia gì cũng tôn của Xỉu. Cu em cần gì nào?”
+CHOICE
+[Học tập] – Dịch vụ gia sư học tập
+[Đời sống] – Dịch vụ bồi bổ đời sống
+VÕ MINH XỈU:
+“OK luôn. Cứ giao cho chị. Tối nay chị sẽ chăm sóc cu em nhiệt tình.”
+[Về phòng] Đi ngủ
+
+
+
+
+
+
+
+
+
+CHƯƠNG 3: DIANOIA (LÝ TRÍ)
+________________________________________
+CẢNH MỞ ĐẦU – NGÀY 10 (KTX – SÁNG)
+Điện thoại rung.
+Bố:
+<Đóng gói hành lý đi. Chiều về trại quân sự để làm thủ tục đi lính.>
+Main:
+“..?”
+“Đang yên đang lành sao tự nhiên bố lại bảo đi lính?”
+“Thôi thì đến hỏi cho ra lẽ vậy.”
+________________________________________
+(TRẠI – SÁNG)
+Bố:
+“Con tới rồi hả?”
+“Bố chuẩn bị sẵn thủ tục nghĩa vụ quân sự rồi.”
+“Giờ đi theo bố kiểm tra thể lực.”
+“Xong về thì nhớ làm cái giấy thôi học.”
+Main:
+“Sao tự nhiên lại nghỉ học hả bố?”
+“Trên trường việc học của con vẫn ổn mà?”
+Bố:
+“Thời buổi nào rồi mà còn học Đại học nữa.”
+“Mỹ đang lục đục đánh nhau với Cuba rồi.”
+“Con phải vào quân đội để lên đường bảo vệ Tổ Quốc.”
+“Chứ cứ ru rú ở hậu phương thì làm được gì?”
+Main:
+“Ở hậu phương đâu phải là không đóng góp được gì cho Tổ Quốc?”
+“Con vẫn có thể góp sức xây dựng Xã hội mà?”
+“Đất Nước cũng là một thực thể triết học, nó cần phải vận động để có thể tồn tại, sự vận động đó không chỉ đến từ việc bảo vệ mà còn phải đến từ việc phát triển để tiến bộ.”
+“Nó tạo ra cho chúng ta những tri thức, mà tri thức là sức mạnh giúp cho Đất Nước hùng cường hơn.”
+Bố:
+“Chỉ có những nhà khoa học xuất sắc mới đủ sức tạo ra tri thức, loại hoạ sĩ quèn như mày thì làm ăn được cái gì cho Tổ Quốc?”
+“Thôi! Vào quân đội rèn luyện kỷ luật, chứ làm hoạ sĩ ra ngoài lương được mấy đồng?”
+Main:
+“Hoạ sĩ nước mình vất vả, nhưng họ dâng hiến tất cả!”
+“Con muốn trở thành hoạ sĩ để góp phần làm đẹp cho Đất Nước chứ không phải chỉ vì tiền!”
+Bố:
+“MỚI LÊN ĐẠI HỌC CÓ VÀI NGÀY MÀ CÁI MỒM ĐÃ LEM LẺM, PHÉP TẮC GIA ĐÌNH Ở ĐÂU HẢ?”
+“MÀY MÀ KHÔNG NGHE LỜI TAO THÌ MỌI CHUYỆN SAU NÀY TỰ THÂN MÀ LO NẤY, TAO KHÔNG CHU CẤP CHO NỮA.”
+CHOICE
+[Có] – “Dạ… Vâng ạ….” => Ending Phát Xít
+[Không] – ”Con có thể tự lo cho bản thân mình rồi, không cần bố bao bọc nữa!”
+(KTX – TỐI)
+Main:
+“Không còn tiền chu cấp, áp lực tài chính của mình tăng lên rồi, từ ngày main phải tiết kiệm lại thôi.”
+________________________________________
+CẢNH 1 – NGÀY 14 (KTX – SÁNG)
+Điện thoại rung.
+KHUẤT QUANG HƯƠNG:
+<Nay có lễ hội trường đấy, anh có muốn đi cùng em không?>
+Main:
+“Lễ hội trường sao, nghe có vẻ vui. Cơ mà mình đang hơi kẹt tiền…”
+CHOICE
+[Có] – <OK, chờ anh xíu!>
+[Không] – <Nay anh lại đang hơi túng thiếu, để khi khác anh em mình đi chơi sau nha.>
+________________________________________
+Vừa bước ra ngoài ký túc xá đã thấy Hương đợi sẵn
+Main:
+“Em tới sớm vậy, chờ anh có lâu không?”
+KHUẤT QUANG HƯƠNG:
+“Em cũng mới tới à, thôi ta đi thôi.”
+
+Main:
+“Cơ mà lễ hội trường à? Tưởng chỉ có trong anime thôi chứ.”
+KHUẤT QUANG HƯƠNG:
+“Anh lại chẳng thích quá à? Máy tính ảnh có cả một thư mục lưu hình gái anime mà”
+Main:
+“Cái… Sao em biết? Nó… Nó chỉ là tài liệu tham khảo thôi.”
+Trường hôm nay mở hội chợ quốc tế, khá là lớn, chắc năm nay lùa được nhiều con vịt vào chuồng.
+KHUẤT QUANG HƯƠNG:
+“Wow, lễ hội trường lớn thế nhở, thật xứng danh trường đại học công nghệ hàng đầu Việt Nam.”
+Main:
+“Quả đúng là ngạo nghễ FPT!"
+KHUẤT QUANG HƯƠNG:
+“Sáng giờ chưa có gì bỏ vào mồm cả, đói quá !" 
+ "Vừa hay ở kia có mỳ cay tứ xuyên kìa, hay chúng ta lại đấy ăn đi?"
+CHOICE
+[Có] – “OK luôn!” – “Ưm, Mỳ cay Ngon thật đấy!”
+[Không] – ”Thôi ta đi xem thứ khác đi…”
+KHUẤT QUANG HƯƠNG:
+“Ở đây có chú chó bông này.”
+“Nhỏ nhỏ con con chỉ cao bằng bộ PC. Dễ thương quá”
+CHOICE
+[Có] – “Em thích thì để anh mua!” – “Mềm mềm ôm thích thật!”
+[Không] – ”Thôi ta đi xem thứ khác đi…”
+KHUẤT QUANG HƯƠNG:
+“Chỗ kia trông vui vậy, có anh quay tay dẻo như Khá Bảnh luôn!”
+“Lại đấy xem không anh?”
+CHOICE
+[Có] – “Em muốn đi đâu anh đưa đến đấy.” – “Hôm nay còn biết tán tỉnh à? Đoán vội vừa đọc bí kíp tán gái nào đó phải không?!”
+[Không] – ”Thôi ta đi xem thứ khác đi…”
+Chơi vui quá, thấm thoát đã sang buổi chiều…
+[Tình cảm > 80]
+KHUẤT QUANG HƯƠNG:
+“Hôm nay… Cảm ơn anh nhá…. Đi chơi với anh vui lắm.”
+Main:
+“Không. Câu đó phải anh nói mới đúng.”
+“Em biết chuyện anh với bố cãi nhau nên mới rủ anh đi chơi cho khuây khoả hả.”
+“Từ trước tới giờ, mỗi lần anh bị bố đánh đều là nhờ có em an ủi.”
+“Thật sự anh lúc nào cũng cảm thấy biết ơn em.”
+KHUẤT QUANG HƯƠNG:
+“Không phải đâu… Từ nhỏ, em đã chỉ là một con nhóc nhát cáy không dám nói chuyện với ai.”
+“Nhờ có anh mà em mới có thể mở lòng được với mọi người xung quanh.”
+“Những chuyện vui buồn trong đời em, lúc nào cũng có anh ở bên.”
+“Từ lúc nào mà… Em đã thích anh rồi…”
+Main:
+“…”
+“Anh rất vui khi nhận được tình cảm của em.”
+“Nhưng bây giờ còn nhiều chuyện phải giải quyết, anh chưa thể yêu đương được.”
+“Chờ khi mọi chuyện lắng xuống, anh sẽ trả lời em nhá.”
+KHUẤT QUANG HƯƠNG:
+“Dạ vâng… Em sẽ đợi…”
+________________________________________
+CẢNH 2 – NGÀY 18 (KTX – SÁNG)
+Điện thoại rung.
+VÕ MINH XỈU:
+<Đi uống không cu? Nay chị bao!>
+Main:
+“Của rẻ là của công an… Có khi nào chị ấy bị bắt nên khai ra mình không nhỉ?”
+CHOICE
+[Có] – <Nổ cho em cái địa chỉ nào!>
+[Không] – <Tiếc quá, nay em lại có việc bận rồi…>
+________________________________________
+Đến quán nhậu Xỉu gửi, thấy đàn chị đang say khướt.
+VÕ MINH XỈU:
+“Cu em đến rồi à? Lại đây uống với chị nào!"
+Main:
+“Chị ổn chứ, trông chị say lắm rồi đấy."
+VÕ MINH XỈU:
+“Chị mày vẫn uống được, bà chủ, dâng tửu."
+Main:
+“Nay có chuyện gì buồn sao?”
+Xỉu im lặng không nói gì.
+Main:
+“Em thấy nay chị uống hơi nhiều rồi đấy. Nếu có gì buồn phiền, cứ nói em.”
+“Chẳng giúp được gì chị đâu, cơ mà đỡ hơn là giữ trong lòng.”
+VÕ MINH XỈU:
+“…”
+“Gia đình chị sắp không còn nữa rồi…”
+Main:
+“!!?”
+“Có chuyện gì xảy ra à? Bố mẹ chị cãi nhau hả?"
+VÕ MINH XỈU:
+“Không phải bố mẹ, chỉ là những người đã nuôi chị lớn mà thôi."
+"Chị từ nhỏ đã không biết mặt bố mẹ, được các vú em trong cô nhi viện nuôi lớn."
+"Cuộc sống trong cô nhi viện cũng khá khó khăn, điều kiện ăn uống sinh hoạt thiếu thốn đủ đường, đã thế còn khá là bức bối, đi đâu cũng có người theo quản."
+"Cơ mà tình cảm của chị với các vú em thì lại khăng khít như ruột thịt vậy."
+Main:
+“Em không biết hồi nhỏ chị lại sống cơ cực như vậy đấy."
+VÕ MINH XỈU:
+“Thiếu thốn đủ đường như thế nên các vú em phải làm việc cho tụi xã hội đen từ đêm đến sáng."
+"Chị từ khi còn nhỏ cũng đã phải đi làm rồi."
+Main:
+(Làm việc cho xã hội đen sao, nghe nguy hiểm quá vậy.)
+”Từ nhỏ luôn sao? Chị bị bắt đi làm gì vậy?"
+VÕ MINH XỈU:
+“Nhiều việc lắm, từ gọi điện quảng cáo đến tư vấn khách hàng."
+"Thậm chí trước chị còn đóng vai công an để doạ ông chú kia phát khóc."
+"Làm quần quật cả ngày, cơ mà mỗi lần không mời được khách thì lại bị tụi xã hội đen dùng dùi cui điện quật túi bụi."
+Main:
+“!!?”
+“Chị làm việc ở đâu mà nghe nguy hiểm quá vậy?”
+VÕ MINH XỈU:
+“Ở khu tam thái tử bên Campuchia đấy.”
+“Chị từ lúc sinh ra đã ở đấy rồi.”
+“May sao được các vú em bao che cho nên mới trốn sang được Việt Nam.”
+“Nhưng mà khu tự trị đó gần đây đã bị triết phá, mái nhà xưa nơi chị lớn lên giờ đã chả còn.”
+“Chỉ mong sao các vú em vẫn bình an.”
+Main:
+“Vậy sao….”
+“Chị an tâm. Em tin rằng mọi người sẽ ổn thôi.”
+VÕ MINH XỈU:
+“….” 
+“Cảm ơn em.”
+Không khí cả buổi đi chơi bỗng rơi vào trầm tư, nhưng rất thích hợp để tịnh tâm suy nghĩ.
+[Tình cảm > 80]
+VÕ MINH XỈU:
+“Này, muốn làm một ván cá cược với chị không?”
+“Đoán xem…. Chị có đang phải lòng em không?”
+Main:
+“Chị ấy có tình cảm với mình sao? Có lẽ mình nên suy nghĩ một chút.”
+CHOICE
+[Có] – “Có”
+[Không] – ”Không”
+[Suy luận] – “Những lúc say thế này, con người thường rất dễ mềm lòng…”
+VÕ MINH XỈU:
+[Có] – “Lần này…. Em thắng rồi….”
+[Không] – ”… Tiếc quá….”
+VÕ MINH XỈU:
+“Thôi vậy chị về trước đây.”
+“Nay cảm ơn cu em nhiều nha!”
+________________________________________
+CẢNH 3 – NGÀY 22 (KTX – SÁNG)
+Điện thoại rung.
+VŨ HẢI NỮ:
+<Hôm nay tôi đang có hứng, cho phép em rủ tôi đi chơi.>
+Main:
+“Cô tiểu thư này lại bày trò gì nữa vậy? Không nghe lời thì có ảnh hưởng gì đến tiền lương của mình không ta?”
+CHOICE
+[Có] – <Nhân ngày đẹp trời, quý cô đây có muốn đi chơi với tôi không?>
+[Không] – <Xin lỗi chị, nay em lại không có hứng lắm…>
+________________________________________
+Vừa xuống dưới sân đã thấy một chiếc limousine 32 chỗ đang đợi trước cổng. Từ trong đó, Hải Nữ bước xuống.
+VŨ HẢI NỮ:
+“Đứng ngây ra đó làm gì, còn không mau lên xe.”
+Main:
+“Đây là xe của chị sao? Lần đầu em thấy con xe dài thế này đấy."
+VŨ HẢI NỮ:
+“Có gì đâu, nhà chị dùng con này để dạo quanh vườn suốt."
+Mải mê ngắm nhìn nôi thất, xe đã tới một trung tâm thương mại sầm uất lúc nào không hay.
+Main:
+“Chỗ này… Toàn là hàng hiệu… Ví tiền của em đang bị bạo lực..."
+VŨ HẢI NỮ:
+(liếc nhìn) “Vậy sao."
+"Cầm lấy chút tiền lẻ mà tiêu sài."
+Hải Nữ ném thẳng cục tiền 1 tỷ vào tôi.
+Main:
+“Tuân lệnh. Hôm nay chị nói gì em cũng nghe lời hết.”
+VŨ HẢI NỮ:
+“Được, vậy hôm nay cậu là của tôi."
+“Dùng số tiền kia để phục vụ cho tôi.”
+“Còn bao nhiêu, cứ giữ lấy.”
+VŨ HẢI NỮ:
+“Được rồi, vậy thì trước tiên ta đi mua đồ.”
+“Cậu thấy bộ đồ này thế nào?”
+CHOICE
+[Có] – “Rất là đẹp ạ!”
+[Không] – ”Trông hơi không được thoải mái…”
+[Suy luận] – “Váy ôm sát quá, có lẽ sẽ làm chị ấy đau…”
+[Có] – “Vậy sao.... Thế tôi lấy cái này….” 
+[Không] – (Không say mê trước vẻ đẹp của mình sao, chàng trai này thật thú vị!)
+VŨ HẢI NỮ:
+“Tiếp theo, đến quầy này đi.”
+CHOICE
+[Có] – “Được thôi, chị muốn mua gì nào?”
+[Không] – ”Trông chán lắm, đi quầy khác đi.”
+[Suy luận] – “Đây hình như là một tiệm mỹ phẩm nổi tiếng…”
+[Có] – (Tiểu tử này cũng dẻo mồm đấy chứ!)
+[Không] – ”Tôi không có hỏi ý kiến của cậu.”
+VŨ HẢI NỮ:
+“Tôi đói rồi. Chúng ta tìm chỗ nào ăn đi.”
+“Quán này có danh tiếng khá tốt, có lẽ đồ ăn sẽ rất ngon.”
+CHOICE
+[0] – “Ưm… Quả thực là rất ngon.”
+[1] – ”Cũng ngon, cơ mà hơi ít.”
+[Suy luận] – “Có vẻ chị ấy rất thích món này…”
+[0] – (Tốt! Có vẻ cậu ta cũng thích món này.)
+[1] – ”Câu dám chê quán tôi chọn sao?”
+VŨ HẢI NỮ:
+“Tôi chán rồi. Cậu biết chỗ nào vui không đưa tôi đi.”
+CHOICE
+[0] – “Hay chúng ta cùng vào đọc sách đi.”
+[1] – “Chị có muốn đi dạo cùng em chứ.”
+[Suy luận] – “Nên tìm chỗ nào đó mà cả hai có thể vui…”
+[0] – (Đọc sách sao, cũng thanh lịch đó chứ!)
+[1] – ”Cả toà nhà to thế này cậu bắt tôi đi bộ suốt sao?”
+Đi khắp cái trung tâm thương mại này hết cả buổi sáng, có lẽ mình nên về rồi.
+[Tình cảm > 80]
+Trên đường về nhà.
+VŨ HẢI NỮ:
+“Hôm nay cảm ơn cậu đã đi cùng tôi.”
+Main:
+“Dạ vâng. Có gì đâu ạ.”
+VŨ HẢI NỮ:
+“…”
+“Tôi… Là một người con gái phiền phức đúng không?”
+“Từ trước tới giờ sống trong nhung lụa, được bao người xu nịnh, tôi đã quên mất cách nhìn nhận người khác.”
+“Vào câu lạc bộ này để có thể mở rộng thế giới quan của bản thân, nhưng tôi vẫn chứng nào tật nấy….”
+Main:
+“Không phải vậy đâu.”
+“Đúng là có những lúc chị khá phiền, nhưng chị luôn hào phóng với mọi người xung quanh.”
+“Nếu không nhờ có chị thì có lẽ sẽ không thể tiếp tục con đường học hành rồi….”
+VŨ HẢI NỮ:
+“…”
+“Vậy sao…”
+(bật cười) “Cậu đã thành công thu hút được sự chú ý của tôi rồi đấy.”
+“Sao nào? Trở thành bạn trai của tôi đủ để thoả mãn cậu chứ?”
+Main:
+“Chuyện đó… Bây giờ em đang còn vướng bận nhiều điều, nên vẫn chưa sẵn sàng để bắt đầu mối quan hệ.”
+“Đợi sau khi em giải quyết xong mọi chuyện sẽ trả lời chị.”
+VŨ HẢI NỮ:
+“…. Được!”
+“Cậu không thoát được khỏi tay tôi đâu, nhất định cậu sẽ thành của tôi.”
+________________________________________
+CẢNH 4 – NGÀY 26 (KTX – SÁNG)
+Điện thoại rung.
+HỘI TRƯỞNG:
+<Đang có một bộ phim khá hay mà chị muốn xem, cơ mà đi một mình thì lại hơi ngại, em có muốn đi xem cùng chị không?>
+Main:
+“Lâu rồi mình chưa đi xem phim, nhưng mà giá vé lại đắt quá…. Nên làm gì đây?”
+CHOICE
+[Có] – <Chị xem rạp nào vậy em tới đây>
+[Không] – <Em cũng muốn đi lắm… Cơ mà tài khoản em lại không cho phép….>
+________________________________________
+Đến rạp chiếu phim cùng Hội Trưởng để xem phim “The Truman Show”.
+Phim khá ấn tượng, làm mình cũng phải nghi ngờ rằng liệu mình có đang ở trong một con game tình cảm nào đó không….
+
+________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CHƯƠNG 4: NOESIS (TRI THỨC)________________________________________
+CẢNH MỞ ĐẦU – NGÀY 30 (KTX – SÁNG)
+________________________________________
+CẢNH 1: (TRẠI – SÁNG)
+________________________________________
+CẢNH 2: (CLB – CHIỀU)
+________________________________________
+CẢNH 3: (HÀNH LANG – TỐI)
+

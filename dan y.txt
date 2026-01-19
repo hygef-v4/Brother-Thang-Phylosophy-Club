@@ -1,0 +1,116 @@
+Bối cảnh
+Thời gian: 4 buổi sáng chiều tối đêm mỗi buổi chỉ làm 1 công việc
+Trường FPT:
+-	Đi học tăng chỉ số học tập
+-	Nói chuyện với 4 gái buổi sáng chiều tối
+Gym:
+-	Tập gym tăng chỉ số đời sống
+Căng Tin:
+-	Mua đồ tặng gái, giúp tăng tình cảm mà không phải đi chơi
+Ký túc xá:
+-	Ngủ
+-	Nói chuyện với Xỉu buổi đêm
+Trại quân sự:
+-	Nói chuyện với bố
+
+Nhân vật:
+Võ Chiến Thắng:
+-	Main, có bố làm trong ngành triết, vừa trượt trường mỹ thuật nên phải vào FPT
+-	Wibu, hướng nội, xấu trai, học kém, không biết làm gì ngoài ăn với ngủ
+-	Lúc đầu mới vào trường thì có cái nhìn vô cùng hạn hẹp, sau khi vào CLB thì dần cải thiện và nhận thức rõ hơn về bản thân
+-	Cả game vừa phải giữ thanh học tập và đời sống ở mức ổn định vừa phải làm tăng thanh tình cảm của các gái
+
+•	Chỉ số:
+o	Học tập: hồi 1 ít mỗi ngày, đi học hồi 1 lượng lớn, mỗi lần đi chơi sẽ giảm chỉ số này, chỉ số càng cao thì chỉ số tình cảm cộng thêm càng nhiều
+o	Đời sống: hồi 1 ít mỗi ngày, tập gym hồi 1 lượng lớn, mỗi lần đi chơi sẽ giảm chỉ số này, chỉ số càng cao mỗi ngày hồi càng nhiều điểm
+o	Tiền: mỗi ngày đều đc cho tiền, có thể dung tiền để tăng các chỉ số khác, mỗi lần đi chơi sẽ giảm chỉ số này, tiền bằng 0 sẽ giảm lượng chỉ số tình cảm gia tăng và bỏ qua hồi mỗi ngày
+
+Đào Chí Ischyros:
+-	Người Việt Kiều Hy Lạp, chủ tịch CLB Triết học Plato
+-	Nghiêm khắc nhưng yêu thích triết học
+-	Ban đầu hay cãi nhau với main nhưng sau khi main thay đổi thì thân thiết với main hơn các gái khác
+-	Là người giải thích các triết lý và giúp main học tốt hơn
+
+•	Chỉ số: Tình cảm: Tình cảm cao giúp mở ending Duy Vật Biện Chứng
+•	Sở thích: Chỉ số học tập càng cao thì càng tăng nhiều chỉ số tình cảm
+•	Tác dụng thêm: Không
+
+Khuất Quang Hương:
+-	Bạn thuở nhỏ, hacker thiên tài, học vượt để học cùng main
+-	Hoà đồng với mọi người đặc biệt là main, có khuynh hướng yandere
+-	Thích main, luôn chăm sóc main mọi lúc mọi nơi, hay hack máy main để theo dõi
+-	Giới thiệu main vào CLB và giúp main tốt hơn
+
+•	Chỉ số: Tình cảm: Tình cảm cao giúp mở ending Duy Vật Lịch Sử
+•	Sở thích: Chỉ số đời sống càng cao thì càng tăng nhiều chỉ số tình cảm
+•	Tác dụng thêm: Không
+
+Vũ Hải Nữ:
+-	Tiểu thư nhà giàu, học giỏi, xinh đẹp và là người kế thừa của một công ty lớn
+-	Kiêu ngạo, xấu tính nhưng đôi lúc cùng quan tâm tới main
+-	Là chỗ để main kiếm tiền
+-	Tình cảm càng cao thì main càng kiếm được nhiều tiền
+
+•	Chỉ số: Tình cảm: Tình cảm cao giúp mở ending Duy Lý
+•	Sở thích: Chỉ số đời sống và học tập cao thì tăng nhiều chỉ số tình cảm hơn
+•	Tác dụng thêm: Chỉ số tình cảm càng cao main mỗi ngày nhận được càng nhiều tiền
+
+Võ Minh Xỉu:
+-	Dân 36, tuy học giỏi nhưng ham chơi, vào CLB để lừa các bạn học
+-	Hay cãi nhau với trưởng CLB do tính cách và tư tưởng
+-	Hay ve vãn main, rủ main đi chơi để lấy tiền
+-	Lấy tiền của main để giúp main refill chỉ số hoặc rủ main đi chơi khiến main học kém hơn
+
+•	Chỉ số: Tình cảm: Tình cảm hồi lại 1 ít mỗi ngày, cần để mở ending Kinh Nghiệm
+•	Sở thích: Không
+•	Tác dụng thêm: Có thể giúp main tăng các chỉ số học tập và đời sống bằng tiền, thi thoảng sẽ có sự kiện cá cược, chọn có sẽ hồi đầy tình cảm nhưng có khả năng bị lừa đảo mất sạch tiền
+
+-	Cốt truyện Only: 
+o	Bố 
+o	Hôn phu của tt: Liễu Như Y
+
+Dàn Ý:
+•	Chương 1: Eikasia (Ảo ảnh):
+o	Đầu game main trượt đại học mỹ thuật, bố main bảo vào FPT mà học
+o	Main mới vào trường và đc btn mời vào clb triết học
+o	Main là một con người thoải mái, cả tin nên mặc dù không thích nhưng vẫn quyết định vào thử xem sao
+o	Lúc đến đăng ký thấy ht đứng ở trong, ht giảng giải về eikasia, về việc mọi vật main nhìn thấy chỉ như ảo ảnh, rồi chỉ ra sự vô vị trong cách sống của main
+o	Main gặp tx lần đầu, sự kiện cá cược xuất hiện, lần đầu không lừa đảo
+o	Main gặp tt, tt nhờ main giúp việc, main làm và được tt offer job để mỗi ngày nhận tiền
+o	Chương đầu tiên main chỉ có thể chọn có do ko có chính kiến và tin vào mọi lời nói
+•	Chương 2: Pistis (Niềm tin):
+o	Sau khi xong ngày 1 sẽ sang chương 2
+o	Tx lại rủ main chơi cá cược, main định đồng ý nhưng ht ngăn lại và nói lên trò lừa đảo của tx, đồng thời khuyên main nên suy nghĩ trước khi hành động, trước tiên với việc học cách nói không
+o	Tập trung vào việc main đi chơi với gái và cuộc sống hàng ngày của main
+o	Sự kiện đi chơi cùng ht đầu tiên main sẽ hỏi về các line trong thuyết của Plato, ht giải thích đến pistis thì bị gọi đi nên lần sau nói tiếp
+o	Chương 2 main có thể chọn có hoặc không cho thấy ý chí của main thay vì chỉ nghe và tin vào mọi điều người khác nói, tuy nhiên vẫn chỉ dựa vào niềm tin cảm tính
+•	Chương 3: Dianoia (Lý trí):
+o	Ngày 30 sẽ sang chương 3
+o	Sang chương 3 bố main bắt main vào quân đội do thấy main thiếu sự kỷ luật
+o	Main có 2 lựa chọn, học tiếp sẽ tiếp tục nhưng bị cắt trợ cấp ko thì main sẽ hận đời ko muốn mọi người có những tư tưởng triết học riêng và end phát xít
+o	Tiếp tục thì main nhận debuff mỗi ngày giảm 1 lượng lớn tiền
+o	Tiếp tục các sự kiện đi chơi với gái cùng cuộc sống hang ngày của main
+o	Thêm 4 tuyến truyện gỡ rối quá khứ của các gái và 2 tuyến truyện của main, mỗi 10 ngày mở 1 cái
+o	Quá khứ của ht là cháu của 1 nhà triết học, từ bé đã thích triết nhưng lại bị cho là lập dị so với trẻ con, giải thích tiếp về dianoia và bảo main hãy tìm hiểu tiếp và tỏ tình, main mở khoá khả năng suy luận
+o	Quá khứ của tx là học sinh chăm ngoan nhưng không thích bị gia đình kìm kẹp nên lao vào cá độ để bị đuổi học, cuối ngày thách main chơi cá cược với mình, main thắng sẽ tỏ tình
+o	Quá khứ của tt có hôn phu, theo main để trêu tức hôn phu, hôn phu cay nên huỷ hôn, khiến cổ phiếu lao dốc nhưng được main giúp kéo lên lại, sau đó tỏ tình main
+o	Quá khứ của btn là 1 hacker liên xô được chuyển sinh vào 1 gia đình, từ nhỏ đã chơi với main nên lúc nào cũng bám main, trong lúc đi chơi với main thì đã nói ra sự thật này rồi tỏ tình main
+o	Quá khứ của main bị bố ép vào quy củ, gò bó nên thiếu không gian để phát triển tư duy triết học
+o	Tiếp theo là sinh nhật main nên có sự kiện đi chơi với các gái
+o	Chương 3 main nhận được skill suy luận nên có thể chọn suy luận trước rồi mới trả lời trò cá cược của tx
+•	Chương 4: Noesis (Tri thức):
+o	Ngày 97 sẽ main tâm sự với bố về triết học các kiểu và gỡ rối nút thắt bằng cách học skill từ chối khéo (từ chối nhưng không mất điểm tình cảm)
+o	Ngày 100 main quay lại trường cảm ơn mọi người và nói về Noesis và chọn ending
+o	Chương 4 main dùng được skill từ chối khéo vì đã có thể thấu hiểu được bố nhờ đó làm hoà được với bố
+
+ENDING:
+•	Good Ending:
+o	Duy Vật Biện Chứng: chỉ số tình cảm của Ischyros trên 80 và chọn Ischyros, về với Ischyros
+o	Duy Vật Lịch Sử: chỉ số tình cảm của Hương trên 80 và chọn Hương, về với Hương
+o	Duy Lý: chỉ số tình cảm của Hải Nữ trên 80 và chọn Hải Nữ, về với Hải Nữ
+o	Kinh Nghiệm: chỉ số tình cảm của cả 4 đều trên 80 và chọn tất, hốt hết cả 4
+•	Bad Ending:
+o	Khoái Lạc: chỉ số học tập bé hơn hoặc bằng 0
+o	Thực Dụng: chỉ số đời sống bé hơn hoặc bằng 0
+o	Duy Tâm: chỉ số đời sống và học tập đều bé hơn hoặc bằng 20 hoặc Ending nhưng ngoại trừ Xỉu thì chỉ số tình cảm của các nhân vật khác đều bé hơn 80
+o	Phát Xít: Vào quân đội theo lời của bố
