@@ -14,9 +14,12 @@ define -2 gui.muted_color = '#6666a3'
 define -2 gui.hover_muted_color = '#9999c1'
 define -2 gui.text_color = '#ffffff'
 define -2 gui.interface_text_color = '#ffffff'
-define -2 gui.text_font = "gui/font/Aller_Rg.ttf"
-define -2 gui.name_font = "gui/font/RifficFree-Bold.ttf"
-define -2 gui.interface_text_font = "gui/font/Aller_Rg.ttf"
+
+## FONTS - Updated để hỗ trợ tiếng Việt
+## DejaVuSans có sẵn trong Ren'Py và support Vietnamese tốt
+define -2 gui.text_font = "DejaVuSans.ttf"
+define -2 gui.name_font = "DejaVuSans-Bold.ttf"
+define -2 gui.interface_text_font = "DejaVuSans.ttf"
 define -2 gui.text_size = 24
 define -2 gui.name_text_size = 24
 define -2 gui.interface_text_size = 24
@@ -43,7 +46,7 @@ define -2 gui.button_width = None
 define -2 gui.button_height = 36
 define -2 gui.button_borders = Borders(4, 4, 4, 4)
 define -2 gui.button_tile = False
-define -2 gui.button_text_font = gui.interface_text_font
+define -2 gui.button_text_font = "DejaVuSans-Bold.ttf"
 define -2 gui.button_text_size = gui.interface_text_size
 define -2 gui.button_text_idle_color = gui.idle_color
 define -2 gui.button_text_hover_color = gui.hover_color
@@ -63,7 +66,7 @@ define -2 gui.choice_button_width = 420
 define -2 gui.choice_button_height = None
 define -2 gui.choice_button_tile = False
 define -2 gui.choice_button_borders = Borders(100, 5, 100, 5)
-define -2 gui.choice_button_text_font = gui.text_font
+define -2 gui.choice_button_text_font = "DejaVuSans.ttf"
 define -2 gui.choice_button_text_size = gui.text_size
 define -2 gui.choice_button_text_xalign = 0.5
 define -2 gui.choice_button_text_idle_color = "#000"
