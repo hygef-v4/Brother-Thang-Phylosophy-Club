@@ -173,7 +173,7 @@ init -1 style say_dialogue:
     line_spacing 16
     color "#FFFFFF"
     outlines []
-    antialias True
+    language "unicode"
 
 init 499 image ctc:
     xalign 0.81 yalign 0.98 xoffset -5 alpha 0.0 subpixel True
