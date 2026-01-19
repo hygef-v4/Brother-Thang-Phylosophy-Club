@@ -1,5 +1,5 @@
 # ================================================
-# CHAPTER 2: PISTIS (NIỀM TIN) - DAY 2
+# CHAPTER 2: PISTIS (NIỀM TIN)
 # Brother Thang Philosophy Club
 # ================================================
 
@@ -22,7 +22,7 @@ label ch2_day2:
     mc "\"Chà… Người đâu mà đã xinh đẹp, giàu có lại tốt tính. Phú bà của cuộc đời ta đây rồi!\""
 
     # ========================================
-    # SCENE: SÂN - SÁNG
+    # CẢNH: SÂN - SÁNG
     # ========================================
     scene bg class_day with wipeleft_scene
 
@@ -94,8 +94,6 @@ label ch2_day2:
             mc "\"Chơi thì chơi, sợ gì?\""
             show monika 1k
             xiu "\"Ngon, thắng rồi! Tiền cu em chị xin nhá!\""
-            # Note: The result of the bet ("thắng rồi") seems to imply she wins immediately or is confident? 
-            # Following the script text exactly.
 
         "Thôi, nay em xin kiếu!":
             mc "\"Thôi, nay em xin kiếu!\""
@@ -105,19 +103,13 @@ label ch2_day2:
     hide monika with dissolve
 
     # ========================================
-    # FREE TIME - SÁNG TRƯA CHIỀU
+    # CLB - SÁNG TRƯA CHIỀU (Free Time)
     # ========================================
     
-    # Normally we'd use a loop or call screen for free time, but following the linear script structure for now.
-    # The script lists options: Talk to President, Talk to Hai Nu, Library, Gym.
-    # To represent "+ SESSION", I will verify if this needs a loop or just linear progression.
-    # Assuming linear for V1 MVP as per script flow.
-
-    # 1. Talk to Ischyros (Club)
+    # [Nói chuyện với Hội Trưởng]
     scene bg club_day with wipeleft_scene
     show yuri 1a at t11
 
-    # [Nói chuyện với Hội Trưởng]
     ischyros "\"Cậu… Có vẻ đã thoát khỏi cái hang của mình rồi nhỉ?\""
 
     mc "(bối rối) \"Ơ… Dạ?\""
@@ -177,8 +169,7 @@ label ch2_day2:
     "Bàn luận về triết học cùng Hội Trưởng tới hết buổi..."
     hide yuri with dissolve
 
-    # 2. Talk to Hai Nu (Club)
-    scene bg club_day with dissolve # Stay in club or re-enter
+    # [Nói chuyện với Hải Nữ]
     show natsuki 1c at t11
 
     hainu "\"Cậu tới đúng lúc lắm, hội trưởng vừa bảo tôi kiểm toán lại chi tiêu tháng vừa rồi.\""
@@ -189,7 +180,6 @@ label ch2_day2:
             mc "\"Dạ vâng, em làm ngay!\""
             "Cả một núi sổ sách phải giải quyết, đến lúc xong thì đã sang buổi..."
             $ stats.modify_relationship("hainu", 5)
-            # Time skip effect?
 
         "Xin lỗi, nay em hơi bận xíu….":
             mc "\"Xin lỗi, nay em hơi bận xíu….\""
@@ -199,7 +189,7 @@ label ch2_day2:
     hide natsuki with dissolve
 
     # ========================================
-    # THƯ VIỆN - SÁNG TRƯA CHIỀU
+    # THƯ VIỆN & GYM - SÁNG TRƯA CHIỀU
     # ========================================
     scene bg library with wipeleft_scene
 
@@ -232,7 +222,6 @@ label ch2_day2:
 
     # [Học bài]
     "Giở sách ra ôn lại bài cũ."
-    # Check stats defined in config/stats system. Default 50.
     if stats.hoc_tap < 20:
         mc "\"Ra là thế… Chả hiểu gì cả.\""
     elif stats.hoc_tap < 50:
@@ -246,9 +235,7 @@ label ch2_day2:
 
     $ stats.modify_hoc_tap(5)
 
-    # ========================================
-    # GYM - SÁNG TRƯA CHIỀU
-    # ========================================
+    # [GYM]
     scene bg gym with wipeleft_scene
 
     menu:

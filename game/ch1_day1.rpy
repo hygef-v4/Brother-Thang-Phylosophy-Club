@@ -1,5 +1,5 @@
 # ================================================
-# CHAPTER 1: EIKASIA (ẢO ẢNH) - DAY 1
+# CHAPTER 1: EIKASIA (ẢO ẢNH)
 # Brother Thang Philosophy Club
 # ================================================
 
@@ -17,7 +17,7 @@ label ch1_day1:
     play music daily_life fadein 1.0
     
     # ========================================
-    # SCENE 1: NHÀ - ĐÊM
+    # CẢNH 1: NHÀ - ĐÊM
     # ========================================
     
     "Đêm khuya."
@@ -67,7 +67,7 @@ label ch1_day1:
     hide dad with dissolve
     
     # ========================================
-    # SCENE 2: SÂN TRƯỜNG - SÁNG
+    # CẢNH 2: NGÀY 1 (SÂN - SÁNG)
     # ========================================
     
     scene bg class_day with wipeleft_scene
@@ -102,7 +102,7 @@ label ch1_day1:
     
     "Đây là Khuất Quang Hương, bạn thuở nhỏ của tôi."
     "Một hacker thần đồng nghìn năm có một."
-    "Cơ mà tính cách ẻm có hơi dị dị…."
+    "Cơ mà tính cách ẻm có hơi dị…."
     
     show sayori 2l
     
@@ -128,7 +128,6 @@ label ch1_day1:
     mc "(Mình không muốn vào đó đâu, nghe chán lắm!)"
     mc "(Nhưng nếu Hương đã bảo vậy thì… Thử vào xem sao…)"
     
-    # CHOICE 1: Vào CLB (forced cho MVP)
     menu:
         huong "\"Vậy anh nghĩ sao?\""
         
@@ -147,7 +146,7 @@ label ch1_day1:
     hide sayori with dissolve
     
     # ========================================
-    # SCENE 3: PHÒNG CLB - TRƯA
+    # CẢNH 3: CLB - TRƯA
     # ========================================
     
     scene bg club_day with wipeleft_scene
@@ -214,9 +213,10 @@ label ch1_day1:
     hide yuri with dissolve
     
     # ========================================
-    # SCENE 4: PHÒNG CLB - CHIỀU
+    # CẢNH 4: CLB - CHIỀU
     # ========================================
     
+    # Scene transition simulation (School afternoon)
     scene bg club_day with dissolve
     
     "Tan học rồi…"
@@ -241,7 +241,6 @@ label ch1_day1:
     
     $ stats.met_hainu = True
     
-    # CHOICE 2: Giúp Hải Nữ
     menu:
         hainu "\"Cậu có rảnh không?\""
         
@@ -295,7 +294,7 @@ label ch1_day1:
     hide natsuki with dissolve
     
     # ========================================
-    # SCENE 5: KÝ TÚC XÁ - TỐI
+    # CẢNH 5: KÝ TÚC XÁ - TỐI
     # ========================================
     
     scene bg bedroom with wipeleft_scene
@@ -326,7 +325,6 @@ label ch1_day1:
     
     mc "(Nghe có vẻ nguy hiểm. Cơ mà có tận 50%% cơ hội thắng mà, hay thử xíu nhỉ?)"
     
-    # CHOICE 3: Cá cược với Xỉu
     menu:
         xiu "\"Vậy chơi không?\""
         
@@ -342,12 +340,10 @@ label ch1_day1:
                 
                 "ALL IN MU!!!":
                     mc "\"Dạo này MU đang mạnh, theo MU vậy!\""
-                    
                     $ xiu_bet_choice = "MU"
                 
                 "ALL IN MC!!!":
                     mc "\"Dạo này MU đá đần lắm… Thôi thì theo MC vậy!\""
-                    
                     $ xiu_bet_choice = "MC"
             
             show monika 2a
@@ -419,6 +415,4 @@ label ch1_day1:
     # END OF DAY 1
     # ========================================
     
-    # jump ch2_day2
     jump ch2_day2
-

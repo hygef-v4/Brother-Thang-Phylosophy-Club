@@ -14,11 +14,16 @@ label ch3_day3:
     scene bg bedroom with dissolve_scene_full
     play music daily_life fadein 1.0
 
+    "8 ngày trôi qua."
+    "Mình dần quen với CLB."
+    "Quen với việc bị sai vặt."
+    "Và… quen với việc bắt đầu nghĩ \"tại sao\"."
+
     "Điện thoại rung."
     play sound "sfx/fall.ogg" # Placeholder for phone vibration
 
     # Bố sends message
-    dad "<Đóng gói hành lý đi. Chiều về trại quân sự để làm thủ tục đi lính.>"
+    dad "<Đóng gói hành lý đi. Chiều về trại quân sự để làm thủ tục đi lính. Đừng hỏi nhiều.>"
 
     mc "\"..?\""
     mc "\"Đang yên đang lành sao tự nhiên bố lại bảo đi lính?\""
@@ -29,7 +34,7 @@ label ch3_day3:
     # ========================================
     scene bg military_camp with wipeleft_scene
 
-    show yuri 3f at t11 # Placeholder for Dad sprite if needed, or just show nothing/Dad defined as character
+    show yuri 3f at t11 # Placeholder for Dad
 
     dad "\"Con tới rồi hả?\""
     dad "\"Bố chuẩn bị sẵn thủ tục nghĩa vụ quân sự rồi.\""
@@ -40,31 +45,34 @@ label ch3_day3:
     mc "\"Trên trường việc học của con vẫn ổn mà?\""
 
     dad "\"Thời buổi nào rồi mà còn học Đại học nữa.\""
-    dad "\"Mỹ đang lục đục đánh nhau với Cuba rồi.\""
+    dad "\"Tình hình thế giới đang căng.\""
     dad "\"Con phải vào quân đội để lên đường bảo vệ Tổ Quốc.\""
     dad "\"Chứ cứ ru rú ở hậu phương thì làm được gì?\""
 
-    mc "\"Ở hậu phương đâu phải là không đóng góp được gì cho Tổ Quốc?\""
+    mc "\"Ở hậu phương đâu phải là không đóng góp được gì?\""
     mc "\"Con vẫn có thể góp sức xây dựng Xã hội mà?\""
-    mc "\"Đất Nước cũng là một thực thể triết học, nó cần phải vận động để có thể tồn tại, sự vận động đó không chỉ đến từ việc bảo vệ mà còn phải đến từ việc phát triển để tiến bộ.\""
-    mc "\"Nó tạo ra cho chúng ta những tri thức, mà tri thức là sức mạnh giúp cho Đất Nước hùng cường hơn.\""
+    mc "\"Đất Nước cũng là một thực thể, nó cần phải vận động để có thể tồn tại.\""
+    mc "\"Sự vận động đó không chỉ là bảo vệ… mà còn là phát triển.\""
+    mc "\"Và tri thức là sức mạnh giúp cho Đất Nước hùng cường hơn.\""
 
-    dad "\"Chỉ có những nhà khoa học xuất sắc mới đủ sức tạo ra tri thức, loại hoạ sĩ quèn như mày thì làm ăn được cái gì cho Tổ Quốc?\""
-    dad "\"Thôi! Vào quân đội rèn luyện kỷ luật, chứ làm hoạ sĩ ra ngoài lương được mấy đồng?\""
+    dad "\"Chỉ có những nhà khoa học xuất sắc mới đủ sức tạo ra tri thức.\""
+    dad "\"Loại hoạ sĩ quèn như mày thì làm ăn được cái gì?\""
+    dad "\"Thôi! Vào quân đội rèn luyện kỷ luật.\""
+    dad "\"Chứ làm hoạ sĩ ra ngoài lương được mấy đồng?\""
 
     mc "\"Hoạ sĩ nước mình vất vả, nhưng họ dâng hiến tất cả!\""
     mc "\"Con muốn trở thành hoạ sĩ để góp phần làm đẹp cho Đất Nước chứ không phải chỉ vì tiền!\""
 
-    dad "\"MỚI LÊN ĐẠI HỌC CÓ VÀI NGÀY MÀ CÁI MỒM ĐÃ LEM LẺM, PHÉP TẮC GIA ĐÌNH Ở ĐÂU HẢ?\""
-    dad "\"MÀY MÀ KHÔNG NGHE LỜI TAO THÌ MỌI CHUYỆN SAU NÀY TỰ THÂN MÀ LO NẤY, TAO KHÔNG CHU CẤP CHO NỮA.\""
+    dad "\"MỚI LÊN ĐẠI HỌC CÓ VÀI NGÀY MÀ CÁI MỒM ĐÃ LEM LẺM!\""
+    dad "\"PHÉP TẮC GIA ĐÌNH Ở ĐÂU HẢ?\""
+    dad "\"MÀY KHÔNG NGHE LỜI TAO THÌ TỪ NAY TỰ THÂN MÀ LO.\""
+    dad "\"TAO KHÔNG CHU CẤP CHO NỮA.\""
 
     menu:
         "Dạ… Vâng ạ….":
              # Ending Phat Xit
              mc "\"Dạ… Vâng ạ….\""
-             scene black with dissolve_scene_full
-             "ENDING: PHÁT XÍT"
-             return
+             jump fascist_ending
 
         "Con có thể tự lo cho bản thân mình rồi, không cần bố bao bọc nữa!":
              mc "\"Con có thể tự lo cho bản thân mình rồi, không cần bố bao bọc nữa!\""
@@ -76,7 +84,8 @@ label ch3_day3:
     # ========================================
     scene bg bedroom with wipeleft_scene
     
-    mc "\"Không còn tiền chu cấp, áp lực tài chính của mình tăng lên rồi, từ ngày main phải tiết kiệm lại thôi.\""
+    mc "\"Không còn tiền chu cấp, áp lực tài chính của mình tăng lên rồi.\""
+    mc "\"Từ nay phải tiết kiệm thôi.\""
 
 
     # ========================================
@@ -102,7 +111,7 @@ label ch3_day3:
             jump ch3_day18 # Skip event
 
     # ========================================
-    # School Festival (Generic BG or School limit)
+    # School Festival
     # ========================================
     scene bg class_day with wipeleft_scene
 
@@ -114,22 +123,21 @@ label ch3_day3:
 
     huong "\"Em cũng mới tới à, thôi ta đi thôi.\""
 
-    scene bg club_day with wipeleft_scene # Reusing club/class as festival temporarily? Or corridor.
-    # User mentioned "School Festival" but likely outside. Using class_day for now.
+    scene bg club_day with wipeleft_scene # Visual placeholder
     
     show sayori 1a at t11
 
     mc "\"Cơ mà lễ hội trường à? Tưởng chỉ có trong anime thôi chứ.\""
 
     show sayori 1r
-    huong "\"Anh lại chẳng thích quá à? Máy tính ảnh có cả một thư mục lưu hình gái anime mà\""
+    huong "\"Anh lại chẳng thích quá à? Máy tính ảnh có cả một thư mục ‘tư liệu tham khảo’ mà.\""
 
     mc "\"Cái… Sao em biết? Nó… Nó chỉ là tài liệu tham khảo thôi.\""
 
-    "Trường hôm nay mở hội chợ quốc tế, khá là lớn, chắc năm nay lùa được nhiều con vịt vào chuồng."
+    "Trường hôm nay mở hội chợ quốc tế, khá là lớn."
 
     show sayori 1m
-    huong "\"Wow, lễ hội trường lớn thế nhở, thật xứng danh trường đại học công nghệ hàng đầu Việt Nam.\""
+    huong "\"Wow, lễ hội trường lớn thế nhở, thật xứng danh trường công nghệ.\""
 
     mc "\"Quả đúng là ngạo nghễ FPT!\""
 
@@ -157,13 +165,13 @@ label ch3_day3:
         "Thôi ta đi xem thứ khác đi…":
              mc "\"Thôi ta đi xem thứ khác đi…\""
 
-    huong "\"Chỗ kia trông vui vậy, có anh quay tay dẻo như Khá Bảnh luôn!\""
+    huong "\"Chỗ kia trông vui vậy, chắc có trò vui.\""
     huong "\"Lại đấy xem không anh?\""
 
     menu:
         "Em muốn đi đâu anh đưa đến đấy.":
             mc "\"Em muốn đi đâu anh đưa đến đấy.\""
-            huong "\"Hôm nay còn biết tán tỉnh à? Đoán vội vừa đọc bí kíp tán gái nào đó phải không?!\""
+            huong "\"Hôm nay còn biết tán tỉnh à?\""
             $ stats.modify_relationship("huong", 5)
 
         "Thôi ta đi xem thứ khác đi…":
@@ -207,7 +215,7 @@ label ch3_day3:
 
     xiu "<Đi uống không cu? Nay chị bao!>"
 
-    mc "\"Của rẻ là của công an… Có khi nào chị ấy bị bắt nên khai ra mình không nhỉ?\""
+    mc "\"Của rẻ là của… Thôi, đừng đa nghi quá.\""
 
     menu:
         "Nổ cho em cái địa chỉ nào!":
@@ -265,10 +273,10 @@ label ch3_day3:
     mc "\"!!?\""
     mc "\"Chị làm việc ở đâu mà nghe nguy hiểm quá vậy?\""
 
-    xiu "\"Ở khu tam thái tử bên Campuchia đấy.\""
-    xiu "\"Chị từ lúc sinh ra đã ở đấy rồi.\""
+    xiu "\"Ở khu bên kia biên giới đấy.\""
+    xiu "\"Chị sinh ra ở đó.\""
     xiu "\"May sao được các vú em bao che cho nên mới trốn sang được Việt Nam.\""
-    xiu "\"Nhưng mà khu tự trị đó gần đây đã bị triết phá, mái nhà xưa nơi chị lớn lên giờ đã chả còn.\""
+    xiu "\"Nhưng mà khu đó gần đây đã bị triệt phá, mái nhà xưa nơi chị lớn lên giờ đã chả còn.\""
     xiu "\"Chỉ mong sao các vú em vẫn bình an.\""
 
     mc "\"Vậy sao….\""
@@ -296,7 +304,6 @@ label ch3_day3:
             
             "Những lúc say thế này, con người thường rất dễ mềm lòng…":
                 mc "\"Những lúc say thế này, con người thường rất dễ mềm lòng…\""
-                # Logic not specified for this option result, assuming generic response or fallthrough
                 xiu "\"…\""
     
     xiu "\"Thôi vậy chị về trước đây.\""
@@ -314,7 +321,7 @@ label ch3_day3:
     "Điện thoại rung."
     play sound "sfx/fall.ogg"
 
-    hainu "<Hôm nay tôi đang có hứng, cho phép em rủ tôi đi chơi.>"
+    hainu "<Hôm nay tôi rảnh. Em có vinh dự được đi cùng tôi.>"
 
     mc "\"Cô tiểu thư này lại bày trò gì nữa vậy? Không nghe lời thì có ảnh hưởng đến tiền lương của mình không ta?\""
 
@@ -366,14 +373,13 @@ label ch3_day3:
     menu:
         "Rất là đẹp ạ!":
              mc "\"Rất là đẹp ạ!\""
-             
              hainu "\"Vậy sao.... Thế tôi lấy cái này….\""
         
         "Trông hơi không được thoải mái…":
              mc "\"Trông hơi không được thoải mái…\""
              hainu "(Không say mê trước vẻ đẹp của mình sao, chàng trai này thật thú vị!)"
 
-        "[[Suy luận] Váy ôm sát quá, có lẽ sẽ làm chị ấy đau…":
+        "Váy ôm sát quá, có lẽ sẽ làm chị ấy đau…":
              mc "\"Váy ôm sát quá, có lẽ sẽ làm chị ấy đau…\""
              hainu "(Không say mê trước vẻ đẹp của mình sao, chàng trai này thật thú vị!)"
              $ stats.modify_relationship("hainu", 5)
@@ -390,7 +396,7 @@ label ch3_day3:
              hainu "\"Tôi không có hỏi ý kiến của cậu.\""
              $ stats.modify_relationship("hainu", -5)
 
-        "[[Suy luận] Đây hình như là một tiệm mỹ phẩm nổi tiếng…":
+        "Đây hình như là một tiệm mỹ phẩm nổi tiếng…":
              mc "\"Đây hình như là một tiệm mỹ phẩm nổi tiếng…\""
              hainu "(Tiểu tử này cũng dẻo mồm đấy chứ!)"
              $ stats.modify_relationship("hainu", 5)
@@ -408,7 +414,7 @@ label ch3_day3:
              mc "\"Cũng ngon, cơ mà hơi ít.\""
              hainu "\"Câu dám chê quán tôi chọn sao?\""
 
-        "[[Suy luận] Có vẻ chị ấy rất thích món này…":
+        "Có vẻ chị ấy rất thích món này…":
              mc "\"Có vẻ chị ấy rất thích món này…\""
              hainu "(Tốt! Có vẻ cậu ta cũng thích món này.)"
              $ stats.modify_relationship("hainu", 5)
@@ -424,7 +430,7 @@ label ch3_day3:
              mc "\"Chị có muốn đi dạo cùng em chứ.\""
              hainu "\"Cả toà nhà to thế này cậu bắt tôi đi bộ suốt sao?\""
 
-        "[[Suy luận] Nên tìm chỗ nào đó mà cả hai có thể vui…":
+        "Nên tìm chỗ nào đó mà cả hai có thể vui…":
              mc "\"Nên tìm chỗ nào đó mà cả hai có thể vui…\""
              hainu "(Đọc sách sao, cũng thanh lịch đó chứ!)"
              $ stats.modify_relationship("hainu", 5)
@@ -493,4 +499,84 @@ label ch3_day3:
              mc "<Em cũng muốn đi lắm… Cơ mà tài khoản em lại không cho phép….>"
 
     "Kết thúc Chương 3: DIANOIA."
+    jump ch4_noesis
+
+# ================================================
+# FASCIST ENDING
+# ================================================
+label fascist_ending:
+    # CẢNH 1: TRẠI - SÁNG
+    dad "\"Thế mới là con tao.\""
+    dad "\"Đi thôi.\""
+    
+    "Âm thanh cổng trại đóng lại."
+    "CLANG."
+    
+    # CẢNH 2: PHÒNG HỌP
+    scene bg military_camp with fade # Placeholder
+    "Sĩ quan đọc danh sách. Giọng đều, lạnh."
+    
+    "SĨ QUAN" "\"Từ hôm nay, các cậu không còn là ‘mình’.\""
+    "SĨ QUAN" "\"Các cậu là một phần của tập thể.\""
+    "SĨ QUAN" "\"Không hỏi. Không tranh luận.\""
+    "SĨ QUAN" "\"Chỉ thực hiện.\""
+    
+    # CẢNH 3: SÂN TẬP
+    "SĨ QUAN" "\"CHẠY!\""
+    
+    mc "..."
+    "Cơ thể đau, nhưng đầu óc trống."
+    
+    "SĨ QUAN" "\"Cậu kia! Đứng lại! Cậu chạy vì cái gì?\""
+    
+    mc "\"…Vì Tổ Quốc ạ.\""
+    
+    "SĨ QUAN" "\"Không đủ! Cậu chạy vì lệnh! Vì kỷ luật! Vì sự đúng đắn tuyệt đối!\""
+    
+    mc "\"Dạ!\""
+    
+    # CẢNH 4: ĐÊM - GIƯỜNG TẦNG
+    scene bg bedroom with fade # Placeholder for bunk bed
+    
+    "Tin nhắn dồn dập từ Hương, Xỉu, Hải Nữ, Hội Trưởng."
+    "Main tắt màn hình."
+    
+    mc "(độc thoại) \"Không được. Nếu mình trả lời… mình sẽ lại nghĩ.\""
+    mc "(độc thoại) \"Mà nghĩ… thì đau.\""
+    
+    "LOA" "\"ĐÈN TẮT. NGỦ.\""
+    
+    # CẢNH 5: MONTAGE time skip
+    scene black with fade
+    "Thời gian trôi..."
+    "Main học cách tháo lắp súng."
+    "Main học cách gọi cảm xúc là 'yếu đuối'."
+    
+    # CẢNH 6: TRẠI - TUYÊN THỆ
+    scene bg military_camp with dissolve
+    
+    "SĨ QUAN" "\"Tốt. Cậu có tiềm năng trở thành người dẫn dắt.\""
+    "SĨ QUAN" "\"Kẻ thù lớn nhất… là kẻ nghĩ khác.\""
+    
+    "TẬP THỂ" "\"TUYÊN THỆ!\""
+    
+    # CẢNH 7: CỔNG TRƯỜNG FPT
+    scene bg class_day with fade
+    "Xe quân đội dừng trước cổng trường."
+    
+    "Trên ban công, Đào Chí Ischyros đứng đó."
+    "Cô không nói gì. Chỉ nhìn Main như nhìn một người vừa chết."
+    
+    "SĨ QUAN" "\"Đứng lại. Đi theo đội hình.\""
+    
+    mc "(độc thoại) \"Kỷ luật là sức mạnh khiến mọi người giống nhau.\""
+    
+    # EPILOGUE
+    scene black with dissolve_scene_full
+    
+    "Main nhìn mình trong gương."
+    mc "(độc thoại) \"Mình đã trở thành người mà bố muốn.\""
+    mc "(độc thoại) \"Cảm xúc là yếu đuối.\""
+    
+    "FASCIST ENDING: KỶ LUẬT THAY CHO SỰ THẬT"
     return
