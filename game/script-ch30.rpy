@@ -496,7 +496,7 @@ label ch30_main2:
 
     m "I guess there's only one way to find out, right?"
 
-    call poem
+    # call poem - poem game removed
 
 label ch30_postpoem:
 
