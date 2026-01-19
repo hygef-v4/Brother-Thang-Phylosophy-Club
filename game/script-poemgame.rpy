@@ -14,16 +14,17 @@ init python:
 
     full_wordlist = []
 
-    with renpy.file('poemwords.txt', encoding="UTF-8") as wordfile:
-        for line in wordfile:
-            line = line.strip()
+    # Poem game disabled - poemwords.txt removed
+    # with renpy.file('poemwords.txt', encoding="UTF-8") as wordfile:
+    #     for line in wordfile:
+    #         line = line.strip()
 
-            if line == '' or line[0] == '#':
-                continue
+    #         if line == '' or line[0] == '#':
+    #             continue
 
-            x = line.split(',')
+    #         x = line.split(',')
 
-            full_wordlist.append(PoemWord(x[0], float(x[1]), float(x[2]), float(x[3])))
+    #         full_wordlist.append(PoemWord(x[0], float(x[1]), float(x[2]), float(x[3])))
 
     seen_eyes_this_chapter = False
     sayoriTime = renpy.random.random() * 4 + 4
