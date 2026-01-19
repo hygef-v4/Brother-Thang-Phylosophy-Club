@@ -1,0 +1,169 @@
+# ================================================
+# STATS SYSTEM - Brother Thang Philosophy Club
+# ================================================
+
+init -1 python:
+    class StatsManager:
+        """Quản lý tất cả stats của game"""
+        
+        def __init__(self):
+            # Core stats
+            self.hoc_tap = GameConfig.STAT_INITIAL_HOC_TAP
+            self.doi_song = GameConfig.STAT_INITIAL_DOI_SONG
+            self.tien = GameConfig.STAT_INITIAL_TIEN
+            
+            # Relationship scores
+            self.rel_ischyros = GameConfig.REL_INITIAL_ISCHYROS
+            self.rel_huong = GameConfig.REL_INITIAL_HUONG
+            self.rel_hainu = GameConfig.REL_INITIAL_HAINU
+            self.rel_xiu = GameConfig.REL_INITIAL_XIU
+            
+            # Flags
+            self.dad_cutoff = False  # Bố cắt trợ cấp
+            self.met_ischyros = False
+            self.met_huong = False
+            self.met_hainu = False
+            self.met_xiu = False
+            
+        def clamp(self, value, min_val, max_val):
+            """Clamp value giữa min và max"""
+            return max(min_val, min(max_val, value))
+        
+        def modify_hoc_tap(self, amount):
+            """Thay đổi học tập"""
+            self.hoc_tap = self.clamp(
+                self.hoc_tap + amount,
+                GameConfig.STAT_MIN,
+                GameConfig.STAT_MAX
+            )
+            return amount
+        
+        def modify_doi_song(self, amount):
+            """Thay đổi đời sống"""
+            self.doi_song = self.clamp(
+                self.doi_song + amount,
+                GameConfig.STAT_MIN,
+                GameConfig.STAT_MAX
+            )
+            return amount
+        
+        def modify_tien(self, amount):
+            """Thay đổi tiền"""
+            self.tien = max(0, self.tien + amount)
+            return amount
+        
+        def modify_relationship(self, char_name, amount, stat_multiplier=1.0):
+            """
+            Thay đổi tình cảm với nhân vật
+            char_name: "ischyros", "huong", "hainu", "xiu"
+            amount: số điểm thay đổi
+            stat_multiplier: nhân với stats (Ischyros thích học tập, Hương thích đời sống)
+            """
+            final_amount = amount * stat_multiplier
+            
+            if char_name == "ischyros":
+                self.rel_ischyros = self.clamp(
+                    self.rel_ischyros + final_amount,
+                    GameConfig.REL_MIN,
+                    GameConfig.REL_MAX
+                )
+            elif char_name == "huong":
+                self.rel_huong = self.clamp(
+                    self.rel_huong + final_amount,
+                    GameConfig.REL_MIN,
+                    GameConfig.REL_MAX
+                )
+            elif char_name == "hainu":
+                self.rel_hainu = self.clamp(
+                    self.rel_hainu + final_amount,
+                    GameConfig.REL_MIN,
+                    GameConfig.REL_MAX
+                )
+            elif char_name == "xiu":
+                self.rel_xiu = self.clamp(
+                    self.rel_xiu + final_amount,
+                    GameConfig.REL_MIN,
+                    GameConfig.REL_MAX
+                )
+            
+            return final_amount
+        
+        def get_stat_multiplier_ischyros(self):
+            """Ischyros thích học tập cao"""
+            if self.hoc_tap >= 80:
+                return 1.5
+            elif self.hoc_tap >= 60:
+                return 1.2
+            else:
+                return 1.0
+        
+        def get_stat_multiplier_huong(self):
+            """Hương thích đời sống cao"""
+            if self.doi_song >= 80:
+                return 1.5
+            elif self.doi_song >= 60:
+                return 1.2
+            else:
+                return 1.0
+        
+        def get_stat_multiplier_hainu(self):
+            """Hải Nữ thích cân bằng"""
+            avg = (self.hoc_tap + self.doi_song) / 2
+            if avg >= 70:
+                return 1.5
+            elif avg >= 50:
+                return 1.2
+            else:
+                return 1.0
+        
+        def update_daily(self):
+            """Gọi mỗi ngày mới"""
+            # Hồi stats
+            self.modify_hoc_tap(GameConfig.STAT_DAILY_HOC_TAP_REGEN)
+            self.modify_doi_song(GameConfig.STAT_DAILY_DOI_SONG_REGEN)
+            
+            # Xỉu relationship hồi
+            self.modify_relationship("xiu", 5)
+            
+            # Nhận tiền (nếu không bị cắt)
+            if not self.dad_cutoff:
+                base_money = GameConfig.STAT_DAILY_MONEY_BASE
+            else:
+                base_money = 0
+            
+            # Bonus từ Hải Nữ
+            bonus_money = int(self.rel_hainu * 500)
+            
+            self.modify_tien(base_money + bonus_money)
+
+# Initialize stats globally
+default stats = StatsManager()
+
+# ================================================
+# HELPER FUNCTIONS
+# ================================================
+
+init python:
+    def show_stat_change(stat_name, amount):
+        """Hiển thị thông báo khi stats thay đổi"""
+        if amount > 0:
+            symbol = "+"
+            color = "#00ff00"
+        else:
+            symbol = ""
+            color = "#ff0000"
+        
+        stat_display = {
+            "hoc_tap": "Học tập",
+            "doi_song": "Đời sống",
+            "tien": "Tiền",
+            "rel_ischyros": "❤ Ischyros",
+            "rel_huong": "❤ Hương",
+            "rel_hainu": "❤ Hải Nữ",
+            "rel_xiu": "❤ Xỉu"
+        }
+        
+        display_name = stat_display.get(stat_name, stat_name)
+        
+        # Show notification
+        renpy.notify("{color=%s}%s %s%d{/color}" % (color, display_name, symbol, int(amount)))

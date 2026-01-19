@@ -1,7 +1,7 @@
-define config.name = "Doki Doki Literature Club! (Ren'Py Mod)"
-define config.version = "1.1.1"
-define gui.about = _("")
-define build.name = "DDLC"
+define config.name = "Brother Thang Philosophy Club"
+define config.version = "0.1.0"
+define gui.about = _("Một visual novel về triết học và cuộc sống sinh viên")
+define build.name = "BrotherThang"
 define config.has_sound = True
 define config.has_music = True
 define config.has_voice = False
