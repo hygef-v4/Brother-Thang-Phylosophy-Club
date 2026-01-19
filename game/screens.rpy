@@ -170,6 +170,10 @@ init -1 style say_dialogue:
     ypos gui.dialogue_ypos
     text_align gui.dialogue_text_xalign
     layout ("subtitle" if gui.dialogue_text_xalign else "tex")
+    line_spacing 16
+    color "#FFFFFF"
+    outlines []
+    antialias True
 
 init 499 image ctc:
     xalign 0.81 yalign 0.98 xoffset -5 alpha 0.0 subpixel True
