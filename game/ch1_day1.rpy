@@ -416,13 +416,9 @@ label ch1_day1:
     hide screen stats_display
     
     # ========================================
-    # END OF DAY 1 - COMING SOON
+    # END OF DAY 1
     # ========================================
     
-    $ renpy.pause(1.0)
-    
-    call screen coming_soon
-    
-    # Return to main menu
-    return
+    # jump ch2_day2
+    jump ch2_day2
 

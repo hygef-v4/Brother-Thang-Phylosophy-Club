@@ -87,6 +87,18 @@ init -1 python:
                 )
             
             return final_amount
+
+        def get_relationship(self, char_name):
+            """Lấy giá trị tình cảm"""
+            if char_name == "ischyros":
+                return self.rel_ischyros
+            elif char_name == "huong":
+                return self.rel_huong
+            elif char_name == "hainu":
+                return self.rel_hainu
+            elif char_name == "xiu":
+                return self.rel_xiu
+            return 0
         
         def get_stat_multiplier_ischyros(self):
             """Ischyros thích học tập cao"""

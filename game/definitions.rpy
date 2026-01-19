@@ -162,6 +162,12 @@ image bg house = "bg/house.png"
 image bg kitchen = "bg/kitchen.png"
 image bg notebook = "bg/notebook.png"
 image bg notebook-glitch = "bg/notebook-glitch.png"
+image bg library = "bg/library.png"
+image bg gym = "bg/gym.jpg"
+image bg military_camp = "bg/military-camp.jpg"
+image bg pub = "bg/pub.jpg"
+image bg mall = "bg/mall.jpg"
+image bg cinema = "bg/cinema.jpg"
 image bg glitch = LiveTile("bg/glitch.jpg")
 
 image glitch_color:
