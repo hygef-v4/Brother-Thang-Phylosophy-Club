@@ -16,12 +16,12 @@ init -1 python:
         # CHARACTER NAMES
         # ========================================
         MC_NAME_DEFAULT = "Võ Chiến Thắng"
-        MC_NICKNAME = "Thắng"
+        MC_NICKNAME = "Võ Thắng"
         
         CHAR_ISCHYROS = "Đào Chí Ischyros"
-        CHAR_HUONG = "Khuất Quang Hương"
-        CHAR_HAINU = "Vũ Hải Nữ"
-        CHAR_XIU = "Võ Minh Xỉu"
+        CHAR_HUONG = "Hương"
+        CHAR_HAINU = "Hải Nữ"
+        CHAR_XIU = "Xỉu"
         CHAR_DAD = "Bố"
         
         # ========================================
@@ -70,7 +70,7 @@ default game_config = GameConfig()
 # ========================================
 # GAME VARIABLES
 # ========================================
-default mc_name = GameConfig.MC_NAME_DEFAULT
+default mc_name = "Võ Thắng"
 default current_day = 1
 default current_chapter = 1
 default current_time_slot = "morning"
@@ -78,12 +78,12 @@ default current_time_slot = "morning"
 # ========================================
 # DEFINE CHARACTERS
 # ========================================
-define mc = Character("[mc_name]", color="#c8ffc8", what_prefix='"', what_suffix='"')
-define ischyros = Character(GameConfig.CHAR_ISCHYROS, color="#ff6b9d", what_prefix='"', what_suffix='"')
-define huong = Character(GameConfig.CHAR_HUONG, color="#33ccff", what_prefix='"', what_suffix='"')
-define hainu = Character(GameConfig.CHAR_HAINU, color="#9966ff", what_prefix='"', what_suffix='"')
-define xiu = Character(GameConfig.CHAR_XIU, color="#ffcc00", what_prefix='"', what_suffix='"')
-define dad = Character(GameConfig.CHAR_DAD, color="#999999", what_prefix='"', what_suffix='"')
+define mc = Character("[mc_name]", color="#FFFFFF", what_prefix='"', what_suffix='"')
+define ischyros = Character(GameConfig.CHAR_ISCHYROS, color="#FFFFFF", what_prefix='"', what_suffix='"')
+define huong = Character(GameConfig.CHAR_HUONG, color="#FFFFFF", what_prefix='"', what_suffix='"')
+define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF", what_prefix='"', what_suffix='"')
+define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF", what_prefix='"', what_suffix='"')
+define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF", what_prefix='"', what_suffix='"')
 define narrator = Character(None, kind=nvl)  # Cho narration
 
 # ========================================

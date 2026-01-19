@@ -170,6 +170,10 @@ init -1 style say_dialogue:
     ypos gui.dialogue_ypos
     text_align gui.dialogue_text_xalign
     layout ("subtitle" if gui.dialogue_text_xalign else "tex")
+    line_spacing 16
+    color "#FFFFFF"
+    outlines []
+    antialias True
 
 init 499 image ctc:
     xalign 0.81 yalign 0.98 xoffset -5 alpha 0.0 subpixel True
@@ -318,9 +322,9 @@ init -501 screen navigation():
         if not persistent.autoload or not main_menu:
             if main_menu:
                 if persistent.playthrough == 1:
-                    textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Vui lòng nhập tên của bạn", ok_action=Function(FinishEnterName)))
+                    textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action Start()
                 else:
-                    textbutton _("Chơi Mới") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Vui lòng nhập tên của bạn", ok_action=Function(FinishEnterName)))
+                    textbutton _("Chơi Mới") action Start()
             else:
                 textbutton _("Lịch Sử") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
                 textbutton _("Lưu Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
