@@ -1,4 +1,4 @@
-define config.name = "Brother Thang Philosophy Club"
+define config.name = "CLB Triết Học Anh Thắng"
 define config.version = "0.1.0"
 define gui.about = _("Một visual novel về triết học và cuộc sống sinh viên")
 define build.name = "BrotherThang"

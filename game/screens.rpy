@@ -46,7 +46,7 @@ init -1 style splash_text:
 
 init -1 style poemgame_text:
     yalign 0.5
-    font "gui/font/Halogen.ttf"
+    font gui.interface_text_font
     size 30
     color "#000"
     outlines []
@@ -280,12 +280,12 @@ init -501 screen quick_menu():
             style_prefix "quick"
             xalign 0.5
             yalign 0.995
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip()
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Load") action ShowMenu('load')
-            textbutton _("Settings") action ShowMenu('preferences')
+            textbutton _("Lịch Sử") action ShowMenu('history')
+            textbutton _("Bỏ Qua") action Skip()
+            textbutton _("Tự Động") action Preference("auto-forward", "toggle")
+            textbutton _("Lưu") action ShowMenu('save')
+            textbutton _("Tải") action ShowMenu('load')
+            textbutton _("Cài Đặt") action ShowMenu('preferences')
 
 default -1 quick_menu = True
 
@@ -318,28 +318,28 @@ init -501 screen navigation():
         if not persistent.autoload or not main_menu:
             if main_menu:
                 if persistent.playthrough == 1:
-                    textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
+                    textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Vui lòng nhập tên của bạn", ok_action=Function(FinishEnterName)))
                 else:
-                    textbutton _("New Game") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
+                    textbutton _("Chơi Mới") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Vui lòng nhập tên của bạn", ok_action=Function(FinishEnterName)))
             else:
-                textbutton _("History") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
-                textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
+                textbutton _("Lịch Sử") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
+                textbutton _("Lưu Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
 
-            textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+            textbutton _("Tải Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
 
             if _in_replay:
-                textbutton _("End Replay") action EndReplay(confirm=True)
+                textbutton _("Kết Thúc Replay") action EndReplay(confirm=True)
             elif not main_menu:
                 if persistent.playthrough != 3:
-                    textbutton _("Main Menu") action MainMenu()
+                    textbutton _("Menu Chính") action MainMenu()
                 else:
-                    textbutton _("Main Menu") action NullAction()
+                    textbutton _("Menu Chính") action NullAction()
 
-            textbutton _("Settings") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            textbutton _("Cài Đặt") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
 
             if renpy.variant("pc"):
-                textbutton _("Help") action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
-                textbutton _("Quit") action Quit(confirm=not main_menu)
+                textbutton _("Trợ Giúp") action [Help("README.html"), Show(screen="dialog", message="File hướng dẫn đã được mở trong trình duyệt của bạn.", ok_action=Hide("dialog"))]
+                textbutton _("Thoát") action Quit(confirm=not main_menu)
         else:
             timer 1.75 action Start("autoload_yurikill")
 
@@ -354,7 +354,7 @@ init -1 style navigation_button:
 
 init -1 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
-    font "gui/font/RifficFree-Bold.ttf"
+    font gui.name_font
     color "#fff"
     outlines [(4, "#b59", 0, 0), (2, "#b59", 2, 2)]
     hover_outlines [(4, "#fac", 0, 0), (2, "#fac", 2, 2)]
@@ -482,7 +482,7 @@ init -501 screen game_menu(title, scroll=None):
     if not main_menu and persistent.playthrough == 2 and not persistent.menu_bg_m and renpy.random.randint(0, 49) == 0:
         on "show" action Show("game_menu_m")
 
-    textbutton _("Return"):
+    textbutton _("Quay Lại"):
         style "return_button"
         action Return()
 
@@ -533,7 +533,7 @@ init -1 style game_menu_label:
     ysize 120
 
 init -1 style game_menu_label_text:
-    font "gui/font/RifficFree-Bold.ttf"
+    font gui.name_font
     size gui.title_text_size
     color "#fff"
     outlines [(6, "#b59", 0, 0), (3, "#b59", 2, 2)]
@@ -546,16 +546,16 @@ init -1 style return_button:
 
 init -501 screen about():
     tag menu
-    use game_menu(_("About"), scroll="viewport"):
+    use game_menu(_("Thông tin"), scroll="viewport"):
         style_prefix "about"
         vbox:
             label "[config.name!t]"
-            text _("Version [config.version!t]\n")
+            text _("Phiên bản [config.version!t]\n")
 
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("Được làm bằng {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 define -1 gui.about = ""
 init -1 style about_label is gui_label
@@ -567,11 +567,11 @@ init -1 style about_label_text:
 
 init -501 screen save():
     tag menu
-    use file_slots(_("Save"))
+    use file_slots(_("Lưu Game"))
 
 init -501 screen load():
     tag menu
-    use file_slots(_("Load"))
+    use file_slots(_("Tải Game"))
 
 init -1 python:
     def FileActionMod(name, page=None, **kwargs):
@@ -606,7 +606,7 @@ init -501 screen file_slots(title):
                         action FileActionMod(slot)
                         has vbox
                         add FileScreenshot(slot) xalign 0.5
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                        text FileTime(slot, format=_("{#file_time}%A, %d %B %Y, %H:%M"), empty=_("ô trống")):
                             style "slot_time_text"
                         text FileSaveName(slot):
                             style "slot_name_text"
@@ -663,7 +663,7 @@ init -501 screen preferences():
     else:
         $ cols = 4
 
-    use game_menu(_("Settings"), scroll="viewport"):
+    use game_menu(_("Cài Đặt"), scroll="viewport"):
         vbox:
             xoffset 50
             hbox:
@@ -671,42 +671,42 @@ init -501 screen preferences():
                 if renpy.variant("pc"):
                     vbox:
                         style_prefix "radio"
-                        label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        label _("Hiển Thị")
+                        textbutton _("Cửa Sổ") action Preference("display", "window")
+                        textbutton _("Toàn Màn Hình") action Preference("display", "fullscreen")
 
                 if config.developer:
                     vbox:
                         style_prefix "radio"
                         label _("Rollback Side")
-                        textbutton _("Disable") action Preference("rollback side", "disable")
-                        textbutton _("Left") action Preference("rollback side", "left")
-                        textbutton _("Right") action Preference("rollback side", "right")
+                        textbutton _("Vô Hiệu") action Preference("rollback side", "disable")
+                        textbutton _("Trái") action Preference("rollback side", "left")
+                        textbutton _("Phải") action Preference("rollback side", "right")
 
                 vbox:
                     style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
+                    label _("Bỏ Qua")
+                    textbutton _("Chưa Đọc") action Preference("skip", "toggle")
+                    textbutton _("Sau Lựa Chọn") action Preference("after choices", "toggle")
 
             null height (4 * gui.pref_spacing)
             hbox:
                 style_prefix "slider"
                 box_wrap True
                 vbox:
-                    label _("Text Speed")
+                    label _("Tốc Độ Chữ")
                     bar value FieldValue(_preferences, "text_cps", range=180, max_is_zero=False, style="slider", offset=20)
-                    label _("Auto-Forward Time")
+                    label _("Tốc Độ Tự Động")
                     bar value Preference("auto-forward time")
                 vbox:
                     if config.has_music:
-                        label _("Music Volume")
+                        label _("Âm Nhạc")
 
                         hbox:
                             bar value Preference("music volume")
 
                     if config.has_sound:
-                        label _("Sound Volume")
+                        label _("Âm Thanh")
 
                         hbox:
                             bar value Preference("sound volume")
@@ -715,7 +715,7 @@ init -501 screen preferences():
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
                     if config.has_voice:
-                        label _("Voice Volume")
+                        label _("Giọng Nói")
 
                         hbox:
                             bar value Preference("voice volume")
@@ -726,7 +726,7 @@ init -501 screen preferences():
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
 
-                        textbutton _("Mute All"):
+                        textbutton _("Tắt Tiếng"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
 
@@ -766,7 +766,7 @@ init -1 style pref_label:
     bottom_margin 2
 
 init -1 style pref_label_text:
-    font "gui/font/RifficFree-Bold.ttf"
+    font gui.name_font
     size 24
     color "#fff"
     outlines [(3, "#b59", 0, 0), (1, "#b59", 1, 1)]
@@ -784,7 +784,7 @@ init -1 style radio_button:
 
 init -1 style radio_button_text:
     properties gui.button_text_properties("radio_button")
-    font "gui/font/Halogen.ttf"
+    font gui.interface_text_font
     outlines []
 
 init -1 style check_vbox:
@@ -796,7 +796,7 @@ init -1 style check_button:
 
 init -1 style check_button_text:
     properties gui.button_text_properties("check_button")
-    font "gui/font/Halogen.ttf"
+    font gui.interface_text_font
     outlines []
 
 init -1 style slider_slider:
@@ -816,7 +816,7 @@ init -1 style slider_vbox:
 init -501 screen history():
     tag menu
     predict False
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport")):
+    use game_menu(_("Lịch Sử"), scroll=("vpgrid" if gui.history_height else "viewport")):
         style_prefix "history"
         for h in _history_list:
             window:
@@ -832,7 +832,7 @@ init -501 screen history():
                 text h.what
 
         if not _history_list:
-            label _("The dialogue history is empty.")
+            label _("Lịch sử hội thoại trống.")
 
 
 init -1 style history_window is empty
@@ -936,8 +936,8 @@ init -501 screen confirm(message, yes_action, no_action):
         hbox:
             xalign 0.5
             spacing 100
-            textbutton _("Yes") action yes_action
-            textbutton _("No") action no_action
+            textbutton _("Có") action yes_action
+            textbutton _("Không") action no_action
 
 init -1 style confirm_frame is gui_frame
 init -1 style confirm_prompt is gui_prompt
@@ -975,7 +975,7 @@ init -501 screen skip_indicator():
     frame:
         has hbox:
             spacing 6
-        text _("Skipping")
+        text _("Đang tua")
         text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
         text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
         text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
