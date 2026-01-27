@@ -569,6 +569,29 @@ label ch1_day1_day2:
     xiu "\"Đây là robot bán hàng số hiệu T31 tên là DaoChiCuong do tập đoàn FPT sản xuất.\""
     xiu "\"Phế lắm, chị chửi nó suốt. Mong sau này robot xâm chiếm thế giới nó không nhớ mặt chị.\""
     
+    # T31 interaction
+    mc "\"Uhm... Chào bạn T31?\""
+    
+    "Robot T31 quay lại nhìn tôi với đôi mắt LED đỏ."
+    
+    "T31" "\"Hasta la vista, baby.\""
+    
+    mc "(Ủa... Sao lại tiếng Tây???)"
+    
+    show monika 2p
+    
+    xiu "\"Thấy chưa! Nó bị lỗi phần mềm rồi đấy. Bảo sửa mãi không chịu.\""
+    
+    "T31" "\"I'll be back.\""
+    
+    "Robot T31 lăn đi về phía kho."
+    
+    mc "\"Có vẻ nó thích phim Terminator nhỉ...\""
+    
+    show monika 1k
+    
+    xiu "\"Ai mà biết được. Chắc là ai đó cài đặt lỗi cho vui.\""
+    
     "..."
     
     show monika 2a
