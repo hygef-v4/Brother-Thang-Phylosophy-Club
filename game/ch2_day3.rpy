@@ -206,15 +206,12 @@ label ch2_activity_loop:
         "Chọn hoạt động:"
         
         "Đến CLB" if time_slots_used < max_time_slots:
-            $ time_slots_used += 1
             jump ch2_club_activities
         
         "Đến Thư viện" if time_slots_used < max_time_slots:
-            $ time_slots_used += 1
             jump ch2_library_activities
         
         "Đến Gym" if time_slots_used < max_time_slots:
-            $ time_slots_used += 1
             jump ch2_gym_activities
         
         "Bỏ qua (về phòng sớm)":
@@ -254,6 +251,8 @@ label ch2_club_activities:
             
             hide yuri with dissolve
             
+            # Activity completed - consume time slot
+            $ time_slots_used += 1
             jump ch2_activity_loop
         
         "Giúp Hải Nữ kế toán":
@@ -355,6 +354,8 @@ label ch2_library_activities:
             $ stats.modify_doi_song(-5)
             $ show_stat_change("doi_song", -5)
             
+            # Activity completed - consume time slot
+            $ time_slots_used += 1
             jump ch2_activity_loop
         
         "Quay lại":
@@ -389,6 +390,8 @@ label ch2_gym_activities:
             $ stats.modify_doi_song(12)
             $ show_stat_change("doi_song", 12)
             
+            # Activity completed - consume time slot
+            $ time_slots_used += 1
             jump ch2_activity_loop
         
         "Chạy bộ":
@@ -537,16 +540,17 @@ label ch2_end_of_day:
     scene black with dissolve_scene_full
     stop music fadeout 2.0
     
-    # Hide stats UI
-    hide screen stats_display
+    $ renpy.pause(2.0)
     
     # ========================================
-    # END OF CHAPTER 2 - COMING SOON
+    # TRANSITION TO DAILY ROUTINE (Day 4-9)
     # ========================================
     
-    $ renpy.pause(1.0)
+    # Set day to 4 and start daily routine loop
+    $ current_day = 4
     
-    call screen coming_soon_ch3
+    # Call daily routine system
+    call daily_routine_loop
     
     # Return to main menu
     return
