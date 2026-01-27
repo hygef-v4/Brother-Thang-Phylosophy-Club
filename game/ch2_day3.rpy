@@ -1,14 +1,14 @@
 # ================================================
-# CHAPTER 2: PISTIS (NIỀM TIN) - DAY 2
+# CHAPTER 2: PISTIS (NIỀM TIN) - DAY 3
 # Brother Thang Philosophy Club
 # ================================================
 
-label ch2_day2:
+label ch2_day3:
     
     # Show stats UI
     show screen stats_display
     
-    $ current_day = 2
+    $ current_day = 3  # FIX: This is Day 3 (Chapter 1 = Day 1+2)
     $ current_chapter = 2
     
     # Daily stats update
@@ -35,126 +35,18 @@ label ch2_day2:
     "Nhìn lại stats, tiền đã tăng lên khá nhiều nhờ bonus từ Hải Nữ."
     
     # ========================================
-    # SCENE 1: PHÒNG CLB - SÁNG
+    # CLB - SÁNG CHIỀU (Philosophy Discussion)
     # ========================================
     
     scene bg class_day with wipeleft_scene
     
-    mc "\"Buổi đầu tiên có lẽ mình nên đến CLB xem thử…\""
+    mc "Buổi đầu tiên có lẽ mình nên đến CLB xem thử…"
     
     scene bg club_day with wipeleft_scene
     play music club_theme fadein 1.0
     
-    "Vừa bước vào phòng CLB, tình cờ thế nào lại gặp lại chị gái tối qua."
-    
-    show monika 1d at t11
-    
-    xiu "\"Ô! Xem ai đây kìa! Cu em là thành viên mới của cái CLB tẻ nhạt này à?\""
-    xiu "\"Trùng hợp ghê, chị cũng là thành viên đó!\""
-    
-    show monika 1k
-    
-    xiu "\"Hữu duyên thế này thì tối này chị em ta lại phải làm ván cá độ rồi!\""
-    
-    mc "\"Dạ… Dạ vâng…\""
-    
-    # hainu xuất hiện
-    show monika 1d at t21
-    show yuri 3y at t22
-    
-    hainu "\"XỈU!!!\""
-    
-    "Hội trưởng bước vào."
-    
-    show yuri 4y at t22
-    
-    hainu "\"BÀ LẠI ĐỊNH ĐI LỪA THÀNH VIÊN MỚI NỮA ĐẤY HẢ?\""
-    hainu "\"CÓ BIẾT BAO NHIÊU NGƯỜI CHẠY KHỎI CLB MÌNH VÌ BỊ BÀ LỪA CHO HẾT TIỀN RỒI KHÔNG HẢ?\""
-    
-    show monika 2p at t21
-    
-    xiu "(lủi mất) \"Đùa tí, làm gì căng.\""
-    
-    show yuri 2f at t22
-    
-    hainu "\"Còn cả cậu nữa, ai rủ gì cậu cũng làm à? Chính kiến của cậu đâu hả?\""
-    
-    mc "\"Dạ…. Dạ…. Tại em nghĩ chỉ chơi cho vui thôi chứ đâu có biết là lừa đảo….\""
-    
-    show yuri 1h
-    
-    hainu "\"…. Thật là một niềm tin mù quáng….\""
-    hainu "\"Sống trên đời phải biết nghi ngờ, nếu không thì chả khác nào mấy thằng nghe lời người ta cầm 2 tỷ đầu tư vào HDPE để rồi tán gia bại sản.\""
-    
-    show yuri 1g
-    
-    hainu "\"Thôi được rồi… nay cậu về đì.\""
-    
-    hide yuri with dissolve
-    hide monika with dissolve
-    
-    # ========================================
-    # SCENE 2: HÀNH LANG - SÁNG
-    # ========================================
-    
-    scene bg corridor with wipeleft_scene
-    
-    "Vừa ra khỏi phòng CLB đã thấy Xỉu đuổi theo."
-    
-    show monika 2a at t11
-    
-    xiu "\"Cu em chịu khó ngồi nghe cái bà hội trưởng đấy lảm nhảm thế nhỉ?\""
-    xiu "\"Phải chị chị làm vội ba giấc rồi!\""
-    
-    show monika 1j
-    
-    xiu "\"Thế kèo của chị em mình tối nay chú tính thế nào? Chơi hay không chơi nói một lời nào.\""
-    
-    mc "(Thắng ăn cả mà thua thì ăn ***, có lẽ mình nên suy nghĩ cẩn thận một chút…)"
-    
-    # CHOICE: Cá cược lần 2 với Xỉu
-    menu:
-        xiu "\"Vậy chơi không?\""
-        
-        "Chơi thì chơi, sợ gì?":
-            mc "\"Chơi thì chơi, sợ gì?\""
-            
-            $ xiu_day2_bet = True
-            
-            show monika 1k
-            
-            xiu "\"Ngon, thắng rồi! Tiền cu em chị xin nhá!\""
-            
-            # Mất tiền (tối nay sẽ thua)
-            $ stats.modify_tien(-50000)
-            $ show_stat_change("tien", -50000)
-            
-            # Relationship giảm
-            $ gained = stats.modify_relationship("xiu", -3)
-            $ show_stat_change("rel_xiu", gained)
-        
-        "Thôi, nay em xin kiếu!":
-            mc "\"Thôi, nay em xin kiếu!\""
-            mc "\"Em đang hơi cần tiền lắm, không dám liều nữa.\""
-            
-            $ xiu_day2_bet = False
-            
-            show monika 5a
-            
-            xiu "\"Chậc... Tuỳ cu.\""
-            xiu "\"Vậy thì chị đi kiếm con mồi khác vậy.\""
-            
-            # Không mất tiền, nhưng cũng không tăng relationship
-    
-    hide monika with dissolve
-    
-    # ========================================
-    # SCENE 3: PHÒNG CLB - DISCUSSION EIKASIA
-    # ========================================
-    
-    scene bg club_day with wipeleft_scene
-    
-    "Tôi quay lại phòng CLB, thấy hainu đang ngồi đọc sách."
+    # Direct to philosophy conversation with Hải Nữ
+    "Tôi đến phòng CLB, thấy Hải Nữ đang ngồi đọc sách."
     
     show yuri 1a at t11
     
@@ -282,17 +174,30 @@ label ch2_day2:
     
     # ========================================
     # TIME SLOT ACTIVITY SYSTEM
+    # Buổi SÁNG đã dùng cho Philosophy → Còn CHIỀU + TỐI
     # ========================================
     
     # Initialize time slot variables
-    $ time_slots_used = 0
-    $ max_time_slots = 3
+    # Buổi sáng đã hết (Philosophy discussion), bắt đầu từ slot 1 (Chiều)
+    $ time_slots_used = 1
+    $ max_time_slots = 2  # Sáng (đã dùng) + Chiều (còn lại)
     
 label ch2_activity_loop:
     
-    # Check if all time slots used
+    # Check if all time slots used (both morning and afternoon)
     if time_slots_used >= max_time_slots:
-        jump ch2_end_of_day
+        # Auto transition to evening (dorm)
+        jump ch2_evening_transition
+    
+    # Time period indicator
+    if time_slots_used == 0:
+        scene black
+        centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Chọn hoạt động buổi sáng{/size}"
+        $ renpy.pause(1.5, hard=True)
+    elif time_slots_used == 1:
+        scene black
+        centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Chọn hoạt động buổi chiều{/size}"
+        $ renpy.pause(1.5, hard=True)
     
     scene bg class_day with fade
     
@@ -312,8 +217,8 @@ label ch2_activity_loop:
             $ time_slots_used += 1
             jump ch2_gym_activities
         
-        "Về phòng nghỉ":
-            jump ch2_dorm_activities
+        "Bỏ qua (về phòng sớm)":
+            jump ch2_evening_transition
 
 # ========================================
 # CLB ACTIVITIES
@@ -352,14 +257,14 @@ label ch2_club_activities:
             jump ch2_activity_loop
         
         "Giúp Hải Nữ kế toán":
-            show natsuki 1c at t11
+            show yuri 1a at t11
             
             hainu "\"Cậu tới đúng lúc lắm, hội trưởng vừa bảo tôi kiểm toán lại chi tiêu tháng vừa rồi.\""
             hainu "\"Tôi để sổ sách đằng kia, cậu ra làm đi.\""
             
             mc "\"Dạ vâng, em làm ngay!\""
             
-            show natsuki 1a
+            show yuri 2f
             
             "Sắp xếp tài liệu..."
             "Kiểm tra số liệu..."
@@ -375,7 +280,7 @@ label ch2_club_activities:
                 
                 "Làm việc đến tận chiều muộn mới xong..."
             
-            show natsuki 1k
+            show yuri 1a
             
             hainu "\"Xong rồi à? Cậu làm việc khá nhanh đấy.\""
             hainu "\"Tiền công ngày hôm nay đây.\""
@@ -396,13 +301,28 @@ label ch2_club_activities:
             $ stats.modify_doi_song(-5)
             $ show_stat_change("doi_song", -5)
             
-            hide natsuki with dissolve
+            hide yuri with dissolve
             
             jump ch2_activity_loop
         
         "Quay lại":
             jump ch2_activity_loop
 
+# ========================================
+# EVENING TRANSITION
+# ========================================
+
+label ch2_evening_transition:
+    # Transition to evening
+    scene black with dissolve_scene_full
+    stop music fadeout 2.0
+    
+    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Về ký túc xá{/size}"
+    $ renpy.pause(2.0, hard=True)
+    
+    # Go to dorm activities
+    jump ch2_dorm_activities
+ 
 # ========================================
 # LIBRARY ACTIVITIES
 # ========================================
@@ -413,52 +333,6 @@ label ch2_library_activities:
     
     menu:
         "Làm gì tại Thư viện?"
-        
-        "Nói chuyện với Hương":
-            show sayori 1a at t11
-            
-            mc "\"Em đang làm gì vậy Hương?\""
-            
-            "Hương vội che đi màn hình máy tính."
-            
-            show sayori 1o
-            
-            huong "\"Không có gì đâu anh, em chỉ đang làm bùa… À không, hỗ trợ các bạn học sinh trong trường học tập thôi.\""
-            
-            mc "\"Vậy sao, em giỏi thật đấy. Nghe bảo một kỳ em học tận 20 lớp mà vẫn có thời gian giúp bạn bè vậy hả?\""
-            
-            show sayori 1b
-            
-            huong "\"Dạ vâng, em được các bạn nhờ thôi. Vậy dạo này anh học hành có ổn không, cần em giúp gì không nào?\""
-            
-            mc "\"Anh cũng ổn. Cơ mà nhiều môn phải học quá, học trên lớp rồi lại còn học coursera online nữa. Anh còn chưa có thời gian ngồi làm coursera đây này.\""
-            
-            show sayori 1k
-            
-            huong "\"Coursera á? Thế anh hỏi đúng người rồi đấy. Em có mẹo này có thể giúp anh này. Anh có muốn biết không?\""
-            
-            mc "\"Mẹo gì cơ?\""
-            
-            show sayori 4r
-            
-            huong "\"Hehe~ Để em chỉ anh!\""
-            
-            "Ngồi trò chuyện vui vẻ với Hương..."
-            
-            # Tăng cả học tập và đời sống
-            $ stats.modify_hoc_tap(5)
-            $ show_stat_change("hoc_tap", 5)
-            $ stats.modify_doi_song(3)
-            $ show_stat_change("doi_song", 3)
-            
-            # Tăng relationship
-            $ multiplier = stats.get_stat_multiplier_huong()
-            $ gained = stats.modify_relationship("huong", 5, multiplier)
-            $ show_stat_change("rel_huong", gained)
-            
-            hide sayori with dissolve
-            
-            jump ch2_activity_loop
         
         "Học bài":
             "Giở sách ra ôn lại bài cũ..."
@@ -475,11 +349,11 @@ label ch2_library_activities:
             else:
                 mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
             
-            # Tăng học tập, giảm đời sống
-            $ stats.modify_hoc_tap(15)
-            $ show_stat_change("hoc_tap", 15)
-            $ stats.modify_doi_song(-10)
-            $ show_stat_change("doi_song", -10)
+            # Tăng học tập, giảm sức khỏe nhẹ
+            $ stats.modify_hoc_tap(10)
+            $ show_stat_change("hoc_tap", 10)
+            $ stats.modify_doi_song(-5)
+            $ show_stat_change("doi_song", -5)
             
             jump ch2_activity_loop
         
@@ -511,11 +385,9 @@ label ch2_gym_activities:
             else:
                 mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
             
-            # Tăng đời sống, giảm học tập
-            $ stats.modify_doi_song(15)
-            $ show_stat_change("doi_song", 15)
-            $ stats.modify_hoc_tap(-5)
-            $ show_stat_change("hoc_tap", -5)
+            # Tăng sức khỏe
+            $ stats.modify_doi_song(12)
+            $ show_stat_change("doi_song", 12)
             
             jump ch2_activity_loop
         
@@ -532,11 +404,9 @@ label ch2_gym_activities:
             else:
                 mc "\"Dễ dàng quá! Marathon cũng không sợ!\""
             
-            # Tăng đời sống, giảm học tập
-            $ stats.modify_doi_song(15)
-            $ show_stat_change("doi_song", 15)
-            $ stats.modify_hoc_tap(-5)
-            $ show_stat_change("hoc_tap", -5)
+            # Tăng sức khỏe
+            $ stats.modify_doi_song(12)
+            $ show_stat_change("doi_song", 12)
             
             jump ch2_activity_loop
         
@@ -629,13 +499,14 @@ label ch2_dorm_activities:
             
             hide monika with dissolve
             
-            jump ch2_dorm_activities
+            # End day after talking to Xỉu
+            jump ch2_end_of_day
         
         "Đi ngủ (kết thúc ngày)":
             jump ch2_end_of_day
 
 # ========================================
-# END OF DAY 2
+# END OF DAY 3 (CHAPTER 2)
 # ========================================
 
 label ch2_end_of_day:

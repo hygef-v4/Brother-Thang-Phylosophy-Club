@@ -45,10 +45,10 @@ screen stats_display():
                     right_bar Frame("gui/bar/right.png", 4, 4)
                 text "[stats.hoc_tap]/100" size 14 color "#ffffff"
             
-            # Đời sống
+            # Sức khỏe (Đời sống)
             vbox:
                 spacing 3
-                text "Đời sống" size 16 color "#00ff88"
+                text "Sức khỏe" size 16 color "#00ff88"
                 bar:
                     value stats.doi_song
                     range 100

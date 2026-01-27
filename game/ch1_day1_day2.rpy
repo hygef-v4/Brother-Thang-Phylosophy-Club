@@ -1,9 +1,9 @@
 # ================================================
-# CHAPTER 1: EIKASIA (ẢO ẢNH)
+# CHAPTER 1: EIKASIA (ẢO ẢNH) - DAY 1 & 2
 # Brother Thang Philosophy Club
 # ================================================
 
-label ch1_day1:
+label ch1_day1_day2:
     
     # Show stats UI
     show screen stats_display
@@ -353,9 +353,14 @@ label ch1_day1:
     
     hide monika with dissolve
     
+    # ========================================
+    # DAY 1 → DAY 2 TRANSITION
+    # ========================================
+    
     # Scene label
     scene black
-    with dissolve
+    with dissolve_scene_full
+    stop music fadeout 2.0
     
     centered "{size=40}{color=#ffdd00}CẢNH 4{/color}{/size}\n{size=24}PHÒNG CLB - SÁNG{/size}\n{size=18}Ngày 2{/size}"
     
@@ -364,6 +369,10 @@ label ch1_day1:
     # ========================================
     # CẢNH 4: CLB - SÁNG (Ngày 2)
     # ========================================
+    
+    # DAY 2 INITIALIZATION
+    $ current_day = 2
+    $ stats.update_daily()
     
     scene bg club_day with wipeleft_scene
     play music club_theme fadein 1.0
@@ -711,16 +720,14 @@ label ch1_day1:
     scene black with dissolve_scene_full
     stop music fadeout 2.0
     
-    # Hide stats UI
-    hide screen stats_display
-    
     # ========================================
-    # END OF DAY 1 - TRANSITION TO DAY 2
+    # END OF CHAPTER 1 (Day 1-2)
     # ========================================
     
-    $ renpy.pause(1.0)
+    $ renpy.pause(2.0)
     
-    # Jump to Day 2
-    jump ch2_day2
-
-
+    # Transition to Chapter 2 (Day 3)
+    # Note: Stats UI remains visible for continuity
+    call ch2_day3
+    
+    return

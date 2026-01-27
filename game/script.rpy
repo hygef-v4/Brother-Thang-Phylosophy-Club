@@ -4,8 +4,8 @@
 
 label start:
     # Entry point của game
-    # Call Chapter 1 Day 1
-    call ch1_day1
+    # Call Chapter 1 Day 1+2
+    call ch1_day1_day2
     
-    # Sau khi ch1_day1 kết thúc, return về main menu
+    # Sau khi ch1 kết thúc, return về main menu
     return
