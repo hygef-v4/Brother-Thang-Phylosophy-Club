@@ -43,6 +43,8 @@ label ch1_day1:
     
     "Cánh cửa mở."
     
+    "Bố tôi, Võ Quang Hưng, một Đại Tá quân đội, bước vào."
+    
     show dad at t11
     
     dad "\"Trượt rồi à?\""
@@ -82,219 +84,136 @@ label ch1_day1:
     mc "(Đông quá!)"
     mc "(Đông thế này chắc không ai để ý mình đâu nhỉ.)"
     
-    # Gặp Hương lần đầu
-    show sayori 1b at t11
+    # NEW: Phone call from Xỉu
+    play sound "sfx/pageflip.ogg"  # Phone ring sound
     
-    huong "\"Alo Thắng à, anh có phải là Thắng không?\""
+    "Bỗng nhiên, điện thoại bất ngờ nhận một cuộc gọi từ số lạ."
     
-    "Tôi quay đầu lại, bất chợt thấy một bóng dáng quen thuộc."
+    mc "\"???\""
+    mc "\"Ai đây nhở?\""
     
-    mc "\"Ủa Hương? Sao em ở đây?\""
+    # Accept call
+    "Click."
     
-    show sayori 4r
+    show monika 1d at t11
     
-    huong "\"Em thi vượt cấp để được vào đây cùng anh đó.\""
+    xiu "\"Alo Thắng à, em có phải là Thắng không?\""
     
-    mc "\"Vậy sao…\""
+    mc "(???) \"Dạ vâng. Cho hỏi ai đấy ạ?\""
     
-    # Set flag đã gặp Hương
-    $ stats.met_huong = True
+    show monika 1j
     
-    "Đây là Khuất Quang Hương, bạn thuở nhỏ của tôi."
-    "Một hacker thần đồng nghìn năm có một."
-    "Cơ mà tính cách ẻm có hơi dị…."
+    xiu "\"Chị là Võ Minh Xỉu, thành viên câu lạc bộ Triết học Plato.\""
+    xiu "\"Nghe bảo cu em là sinh viên mới, không biết có rảnh không nhỉ?\""
     
-    show sayori 2l
+    show monika 5a
     
-    huong "\"Anh Thắng à, anh tính bỏ em đi mà trốn lên tận cái trường này sao?\""
+    xiu "\"Nếu rảnh thì tham gia CLB của bọn chị đi. Khi tham gia sẽ có cơ hội nhận được rất nhiều ưu đãi hấp dẫn…\""
     
-    mc "\"Không anh đâu có...\""
+    mc "\"Dạ thôi chị ơi, em hơi bận xíu...\""
     
-    show sayori 2m
+    show monika 1j
     
-    huong "\"Ui, thôi anh đừng có chối, thông tin về chiều cao, cân nặng, sở thích, địa chỉ nhà trọ, lịch sinh hoạt của anh,… em có cả rồi ở đây rồi.\""
-    huong "\"Anh có cần em đọc cho nghe một số thông tin không?\""
+    xiu "\"Ui, thôi em đừng có chối, thông tin về chiều cao, cân nặng, sở thích, địa chỉ nhà trọ, lịch sinh hoạt của em,… chị có cả rồi ở đây rồi.\""
+    xiu "\"Cu em có cần chị đọc cho nghe một số thông tin không?\""
     
-    mc "\"Hả? Thôi thôi xin em…\""
+    mc "\"Hả? Thôi thôi cho em xin…\""
     
-    show sayori 1a
+    show monika 1k
     
-    huong "\"Nếu muốn em tha cho thì… Đăng ký vào CLB Triết của trường này đi.\""
-    
-    show sayori 1k
-    
-    huong "(thì thầm) \"Đăng ký vào rồi anh đừng có hòng mà thoát khỏi tay em.\""
+    xiu "\"Nếu vậy thì hãy tham gia ngay cùng bọn chị nào!\""
+    xiu "\"Vậy nhá, chị rất mong chờ được gặp lại em tại CLB Triết học Plato, tầng 2, phòng 217, toà Beta, Trường Đại học FPT!\""
     
     mc "(Mình không muốn vào đó đâu, nghe chán lắm!)"
-    mc "(Nhưng nếu Hương đã bảo vậy thì… Thử vào xem sao…)"
+    mc "(Nhưng nếu người ta đã mời như vậy thì từ chối có vẻ cũng hơi ngại…)"
     
     menu:
-        huong "\"Vậy anh nghĩ sao?\""
+        xiu "\"Vậy em có tham gia không?\""
         
-        "Ừ… được rồi":
-            mc "\"Ừ… được rồi.\""
+        "Dạ vâng, em sẽ tham gia ạ":
+            mc "\"Dạ vâng, em sẽ tham gia ạ.\""
             
-            # Relationship tăng
-            $ multiplier = stats.get_stat_multiplier_huong()
-            $ gained = stats.modify_relationship("huong", 5, multiplier)
-            $ show_stat_change("rel_huong", gained)
+            # Relationship tăng với Xỉu
+            $ multiplier = stats.get_stat_multiplier_xiu()
+            $ gained = stats.modify_relationship("xiu", 5, multiplier)
+            $ show_stat_change("rel_xiu", gained)
             
-            show sayori 4r
+            show monika 1k
             
-            huong "\"Ngoan~ Học xong nhớ lên đăng ký đi nhé. Em đi trước đây.\""
+            xiu "\"Ngon~ Học xong nhớ lên đăng ký em nhé. Bái bai!\""
     
-    hide sayori with dissolve
+    hide monika with dissolve
     
     # ========================================
-    # CẢNH 3: CLB - TRƯA
+    # CẢNH 3: CLB - CHIỀU
     # ========================================
     
     scene bg club_day with wipeleft_scene
     play music club_theme fadein 1.0
     
     "Mở cửa ra, trước mặt là một người con gái đứng nhìn xuống dưới sân trường."
-    "Đó có lẽ là hội trưởng CLB Triết học Plato – Đào Chí Ischyros."
+    "Đó có lẽ là hội trưởng CLB Triết học Plato – Vũ Hải Nữ."
     
+    # Hải Nữ now uses Yuri sprite (as president)
     show yuri 1a at t11
     
-    ischyros "\"Eikasia.\""
+    hainu "\"Eikasia.\""
     
     mc "\"..?\""
     mc "(Nghe giống như tên một món vũ khí trong game RPG nào đó vậy.)"
     
     show yuri 1f
     
-    ischyros "\"Là cấp độ thấp nhất của nhận thức.\""
+    hainu "\"Là cấp độ thấp nhất của nhận thức.\""
     
     "Hội Trưởng quay lại, nhìn thẳng vào tôi."
     
     show yuri 2f at t11
     
-    ischyros "\"Cậu kia. Cậu thấy bầu trời màu gì?\""
+    hainu "\"Cậu kia. Cậu thấy bầu trời màu gì?\""
     
     mc "(bối rối) \"Ờ… màu xanh ạ.\""
     
     show yuri 3h
     
-    ischyros "\"Thiển cận!\""
-    ischyros "\"Mặt trời không chỉ phát ra một màu, mà là cả một phổ ánh sáng.\""
-    ischyros "\"Nếu tôi nói… Bầu trời thực chất chỉ là khoảng đen của vũ trụ.\""
+    hainu "\"Thiển cận!\""
+    hainu "\"Mặt trời không chỉ phát ra một màu, mà là cả một phổ ánh sáng.\""
+    hainu "\"Nếu tôi nói… Bầu trời thực chất chỉ là khoảng đen của vũ trụ.\""
     
     mc "\"…Hả?\""
     
     show yuri 2f
     
-    ischyros "\"Bầu trời vốn không hề xanh.\""
-    ischyros "\"Màu xanh cậu thấy… Là ánh sáng bị tán xạ… Chỉ là ảo ảnh mà cậu tạo ra để diễn giải về thế giới.\""
+    hainu "\"Bầu trời vốn không hề xanh.\""
+    hainu "\"Màu xanh cậu thấy… Là ánh sáng bị tán xạ… Chỉ là ảo ảnh mà cậu tạo ra để diễn giải về thế giới.\""
     
     "Một khoảng im lặng…"
     
-    $ stats.met_ischyros = True
+    $ stats.met_hainu = True
     
     show yuri 1a
     
-    ischyros "\"Vậy cậu đến đây làm gì?\""
+    hainu "\"Vậy cậu đến đây làm gì?\""
     
     mc "(Gượng cười) \"Dạ em muốn gia nhập CLB ạ!\""
     
     show yuri 1f
     
-    ischyros "\"…\""
+    hainu "\"…\""
     
     show yuri 1a
     
-    ischyros "\"Được thôi… Cậu được nhận.\""
+    hainu "\"Được thôi… Cậu được nhận.\""
     
-    # Tăng relationship với Ischyros
-    $ multiplier = stats.get_stat_multiplier_ischyros()
-    $ gained = stats.modify_relationship("ischyros", 3, multiplier)
-    $ show_stat_change("rel_ischyros", gained)
+    # Tăng relationship với Hải Nữ
+    $ multiplier = stats.get_stat_multiplier_hainu()
+    $ gained = stats.modify_relationship("hainu", 3, multiplier)
+    $ show_stat_change("rel_hainu", gained)
     
     hide yuri with dissolve
     
     # ========================================
-    # CẢNH 4: CLB - CHIỀU
-    # ========================================
-    
-    # Scene transition simulation (School afternoon)
-    scene bg club_day with dissolve
-    
-    "Tan học rồi…"
-    
-    mc "\"Tan học rồi, về thôi.\""
-    mc "\"Thôi chết, chìa khoá đâu rồi?\""
-    mc "\"Hình như mình để quên trên phòng CLB rồi.\""
-    
-    scene bg club_day with fade
-    
-    "Vừa bước vào phòng đã thấy một đàn chị nằm trên ghế sofa."
-    
-    show natsuki 1c at t11
-    
-    hainu "\"Này.\""
-    
-    mc "\"Dạ?\""
-    
-    show natsuki 2c
-    
-    hainu "\"Giúp tôi mấy việc.\""
-    
-    $ stats.met_hainu = True
-    
-    menu:
-        hainu "\"Cậu có rảnh không?\""
-        
-        "Dạ vâng ạ…":
-            mc "\"Dạ vâng ạ…\""
-            
-            "Sắp xếp tài liệu."
-            "Dọn dẹp nhà cửa."
-            "Mấy việc lặt vặt nhưng làm rất mệt."
-            
-            # Stats giảm
-            $ stats.modify_doi_song(-5)
-            $ show_stat_change("doi_song", -5)
-            
-            "Trong khi đó đàn chị vẫn cứ ung dung ngồi nghỉ trên sofa."
-            
-            show natsuki 1a
-            
-            hainu "\"Tôi là Vũ Hải Nữ, thủ quỹ của CLB này.\""
-            hainu "\"Cậu là thành viên mới hả, rảnh chứ?\""
-            
-            mc "\"Dạ… rảnh ạ…\""
-            
-            show natsuki 1k
-            
-            hainu "\"Được! Vậy làm việc cho tôi.\""
-            hainu "\"Chỉ cần làm những việc mà hội trưởng giao cho tôi là được!\""
-            hainu "\"Tất nhiên tôi sẽ trả tiền.\""
-            
-            mc "\"Tiền… thật chứ?\""
-            
-            show natsuki 1a
-            
-            hainu "\"Tôi không rảnh để đùa.\""
-            
-            menu:
-                hainu "\"Vậy cậu có nhận không?\""
-                
-                "Việc tốt thế này tất nhiên em nhận rồi!":
-                    mc "\"Việc tốt thế này tất nhiên em nhận rồi!\""
-                    
-                    # Relationship tăng với Hải Nữ
-                    $ multiplier = stats.get_stat_multiplier_hainu()
-                    $ gained = stats.modify_relationship("hainu", 5, multiplier)
-                    $ show_stat_change("rel_hainu", gained)
-                    
-                    show natsuki 1k
-                    
-                    hainu "\"Tốt. Ngày mai đến sớm nhé.\""
-    
-    hide natsuki with dissolve
-    
-    # ========================================
-    # CẢNH 5: KÝ TÚC XÁ - TỐI
+    # CẢNH 3B: KTX - TỐI (Cá cược lần 1)
     # ========================================
     
     scene bg bedroom with wipeleft_scene
@@ -388,9 +307,231 @@ label ch1_day1:
             
             show monika 1a
             
-            xiu "\"Chị là Võ Minh Xỉu, phòng ở bên cạnh, nếu cần gì cứ sang gọi chị nhá!\""
+            xiu "\"Chị ở phòng bên cạnh, nếu cần gì cứ sang gọi chị nhá!\""
     
     hide monika with dissolve
+    
+    # ========================================
+    # CẢNH 4: CLB - SÁNG (Ngày 2)
+    # ========================================
+    
+    scene bg club_day with wipeleft_scene
+    play music club_theme fadein 1.0
+    
+    "Vừa bước vào phòng CLB, tình cờ thế nào lại gặp lại chị gái tối qua."
+    
+    show monika 1d at t11
+    
+    xiu "\"Ô! Xem ai đây kìa! Cu em là thành viên mới của cái CLB tẻ nhạt này à?\""
+    xiu "\"Trùng hợp ghê, chị cũng là thành viên đó!\""
+    
+    show monika 1k
+    
+    xiu "\"Hữu duyên thế này thì tối này chị em ta lại phải làm ván cá độ rồi!\""
+    
+    mc "\"Dạ… Dạ vâng…\""
+    
+    # Hải Nữ xuất hiện
+    show monika 1d at t21
+    show yuri 3y at t22
+    
+    hainu "\"XỈU!!!\""
+    
+    "Hội trưởng bước vào."
+    
+    show yuri 4y at t22
+    
+    hainu "\"BÀ LẠI ĐI GỌI ĐIỆN CHÈO KÉO THÀNH VIÊN VÀO CLB ĐỂ TIỆN TAY LỪA ĐẢO NỮA HẢ?\""
+    hainu "\"HÔM QUA CÓ MỘT NGƯỜI MỚI GIA NHẬP, CÓ PHẢI LÀ DO BÀ DỤ DỖ KHÔNG HẢ?\""
+    hainu "\"ĐÂY LÀ CLB TRIẾT CHỨ KHÔNG PHẢI Ổ LỪA ĐẢO CỦA BÀ ĐÂU NHÁ!\""
+    
+    show monika 2p at t21
+    
+    xiu "(lủi mất) \"Đùa tí, làm gì căng.\""
+    
+    show yuri 2f at t22
+    
+    hainu "\"Còn cả cậu nữa, ai rủ gì cậu cũng làm à? Chính kiến của cậu đâu hả?\""
+    
+    mc "\"Dạ…. Dạ…. Tại em nghĩ chỉ chơi cho vui thôi chứ đâu có biết là lừa đảo….\""
+    
+    show yuri 1h
+    
+    hainu "\"…. Thật là một niềm tin mù quáng….\""
+    hainu "\"Sống trên đời phải biết nghi ngờ, nếu không thì chả khác nào mấy thằng nghe lời người ta cầm 2 tỷ đầu tư vào HDPE để rồi tán gia bại sản.\""
+    
+    show yuri 1g
+    
+    hainu "\"Thôi được rồi… nay cậu về đi.\""
+    
+    hide yuri with dissolve
+    hide monika with dissolve
+    
+    # ========================================
+    # CẢNH 5: TOUR TRƯỜNG VỚI XỈU (NEW SCENE)
+    # ========================================
+    
+    scene bg corridor with wipeleft_scene
+    play music daily_life fadein 1.0
+    
+    "Vừa ra khỏi phòng CLB đã thấy Xỉu đuổi theo."
+    
+    show monika 2a at t11
+    
+    xiu "\"Ây cu.\""
+    xiu "\"Đừng giận chị nha.\""
+    xiu "\"Dù sao thì chị em mình cũng cùng CLB, phòng lại còn cạnh nhau nữa…\""
+    xiu "\"Hay là, để tạ lỗi, chị dắt em đi xem trường nha.\""
+    
+    mc "(Không sao, em cũng không giận gì đâu.)"
+    
+    menu:
+        xiu "\"Vậy có đồng ý không?\""
+        
+        "Không sao, em cũng không giận gì đâu":
+            mc "\"Không sao, em cũng không giận gì đâu.\""
+            
+            show monika 1k
+            
+            xiu "\"Ngon. Chị em mình cứ thế thôi, hẹ hẹ hẹ.\""
+            xiu "\"Được rồi, để chị dẫn đoàn nhà mình đi tham quan trường nào!\""
+            
+            # Relationship tăng
+            $ gained = stats.modify_relationship("xiu", 5)
+            $ show_stat_change("rel_xiu", gained)
+    
+    # Tour 1: Thư viện
+    scene bg corridor with fade
+    
+    show monika 1a at t11
+    
+    xiu "\"Đầu tiên là thư viện, là một nơi vô cùng lý tưởng để ngồi ôn lại bài cũ…, hoặc là ngủ.\""
+    
+    show monika 1j
+    
+    xiu "\"Nghe bảo Hội Trưởng thích mấy anh zai học bá đó, nếu em định tán chị ấy thì tốt nhất thử thông thạo bảy mấy món triết học Mác Leenin hay Tư tưởng Hồ Chí Minh đi.\""
+    
+    mc "\"Ghê vậy sao? Học xong đống đấy thì chắc tu vi đắc đạo lúc nào chả biết.\""
+    
+    # Tăng học tập vì có hint
+    $ stats.modify_hoc_tap(3)
+    $ show_stat_change("hoc_tap", 3)
+    
+    # Tour 2: Gym
+    scene bg class_day with fade
+    
+    show monika 5a at t11
+    
+    xiu "\"Kế đến là phòng Gym, nơi các anh giai sáu múi flex đống cơ của mình.\""
+    xiu "\"Gu chị là mấy anh chàng cao to đen hôi thể hình lực lưỡng, thi thoảng ra ngó mấy anh giai chống đẩy mà them chảy nước giãi.\""
+    
+    mc "\"Tém tém thôi chị ơi, liêm xỉ trôi theo hàng nước của chị rồi kìa.\""
+    
+    show monika 1k
+    
+    # Tour 3: Canteen & Robot T31
+    scene bg class_day with fade
+    
+    show monika 1a at t11
+    
+    xiu "\"Cuối cùng là căng tin, nơi sinh hoạt văn hoá của hội những người không biết xấu hổ.\""
+    
+    mc "\"A! Con lợn này.\""
+    
+    show monika 1d at t11
+    
+    xiu "\"Đây là robot bán hàng số hiệu T31 tên là DaoChiCuong do tập đoàn FPT sản xuất.\""
+    xiu "\"Phế lắm, chị chửi nó suốt. Mong sau này robot xâm chiếm thế giới nó không nhớ mặt chị.\""
+    
+    "..."
+    
+    show monika 2a
+    
+    xiu "\"Thôi muộn rồi, chị té trước đây nha.\""
+    
+    # Relationship và đời sống tăng
+    $ gained = stats.modify_relationship("xiu", 5)
+    $ show_stat_change("rel_xiu", gained)
+    $ stats.modify_doi_song(5)
+    $ show_stat_change("doi_song", 5)
+    
+    hide monika with dissolve
+    
+    # ========================================
+    # CẢNH 6: CLB - TỐI (Giúp Hải Nữ)
+    # ========================================
+    
+    scene bg class_day with wipeleft_scene
+    
+    "Tan học rồi…"
+    
+    mc "\"Tan học rồi, về thôi.\""
+    mc "\"Thôi chết, chìa khoá đâu rồi?\""
+    mc "\"Hình như mình để quên trên phòng CLB rồi.\""
+    
+    scene bg club_day with fade
+    play music club_theme fadein 1.0
+    
+    "Phòng CLB vẫn sáng đèn."
+    "Hội Trưởng ở trong phòng, trước mặt là một chồng sổ sách cao chạm trần!!?"
+    
+    show yuri 1a at t11
+    
+    hainu "\"Cậu là thành viên mới. Muộn rồi còn tới đây làm gì?\""
+    
+    mc "\"Em để quên chìa khoá ạ.\""
+    
+    show yuri 1f
+    
+    hainu "\"Chìa khoá hả? Tôi thấy nó nên đặt ở kia kìa.\""
+    
+    "Đã tìm thấy chìa khoá, đang định đi về…."
+    
+    show yuri 2f
+    
+    hainu "\"Này.\""
+    
+    mc "\"Dạ?\""
+    
+    hainu "\"Giúp tôi xử lý đống sổ sách này với được chứ.\""
+    hainu "\"Tất nhiên tôi sẽ trả lương theo ngày.\""
+    
+    mc "(Sổ sách nhiều vượt mức pickleball rồi, cơ mà vừa hay, tiền mình có hơi vô gia cư…)"
+    
+    menu:
+        hainu "\"Vậy cậu có giúp không?\""
+        
+        "Dạ vâng ạ…":
+            mc "\"Dạ vâng ạ…\""
+            
+            "Tài liệu chất đống như núi, xử lý xong thì cũng đã muộn."
+            
+            # Stats giảm đời sống vì làm việc muộn
+            $ stats.modify_doi_song(-5)
+            $ show_stat_change("doi_song", -5)
+            
+            show yuri 1a
+            
+            hainu "\"Nay cảm ơn cậu. Không có cậu chắc tôi bị đống giấy tờ này bán hành đến chết mất!\""
+            hainu "\"…\""
+            hainu "\"Chiều nay… Tôi có hơi nặng lời.\""
+            
+            show yuri 2f
+            
+            hainu "\"Nhưng mà… Con người khác với mọi sinh vật ở khả năng suy nghĩ và phản biện.\""
+            hainu "\"Suy nghĩ và phản biện là nền móng của triết học.\""
+            hainu "\"Nếu cậu thật sự muốn tham gia CLB này, thì mong cậu hãy học cách tư duy…\""
+            
+            # Relationship tăng mạnh
+            $ multiplier = stats.get_stat_multiplier_hainu()
+            $ gained = stats.modify_relationship("hainu", 10, multiplier)
+            $ show_stat_change("rel_hainu", gained)
+            
+            # Học tập tăng
+            $ stats.modify_hoc_tap(5)
+            $ show_stat_change("hoc_tap", 5)
+    
+    hide yuri with dissolve
     
     # ========================================
     # SCENE KẾT - ĐÊM
@@ -399,10 +540,11 @@ label ch1_day1:
     scene bg bedroom with fade
     play music sad fadein 1.0
     
-    "..."
+    "Về đến phòng..."
     
     mc "(ngáp) \"Ôi mệt quá…\""
     mc "\"Hôm nay quả thật là một ngày dài…\""
+    mc "\"Gặp được Hội Trưởng, chị Xỉu… Cuộc sống đại học bắt đầu từ đây!\""
     mc "\"Ngày mai… Mong mọi chuyện vẫn ổn…\""
     
     scene black with dissolve_scene_full

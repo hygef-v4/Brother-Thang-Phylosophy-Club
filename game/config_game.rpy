@@ -18,11 +18,11 @@ init -1 python:
         MC_NAME_DEFAULT = "Võ Chiến Thắng"
         MC_NICKNAME = "Võ Thắng"
         
-        CHAR_ISCHYROS = "Đào Chí Ischyros"
+        # CHAR_ISCHYROS = "Đào Chí Ischyros"  # REMOVED - character no longer exists in new story
         CHAR_HUONG = "Hương"
-        CHAR_HAINU = "Hải Nữ"
-        CHAR_XIU = "Xỉu"
-        CHAR_DAD = "Bố"
+        CHAR_HAINU = "Vũ Hải Nữ"  # Now club president (full name)
+        CHAR_XIU = "Võ Minh Xỉu"  # Full name
+        CHAR_DAD = "Võ Quang Hưng"  # Full name - Đại Tá quân đội
         
         # ========================================
         # STATS CONFIGURATION
@@ -49,10 +49,10 @@ init -1 python:
         # ========================================
         REL_MIN = 0
         REL_MAX = 100
-        REL_INITIAL_ISCHYROS = 0
+        # REL_INITIAL_ISCHYROS = 0  # REMOVED - character no longer exists
         REL_INITIAL_HUONG = 0
-        REL_INITIAL_HAINU = 0
-        REL_INITIAL_XIU = 50  # Starts higher
+        REL_INITIAL_HAINU = 0  # Now president
+        REL_INITIAL_XIU = 50  # Starts higher (she recruits MC via phone)
         
         REL_THRESHOLD_GOOD_ENDING = 80
         REL_THRESHOLD_BAD = 20
@@ -79,11 +79,11 @@ default current_time_slot = "morning"
 # DEFINE CHARACTERS
 # ========================================
 define mc = Character("[mc_name]", color="#FFFFFF", what_prefix='"', what_suffix='"')
-define ischyros = Character(GameConfig.CHAR_ISCHYROS, color="#FFFFFF", what_prefix='"', what_suffix='"')
+# define ischyros - REMOVED: character no longer exists in new story
 define huong = Character(GameConfig.CHAR_HUONG, color="#FFFFFF", what_prefix='"', what_suffix='"')
-define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF", what_prefix='"', what_suffix='"')
-define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF", what_prefix='"', what_suffix='"')
-define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF", what_prefix='"', what_suffix='"')
+define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF", what_prefix='"', what_suffix='"')  # Now president
+define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF", what_prefix='"', what_suffix='"')  # Recruits MC
+define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF", what_prefix='"', what_suffix='"')  # Đại Tá
 define narrator = Character(None, kind=nvl)  # Cho narration
 
 # ========================================

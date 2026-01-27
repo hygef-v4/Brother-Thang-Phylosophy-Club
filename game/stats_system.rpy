@@ -13,14 +13,14 @@ init -1 python:
             self.tien = GameConfig.STAT_INITIAL_TIEN
             
             # Relationship scores
-            self.rel_ischyros = GameConfig.REL_INITIAL_ISCHYROS
+            # self.rel_ischyros = GameConfig.REL_INITIAL_ISCHYROS  # REMOVED - character no longer exists
             self.rel_huong = GameConfig.REL_INITIAL_HUONG
             self.rel_hainu = GameConfig.REL_INITIAL_HAINU
             self.rel_xiu = GameConfig.REL_INITIAL_XIU
             
             # Flags
             self.dad_cutoff = False  # Bố cắt trợ cấp
-            self.met_ischyros = False
+            # self.met_ischyros = False  # REMOVED
             self.met_huong = False
             self.met_hainu = False
             self.met_xiu = False
@@ -55,19 +55,14 @@ init -1 python:
         def modify_relationship(self, char_name, amount, stat_multiplier=1.0):
             """
             Thay đổi tình cảm với nhân vật
-            char_name: "ischyros", "huong", "hainu", "xiu"
+            char_name: "huong", "hainu", "xiu" (ischyros removed)
             amount: số điểm thay đổi
-            stat_multiplier: nhân với stats (Ischyros thích học tập, Hương thích đời sống)
+            stat_multiplier: nhân với stats (Hải Nữ thích học tập, Hương thích đời sống)
             """
             final_amount = amount * stat_multiplier
             
-            if char_name == "ischyros":
-                self.rel_ischyros = self.clamp(
-                    self.rel_ischyros + final_amount,
-                    GameConfig.REL_MIN,
-                    GameConfig.REL_MAX
-                )
-            elif char_name == "huong":
+            # Note: ischyros case removed
+            if char_name == "huong":
                 self.rel_huong = self.clamp(
                     self.rel_huong + final_amount,
                     GameConfig.REL_MIN,
@@ -90,9 +85,8 @@ init -1 python:
 
         def get_relationship(self, char_name):
             """Lấy giá trị tình cảm"""
-            if char_name == "ischyros":
-                return self.rel_ischyros
-            elif char_name == "huong":
+            # Note: ischyros case removed
+            if char_name == "huong":
                 return self.rel_huong
             elif char_name == "hainu":
                 return self.rel_hainu
@@ -100,14 +94,7 @@ init -1 python:
                 return self.rel_xiu
             return 0
         
-        def get_stat_multiplier_ischyros(self):
-            """Ischyros thích học tập cao"""
-            if self.hoc_tap >= 80:
-                return 1.5
-            elif self.hoc_tap >= 60:
-                return 1.2
-            else:
-                return 1.0
+        # get_stat_multiplier_ischyros REMOVED - character no longer exists
         
         def get_stat_multiplier_huong(self):
             """Hương thích đời sống cao"""
@@ -119,9 +106,19 @@ init -1 python:
                 return 1.0
         
         def get_stat_multiplier_hainu(self):
-            """Hải Nữ thích cân bằng"""
+            """Hải Nữ (President) thích học tập cao"""
+            # Changed: Hải Nữ is now president, prefers high study stats
+            if self.hoc_tap >= 80:
+                return 1.5
+            elif self.hoc_tap >= 60:
+                return 1.2
+            else:
+                return 1.0
+        
+        def get_stat_multiplier_xiu(self):
+            """Xỉu thích cân bằng + tiền"""
             avg = (self.hoc_tap + self.doi_song) / 2
-            if avg >= 70:
+            if avg >= 70 and self.tien > 100000:
                 return 1.5
             elif avg >= 50:
                 return 1.2
@@ -169,7 +166,7 @@ init python:
             "hoc_tap": "Học tập",
             "doi_song": "Đời sống",
             "tien": "Tiền",
-            "rel_ischyros": "❤ Ischyros",
+            # "rel_ischyros": "❤ Ischyros",  # REMOVED
             "rel_huong": "❤ Hương",
             "rel_hainu": "❤ Hải Nữ",
             "rel_xiu": "❤ Xỉu"

@@ -66,16 +66,7 @@ screen stats_display():
             null height 10
             
             # Tình cảm (chỉ hiển thị nếu đã gặp)
-            if stats.met_ischyros:
-                vbox:
-                    spacing 2
-                    text "❤ Ischyros" size 14 color "#ff6b9d"
-                    bar:
-                        value stats.rel_ischyros
-                        range 100
-                        xsize 220
-                        left_bar Frame("gui/bar/left.png", 4, 4)
-                        right_bar Frame("gui/bar/right.png", 4, 4)
+            # Ischyros relationship REMOVED - character no longer exists
             
             if stats.met_huong:
                 vbox:
