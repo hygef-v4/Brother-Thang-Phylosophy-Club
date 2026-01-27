@@ -58,18 +58,18 @@ label ch2_day2:
     
     mc "\"Dạ… Dạ vâng…\""
     
-    # Ischyros xuất hiện
+    # hainu xuất hiện
     show monika 1d at t21
     show yuri 3y at t22
     
-    ischyros "\"XỈU!!!\""
+    hainu "\"XỈU!!!\""
     
     "Hội trưởng bước vào."
     
     show yuri 4y at t22
     
-    ischyros "\"BÀ LẠI ĐỊNH ĐI LỪA THÀNH VIÊN MỚI NỮA ĐẤY HẢ?\""
-    ischyros "\"CÓ BIẾT BAO NHIÊU NGƯỜI CHẠY KHỎI CLB MÌNH VÌ BỊ BÀ LỪA CHO HẾT TIỀN RỒI KHÔNG HẢ?\""
+    hainu "\"BÀ LẠI ĐỊNH ĐI LỪA THÀNH VIÊN MỚI NỮA ĐẤY HẢ?\""
+    hainu "\"CÓ BIẾT BAO NHIÊU NGƯỜI CHẠY KHỎI CLB MÌNH VÌ BỊ BÀ LỪA CHO HẾT TIỀN RỒI KHÔNG HẢ?\""
     
     show monika 2p at t21
     
@@ -77,18 +77,18 @@ label ch2_day2:
     
     show yuri 2f at t22
     
-    ischyros "\"Còn cả cậu nữa, ai rủ gì cậu cũng làm à? Chính kiến của cậu đâu hả?\""
+    hainu "\"Còn cả cậu nữa, ai rủ gì cậu cũng làm à? Chính kiến của cậu đâu hả?\""
     
     mc "\"Dạ…. Dạ…. Tại em nghĩ chỉ chơi cho vui thôi chứ đâu có biết là lừa đảo….\""
     
     show yuri 1h
     
-    ischyros "\"…. Thật là một niềm tin mù quáng….\""
-    ischyros "\"Sống trên đời phải biết nghi ngờ, nếu không thì chả khác nào mấy thằng nghe lời người ta cầm 2 tỷ đầu tư vào HDPE để rồi tán gia bại sản.\""
+    hainu "\"…. Thật là một niềm tin mù quáng….\""
+    hainu "\"Sống trên đời phải biết nghi ngờ, nếu không thì chả khác nào mấy thằng nghe lời người ta cầm 2 tỷ đầu tư vào HDPE để rồi tán gia bại sản.\""
     
     show yuri 1g
     
-    ischyros "\"Thôi được rồi… nay cậu về đì.\""
+    hainu "\"Thôi được rồi… nay cậu về đì.\""
     
     hide yuri with dissolve
     hide monika with dissolve
@@ -154,11 +154,11 @@ label ch2_day2:
     
     scene bg club_day with wipeleft_scene
     
-    "Tôi quay lại phòng CLB, thấy Ischyros đang ngồi đọc sách."
+    "Tôi quay lại phòng CLB, thấy hainu đang ngồi đọc sách."
     
     show yuri 1a at t11
     
-    ischyros "\"Cậu… Có vẻ đã thoát khỏi cái hang của mình rồi nhỉ?\""
+    hainu "\"Cậu… Có vẻ đã thoát khỏi cái hang của mình rồi nhỉ?\""
     
     mc "(bối rối) \"Ơ… Dạ?\""
     
@@ -168,21 +168,21 @@ label ch2_day2:
     
     show yuri 1f
     
-    ischyros "\"Không có gì.\""
+    hainu "\"Không có gì.\""
     
     mc "\"…\""
     mc "\"Mạn phép cho em hỏi, cái từ mà lần trước chị nói khi mới gặp em ấy. Eika… gì ấy nhở?\""
     
     show yuri 2a
     
-    ischyros "\"Eikasia.\""
+    hainu "\"Eikasia.\""
     
     mc "\"Nó là gì vậy ạ?\""
     
     show yuri 2f
     
-    ischyros "\"…\""
-    ischyros "\"Cậu biết ngụ ngôn về cái hang của Plato chứ?\""
+    hainu "\"…\""
+    hainu "\"Cậu biết ngụ ngôn về cái hang của Plato chứ?\""
     
     mc "\"Dạ không.\""
     
@@ -192,45 +192,45 @@ label ch2_day2:
     # PLATO'S CAVE ALLEGORY
     # ========================================
     
-    ischyros "\"Ngày xửa ngày xưa, có vài người cổ đại sống ở dưới đáy của một cái hang động.\""
+    hainu "\"Ngày xửa ngày xưa, có vài người cổ đại sống ở dưới đáy của một cái hang động.\""
     
     show yuri 1f
     
-    ischyros "\"Cái hang đấy có một cái lỗ nhỏ, nơi một ít ánh sáng lọt vào.\""
-    ischyros "\"Từ cái lỗ đó, có những cái bóng lấp ló hắt lên trên bức tường của cái hang.\""
+    hainu "\"Cái hang đấy có một cái lỗ nhỏ, nơi một ít ánh sáng lọt vào.\""
+    hainu "\"Từ cái lỗ đó, có những cái bóng lấp ló hắt lên trên bức tường của cái hang.\""
     
     show yuri 2f
     
-    ischyros "\"Những người cổ đại nhìn thấy nó và đặt tên cho những ảo ảnh này và tin rằng vạn vật chỉ là những cái bóng.\""
+    hainu "\"Những người cổ đại nhìn thấy nó và đặt tên cho những ảo ảnh này và tin rằng vạn vật chỉ là những cái bóng.\""
     
     show yuri 1a
     
-    ischyros "\"Một ngày nọ, một người cổ đại tìm được cách thoát ra khỏi cái hang.\""
-    ischyros "\"Lần đầu tiên trong đời, anh ta thấy được hình dạng thực của những cái bóng.\""
+    hainu "\"Một ngày nọ, một người cổ đại tìm được cách thoát ra khỏi cái hang.\""
+    hainu "\"Lần đầu tiên trong đời, anh ta thấy được hình dạng thực của những cái bóng.\""
     
     show yuri 2g
     
-    ischyros "\"Anh ta vui mừng quay lại hang động và kể cho những người bạn nghe.\""
+    hainu "\"Anh ta vui mừng quay lại hang động và kể cho những người bạn nghe.\""
     
     show yuri 2w
     
-    ischyros "\"Tuy nhiên, những người bạn lại nghĩ anh ta bị điên… Và thế là họ... Cô lập anh ta đến chết.\""
+    hainu "\"Tuy nhiên, những người bạn lại nghĩ anh ta bị điên… Và thế là họ... Cô lập anh ta đến chết.\""
     
     mc "\"Thật là một câu chuyện bi thảm.\""
     
     show yuri 1f
     
-    ischyros "\"…\""
-    ischyros "\"Những người cổ đại, họ chỉ thấy những cái bóng.\""
-    ischyros "\"Họ bị kẹt trong cái gọi là Eikasia. Họ chỉ nhìn thấy những thứ được cho nhìn thấy.\""
+    hainu "\"…\""
+    hainu "\"Những người cổ đại, họ chỉ thấy những cái bóng.\""
+    hainu "\"Họ bị kẹt trong cái gọi là Eikasia. Họ chỉ nhìn thấy những thứ được cho nhìn thấy.\""
     
     show yuri 2f
     
-    ischyros "\"Vậy theo cậu, người đàn ông tìm được đường ra khỏi hang liệu đã thấy được hình dạng thật của những chiếc bóng?\""
+    hainu "\"Vậy theo cậu, người đàn ông tìm được đường ra khỏi hang liệu đã thấy được hình dạng thật của những chiếc bóng?\""
     
     # CHOICE: Philosophy question
     menu:
-        ischyros "\"Cậu nghĩ sao?\""
+        hainu "\"Cậu nghĩ sao?\""
         
         "Nhìn thấy được rồi thì tức là thật!":
             mc "\"Nhìn thấy được rồi thì tức là thật!\""
@@ -238,7 +238,7 @@ label ch2_day2:
             
             show yuri 1h
             
-            ischyros "\"Sai rồi.\""
+            hainu "\"Sai rồi.\""
             
             # Không tăng stats
         
@@ -248,33 +248,33 @@ label ch2_day2:
             
             show yuri 3a
             
-            ischyros "\"Chính xác!\""
+            hainu "\"Chính xác!\""
             
             # Tăng học tập
             $ stats.modify_hoc_tap(5)
             $ show_stat_change("hoc_tap", 5)
             
             # Tăng relationship
-            $ multiplier = stats.get_stat_multiplier_ischyros()
-            $ gained = stats.modify_relationship("ischyros", 5, multiplier)
-            $ show_stat_change("rel_ischyros", gained)
+            $ multiplier = stats.get_stat_multiplier_hainu()
+            $ gained = stats.modify_relationship("hainu", 5, multiplier)
+            $ show_stat_change("rel_hainu", gained)
     
     show yuri 2k
     
-    ischyros "(cười mỉm) \"Thật ra thì, cái hang của họ nằm trong một khu bảo tồn người cổ đại!\""
-    ischyros "\"Những thứ mà người đàn ông đó thấy chỉ là những đồ giả mà thôi.\""
+    hainu "(cười mỉm) \"Thật ra thì, cái hang của họ nằm trong một khu bảo tồn người cổ đại!\""
+    hainu "\"Những thứ mà người đàn ông đó thấy chỉ là những đồ giả mà thôi.\""
     
     show yuri 2f
     
-    ischyros "\"Vì vậy, anh ta vẫn chưa thoát khỏi ý niệm của bản thân, vẫn bị kẹt trong Pistis…\""
-    ischyros "\"Niềm tin dựa trên những gì anh ta nhìn thấy, nhưng chưa phải là chân lý.\""
+    hainu "\"Vì vậy, anh ta vẫn chưa thoát khỏi ý niệm của bản thân, vẫn bị kẹt trong Pistis…\""
+    hainu "\"Niềm tin dựa trên những gì anh ta nhìn thấy, nhưng chưa phải là chân lý.\""
     
     mc "\"Vậy… Làm sao để thoát khỏi Pistis?\""
     
     show yuri 1f
     
-    ischyros "\"Đó là con đường dài. Từ Eikasia đến Pistis, rồi Dianoia, và cuối cùng là Noesis.\""
-    ischyros "\"Nhưng đó là chuyện của những ngày sau. Hôm nay cậu đã hiểu được bước đầu tiên.\""
+    hainu "\"Đó là con đường dài. Từ Eikasia đến Pistis, rồi Dianoia, và cuối cùng là Noesis.\""
+    hainu "\"Nhưng đó là chuyện của những ngày sau. Hôm nay cậu đã hiểu được bước đầu tiên.\""
     
     hide yuri with dissolve
     
@@ -329,19 +329,19 @@ label ch2_club_activities:
         "Nói chuyện với Hội Trưởng":
             show yuri 1a at t11
             
-            ischyros "\"Cậu muốn tìm hiểu thêm về triết học sao?\""
+            hainu "\"Cậu muốn tìm hiểu thêm về triết học sao?\""
             
             mc "\"Dạ vâng, em thấy những gì chị nói rất thú vị.\""
             
             show yuri 2f
             
-            ischyros "\"Triết học không chỉ là kiến thức, mà là cách sống.\""
-            ischyros "\"Mỗi ngày đặt câu hỏi về những gì ta tin là chân lý.\""
+            hainu "\"Triết học không chỉ là kiến thức, mà là cách sống.\""
+            hainu "\"Mỗi ngày đặt câu hỏi về những gì ta tin là chân lý.\""
             
             # Tăng relationship
-            $ multiplier = stats.get_stat_multiplier_ischyros()
-            $ gained = stats.modify_relationship("ischyros", 5, multiplier)
-            $ show_stat_change("rel_ischyros", gained)
+            $ multiplier = stats.get_stat_multiplier_hainu()
+            $ gained = stats.modify_relationship("hainu", 5, multiplier)
+            $ show_stat_change("rel_hainu", gained)
             
             # Tăng học tập
             $ stats.modify_hoc_tap(3)

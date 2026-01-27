@@ -12,6 +12,15 @@ label ch1_day1:
     $ current_chapter = 1
     
     stop music fadeout 2.0
+    
+    # Scene label
+    scene black
+    with dissolve
+    
+    centered "{size=40}{color=#ffdd00}CẢ NH 1{/color}{/size}\n{size=24}NHÀ - ĐÊM{/size}"
+    
+    $ renpy.pause(2.0, hard=True)
+    
     scene bg mc_room with dissolve_scene_full
     
     play music daily_life fadein 1.0
@@ -67,6 +76,14 @@ label ch1_day1:
     mc "\"Dạ vâng ạ...\""
     
     hide dad with dissolve
+    
+    # Scene label
+    scene black
+    with dissolve
+    
+    centered "{size=40}{color=#ffdd00}CẢNH 2{/color}{/size}\n{size=24}SÂN TRƯỜNG FPT - SÁNG{/size}\n{size=18}Ngày 1{/size}"
+    
+    $ renpy.pause(2.0, hard=True)
     
     # ========================================
     # CẢNH 2: NGÀY 1 (SÂN - SÁNG)
@@ -144,6 +161,14 @@ label ch1_day1:
     
     hide monika with dissolve
     
+    # Scene label
+    scene black
+    with dissolve
+    
+    centered "{size=40}{color=#ffdd00}CẢNH 3{/color}{/size}\n{size=24}PHÒNG CLB TRIẾT HỌC PLATO - CHIỀU{/size}"
+    
+    $ renpy.pause(2.0, hard=True)
+    
     # ========================================
     # CẢNH 3: CLB - CHIỀU
     # ========================================
@@ -211,6 +236,14 @@ label ch1_day1:
     $ show_stat_change("rel_hainu", gained)
     
     hide yuri with dissolve
+    
+    # Scene label
+    scene black
+    with dissolve
+    
+    centered "{size=40}{color=#ffdd00}CẢNH 3{/color}{/size}\n{size=24}KÝ TÚC XÁ - TỐI{/size}"
+    
+    $ renpy.pause(2.0, hard=True)
     
     # ========================================
     # CẢNH 3B: KTX - TỐI (Cá cược lần 1)
@@ -308,8 +341,25 @@ label ch1_day1:
             show monika 1a
             
             xiu "\"Chị ở phòng bên cạnh, nếu cần gì cứ sang gọi chị nhá!\""
+        
+        "Không, em không chơi cá cược.":
+            mc "\"Dạ thôi chị, em không muốn chơi cá cược ạ.\""
+            mc "\"Em sợ mất tiền lắm.\""
+            
+            show monika 5a
+            
+            xiu "\"Ừ thì thôi. Nhát thế thì đành chịu vậy.\""
+            xiu "\"Chị ở phòng bên cạnh, nếu cần gì cứ sang gọi chị nhá!\""
     
     hide monika with dissolve
+    
+    # Scene label
+    scene black
+    with dissolve
+    
+    centered "{size=40}{color=#ffdd00}CẢNH 4{/color}{/size}\n{size=24}PHÒNG CLB - SÁNG{/size}\n{size=18}Ngày 2{/size}"
+    
+    $ renpy.pause(2.0, hard=True)
     
     # ========================================
     # CẢNH 4: CLB - SÁNG (Ngày 2)
@@ -368,6 +418,61 @@ label ch1_day1:
     hide monika with dissolve
     
     # ========================================
+    # HÀNH LANG - SÁNG (Betting choice 2)
+    # ========================================
+    
+    scene bg corridor with wipeleft_scene
+    
+    "Vừa ra khỏi phòng CLB đã thấy Xỉu đuổi theo."
+    
+    show monika 2a at t11
+    
+    xiu "\"Cu em chịu khó ngồi nghe cái bà hội trưởng đấy lảm nhảm thế nhỉ?\""
+    xiu "\"Phải chị chị làm vội ba giấc rồi!\""
+    
+    show monika 1j
+    
+    xiu "\"Thế kèo của chị em mình tối nay chú tính thế nào? Chơi hay không chơi nói một lời nào.\""
+    
+    mc "(Thắng ăn cả mà thua thì ăn ***, có lẽ mình nên suy nghĩ cẩn thận một chút…)"
+    
+    menu:
+        xiu "\"Vậy chơi không?\""
+        
+        "Chơi thì chơi, sợ gì?":
+            mc "\"Chơi thì chơi, sợ gì?\""
+            
+            show monika 1k
+            
+            xiu "\"Ngon, thắng rồi! Tiền cu em chị xin nhá!\""
+            
+            # Tự động thua (theo story)
+            $ stats.modify_tien(-50000)
+            $ show_stat_change("tien", -50000)
+            
+            $ gained = stats.modify_relationship("xiu", -3)
+            $ show_stat_change("rel_xiu", gained)
+            
+        "Thôi, nay em xin kiếu!":
+            mc "\"Thôi, nay em xin kiếu!\""
+            mc "\"Em đang hơi cần tiền lắm, không dám liều nữa.\""
+            
+            show monika 5a
+            
+            xiu "\"Chậc... Tuỳ cu.\""
+            xiu "\"Vậy thì chị đi kiếm con mồi khác vậy.\""
+    
+    hide monika with dissolve
+    
+    # Scene label
+    scene black
+    with dissolve
+    
+    centered "{size=40}{color=#ffdd00}CẢNH 5{/color}{/size}\n{size=24}TOUR TRƯỜNG - CHIỀU{/size}\n{size=18}Thư viện → Gym → Canteen{/size}"
+    
+    $ renpy.pause(2.0, hard=True)
+    
+    # ========================================
     # CẢNH 5: TOUR TRƯỜNG VỚI XỈU (NEW SCENE)
     # ========================================
     
@@ -399,6 +504,18 @@ label ch1_day1:
             # Relationship tăng
             $ gained = stats.modify_relationship("xiu", 5)
             $ show_stat_change("rel_xiu", gained)
+        
+        "Em cũng tham quan vòng rồi, không cần phiền chị đâu ạ":
+            mc "\"Em cũng tham quan vòng rồi, không cần phiền chị đâu ạ.\""
+            
+            show monika 5a
+            
+            xiu "\"Thế thôi vậy. Em về nha, chị đi trước đây.\""
+            
+            hide monika with dissolve
+            
+            # Skip tour, jump to CẢNH 6
+            jump ch1_scene6
     
     # Tour 1: Thư viện
     scene bg corridor with fade
@@ -457,9 +574,19 @@ label ch1_day1:
     
     hide monika with dissolve
     
+    # Scene label
+    scene black
+    with dissolve
+    
+    centered "{size=40}{color=#ffdd00}CẢNH 6{/color}{/size}\n{size=24}PHÒNG CLB - TỐI{/size}\n{size=18}Giúp Hội Trưởng xử lý sổ sách{/size}"
+    
+    $ renpy.pause(2.0, hard=True)
+    
     # ========================================
     # CẢNH 6: CLB - TỐI (Giúp Hải Nữ)
     # ========================================
+    
+    label ch1_scene6:
     
     scene bg class_day with wipeleft_scene
     
@@ -511,6 +638,40 @@ label ch1_day1:
             $ show_stat_change("doi_song", -5)
             
             show yuri 1a
+            
+            hainu "\"Nay cảm ơn cậu. Không có cậu chắc tôi bị đống giấy tờ này bán hành đến chết mất!\""
+            hainu "\"…\""
+            hainu "\"Chiều nay… Tôi có hơi nặng lời.\""
+            
+            show yuri 2f
+            
+            hainu "\"Nhưng mà… Con người khác với mọi sinh vật ở khả năng suy nghĩ và phản biện.\""
+            hainu "\"Suy nghĩ và phản biện là nền móng của triết học.\""
+            hainu "\"Nếu cậu thật sự muốn tham gia CLB này, thì mong cậu hãy học cách tư duy…\""
+            
+            # Relationship tăng mạnh
+            $ multiplier = stats.get_stat_multiplier_hainu()
+            $ gained = stats.modify_relationship("hainu", 10, multiplier)
+            $ show_stat_change("rel_hainu", gained)
+            
+            # Học tập tăng
+            $ stats.modify_hoc_tap(5)
+            $ show_stat_change("hoc_tap", 5)
+        
+        "Nay em lại hơi bận…":
+            mc "\"Nay em lại hơi bận…\""
+            
+            "Định đi nhưng thấy vẻ mặt tiều tuỵ của Hội Trưởng, thôi đành giúp vậy…"
+            
+            mc "\"…Thôi được rồi, em sẽ giúp chị.\""
+            
+            show yuri 1a
+            
+            "Tài liệu chất đống như núi, xử lý xong thì cũng đã muộn."
+            
+            # Stats giảm đời sống vì làm việc muộn
+            $ stats.modify_doi_song(-5)
+            $ show_stat_change("doi_song", -5)
             
             hainu "\"Nay cảm ơn cậu. Không có cậu chắc tôi bị đống giấy tờ này bán hành đến chết mất!\""
             hainu "\"…\""
