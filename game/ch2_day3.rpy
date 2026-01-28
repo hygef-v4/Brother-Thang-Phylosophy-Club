@@ -14,10 +14,21 @@ label ch2_day3:
     $ current_day = 4
     call ch2_day_start from ch2_day4_start
     
+    # Text Scenes: 251-256 (Salary)
+    "Chuông báo thức reo."
+    mc "(ngáp) \"Buồn ngủ quá… Qua thức xem stream anh Độ hơi khuya rồi…\""
+    mc "\"Tài khoản tự nhiên được cộng thêm tiền này! Hội trưởng bảo trả lương theo ngày là thật sao?\""
+    "Ting! Bạn nhận được 50.000đ."
+    $ stats.modify_tien(50000)
+    $ show_stat_change("tien", 50000)
+    mc "\"Chà… Người đâu mà đã xinh đẹp, giàu có lại tốt tính. Có phú bà bao nuôi thế này, cuộc sống đại học mình bắt đầu từ đây!\""
+
     "Ngày thứ 4 tại FPT đã bắt đầu."
     "Sau những sự kiện dồn dập của những ngày đầu, hôm nay tôi muốn tìm một nhịp điệu riêng cho mình."
     
-    call ch2_afternoon_activity from ch2_day4_act
+    # Force CLB Event (Cave Allegory) instead of generic choice
+    call ch2_day4_clb_event
+    
     call ch2_evening_activity from ch2_day4_eve
     
     call ch2_day_end from ch2_day4_end
@@ -30,11 +41,6 @@ label ch2_day3:
     
     "Ngày thứ 5."
     "Việc học trên lớp bắt đầu nặng dần, nhưng tôi vẫn muốn dành thời gian buổi chiều cho bản thân."
-    
-    # Logic cũ: Sự kiện Tranh biện ở Ngày 6. Nhưng user suggest Ngày 5 cũng có thể có sự kiện cố định.
-    # User request: "Ngày 5 (Sự kiện bắt buộc): Dù người chơi chọn đi đâu, Xỉu và Nữ đều sẽ xuất hiện cùng lúc để cãi nhau". 
-    # Tuy nhiên, theo timeline cũ thì Debate là Ngày 6. Để tránh conflict timeline lớn, mình setup Debate ở Ngày 6 như cũ, 
-    # Ngày 5 vẫn progression bình thường như user suggest ở phần "TÓM TẮT CÁCH SỬA".
     
     call ch2_afternoon_activity from ch2_day5_act
     call ch2_evening_activity from ch2_day5_eve
@@ -199,6 +205,85 @@ label ch2_day_end:
     $ renpy.pause(1.0)
     return
 
+label ch2_day4_clb_event:
+    # Text Scenes: 258-301 (Cave Allegory)
+    scene bg club_day with wipeleft_scene
+    play music club_theme fadein 1.0
+
+    "Tôi quyết định đến CLB sớm."
+    
+    show yuri 1a at t11
+
+    hainu "\"Cậu… Có vẻ đã thoát khỏi cái hang của mình rồi nhỉ?\""
+    
+    mc "(bối rối) \"Ơ… Dạ?\""
+    mc "\"…\""
+    mc "\"Chuyện lần trước… Cảm ơn chị đã nhắc em về trò lừa bịp của chị Xỉu.\""
+    
+    hainu "\"Không có gì.\""
+    
+    mc "\"…\""
+    mc "\"Mạn phép cho em hỏi, cái từ mà lần trước chị nói khi mới gặp em ấy. Eika… gì ấy nhở?\""
+    
+    hainu "\"Eikasia.\""
+    
+    mc "\"Nó là gì vậy ạ?\""
+    
+    show yuri 1f
+    
+    hainu "\"…\""
+    hainu "\"Cậu biết ngụ ngôn về cái hang của Plato chứ?\""
+    
+    mc "\"Dạ không.\""
+    
+    hainu "\"Ngày xửa ngày xưa, có vài người cổ đại sống ở dưới đáy của một cái hang động.\""
+    hainu "\"Cái hang đấy có một cái lỗ nhỏ, nơi một ít ánh sáng lọt vào.\""
+    hainu "\"Từ cái lỗ đó, có những cái bóng lấp ló hắt lên trên bức tường của cái hang.\""
+    hainu "\"Những người cổ đại nhìn thấy nó và đặt tên cho những ảo ảnh này và tin rằng vạn vật chỉ là những cái bóng.\""
+    
+    show yuri 2f
+    
+    hainu "\"Một ngày nọ, một người cổ đại tìm được cách thoát ra khỏi cái hang.\""
+    hainu "\"Lần đầu tiên trong đời, anh ta thấy được hình dạng thực của những cái bóng.\""
+    hainu "\"Anh ta vui mừng quay lại hang động và kể cho những người bạn nghe.\""
+    
+    show yuri 1g
+    
+    hainu "\"Tuy nhiên, những người bạn lại nghĩ anh ta bị điên… Và thế là họ... Cô lập anh ta đến chết.\""
+    
+    mc "\"Thật là một câu chuyện bi thảm.\""
+    
+    show yuri 1f
+    
+    hainu "\"…\""
+    hainu "\"Những người cổ đại, họ chỉ thấy những cái bóng.\""
+    hainu "\"Họ bị kẹt trong cái gọi là Eikasia. Họ chỉ nhìn thấy những thứ được cho nhìn thấy.\""
+    hainu "\"Vậy theo cậu, người đàn ông tìm được đường ra khỏi hang liệu đã thấy được hình dạng thật của những chiếc bóng?\""
+    
+    menu:
+        "Ý kiến của bạn?"
+        
+        "Nhìn thấy được rồi thì tức là thật!":
+            mc "\"Nhìn thấy được rồi thì tức là thật!\""
+        
+        "Có lẽ là chưa….":
+            mc "\"Có lẽ là chưa….\""
+            
+    show yuri 1s
+    
+    hainu "(cười mỉm) \"Thật ra thì, cái hang của nằm trong một khu bảo tồn người cổ đại!\""
+    hainu "\"Những thứ mà người đàn ông đó thấy chỉ là những đồ giả mà thôi.\""
+    hainu "\"Vì vậy, anh ta vẫn chưa thoát khỏi ý niệm của bản thân, vẫn bị kẹt trong Pistis…\""
+    
+    "Chúng tôi bàn luận về triết học cùng Hội Trưởng tới hết buổi."
+    
+    $ gained = stats.modify_relationship("hainu", 10)
+    $ show_stat_change("rel_hainu", gained)
+    $ stats.modify_hoc_tap(10)
+    $ show_stat_change("hoc_tap", 10)
+    
+    return
+
 # -------------------------------------------------------------------------
 # SYSTEM: ACTIVITY PROGRESSION (COUNT-BASED)
 # -------------------------------------------------------------------------
@@ -227,13 +312,11 @@ label ch2_gym_event:
     play music gym_theme fadein 1.0
 
     # Increment count
-
     $ stats.gym_count += 1
     
     if stats.gym_count == 1:
-        # Lần 1: Gà mờ
-        mc "\"Mùi mồ hôi, tiếng tạ va vào nhau 'keng keng'... Đây đích thị là thánh địa của mấy gã to xác.\""
-        mc "\"Mình thử nâng quả tạ 5kg xem sao... Ái da! Trẹo cả tay.\""
+        # Text 315
+        mc "\"Mệt quá… Chịu rồi...\""
         
         show monika 2l at t11
         xiu "\"Yếu nhớt! Cầm cái tạ như cầm ly trà sữa thế kia bao giờ mới có người yêu?\""
@@ -242,9 +325,8 @@ label ch2_gym_event:
         $ show_stat_change("doi_song", 5)
         
     elif stats.gym_count <= 3:
-        # Lần 2-3: Bắt đầu quen
-        mc "\"Hôm nay mình đã biết cách thở đúng nhịp. Hít vào, thở ra...\""
-        mc "\"Cảm giác cơ bắp bắt đầu đau nhức, nhưng là cái đau của sự phát triển.\""
+        # Text 317
+        mc "\"Cố thêm… Một xíu nữa thôi…\""
         
         show monika 1k at t11
         xiu "\"Khá đấy cu. Nay đẩy ngực được 20kg rồi à? Cố lên, sắp đủ trình làm bao cát cho chị rồi.\""
@@ -255,9 +337,8 @@ label ch2_gym_event:
         $ show_stat_change("rel_xiu", gained)
         
     else:
-        # Lần 4+: Thành thạo
-        mc "\"Nhìn vào gương, mình thấy cơ ngực đã bắt đầu lộ rõ.\""
-        mc "\"Giờ mình có thể nâng mức tạ mà tuần trước mình còn không nhấc nổi.\""
+        # Text 318
+        mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
         
         show monika 3b at t11
         xiu "\"Uầy, nhìn 'mlem' phết rồi đấy. Tối nay đi làm bát phở gầu bò nạm thưởng cho cái body này không?\""
@@ -277,8 +358,8 @@ label ch2_library_event:
     $ stats.lib_count += 1
     
     if stats.lib_count == 1:
-        # Lần 1: Buồn ngủ
-        mc "\"Thư viện yên tĩnh quá... Mùi sách cũ làm mình muốn... khò khò...\""
+        # Text 306
+        mc "\"Ra là thế… Chả hiểu gì cả.\""
         mc "\"Mở cuốn 'Phê phán lý tính thuần túy' ra đọc được 2 dòng thì mắt díp lại.\""
         
         show yuri 2h at t11
@@ -288,8 +369,8 @@ label ch2_library_event:
         $ show_stat_change("hoc_tap", 5)
         
     elif stats.lib_count <= 3:
-        # Lần 2-3: Tập trung
-        mc "\"Mình bắt đầu hiểu được sơ sơ khái niệm 'Vật tự nó' rồi.\""
+        # Text 309
+        mc "\"Ồ, kiến thức mới đã được tiếp thu.\""
         mc "\"Hoá ra triết học không khô khan như mình tưởng, nó giống như giải một bài toán về cuộc đời vậy.\""
         
         show yuri 1a at t11
@@ -301,9 +382,9 @@ label ch2_library_event:
         $ show_stat_change("rel_hainu", gained)
         
     else:
-        # Lần 4+: Giác ngộ -> Unlock True Ending condition
-        mc "\"Mình tìm thấy sự liên kết giữa Hội hoạ và Triết học.\""
-        mc "\"Cả hai đều là cách con người mô tả thế giới. Một bên dùng màu sắc, một bên dùng tư duy.\""
+        # Text 310
+        mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
+        mc "\"Mình tìm thấy sự liên kết giữa Hội hoạ và Triết học. Cả hai đều là cách con người mô tả thế giới.\""
         
         show yuri 1s at t11
         hainu "\"Cậu đã bắt đầu chạm vào được Noesis rồi đấy. Ánh mắt cậu nhìn trang sách... đã khác xưa nhiều.\""
@@ -328,15 +409,31 @@ label ch2_evening_activity:
     "Về phòng rồi. Tối nay làm gì nhỉ?"
 
     menu:
-        "Sang phòng Xỉu chơi (Tăng thiện cảm)" if current_day % 2 == 0: # Available on even days
+        # Text 322-329 (Xiu KTX logic)
+        "Sang phòng Xỉu chơi (Tăng thiện cảm)" if current_day % 2 == 0:
             scene bg ktx with wipeleft
-            "Tôi sang phòng bà chị Xỉu chơi game."
-            "Tuy thua liểng xiểng nhưng cũng xả được stress."
-            $ stats.modify_doi_song(5)
+            
+            show monika 1d at t11
+            xiu "\"Chào mừng đến với dịch vụ Campuchia gì cũng tôn của Xỉu. Cu em cần gì nào?\""
+            
+            menu:
+                "Dịch vụ gia sư học tập":
+                    xiu "\"OK luôn. Cứ giao cho chị. Tối nay chị sẽ chăm sóc cu em nhiệt tình.\""
+                    "Tuy nhiên, 'gia sư' kiểu Xỉu lại là dạy cách đối nhân xử thế."
+                    $ stats.modify_doi_song(3)
+                    $ stats.modify_hoc_tap(2)
+                
+                "Dịch vụ bồi bổ đời sống":
+                    xiu "\"OK luôn. Cứ giao cho chị. Tối nay chị sẽ chăm sóc cu em nhiệt tình.\""
+                    "Chúng tôi chơi game và ăn vặt tới khuya."
+                    $ stats.modify_doi_song(5)
+            
+            hide monika
+            
             $ gained = stats.modify_relationship("xiu", 3)
             $ show_stat_change("rel_xiu", gained)
              
-        "Nhắn tin hỏi bài Nữ (Tăng thiện cảm)" if current_day % 2 != 0: # Available on odd days
+        "Nhắn tin hỏi bài Nữ (Tăng thiện cảm)" if current_day % 2 != 0:
             "Tôi nhắn tin hỏi chị Nữ về vài thuật ngữ chưa hiểu."
             "Chị ấy rep khá nhanh và giải thích rất cặn kẽ."
             $ stats.modify_hoc_tap(5)
