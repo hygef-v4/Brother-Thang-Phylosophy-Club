@@ -117,6 +117,8 @@ init -501 screen say(who, what):
 
     window:
         id "window"
+        xsize int(config.screen_width * 0.7)  # 70% width
+        xalign 0.5  # Centered
         text what id "what"
 
         if who is not None:
@@ -141,7 +143,7 @@ init -1 style namebox_label is say_label
 
 init -1 style window:
     xalign 0.5
-    xfill True
+    xsize 1350  # 75% of 1920 = narrower textbox
     yalign gui.textbox_yalign
     ysize gui.textbox_height
     # Restore patterned textbox ("họa tiết")
@@ -160,14 +162,14 @@ init -1 style namebox:
     padding gui.namebox_borders.padding
 
 init -1 style say_label:
-    # Deep Sky Blue for Name (Contrast with bright box)
-    color "#01579b" 
+    # White text like DDLC
+    color "#ffffff" 
     font gui.name_font
     size gui.name_text_size
     xalign gui.name_xalign
     yalign 0.5
-    # White outline (thick) to pop against the blue box
-    outlines [(3, "#ffffff", 0, 0), (1, "#81d4fa", 1, 1)]
+    # Light blue outline (keeping your blue theme)
+    outlines [(4, "#29b6f6", 0, 0), (2, "#4fc3f7", 2, 2)]
 
 init -1 style say_dialogue:
     xpos gui.dialogue_xpos

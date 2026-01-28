@@ -135,6 +135,30 @@
                 "settings": {
                     "foreground": "#ff6600"
                 }
+            },
+            {
+                "scope": "renpy.meta.color.#ff0000",
+                "settings": {
+                    "foreground": "#ff0000"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#aa0000",
+                "settings": {
+                    "foreground": "#aa0000"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#ff66aa",
+                "settings": {
+                    "foreground": "#ff66aa"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#ffffff",
+                "settings": {
+                    "foreground": "#ffffff"
+                }
             }
         ]
     }
