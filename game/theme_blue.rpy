@@ -28,11 +28,11 @@ image game_menu_bg = game_menu_bg
 image overlay_game_menu = overlay_game_menu
 
 
-# Button backgrounds (if needed, though gui.rpy largely handles colors, these might be image based)
-image choice_idle = im.MatrixColor("gui/button/choice_idle_background.png", blue_tint)
-image choice_hover = im.MatrixColor("gui/button/choice_hover_background.png", blue_tint)
-image slot_idle = im.MatrixColor("gui/button/slot_idle_background.png", blue_tint)
-image slot_hover = im.MatrixColor("gui/button/slot_hover_background.png", blue_tint)
+# Button backgrounds - using Transform instead of obsolete im.MatrixColor
+image choice_idle = Transform("gui/button/choice_idle_background.png", matrixcolor=HueMatrix(-130))
+image choice_hover = Transform("gui/button/choice_hover_background.png", matrixcolor=HueMatrix(-130))
+image slot_idle = Transform("gui/button/slot_idle_background.png", matrixcolor=HueMatrix(-130))
+image slot_hover = Transform("gui/button/slot_hover_background.png", matrixcolor=HueMatrix(-130))
 
 # Updates to definitions that might rely on string paths in screens.rpy
 # We will use these image tags in screens.rpy

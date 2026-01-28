@@ -243,8 +243,9 @@ init -1 style choice_button is default:
     properties gui.button_properties("choice_button")
     hover_sound gui.hover_sound
     activate_sound gui.activate_sound
-    idle_background Frame("choice_idle", gui.choice_button_borders)
-    hover_background Frame("choice_hover", gui.choice_button_borders)
+    # Blue backgrounds - created directly instead of using PNG
+    idle_background Frame(Solid("#e3f2fd"), gui.choice_button_borders)
+    hover_background Frame(Solid("#42a5f5"), gui.choice_button_borders)
 
 init -1 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
@@ -282,6 +283,9 @@ init -1 style choice_button is default:
     properties gui.button_properties("choice_button")
     hover_sound gui.hover_sound
     activate_sound gui.activate_sound
+    # Blue backgrounds - same as above
+    idle_background Frame(Solid("#e3f2fd"), gui.choice_button_borders)
+    hover_background Frame(Solid("#42a5f5"), gui.choice_button_borders)
 
 init -1 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
