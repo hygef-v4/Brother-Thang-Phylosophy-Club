@@ -144,8 +144,11 @@ image bg house = "bg/house.png"
 image bg kitchen = "bg/kitchen.png"
 image bg bar = "bg/club_night.png"  # Fallback for missing bar image
 image bg notebook = "bg/notebook.png"
-image bg notebook-glitch = "bg/notebook-glitch.png"
+# image bg notebook-glitch = "bg/notebook-glitch.png" # Missing
 image bg glitch = LiveTile("bg/glitch.jpg")
+
+# Placeholder for Fascist Ending MC
+image mc_dictator = "dad 1a"
 
 image bg mc_room = "bg/bedroom.png"
 image bg camp_morning = "bg/residential.png"
@@ -1068,13 +1071,6 @@ image y_glitch_head:
     0.15
     repeat
 
-image yuri stab_1 = "yuri/stab/1.png"
-image yuri stab_2 = "yuri/stab/2.png"
-image yuri stab_3 = "yuri/stab/3.png"
-image yuri stab_4 = "yuri/stab/4.png"
-image yuri stab_5 = "yuri/stab/5.png"
-image yuri stab_6 = Composite((960,960), (0, 0), "yuri/stab/6-mask.png", (0, 0), "yuri stab_6_eyes", (0, 0), "yuri/stab/6.png")
-
 image yuri stab_6_eyes:
     "yuri/stab/6-eyes.png"
     subpixel True
@@ -1120,16 +1116,7 @@ image yuri glitch:
     "yuri/glitch5.png"
     pause 0.1
     repeat
-image yuri glitch2:
-    "yuri/0a.png"
-    pause 0.1
-    "yuri/0b.png"
-    pause 0.5
-    "yuri/0a.png"
-    pause 0.3
-    "yuri/0b.png"
-    pause 0.3
-    "yuri 1"
+# image yuri glitch2 = "yuri/0b.png" # Missing
 
 image yuri eyes = Composite((1280, 720), (0, 0), "yuri/eyes1.png", (0, 0), "yuripupils")
 
@@ -1293,8 +1280,8 @@ image monika g2:
             pause 0.2
     repeat
 
-define narrator = Character(ctc="ctc", ctc_position="fixed")
-define mc = Character("[mc_name]", color="#FFFFFF", ctc="ctc", ctc_position="fixed")
+# define store.narrator = Character(None, kind=narrator) # Defined in config_game.rpy
+# define store.mc = Character("[player]", image="mc") # Defined in config_game.rpy#FFFFFF", ctc="ctc", ctc_position="fixed")
 define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
