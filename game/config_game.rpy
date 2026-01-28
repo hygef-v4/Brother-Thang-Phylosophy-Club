@@ -51,8 +51,8 @@ init -1 python:
         REL_MAX = 100
         # REL_INITIAL_ISCHYROS = 0  # REMOVED - character no longer exists
         REL_INITIAL_HUONG = 0
-        REL_INITIAL_HAINU = 0  # Now president
-        REL_INITIAL_XIU = 50  # Starts higher (she recruits MC via phone)
+        REL_INITIAL_HAINU = 0  # Start neutral
+        REL_INITIAL_XIU = 0  # Changed from 50 to 0 - start neutral
         
         REL_THRESHOLD_GOOD_ENDING = 80
         REL_THRESHOLD_BAD = 20

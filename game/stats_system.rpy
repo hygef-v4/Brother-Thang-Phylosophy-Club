@@ -186,5 +186,13 @@ init python:
         
         display_name = stat_display.get(stat_name, stat_name)
         
+        # Skip if amount is 0
+        if amount == 0:
+            return
+        
         # Show notification
         renpy.notify("{color=%s}%s %s%d{/color}" % (color, display_name, symbol, int(amount)))
+        
+        # Small pause to make notification visible (prevent overlap)
+        renpy.pause(0.3, hard=False)
+
