@@ -4,6 +4,8 @@ log.txt
 traceback.txt
 errors.txt
 
+.vscode/
+
 # Ren'Py compiled files
 *.rpyc
 *.rpymc
