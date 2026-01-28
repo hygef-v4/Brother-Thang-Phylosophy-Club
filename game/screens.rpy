@@ -942,7 +942,7 @@ init -501 screen confirm(message, yes_action, no_action):
     modal True
     zorder 200
     style_prefix "confirm"
-    add "gui/overlay/confirm.png"
+    add Solid("#64b5f680")  # Semi-transparent blue overlay
 
     frame:
         has vbox:
@@ -965,14 +965,14 @@ init -1 style confirm_button is gui_medium_button
 init -1 style confirm_button_text is gui_medium_button_text
 
 init -1 style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
+    background Frame(Solid("#e3f2fd"), gui.confirm_frame_borders, tile=gui.frame_tile)  # Light blue background
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
 
 init -1 style confirm_prompt_text:
     color "#000"
-    outlines []
+    outlines [(2, "#000000", 0, 0)]  # Black outline for readability
     text_align 0.5
     layout "subtitle"
 

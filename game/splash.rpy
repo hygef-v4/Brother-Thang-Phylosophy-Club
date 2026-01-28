@@ -2,21 +2,19 @@ init python:
     import datetime
     menu_trans_time = 1
 
-    splash_message_default = "Tu game nay chi mang tinh chat giai tri\nmong moi nguoi choi game vui ve."
+    splash_message_default = "Trải nghiệm này không nhằm giải trí.\nHãy đọc chậm, và tự suy nghĩ."
 
     splash_messages = [
-        "You are my sunshine,\nMy only sunshine",
-        "I missed you.",
-        "Play with me",
-        "It's just a game, mostly.",
-        "This game is not suitable for children\nor those who are easily disturbed?",
-        "sdfasdklfgsdfgsgoinrfoenlvbd",
-        "null",
-        "I have granted kids to hell",
-        "PM died for this.",
-        "It was only partially your fault.",
-        "This game is not suitable for children\nor those who are easily dismembered.",
-        "Don't forget to backup Monika's character file."
+        "Ta là ai, nếu không có ký ức?",
+        "Ý nghĩa có tồn tại nếu không có người quan sát?",
+        "Im lặng cũng là một câu trả lời.",
+        "Không phải mọi câu hỏi đều cần đáp án.",
+        "Bạn có chắc mình đang lựa chọn?",
+        "Tri thức là nhớ lại. — Plato",
+        "Tôi tư duy, vậy nên tôi tồn tại. — Descartes",
+        "Người ta luôn bị lên án để tự do. — Sartre",
+        "Con người là thước đo của vạn vật. — Protagoras",
+        "Sống không được kiểm chứng không đáng sống. — Socrates"
     ]
 
 image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign=0.5)
@@ -67,45 +65,7 @@ image menu_art_m:
     zoom 1.00
     menu_art_move(1.00, 1000, 1.00)
 
-image menu_art_y_ghost:
-    subpixel True
-    "gui/menu_art_y_ghost.png"
-    xcenter 600
-    ycenter 335
-    zoom 0.60
-    menu_art_move(0.54, 600, 0.60)
-
-image menu_art_n_ghost:
-    subpixel True
-    "gui/menu_art_n_ghost.png"
-    xcenter 750
-    ycenter 385
-    zoom 0.58
-    menu_art_move(0.58, 750, 0.58)
-
-image menu_art_s_ghost:
-    subpixel True
-    "gui/menu_art_s_ghost.png"
-    xcenter 510
-    ycenter 500
-    zoom 0.68
-    menu_art_move(0.68, 510, 0.68)
-
-image menu_art_m_ghost:
-    subpixel True
-    "gui/menu_art_m_ghost.png"
-    xcenter 1000
-    ycenter 640
-    zoom 1.00
-    menu_art_move(1.00, 1000, 1.00)
-
-image menu_art_s_glitch:
-    subpixel True
-    "gui/menu_art_s_break.png"
-    xcenter 470
-    ycenter 600
-    zoom 0.68
-    menu_art_move(.8, 470, .8)
+# Ghost art and glitch removed for philosophy focus
 
 image menu_nav:
     "gui/overlay/main_menu.png"
@@ -231,7 +191,7 @@ label splashscreen:
 
     if not firstrun:
         if persistent.first_run and (config.version == persistent.oldversion or persistent.autoload == "postcredits_loop"):
-            $ quick_menu = False
+            # Quick menu enabled for ESC access
 
             scene black
 
@@ -270,7 +230,7 @@ label splashscreen:
         python:
             restore_all_characters()
 
-        $ quick_menu = False
+        # Quick menu enabled for ESC access
 
         scene white
 
@@ -281,15 +241,15 @@ label splashscreen:
 
         pause 1.0
 
-        "This game is not suitable for children or those who are easily disturbed."
+        "Trải nghiệm này chứa các nội dung mang tính triết học và tự vấn."
 
-        "Individuals suffering from anxiety or depression may not have a safe experience playing this game. For content warnings, please visit: http://ddlc.moe/warning.html"
+        "Nó không đưa ra câu trả lời, chỉ đặt ra câu hỏi."
 
         menu:
 
-            "By playing Doki Doki Literature Club, you agree that you are at least 13 years of age, and you consent to your exposure of highly disturbing content."
+            "Bằng cách tiếp tục, bạn đồng ý rằng đây là một trải nghiệm tư duy, không phải giải trí thụ động."
 
-            "I agree.":
+            "Tôi đồng ý.":
 
                 pass
 
@@ -303,38 +263,7 @@ label splashscreen:
         scene white
 
 
-    python:
-        s_kill_early = None
-
-        if persistent.playthrough == 0:
-            try:
-                renpy.file("../characters/sayori.chr")
-            except:
-                s_kill_early = True
-
-        if not s_kill_early:
-            if persistent.playthrough <= 2 and persistent.playthrough != 0:
-                try:
-                    renpy.file("../characters/monika.chr")
-                except:
-                    open(config.basedir + "/characters/monika.chr", "wb").write(renpy.file("monika.chr").read())
-
-            if persistent.playthrough <= 1 or persistent.playthrough == 4:
-                try:
-                    renpy.file("../characters/natsuki.chr")
-                except:
-                    open(config.basedir + "/characters/natsuki.chr", "wb").write(renpy.file("natsuki.chr").read())
-
-                try:
-                    renpy.file("../characters/yuri.chr")
-                except:
-                    open(config.basedir + "/characters/yuri.chr", "wb").write(renpy.file("yuri.chr").read())
-
-            if persistent.playthrough == 4:
-                try:
-                    renpy.file("../characters/sayori.chr")
-                except:
-                    open(config.basedir + "/characters/sayori.chr", "wb").write(renpy.file("sayori.chr").read())
+    # Character file checks removed for philosophy focus
 
     if not persistent.special_poems:
         python hide:
@@ -354,91 +283,13 @@ label splashscreen:
     if persistent.autoload:
         jump autoload
 
-    $ config.allow_skipping = False
+    $ config.allow_skipping = True  # Always allow skipping
 
-    if persistent.playthrough == 2 and not persistent.seen_ghost_menu and renpy.random.randint(0, 63) == 0:
-        show black
-
-        $ config.main_menu_music = audio.ghostmenu
-        $ persistent.seen_ghost_menu = True
-        $ persistent.ghost_menu = True
-
-        $ renpy.music.play(config.main_menu_music)
-
-        $ pause(1.0)
-
-        show end with dissolve_cg
-
-        $ pause(3.0)
-
-        $ config.allow_skipping = True
-
-        return
-
-    if s_kill_early:
-        show black
-
-        play music "bgm/s_kill_early.ogg"
-
-        $ pause(1.0)
-
-        show end with dissolve_cg
-
-        $ pause(3.0)
-
-        scene white
-
-        show expression "images/cg/s_kill_early.png":
-            yalign -0.05
-            xalign 0.25
-            dizzy(1.0, 4.0, subpixel=False)
-        show white as w2:
-            choice:
-                ease 0.25 alpha 0.1
-            choice:
-                ease 0.25 alpha 0.125
-            choice:
-                ease 0.25 alpha 0.15
-            choice:
-                ease 0.25 alpha 0.175
-            choice:
-                ease 0.25 alpha 0.2
-            choice:
-                ease 0.25 alpha 0.225
-            choice:
-                ease 0.25 alpha 0.25
-            choice:
-                ease 0.25 alpha 0.275
-            choice:
-                ease 0.25 alpha 0.3
-            pass
-            choice:
-                pass
-            choice:
-                0.25
-            choice:
-                0.5
-            choice:
-                0.75
-            repeat
-        show noise:
-            alpha 0.1
-        with Dissolve(1.0)
-        show expression Text("Now everyone can be happy.", style="sayori_text"):
-            xalign 0.8
-            yalign 0.5
-            alpha 0.0
-            600
-            linear 60 alpha 0.5
-
-        pause
-
-        $ renpy.quit()
+    # Ghost menu and s_kill_early removed for philosophy focus
 
     show white
 
-    $ persistent.ghost_menu = False
-    $ splash_message = splash_message_default
+    $ splash_message = renpy.random.choice(splash_messages)  # Always show philosophical message
     $ config.main_menu_music = audio.t1
 
     $ renpy.music.play(config.main_menu_music)
@@ -450,9 +301,6 @@ label splashscreen:
     $ pause(3.0 - (datetime.datetime.now() - starttime).total_seconds())
 
     hide intro with Dissolve(max(0, 3.5 - (datetime.datetime.now() - starttime).total_seconds()), alpha=True)
-
-    if persistent.playthrough == 2 and renpy.random.randint(0, 3) == 0:
-        $ splash_message = renpy.random.choice(splash_messages)
 
     show splash_warning "[splash_message]" with Dissolve(max(0, 4.0 - (datetime.datetime.now() - starttime).total_seconds()), alpha=True)
 
@@ -471,60 +319,16 @@ label after_load:
     if persistent.playthrough == 0:
         $ restore_all_characters()
 
-    $ config.allow_skipping = allow_skipping
+    $ config.allow_skipping = True  # Always allow skipping
     $ _dismiss_pause = config.developer
-    $ persistent.ghost_menu = False
 
     $ style.say_dialogue = style.normal
 
-    if persistent.yuri_kill > 0 and persistent.autoload == "yuri_kill_2":
-        if persistent.yuri_kill >= 1380:
-            $ persistent.yuri_kill = 1440
-        elif persistent.yuri_kill >= 1180:
-            $ persistent.yuri_kill = 1380
-        elif persistent.yuri_kill >= 1120:
-            $ persistent.yuri_kill = 1180
-        elif persistent.yuri_kill >= 920:
-            $ persistent.yuri_kill = 1120
-        elif persistent.yuri_kill >= 720:
-            $ persistent.yuri_kill = 920
-        elif persistent.yuri_kill >= 660:
-            $ persistent.yuri_kill = 720
-        elif persistent.yuri_kill >= 460:
-            $ persistent.yuri_kill = 660
-        elif persistent.yuri_kill >= 260:
-            $ persistent.yuri_kill = 460
-        elif persistent.yuri_kill >= 200:
-            $ persistent.yuri_kill = 260
-        else:
-            $ persistent.yuri_kill = 200
+    # Yuri kill and anticheat removed for philosophy focus
+    if persistent.playthrough == 0 and not persistent.first_load and not config.developer:
+        $ persistent.first_load = True
 
-        jump expression persistent.autoload
-
-    elif anticheat != persistent.anticheat:
-        stop music
-
-        scene black
-
-        "The save file could not be loaded."
-
-        "Are you trying to cheat?"
-
-        $ m_name = "Monika"
-
-        show monika 1 at t11
-
-        if persistent.playername == "":
-            m "You're so funny."
-        else:
-            m "You're so funny, [persistent.playername]."
-
-        $ renpy.utter_restart()
-    else:
-        if persistent.playthrough == 0 and not persistent.first_load and not config.developer:
-            $ persistent.first_load = True
-
-            call screen dialog("Hint: You can use the \"Skip\" button to\nfast-forward through text you've already read.", ok_action=Return())
+        call screen dialog("Hint: You can use the \"Skip\" button to\nfast-forward through text you've already read.", ok_action=Return())
 
     return
 
@@ -548,38 +352,14 @@ label autoload:
         main_menu = False
         _in_replay = None
 
-    if persistent.yuri_kill > 0 and persistent.autoload == "yuri_kill_2":
-        $ persistent.yuri_kill += 200
+    # Yuri kill removed for philosophy focus
 
     if renpy.get_return_stack():
         $ renpy.pop_call()
 
     jump expression persistent.autoload
 
-label autoload_yurikill:
-
-    if persistent.yuri_kill >= 1380:
-        $ persistent.yuri_kill = 1440
-    elif persistent.yuri_kill >= 1180:
-        $ persistent.yuri_kill = 1380
-    elif persistent.yuri_kill >= 1120:
-        $ persistent.yuri_kill = 1180
-    elif persistent.yuri_kill >= 920:
-        $ persistent.yuri_kill = 1120
-    elif persistent.yuri_kill >= 720:
-        $ persistent.yuri_kill = 920
-    elif persistent.yuri_kill >= 660:
-        $ persistent.yuri_kill = 720
-    elif persistent.yuri_kill >= 460:
-        $ persistent.yuri_kill = 660
-    elif persistent.yuri_kill >= 260:
-        $ persistent.yuri_kill = 460
-    elif persistent.yuri_kill >= 200:
-        $ persistent.yuri_kill = 260
-    else:
-        $ persistent.yuri_kill = 200
-
-    jump expression persistent.autoload
+# autoload_yurikill removed for philosophy focus
 
 label before_main_menu:
 
@@ -588,14 +368,6 @@ label before_main_menu:
     return
 
 label quit:
-
-    if persistent.ghost_menu:
-        hide screen main_menu
-        scene white
-        show expression "gui/menu_art_m_ghost.png":
-            xpos -100 ypos -100 zoom 3.5
-
-        pause 0.01
 
     return
 
