@@ -372,7 +372,13 @@ label ch1_day1_day2:
     
     # DAY 2 INITIALIZATION
     $ current_day = 2
-    $ stats.update_daily()
+    $ daily_changes = stats.update_daily()
+    
+    # Show daily stat changes
+    $ show_stat_change("hoc_tap", daily_changes["hoc_tap"])
+    $ show_stat_change("doi_song", daily_changes["doi_song"])
+    $ show_stat_change("rel_xiu", daily_changes["rel_xiu"])
+    $ show_stat_change("tien", daily_changes["tien"])
     
     scene bg club_day with wipeleft_scene
     play music club_theme fadein 1.0

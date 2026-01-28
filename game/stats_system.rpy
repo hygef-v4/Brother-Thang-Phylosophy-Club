@@ -126,13 +126,16 @@ init -1 python:
                 return 1.0
         
         def update_daily(self):
-            """Gọi mỗi ngày mới"""
+            """Gọi mỗi ngày mới - Returns dict of changes for display"""
             # Hồi stats
-            self.modify_hoc_tap(GameConfig.STAT_DAILY_HOC_TAP_REGEN)
-            self.modify_doi_song(GameConfig.STAT_DAILY_DOI_SONG_REGEN)
+            hoc_tap_change = GameConfig.STAT_DAILY_HOC_TAP_REGEN
+            self.modify_hoc_tap(hoc_tap_change)
+            
+            doi_song_change = GameConfig.STAT_DAILY_DOI_SONG_REGEN
+            self.modify_doi_song(doi_song_change)
             
             # Xỉu relationship hồi
-            self.modify_relationship("xiu", 5)
+            xiu_rel_change = self.modify_relationship("xiu", 5)
             
             # Nhận tiền (nếu không bị cắt)
             if not self.dad_cutoff:
@@ -142,8 +145,17 @@ init -1 python:
             
             # Bonus từ Hải Nữ
             bonus_money = int(self.rel_hainu * 500)
+            total_money = base_money + bonus_money
             
-            self.modify_tien(base_money + bonus_money)
+            self.modify_tien(total_money)
+            
+            # Return changes for notification display
+            return {
+                "hoc_tap": hoc_tap_change,
+                "doi_song": doi_song_change,
+                "rel_xiu": xiu_rel_change,
+                "tien": total_money
+            }
 
 # Initialize stats globally
 default stats = StatsManager()

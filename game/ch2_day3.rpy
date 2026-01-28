@@ -12,7 +12,13 @@ label ch2_day3:
     $ current_chapter = 2
     
     # Daily stats update
-    $ stats.update_daily()
+    $ daily_changes = stats.update_daily()
+    
+    # Show daily stat changes
+    $ show_stat_change("hoc_tap", daily_changes["hoc_tap"])
+    $ show_stat_change("doi_song", daily_changes["doi_song"])
+    $ show_stat_change("rel_xiu", daily_changes["rel_xiu"])
+    $ show_stat_change("tien", daily_changes["tien"])
     
     stop music fadeout 2.0
     scene bg bedroom with dissolve_scene_full
@@ -374,9 +380,9 @@ label ch2_gym_activities:
         "Nâng tạ":
             "Nâng tạ rèn luyện cơ tay..."
             
-            # Stat-dependent dialogue
+            # Stat-dependent dialogue (sức khoẻ = đời sống)
             if stats.doi_song < 20:
-                mc "\"Mệt quá... Chịu rồi...\""
+                mc "\"Mệt quá… Chịu rồi...\""
             elif stats.doi_song < 50:
                 mc "\"Phù… Nay đến đây thôi vậy.\""
             elif stats.doi_song < 80:
@@ -399,18 +405,22 @@ label ch2_gym_activities:
             
             # Stat-dependent dialogue
             if stats.doi_song < 20:
-                mc "\"Hổng hển… Không chạy nổi nữa…\""
+                mc "\"Mệt quá… Chịu rồi...\""
             elif stats.doi_song < 50:
-                mc "\"Mệt rồi, nghỉ thôi.\""
+                mc "\"Phù… Nay đến đây thôi vậy.\""
             elif stats.doi_song < 80:
-                mc "\"Chạy thêm vài vòng nữa là được.\""
+                mc "\"Cố thêm… Một xíu nữa thôi…\""
+            elif stats.doi_song < 100:
+                mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
             else:
-                mc "\"Dễ dàng quá! Marathon cũng không sợ!\""
+                mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
             
             # Tăng sức khỏe
             $ stats.modify_doi_song(12)
             $ show_stat_change("doi_song", 12)
             
+            # FIX: Activity completed - consume time slot
+            $ time_slots_used += 1
             jump ch2_activity_loop
         
         "Quay lại":

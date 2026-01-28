@@ -22,7 +22,13 @@ label daily_routine_loop:
     show screen stats_display
     
     # Daily stats update
-    $ stats.update_daily()
+    $ daily_changes = stats.update_daily()
+    
+    # Show daily stat changes
+    $ show_stat_change("hoc_tap", daily_changes["hoc_tap"])
+    $ show_stat_change("doi_song", daily_changes["doi_song"])
+    $ show_stat_change("rel_xiu", daily_changes["rel_xiu"])
+    $ show_stat_change("tien", daily_changes["tien"])
     
     # ========================================
     # MORNING ACTIVITY (SÁNG)
@@ -244,7 +250,19 @@ label daily_library_morning:
     
     "Thư viện yên tĩnh, thích hợp để học..."
     
-    "Ngồi học bài một lúc..."
+    "Giở sách vở ra, ôn lại bài cũ..."
+    
+    # Stat-dependent dialogue (học tập)
+    if stats.hoc_tap < 20:
+        mc "\"Ra là thế… Chả hiểu gì cả.\""
+    elif stats.hoc_tap < 50:
+        mc "\"Hừm…. Bài này khó hiểu quá…\""
+    elif stats.hoc_tap < 80:
+        mc "\"Có một số chỗ chưa hiểu lắm, lần sau lên lớp hỏi lại cô vậy.\""
+    elif stats.hoc_tap < 100:
+        mc "\"Ồ, kiến thức mới đã được tiếp thu.\""
+    else:
+        mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
     
     # Balanced study gains
     $ stats.modify_hoc_tap(12)
@@ -261,13 +279,39 @@ label daily_gym_morning:
     
     menu:
         "Nâng tạ":
-            "Rèn luyện sức mạnh..."
+            "Rèn luyện cơ thể, giải toả tinh thần..."
+            
+            # Stat-dependent dialogue (sức khoẻ = đời sống)
+            if stats.doi_song < 20:
+                mc "\"Mệt quá… Chịu rồi...\""
+            elif stats.doi_song < 50:
+                mc "\"Phù… Nay đến đây thôi vậy.\""
+            elif stats.doi_song < 80:
+                mc "\"Cố thêm… Một xíu nữa thôi…\""
+            elif stats.doi_song < 100:
+                mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
+            else:
+                mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
+            
             # Good health gains
             $ stats.modify_doi_song(15)
             $ show_stat_change("doi_song", 15)
         
         "Chạy bộ":
-            "Tim phổi tăng cường..."
+            "Rèn luyện cơ thể, giải toả tinh thần..."
+            
+            # Stat-dependent dialogue (sức khoẻ = đời sống)
+            if stats.doi_song < 20:
+                mc "\"Mệt quá… Chịu rồi...\""
+            elif stats.doi_song < 50:
+                mc "\"Phù… Nay đến đây thôi vậy.\""
+            elif stats.doi_song < 80:
+                mc "\"Cố thêm… Một xíu nữa thôi…\""
+            elif stats.doi_song < 100:
+                mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
+            else:
+                mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
+            
             # Good health gains
             $ stats.modify_doi_song(15)
             $ show_stat_change("doi_song", 15)
@@ -314,7 +358,19 @@ label daily_library_afternoon:
     
     "Thư viện buổi chiều đông người..."
     
-    "Học bài..."
+    "Giở sách vở ra, ôn lại bài cũ..."
+    
+    # Stat-dependent dialogue (học tập)
+    if stats.hoc_tap < 20:
+        mc "\"Ra là thế… Chả hiểu gì cả.\""
+    elif stats.hoc_tap < 50:
+        mc "\"Hừm…. Bài này khó hiểu quá…\""
+    elif stats.hoc_tap < 80:
+        mc "\"Có một số chỗ chưa hiểu lắm, lần sau lên lớp hỏi lại cô vậy.\""
+    elif stats.hoc_tap < 100:
+        mc "\"Ồ, kiến thức mới đã được tiếp thu.\""
+    else:
+        mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
     
     # Balanced afternoon study
     $ stats.modify_hoc_tap(10)
@@ -329,7 +385,19 @@ label daily_gym_afternoon:
     
     "Gym buổi chiều, tập cùng mọi người..."
     
-    "Tập luyện..."
+    "Rèn luyện cơ thể, giải toả tinh thần..."
+    
+    # Stat-dependent dialogue (sức khoẻ = đời sống)
+    if stats.doi_song < 20:
+        mc "\"Mệt quá… Chịu rồi...\""
+    elif stats.doi_song < 50:
+        mc "\"Phù… Nay đến đây thôi vậy.\""
+    elif stats.doi_song < 80:
+        mc "\"Cố thêm… Một xíu nữa thôi…\""
+    elif stats.doi_song < 100:
+        mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
+    else:
+        mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
     
     # Good health gains
     $ stats.modify_doi_song(12)
