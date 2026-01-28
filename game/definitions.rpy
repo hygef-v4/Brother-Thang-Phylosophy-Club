@@ -4,10 +4,12 @@ define config.developer = True
 
 python early:
     import singleton
+    import datetime
 
     me = singleton.SingleInstance()
 
 init python:
+    import datetime
     config.keymap['game_menu'].remove('mouseup_3')
     config.keymap['hide_windows'].append('mouseup_3')
     config.keymap['self_voicing'] = []
@@ -125,6 +127,7 @@ define audio.ghostmenu = "<loop 0>bgm/ghostmenu.ogg"
 define audio.g1 = "<loop 0>bgm/g1.ogg"
 define audio.g2 = "<loop 0>bgm/g2.ogg"
 define audio.hb = "<loop 0>bgm/heartbeat.ogg"
+define audio.heart = "<loop 0>bgm/heartbeat.ogg"
 define audio.closet_open = "sfx/closet-open.ogg"
 define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
