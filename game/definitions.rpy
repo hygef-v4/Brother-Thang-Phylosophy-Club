@@ -1321,7 +1321,7 @@ image monika g2:
     repeat
 
 define narrator = Character(ctc="ctc", ctc_position="fixed")
-define mc = Character("[mc_name]", color="#FFFFFF", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define mc = Character("[mc_name]", color="#FFFFFF", ctc="ctc", ctc_position="fixed")
 define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")

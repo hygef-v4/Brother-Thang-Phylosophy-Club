@@ -124,6 +124,9 @@ init -501 screen say(who, what):
                 style "namebox"
                 text who id "who"
 
+        # Separator line: Soft blue
+        add Solid("#81d4fa") xalign 0.5 yalign 0.77 xsize 0.7 ysize 1 alpha 0.5
+
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
 
@@ -141,6 +144,7 @@ init -1 style window:
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
+    # Restore patterned textbox ("họa tiết")
     background Frame(mw_textbox, 20, 20)
 
 init -1 style window_monika is window:
@@ -156,12 +160,14 @@ init -1 style namebox:
     padding gui.namebox_borders.padding
 
 init -1 style say_label:
-    color gui.accent_color
+    # Deep Sky Blue for Name (Contrast with bright box)
+    color "#01579b" 
     font gui.name_font
     size gui.name_text_size
     xalign gui.name_xalign
     yalign 0.5
-    outlines [(3, "#0288d1", 0, 0), (1, "#0288d1", 1, 1)]
+    # White outline (thick) to pop against the blue box
+    outlines [(3, "#ffffff", 0, 0), (1, "#81d4fa", 1, 1)]
 
 init -1 style say_dialogue:
     xpos gui.dialogue_xpos
@@ -171,8 +177,9 @@ init -1 style say_dialogue:
     text_align gui.dialogue_text_xalign
     layout ("subtitle" if gui.dialogue_text_xalign else "tex")
     line_spacing 16
-    color "#FFFFFF"
-    outlines []
+    color "#ffffff"
+    # Black outline ("text viền đen") as requested
+    outlines [(2, "#000000", 0, 0), (2, "#000000", 1, 1), (1, "#000000", 2, 2)]
     language "unicode"
 
 init 499 image ctc:

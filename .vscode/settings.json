@@ -117,6 +117,24 @@
                 "settings": {
                     "foreground": "#000"
                 }
+            },
+            {
+                "scope": "renpy.meta.color.#ffdd00",
+                "settings": {
+                    "foreground": "#ffdd00"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#ffaa00",
+                "settings": {
+                    "foreground": "#ffaa00"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#ff6600",
+                "settings": {
+                    "foreground": "#ff6600"
+                }
             }
         ]
     }

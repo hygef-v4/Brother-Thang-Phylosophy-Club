@@ -78,12 +78,12 @@ default current_time_slot = "morning"
 # ========================================
 # DEFINE CHARACTERS
 # ========================================
-define mc = Character("[mc_name]", color="#FFFFFF", what_prefix='"', what_suffix='"')
+define mc = Character("[mc_name]", color="#FFFFFF")
 # define ischyros - REMOVED: character no longer exists in new story
-define huong = Character(GameConfig.CHAR_HUONG, color="#FFFFFF", what_prefix='"', what_suffix='"')
-define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF", what_prefix='"', what_suffix='"')  # Now president
-define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF", what_prefix='"', what_suffix='"')  # Recruits MC
-define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF", what_prefix='"', what_suffix='"')  # Đại Tá
+define huong = Character(GameConfig.CHAR_HUONG, color="#FFFFFF")
+define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF")  # Now president
+define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF")  # Recruits MC
+define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF")  # Đại Tá
 define narrator = Character(None, kind=nvl)  # Cho narration
 
 # ========================================
