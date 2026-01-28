@@ -168,8 +168,8 @@ init -1 style say_label:
     size gui.name_text_size
     xalign gui.name_xalign
     yalign 0.5
-    # Light blue outline (keeping your blue theme)
-    outlines [(4, "#29b6f6", 0, 0), (2, "#4fc3f7", 2, 2)]
+    # Light blue outline - thin and clean like DDLC
+    outlines [(2, "#29b6f6", 0, 0)]
 
 init -1 style say_dialogue:
     xpos gui.dialogue_xpos
@@ -243,6 +243,8 @@ init -1 style choice_button is default:
     properties gui.button_properties("choice_button")
     hover_sound gui.hover_sound
     activate_sound gui.activate_sound
+    idle_background Frame("choice_idle", gui.choice_button_borders)
+    hover_background Frame("choice_hover", gui.choice_button_borders)
 
 init -1 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
