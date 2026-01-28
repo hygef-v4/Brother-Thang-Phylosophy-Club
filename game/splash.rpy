@@ -1,4 +1,5 @@
 init python:
+    import datetime
     menu_trans_time = 1
 
     splash_message_default = "Tu game nay chi mang tinh chat giai tri\nmong moi nguoi choi game vui ve."
@@ -200,6 +201,7 @@ image tos2 = "bg/warning2.png"
 
 label splashscreen:
     python:
+        import datetime
         process_list = []
         currentuser = ""
 

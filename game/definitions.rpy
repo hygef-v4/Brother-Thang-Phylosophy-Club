@@ -4,10 +4,12 @@ define config.developer = True
 
 python early:
     import singleton
+    import datetime
 
     me = singleton.SingleInstance()
 
 init python:
+    import datetime
     config.keymap['game_menu'].remove('mouseup_3')
     config.keymap['hide_windows'].append('mouseup_3')
     config.keymap['self_voicing'] = []
