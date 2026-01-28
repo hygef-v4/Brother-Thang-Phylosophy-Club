@@ -358,6 +358,8 @@ label ch1_day1_day2:
     # NGÀY 2: BỊ MẮNG VÀ TOUR TRƯỜNG
     # ========================================
     
+    label ch1_day2_start:
+    
     scene black with dissolve_scene_full
     stop music fadeout 2.0
     
@@ -515,7 +517,7 @@ label ch1_day1_day2:
     
     show monika 1d at t11
     
-    xiu "\"Đây là robot bán hàng số hiệu T31 tên là DaoChiCuong do tập đoàn FPT sản xuất.\""
+    xiu "\"Đây là robot bán hàng số hiệu T31 tên đầy đủ là DaoChiCuong do tập đoàn FPT sản xuất.\""
     xiu "\"Phế lắm, chị chửi nó suốt. Mong sau này robot xâm chiếm thế giới nó không nhớ mặt chị.\""
     
     # T31 interaction

@@ -207,6 +207,16 @@ label ending_objective_idealism:
     mc "\"Hay cuộc sống của mình chỉ là một con game xoay quanh việc cày chỉ số và lấy lòng hai tiền bối?\""
     mc "\"Nếu vậy… Nó có ý nghĩa gì chứ?\""
     mc "\"Liệu thế giới này… Có thật sự tồn tại?\""
+    mc "\"Tại sao mọi thứ lại trùng hợp đến lạ lùng như vậy?\""
+    mc "\"Những biến số, chỉ số tình cảm, tiền bạc... Chúng thay đổi cứ như lập trình sẵn vậy.\""
+    mc "\"Có lẽ nào... Mình cũng chỉ là một nhân vật trong game?\""
+    mc "\"Nếu vậy, thì sự đau khổ này, niềm vui này... Đều là giả tạo ư?\""
+    mc "\"Nếu thế giới này là giả... Thì ta cần gì phải tuân theo những luân thường đạo lý của nó?\""
+    
+    scene black with dissolve_scene_full
+    "NHẬN THỨC CỦA BẠN ĐÃ VƯỢT RA KHỎI THỰC TẠI NÀY."
+    "BẠN CHỌN KHÔNG TIN VÀO THẾ GIỚI."
+    "KẾT THÚC: VÒNG LẶP HƯ VÔ"
     
     scene black with dissolve_scene_full
     call ending_explanation("subjective_passive")
@@ -230,6 +240,13 @@ label ending_subjective_idealism_xiu:
     xiu "\"Theo như bà chị triết gia nhà chị thì chắc chắn đây là duy tâm rồi.\""
     xiu "\"Bởi vì thằng bé nó muốn đi khám phá thế giới mới nên nó mới tự lớn lên.\""
     xiu "\"Đúng nhận sai cãi nào?\""
+    
+    mc "\"Đúng vậy. Em đã chọn rồi. Kệ bố đi.\""
+    mc "\"Sống cho bản thân mình mới là quan trọng nhất.\""
+    mc "\"Gia đình mà chỉ đem lại áp lực và khổ đau thì có cần thiết phải níu giữ không?\""
+    mc "\"Em thà làm đứa con bất hiếu mà vui vẻ, còn hơn làm đứa con ngoan mà tâm hồn chết lặng.\""
+    
+    xiu "\"Chuẩn! Chị em mình cứ thế mà sống thôi!\""
     
     "Cả hai cùng cười phá lên."
     "Có thể cùng vui, cùng cười với những người mình chân quý thế này, cuộc sống thế là hạnh phúc rồi."

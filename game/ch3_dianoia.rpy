@@ -182,10 +182,13 @@ label ch3_day11_xiu_drunk:
     xiu "\"Chỉ mong sao các vú em vẫn bình an.\""
     
     mc "\"Vậy sao….\""
-    mc "\"Chị an tâm. Em tin rằng mọi người sẽ ổn thôi.\""
+    mc "\"Đúng là cuộc sống luôn đầy rẫy bất công. Nhưng mà chị biết không...\""
+    mc "\"Chính những trải nghiệm đó đã tạo nên chị của ngày hôm nay. Mạnh mẽ, kiên cường và luôn lạc quan.\""
+    mc "\"Em tin rằng dù ở đâu, các vú em vẫn luôn dõi theo và tự hào về chị. Và quan trọng hơn cả...\""
+    mc "\"Chị không cô đơn. Chị còn có tụi em, có CLB, và có cả em nữa.\""
     
     xiu "\"….\""
-    xiu "\"Cảm ơn em.\""
+    xiu "\"Cảm ơn em... Thật đấy.\""
     
     "Không khí cả buổi đi chơi bỗng rơi vào trầm tư, nhưng rất thích hợp để tịnh tâm suy nghĩ."
     
@@ -230,10 +233,18 @@ label ch3_day11_hainu_movie:
     
     menu:
         "\<Chị xem rạp nào vậy em tới đây\>":
-            pass
+            $ ticket_price = 100000
+            if stats.tien >= ticket_price:
+                mc "\"Được rồi, mình vẫn đủ tiền. Đi thôi!\""
+                $ stats.modify_tien(-ticket_price)
+                $ show_stat_change("tien", -ticket_price)
+            else:
+                mc "\"Chết dở, mình không đủ tiền vé rồi...\""
+                mc "\"Thành thật với chị ấy vậy.\""
+                mc "Nhưng rồi Hải Nữ nhắn lại: <Tôi bao.>"
+        
         "\<Em cũng muốn đi lắm… Cơ mà tài khoản em lại không cho phép…\>":
             mc "Nhưng rồi Hải Nữ nhắn lại: <Tôi bao.>"
-            pass
     
     scene bg cinema with wipeleft_scene # Cần BG rạp phim
     play music t7 fadein 1.0 # Yuri theme (Intellectual/Romance)

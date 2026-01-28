@@ -203,7 +203,7 @@ VÕ MINH XỈU:
 Main:
  “A! Con lợn này.”
 VÕ MINH XỈU:
- “Đây là robot bán hàng số hiệu T31 tên là DaoChiCuong do tập đoàn FPT sản xuất."
+ "Đây là robot bán hàng số hiệu T31 tên đầy đủ là DaoChiCuong do tập đoàn FPT sản xuất."
  "Phế lắm, chị chửi nó suốt. Mong sau này robot xâm chiếm thế giới nó không nhớ mặt chị."
 T31:
  "Hasta la vista, baby." ? "I’ll be back."
@@ -445,7 +445,10 @@ VÕ MINH XỈU:
  “Chỉ mong sao các vú em vẫn bình an.”
 Main:
  “Vậy sao….”
- “Chị an tâm. Em tin rằng mọi người sẽ ổn thôi.”
+ “Đúng là cuộc sống luôn đầy rẫy bất công. Nhưng mà chị biết không...”
+ “Chính những trải nghiệm đó đã tạo nên chị của ngày hôm nay. Mạnh mẽ, kiên cường và luôn lạc quan.”
+ “Em tin rằng dù ở đâu, các vú em vẫn luôn dõi theo và tự hào về chị. Và quan trọng hơn cả...”
+ “Chị không cô đơn. Chị còn có tụi em, có CLB, và có cả em nữa.”
 VÕ MINH XỈU:
  “….”
  “Cảm ơn em.”
@@ -476,7 +479,9 @@ Main:
  “Lâu rồi mình chưa đi xem phim, nhưng mà giá vé lại đắt quá…. Nên làm gì đây?”
 CHOICE
 [Có] – <Chị xem rạp nào vậy em tới đây>
- [Không] – <Em cũng muốn đi lắm… Cơ mà tài khoản em lại không cho phép….>
+ (Nếu đủ tiền >= 100k) Main: "Được rồi, mình vẫn đủ tiền. Đi thôi!" (-100k)
+ (Nếu không đủ tiền) Main: "Chết dở, mình không đủ tiền vé rồi... Thành thật với chị ấy vậy." -> Hải Nữ nhắn lại: "Tôi bao."
+ [Không] – <Em cũng muốn đi lắm… Cơ mà tài khoản em lại không cho phép….> -> Hải Nữ nhắn lại: "Tôi bao."
 
 Đến rạp chiếu phim cùng Hội Trưởng để xem phim “The Truman Show”.
  Phim khá ấn tượng, làm mình cũng phải nghi ngờ rằng liệu mình có đang ở trong một con game tình cảm nào đó không….
@@ -648,7 +653,14 @@ Main:
  “Cuộc sống thật… Liệu mình có thật sự có cuộc sống thật chứ?”
  “Hay cuộc sống của mình chỉ là một con game xoay quanh việc cày chỉ số và lấy lòng hai tiền bối?”
  “Nếu vậy… Nó có ý nghĩa gì chứ?”
- “Liệu thế giới này… Có thật sự tồn tại?”
+  “Liệu thế giới này… Có thật sự tồn tại?”
+  “Tại sao mọi thứ lại trùng hợp đến lạ lùng như vậy?”
+  “Những biến số, chỉ số tình cảm, tiền bạc... Chúng thay đổi cứ như lập trình sẵn vậy.”
+  “Có lẽ nào... Mình cũng chỉ là một nhân vật trong game?”
+  “Nếu vậy, thì sự đau khổ này, niềm vui này... Đều là giả tạo ư?”
+  “Nếu thế giới này là giả... Thì ta cần gì phải tuân theo những luân thường đạo lý của nó?”
+ 
+ [NHẬN THỨC CỦA BẠN ĐÃ VƯỢT RA KHỎI THỰC TẠI NÀY. BẠN CHỌN KHÔNG TIN VÀO THẾ GIỚI. KẾT THÚC: VÒNG LẶP HƯ VÔ]
 
 [Duy tâm chủ quan]
 CẢNH 1: – NGÀY 15 (CLB – SÁNG)
@@ -662,6 +674,15 @@ VÕ MINH XỈU:
  “Theo như bà chị triết gia nhà chị thì chắc chắn đây là duy tâm rồi.”
  “Bởi vì thằng bé nó muốn đi khám phá thế giới mới nên nó mới tự lớn lên.”
  “Đúng nhận sai cãi nào?”
+ 
+ Main:
+  “Đúng vậy. Em đã chọn rồi. Kệ bố đi.”
+  “Sống cho bản thân mình mới là quan trọng nhất.”
+  “Gia đình mà chỉ đem lại áp lực và khổ đau thì có cần thiết phải níu giữ không?”
+  “Em thà làm đứa con bất hiếu mà vui vẻ, còn hơn làm đứa con ngoan mà tâm hồn chết lặng.”
+ 
+ VÕ MINH XỈU:
+  “Chuẩn! Chị em mình cứ thế mà sống thôi!”
 Cả hai cùng cười phá lên.
  Có thể cùng vui, cùng cười với những người mình chân quý thế này, cuộc sống thế là hạnh phúc rồi.
 
