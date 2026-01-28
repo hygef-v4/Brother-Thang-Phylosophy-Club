@@ -9,14 +9,7 @@ label daily_routine_loop:
     # Check if reached Day 10 (Chapter 3)
     if current_day >= 10:
         # Transition to Chapter 3
-        scene black with dissolve_scene_full
-        stop music fadeout 2.0
-        
-        centered "{size=40}{color=#ff0000}CHAPTER 3{/color}{/size}\n{size=24}Day 10{/size}\n{size=18}Coming Soon...{/size}"
-        $ renpy.pause(3.0, hard=True)
-        
-        call screen coming_soon_ch3
-        return
+        jump ch3_dianoia
     
     # Show stats UI
     show screen stats_display
