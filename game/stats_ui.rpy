@@ -14,7 +14,7 @@ screen stats_display():
         yalign 0.02
         xsize 250
         ymaximum 550  # Limit height to not cover quick menu at bottom
-        background Frame("gui/frame.png", 10, 10)
+        background Frame(mw_frame, 10, 10)
         padding (15, 15)
         
         vbox:
@@ -41,8 +41,8 @@ screen stats_display():
                     value stats.hoc_tap
                     range 100
                     xsize 220
-                    left_bar Frame("gui/bar/left.png", 4, 4)
-                    right_bar Frame("gui/bar/right.png", 4, 4)
+                    left_bar Frame(mw_bar_left, 4, 4)
+                    right_bar Frame(mw_bar_right, 4, 4)
                 text "[stats.hoc_tap]/100" size 14 color "#ffffff"
             
             # Sức khỏe (Đời sống)
@@ -53,8 +53,8 @@ screen stats_display():
                     value stats.doi_song
                     range 100
                     xsize 220
-                    left_bar Frame("gui/bar/left.png", 4, 4)
-                    right_bar Frame("gui/bar/right.png", 4, 4)
+                    left_bar Frame(mw_bar_left, 4, 4)
+                    right_bar Frame(mw_bar_right, 4, 4)
                 text "[stats.doi_song]/100" size 14 color "#ffffff"
             
             # Tiền

@@ -717,7 +717,7 @@ label ch3_start_none:
 
     return
 
-label ch3_end:
+label ch3_end_old:
 
     stop music fadeout 1.0
 
