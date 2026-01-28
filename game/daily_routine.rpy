@@ -134,8 +134,13 @@ label daily_evening_dorm:
                 "Dịch vụ gia sư học tập (20,000 VNĐ)":
                     if stats.tien >= 20000:
                         $ stats.modify_tien(-20000)
+                        $ show_stat_change("tien", -20000)
+                        
                         $ stats.modify_hoc_tap(10)
-                        $ stats.modify_relationship("xiu", 3)
+                        $ show_stat_change("hoc_tap", 10)
+                        
+                        $ gained = stats.modify_relationship("xiu", 6)
+                        $ show_stat_change("rel_xiu", gained)
                         
                         show monika 1k
                         xiu "\"OK! Chị dạy cho.\""
@@ -147,8 +152,13 @@ label daily_evening_dorm:
                 "Dịch vụ bồi bổ sức khỏe (20,000 VNĐ)":
                     if stats.tien >= 20000:
                         $ stats.modify_tien(-20000)
+                        $ show_stat_change("tien", -20000)
+                        
                         $ stats.modify_doi_song(10)
-                        $ stats.modify_relationship("xiu", 3)
+                        $ show_stat_change("doi_song", 10)
+                        
+                        $ gained = stats.modify_relationship("xiu", 6)
+                        $ show_stat_change("rel_xiu", gained)
                         
                         show monika 1k
                         xiu "\"Đi đây!\""
