@@ -396,7 +396,7 @@ label ch1_day1_day2:
     
     # Hải Nữ xuất hiện
     show monika 1d at t21
-    show yuri 3b at t22
+    show yuri 3y at t22
     
     hainu "\"Xỉu!!!\""
     
@@ -406,7 +406,7 @@ label ch1_day1_day2:
     
     "Hội trưởng bước vào."
     
-    show yuri 3c at t22
+    show yuri 4y at t22
     
     hainu "\"BÀ LẠI ĐI GỌI ĐIỆN CHÈO KÉO THÀNH VIÊN VÀO CLB ĐỂ TIỆN TAY LỪA ĐẢO NỮA HẢ?\""
     hainu "\"HÔM QUA CÓ MỘT NGƯỜI MỚI GIA NHẬP, CÓ PHẢI LÀ DO BÀ DỤ DỖ KHÔNG HẢ?\""
