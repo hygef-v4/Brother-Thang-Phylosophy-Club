@@ -58,6 +58,9 @@ label ch1_day1_day2:
     
     dad "\"Trượt rồi à?\""
     
+    stop music fadeout 1.0
+    play music t10 fadein 1.0 # Ominous
+    
     mc "\"Vâng… con thấy mình làm bài cũng ổn áp mà nhỉ.\""
     
     dad "\"Ừ. Ổn cái đầu mày ý!\""
@@ -113,6 +116,9 @@ label ch1_day1_day2:
     show monika 1d at t11
     
     xiu "\"Alo Thắng à, em có phải là Thắng không?\""
+    
+    stop music fadeout 1.0
+    play music t5 fadein 1.0 # Natsuki/Xiu playful theme
     
     mc "(???) \"Dạ vâng. Cho hỏi ai đấy ạ?\""
     
@@ -240,7 +246,11 @@ label ch1_day1_day2:
     $ renpy.pause(1.5, hard=True)
     
     scene bg ktx with wipeleft_scene  # Custom: Ký túc xá FPT
-    play music tense fadein 1.0
+    play music t9 fadein 1.0 # Sayo-nara (somber/tense for betting?) or t6? Let's use t4 (Monika) for organized chaos? No, t6 is panic. Let's use t2 (Playful) or keep tense.
+    # The text says "tense". t6 is panic. t10 is creepy. 
+    # Let's stick to existing "tense" or change to t6 if it's funny tense.
+    # Actually, let's use t4 (Monika) as she is Monika sprite.
+    play music t4 fadein 1.0
     
     "Ngày nhập học đầu tiên kết thúc."
     "Về đến ký túc xá, tôi định ngả lưng nghỉ ngơi chút thì..."
@@ -366,7 +376,7 @@ label ch1_day1_day2:
     
     # CẢNH 5 CŨ: CLB - SÁNG (Bị mắng)
     scene bg club_day with wipeleft_scene
-    play music club_theme fadein 1.0
+    play music t3 fadein 1.0
     
     "Sáng hôm sau, tôi lên phòng CLB."
     "Vừa bước vào phòng, tình cờ thế nào lại gặp lại chị gái tối qua."
@@ -387,6 +397,10 @@ label ch1_day1_day2:
     show yuri 3y at t22
     
     hainu "\"Xỉu!!!\""
+    
+    stop music fadeout 0.5
+    play sound "sfx/slap.ogg" # Just for shock effect, or maybe just music stop.
+    play music t6 fadein 0.5 # Poem Panic
     
     "Hội trưởng bước vào."
     
@@ -462,6 +476,7 @@ label ch1_day1_day2:
     
     # Tour 1: Thư viện
     scene bg library with fade  # Custom: Thư viện FPT
+    play music t2 fadein 1.0 # Reset to happy music
     
     show monika 1a at t11
     
@@ -507,6 +522,7 @@ label ch1_day1_day2:
     mc "\"Uhm... Chào bạn T31?\""
     
     "Robot T31 quay lại nhìn tôi với đôi mắt LED đỏ."
+    play sound "sfx/glitch1.ogg"
     
     "T31" "\"Hasta la vista, baby.\""
     
@@ -568,7 +584,7 @@ label ch1_day1_day2:
     mc "\"Hình như mình để quên trên phòng CLB rồi.\""
     
     scene bg club_night with fade  # Tối - CLB vẫn đèn sáng
-    play music club_theme fadein 1.0
+    play music t7 fadein 1.0 # Yuri theme
     
     "Phòng CLB vẫn sáng đèn."
     "Hội Trưởng ở trong phòng, trước mặt là một chồng sổ sách cao chạm trần!!?"

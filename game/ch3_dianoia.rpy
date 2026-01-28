@@ -23,7 +23,7 @@ label ch3_dianoia:
     # ========================================
     
     scene bg mc_room with dissolve_scene_full
-    play music daily_life fadein 1.0
+    play music t2 fadein 1.0
     
     "Sáng ngày thứ 10."
     "Điện thoại rung."
@@ -36,6 +36,8 @@ label ch3_dianoia:
     mc "\"Thôi thì đến hỏi cho ra lẽ vậy.\""
     
     scene bg camp_morning with wipeleft_scene # Cần BG trại lính
+    stop music fadeout 2.0
+    play music t10 fadein 2.0 # Ominous/Strict
     
     show dad at t11
     
@@ -64,6 +66,7 @@ label ch3_dianoia:
     mc "\"Con muốn trở thành hoạ sĩ để góp phần làm đẹp cho Đất Nước chứ không phải chỉ vì tiền!\""
     
     show dad at s11 # angry shake
+    play music t6 fadein 0.5 # Poem Panic (Argument)
     
     dad "\"MỚI LÊN ĐẠI HỌC CÓ VÀI NGÀY MÀ CÁI MỒM ĐÃ LEM LẺM, PHÉP TẮC GIA ĐÌNH Ở ĐÂU HẢ?\""
     dad "\"MÀY MÀ KHÔNG NGHE LỜI TAO THÌ MỌI CHUYỆN SAU NÀY TỰ THÂN MÀ LO LẤY, TAO KHÔNG CHU CẤP CHO NỮA.\""
@@ -86,7 +89,7 @@ label ch3_dianoia:
 label ch3_day10_night:
 
     scene bg ktx with fade
-    play music sad fadein 1.0
+    play music t9 fadein 1.0 # Sayo-nara (Sad/Tense)
     
     # Text 375
     mc "\"Không còn tiền chu cấp, áp lực tài chính của mình tăng lên rồi, từ ngày mai phải tiết kiệm lại thôi.\""
@@ -127,7 +130,7 @@ label ch3_day11_xiu_drunk:
             pass
 
     scene bg bar with wipeleft_scene # Cần BG quán rượu hoặc quán vỉa hè
-    play music daily_life fadein 1.0
+    play music t3 fadein 1.0
     
     "Đến quán nhậu Xỉu gửi, thấy đàn chị đang say khướt."
     
@@ -144,6 +147,7 @@ label ch3_day11_xiu_drunk:
     mc "\"Chẳng giúp được gì chị đâu, cơ mà đỡ hơn là giữ trong lòng.\""
     
     show monika 1d
+    play music t9 fadein 1.0 # Sad backstory
     
     xiu "\"…\""
     xiu "\"Gia đình chị sắp không còn nữa rồi…\""
@@ -232,7 +236,7 @@ label ch3_day11_hainu_movie:
             pass
     
     scene bg cinema with wipeleft_scene # Cần BG rạp phim
-    play music love_theme fadein 1.0
+    play music t7 fadein 1.0 # Yuri theme (Intellectual/Romance)
     
     "Đến rạp chiếu phim cùng Hội Trưởng để xem phim “The Truman Show”."
     "Phim khá ấn tượng, làm mình cũng phải nghi ngờ rằng liệu mình có đang ở trong một con game tình cảm nào đó không…."
@@ -317,7 +321,7 @@ label ch3_reflection:
     $ renpy.pause(2.0, hard=True)
     
     scene bg mc_room with dissolve_scene_full
-    play music deep_thought fadein 1.0
+    play music t4 fadein 1.0 # Monika theme (Piano/Thinking)
     
     $ current_day = 13
     
@@ -346,7 +350,7 @@ label ending_fascist:
     $ renpy.pause(2.0, hard=True)
     
     scene bg camp_morning with fade # Cần BG trại lính hoặc tương tự
-    play music tense fadein 1.0
+    play music t10 fadein 1.0
     
     "Mấy chục năm sau, thế giới bước qua cuộc Chiến tranh Thế Giới thứ 3."
     "Cuộc chiến kết thúc với sự thống trị của một tên độc tài."

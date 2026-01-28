@@ -21,6 +21,9 @@ label ch2_day3:
     "Ting! Bạn nhận được 50.000đ."
     $ stats.modify_tien(50000)
     $ show_stat_change("tien", 50000)
+    
+    play music t2 fadein 1.0 # Ohayou Sayori (Happy)
+    
     mc "\"Chà… Người đâu mà đã xinh đẹp, giàu có lại tốt tính. Có phú bà bao nuôi thế này, cuộc sống đại học mình bắt đầu từ đây!\""
 
     "Ngày thứ 4 tại FPT đã bắt đầu."
@@ -57,7 +60,7 @@ label ch2_day3:
     $ renpy.pause(1.5, hard=True)
 
     scene bg club_day with wipeleft_scene
-    play music argument fadein 1.0
+    play music t6 fadein 1.0
 
     "Chiều ngày thứ 6, tôi đến CLB như thường lệ."
     "Nhưng hôm nay không khí có vẻ căng thẳng lạ thường."
@@ -158,6 +161,9 @@ label ch2_day3:
     call ch2_day_start from ch2_day9_start
     
     "Ngày thứ 9."
+    
+    stop music fadeout 2.0
+    
     "Hôm nay... tôi có một dự cảm lạ lùng."
     "Mọi thứ dường như quá bình yên."
     
@@ -208,7 +214,7 @@ label ch2_day_end:
 label ch2_day4_clb_event:
     # Text Scenes: 258-301 (Cave Allegory)
     scene bg club_day with wipeleft_scene
-    play music club_theme fadein 1.0
+    play music t7 fadein 1.0
 
     "Tôi quyết định đến CLB sớm."
     
@@ -260,6 +266,8 @@ label ch2_day4_clb_event:
     hainu "\"Họ bị kẹt trong cái gọi là Eikasia. Họ chỉ nhìn thấy những thứ được cho nhìn thấy.\""
     hainu "\"Vậy theo cậu, người đàn ông tìm được đường ra khỏi hang liệu đã thấy được hình dạng thật của những chiếc bóng?\""
     
+    stop music fadeout 2.0 # Silence for thought
+    
     menu:
         "Ý kiến của bạn?"
         
@@ -309,7 +317,7 @@ label ch2_afternoon_activity:
 
 label ch2_gym_event:
     scene bg gym with wipeleft_scene
-    play music gym_theme fadein 1.0
+    play music t2 fadein 1.0
 
     # Increment count
     $ stats.gym_count += 1
@@ -352,7 +360,7 @@ label ch2_gym_event:
 
 label ch2_library_event:
     scene bg library with wipeleft_scene
-    play music library_theme fadein 1.0
+    play music t3 fadein 1.0
     
     # Increment count
     $ stats.lib_count += 1
@@ -412,6 +420,9 @@ label ch2_evening_activity:
         # Text 322-329 (Xiu KTX logic)
         "Sang phòng Xỉu chơi (Tăng thiện cảm)" if current_day % 2 == 0:
             scene bg ktx with wipeleft
+            
+            stop music fadeout 1.0
+            play music t5 fadein 1.0 # Playful
             
             show monika 1d at t11
             xiu "\"Chào mừng đến với dịch vụ Campuchia gì cũng tôn của Xỉu. Cu em cần gì nào?\""

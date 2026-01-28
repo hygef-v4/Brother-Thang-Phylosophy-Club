@@ -18,6 +18,8 @@ label ch4_noesis:
     
     $ renpy.pause(2.0, hard=True)
     
+    play music t2 fadein 1.0
+    
     # ========================================
     # NGÀY 14: TIỆC SINH NHẬT SỚM & QUYẾT ĐỊNH
     # ========================================
@@ -40,7 +42,7 @@ label ch4_path_both:
     "Xỉu: <Ây cu. Tới CLB tí đi. Có việc.>"
     
     scene bg club_day with fade
-    play music club_theme fadein 1.0
+    play music t3 fadein 1.0
     
     "Giữa phòng trưng một băng rôn Happy Birthday (Sớm)."
     
@@ -97,6 +99,7 @@ label ch4_path_xiu:
     play music daily_life fadein 1.0
     
     show monika 1a at t11
+    play music t5 fadein 1.0 # Playful (Xiu)
     
     xiu "\"Ây cu, về rồi à?\""
     xiu "\"Mai sinh nhật đúng không?\""
@@ -136,7 +139,7 @@ label ch4_path_hainu:
     "Điện thoại rung. Hải Nữ gọi lên CLB."
     
     scene bg club_day with fade
-    play music club_theme fadein 1.0
+    play music t7 fadein 1.0 # Yuri (Hainu)
     
     show yuri 1a at t11
     
@@ -184,7 +187,7 @@ label ch4_path_lonely:
 label ending_objective_idealism:
     $ current_day = 15
     scene bg ktx with dissolve_scene_full
-    play music deep_thought fadein 1.0
+    play music t10 fadein 1.0 # Eerie/Space
     
     centered "{size=40}Ngày 15{/size}"
     
@@ -212,7 +215,7 @@ label ending_objective_idealism:
 label ending_subjective_idealism_xiu:
     $ current_day = 15
     scene bg club_day with fade
-    play music daily_life fadein 1.0
+    play music t2 fadein 1.0 # Happy
     
     centered "{size=40}Ngày 15{/size}"
     
@@ -238,7 +241,7 @@ label ending_subjective_idealism_xiu:
 label ending_metaphysical_materialism:
     $ current_day = 15
     scene bg mc_room with fade # Nhà
-    play music daily_life fadein 1.0
+    play music t1 fadein 1.0 # Normal daily life
     
     centered "{size=40}Ngày 15{/size}"
     
@@ -280,7 +283,7 @@ label ending_metaphysical_materialism:
 label ending_dialectical_materialism:
     $ current_day = 15
     scene bg mc_room with fade
-    play music tense fadein 1.0
+    play music t6 fadein 1.0 # Argument/Tension
     
     centered "{size=40}Ngày 15{/size}"
     
@@ -299,8 +302,9 @@ label ending_dialectical_materialism:
     
     dad "\"Sao có 8.0 hả? Con nhà người ta đi thi toàn khoe 9, 10, đằng này…\""
     
-    mc "\"!!?\""
     mc "\"Vị cao nhân nào đi thi IELTS được 10.0 vậy bố?\""
+    
+    stop music fadeout 2.0 # Silence before serious talk
     
     dad "\"Hình như là con của ông bác bên cơ quan bố. Nó vào trường sĩ quan thi tiếng anh IELTS gì đó được 10 nên được cất nhắc lên làm thông dịch viên cho thủ trưởng rồi.\""
     dad "\"Con cũng phải học tập anh đấy, vào quân đội không chỉ được rèn luyện kỷ cương phép nước, mà sau này cũng không phải lo nghĩ gì về cơm ăn áo mặc…\""
@@ -337,13 +341,15 @@ label ending_dialectical_materialism:
     dad "\"Vậy… Sao…\""
     dad "\"Thôi được rồi, tuỳ con quyết định.\""
     dad "\"Nhưng hay nhớ, bố… luôn ở sau lưng con.\""
+    
+    play music t8 fadein 2.0 # Emotional/Confession theme (My Confession)
 
     # Transition to Epilogue
     scene black with dissolve_scene_full
     centered "{size=40}CẢNH CUỐI{/size}"
     
     scene bg club_day with fade
-    play music happy fadein 1.0
+    play music t8 fadein 1.0 # Continue emotional theme
     
     "Làm hoà được với bố, tôi vui vẻ quay lại CLB."
     
