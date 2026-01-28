@@ -100,3 +100,5 @@ define audio.sad = "<loop 9.938>bgm/8.ogg"
 # SFX
 define audio.phone_ring = "sfx/fall.ogg"  # Placeholder
 define audio.notification = "sfx/pageflip.ogg"  # Placeholder
+define audio.love_theme = "<loop 5.861>bgm/10.ogg"
+define audio.happy = "<loop 4.444>bgm/5.ogg"
