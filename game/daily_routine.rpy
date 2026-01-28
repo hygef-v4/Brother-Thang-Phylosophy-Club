@@ -123,7 +123,7 @@ label daily_afternoon_activity:
 # ========================================
 
 label daily_evening_dorm:
-    scene bg bedroom with wipeleft_scene
+    scene bg ktx with wipeleft_scene  # Custom: Ký túc xá FPT
     play music tense fadein 1.0
     
     "Về đến phòng, kết thúc một ngày dài..."
@@ -245,7 +245,7 @@ label daily_clb_morning:
     return
 
 label daily_library_morning:
-    scene bg corridor with wipeleft_scene
+    scene bg library with wipeleft_scene  # Custom: Thư viện FPT
     play music daily_life fadein 1.0
     
     "Thư viện yên tĩnh, thích hợp để học..."
@@ -273,7 +273,7 @@ label daily_library_morning:
     return
 
 label daily_gym_morning:
-    scene bg class_day with wipeleft_scene
+    scene bg gym with wipeleft_scene  # Custom: Phòng gym FPT
     
     "Phòng gym, rèn luyện sức khỏe..."
     
@@ -353,7 +353,7 @@ label daily_clb_afternoon:
     return
 
 label daily_library_afternoon:
-    scene bg corridor with wipeleft_scene
+    scene bg library with wipeleft_scene  # Custom: Thư viện FPT
     play music daily_life fadein 1.0
     
     "Thư viện buổi chiều đông người..."
@@ -381,7 +381,7 @@ label daily_library_afternoon:
     return
 
 label daily_gym_afternoon:
-    scene bg class_day with wipeleft_scene
+    scene bg gym with wipeleft_scene  # Custom: Phòng gym FPT
     
     "Gym buổi chiều, tập cùng mọi người..."
     

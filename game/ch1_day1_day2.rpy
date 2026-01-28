@@ -249,7 +249,7 @@ label ch1_day1_day2:
     # CẢNH 3B: KTX - TỐI (Cá cược lần 1)
     # ========================================
     
-    scene bg bedroom with wipeleft_scene
+    scene bg ktx with wipeleft_scene  # Custom: Ký túc xá FPT
     play music tense fadein 1.0
     
     "Về đến ký túc xá..."
@@ -436,7 +436,7 @@ label ch1_day1_day2:
     # HÀNH LANG - SÁNG (Betting choice 2)
     # ========================================
     
-    scene bg corridor with wipeleft_scene
+    scene bg hallway with wipeleft_scene  # Custom: Hành lang FPT
     
     "Vừa ra khỏi phòng CLB đã thấy Xỉu đuổi theo."
     
@@ -491,7 +491,7 @@ label ch1_day1_day2:
     # CẢNH 5: TOUR TRƯỜNG VỚI XỈU (NEW SCENE)
     # ========================================
     
-    scene bg corridor with wipeleft_scene
+    scene bg hallway with wipeleft_scene  # Custom: Hành lang FPT
     play music daily_life fadein 1.0
     
     "Vừa ra khỏi phòng CLB đã thấy Xỉu đuổi theo."
@@ -533,7 +533,7 @@ label ch1_day1_day2:
             jump ch1_scene6
     
     # Tour 1: Thư viện
-    scene bg corridor with fade
+    scene bg library with fade  # Custom: Thư viện FPT
     
     show monika 1a at t11
     
@@ -550,7 +550,7 @@ label ch1_day1_day2:
     $ show_stat_change("hoc_tap", 3)
     
     # Tour 2: Gym
-    scene bg class_day with fade
+    scene bg gym with fade  # Custom: Phòng gym FPT
     
     show monika 5a at t11
     
@@ -562,7 +562,7 @@ label ch1_day1_day2:
     show monika 1k
     
     # Tour 3: Canteen & Robot T31
-    scene bg class_day with fade
+    scene bg canteen with fade  # Custom: Canteen FPT
     
     show monika 1a at t11
     
@@ -634,7 +634,7 @@ label ch1_day1_day2:
     mc "\"Thôi chết, chìa khoá đâu rồi?\""
     mc "\"Hình như mình để quên trên phòng CLB rồi.\""
     
-    scene bg club_day with fade
+    scene bg club_night with fade  # Tối - CLB vẫn đèn sáng
     play music club_theme fadein 1.0
     
     "Phòng CLB vẫn sáng đèn."
@@ -736,7 +736,7 @@ label ch1_day1_day2:
     # SCENE KẾT - ĐÊM
     # ========================================
     
-    scene bg bedroom with fade
+    scene bg ktx with fade  # Custom: Ký túc xá FPT
     play music sad fadein 1.0
     
     "Về đến phòng..."

@@ -142,24 +142,32 @@ image bg residential_day = "bg/residential.png"
 image bg class_day:
     "bg/class.png"
     zoom 0.75
-image bg corridor = "bg/corridor.png"
-image bg club_day = "bg/club.png"
-image bg club_day2:
-    choice:
-        "bg club_day"
-    choice:
-        "bg club_day"
-    choice:
-        "bg club_day"
-    choice:
-        "bg club_day"
-    choice:
-        "bg club_day"
-    choice:
-        "bg/club-skill.png"
+# image bg corridor = "bg/corridor.png"  # OLD DDLC - replaced with hallway
+# OLD DDLC club backgrounds - DISABLED (replaced with custom)
+# image bg club_day = "bg/club.png"
+# image bg club_day2:
+#     choice:
+#         "bg club_day"
+#     choice:
+#         "bg club_day"
+#     choice:
+#         "bg club_day"
+#     choice:
+#         "bg club_day"
+#     choice:
+#         "bg club_day"
+#     choice:
+#         "bg/club-skill.png"
 image bg closet = "bg/closet.png"
-image bg bedroom = "bg/bedroom.png"
+# image bg bedroom = "bg/bedroom.png"  # OLD DDLC - replaced with ktx
 image bg fpt_yard = "bg/fpt_yard.png"  # Custom: Sân trường FPT
+image bg gym = "bg/gym.png"  # Custom: Phòng gym FPT
+image bg canteen = "bg/canteen.png"  # Custom: Canteen FPT
+image bg club_day = "bg/club_day.png"  # Custom: Phòng CLB - ban ngày
+image bg club_night = "bg/club_night.png"  # Custom: Phòng CLB - tối
+image bg library = "bg/library.png"  # Custom: Thư viện FPT
+image bg ktx = "bg/ktx.png"  # Custom: Ký túc xá FPT
+image bg hallway = "bg/hallway.png"  # Custom: Hành lang FPT
 image bg sayori_bedroom = "bg/sayori_bedroom.png"
 image bg house = "bg/house.png"
 image bg kitchen = "bg/kitchen.png"

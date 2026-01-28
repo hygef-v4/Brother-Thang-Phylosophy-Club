@@ -21,7 +21,7 @@ label ch2_day3:
     $ show_stat_change("tien", daily_changes["tien"])
     
     stop music fadeout 2.0
-    scene bg bedroom with dissolve_scene_full
+    scene bg ktx with dissolve_scene_full  # Custom: Ký túc xá FPT
     
     play music daily_life fadein 1.0
     
@@ -333,7 +333,7 @@ label ch2_evening_transition:
 # ========================================
 
 label ch2_library_activities:
-    scene bg corridor with wipeleft_scene
+    scene bg library with wipeleft_scene  # Custom: Thư viện FPT
     play music daily_life fadein 1.0
     
     menu:
@@ -372,7 +372,7 @@ label ch2_library_activities:
 # ========================================
 
 label ch2_gym_activities:
-    scene bg class_day with wipeleft_scene
+    scene bg gym with wipeleft_scene  # Custom: Phòng gym FPT
     
     menu:
         "Làm gì tại Gym?"
@@ -431,7 +431,7 @@ label ch2_gym_activities:
 # ========================================
 
 label ch2_dorm_activities:
-    scene bg bedroom with wipeleft_scene
+    scene bg ktx with wipeleft_scene  # Custom: Ký túc xá FPT
     play music tense fadein 1.0
     
     menu:
@@ -524,7 +524,7 @@ label ch2_dorm_activities:
 
 label ch2_end_of_day:
     
-    scene bg bedroom with fade
+    scene bg ktx with fade  # Custom: Ký túc xá FPT
     play music sad fadein 1.0
     
     "Về đến phòng..."
