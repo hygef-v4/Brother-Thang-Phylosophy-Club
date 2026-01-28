@@ -110,7 +110,7 @@ init -1 style vslider:
 
 init -1 style frame:
     padding gui.frame_borders.padding
-    background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
+    background Frame(mw_frame, gui.frame_borders, tile=gui.frame_tile)
 
 init -501 screen say(who, what):
     style_prefix "say"
@@ -141,7 +141,7 @@ init -1 style window:
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Frame(mw_textbox, 20, 20)
 
 init -1 style window_monika is window:
     background Image("gui/textbox_monika.png", xalign=0.5, yalign=1.0)
@@ -152,7 +152,7 @@ init -1 style namebox:
     xsize gui.namebox_width
     ypos gui.name_ypos
     ysize gui.namebox_height
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    background Frame(mw_namebox, gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 init -1 style say_label:
@@ -161,7 +161,7 @@ init -1 style say_label:
     size gui.name_text_size
     xalign gui.name_xalign
     yalign 0.5
-    outlines [(3, "#b59", 0, 0), (1, "#b59", 1, 1)]
+    outlines [(3, "#0288d1", 0, 0), (1, "#0288d1", 1, 1)]
 
 init -1 style say_dialogue:
     xpos gui.dialogue_xpos
@@ -184,7 +184,7 @@ init 499 image ctc:
         repeat
 
 init 499 image input_caret:
-    Solid("#b59")
+    Solid("#0288d1")
     size (2,25) subpixel True
     block:
         linear 0.35 alpha 0
@@ -360,9 +360,9 @@ init -1 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
     font gui.name_font
     color "#fff"
-    outlines [(4, "#b59", 0, 0), (2, "#b59", 2, 2)]
-    hover_outlines [(4, "#fac", 0, 0), (2, "#fac", 2, 2)]
-    insensitive_outlines [(4, "#fce", 0, 0), (2, "#fce", 2, 2)]
+    outlines [(4, "#0288d1", 0, 0), (2, "#0288d1", 2, 2)]
+    hover_outlines [(4, "#4fc3f7", 0, 0), (2, "#4fc3f7", 2, 2)]
+    insensitive_outlines [(4, "#81d4fa", 0, 0), (2, "#81d4fa", 2, 2)]
 
 init -501 screen main_menu():
     tag menu
@@ -512,7 +512,7 @@ init -1 style return_button_text is navigation_button_text
 init -1 style game_menu_outer_frame:
     bottom_padding 30
     top_padding 120
-    background "gui/overlay/game_menu.png"
+    background overlay_game_menu
 
 init -1 style game_menu_navigation_frame:
     xsize 280
@@ -540,7 +540,7 @@ init -1 style game_menu_label_text:
     font gui.name_font
     size gui.title_text_size
     color "#fff"
-    outlines [(6, "#b59", 0, 0), (3, "#b59", 2, 2)]
+    outlines [(6, "#0288d1", 0, 0), (3, "#0288d1", 2, 2)]
     yalign 0.5
 
 init -1 style return_button:
@@ -773,7 +773,7 @@ init -1 style pref_label_text:
     font gui.name_font
     size 24
     color "#fff"
-    outlines [(3, "#b59", 0, 0), (1, "#b59", 1, 1)]
+    outlines [(3, "#0288d1", 0, 0), (1, "#0288d1", 1, 1)]
     yalign 1.0
 
 init -1 style pref_vbox:
