@@ -158,6 +158,8 @@ label ending_objective_idealism:
     
     scene black with dissolve_scene_full
     centered "{size=30}{color=#aa0000}BAD ENDING: VÒNG LẶP HƯ VÔ{/color}{/size}"
+    
+    call ending_explanation("subjective_passive")
     return
 
 label ending_subjective_idealism_xiu:
@@ -172,6 +174,8 @@ label ending_subjective_idealism_xiu:
     
     scene black with dissolve_scene_full
     centered "{size=30}{color=#ff66aa}HAPPY ENDING: XIU ROUTE{/color}{/size}"
+    
+    call ending_explanation("subjective_active")
     return
 
 label ending_metaphysical_materialism:
@@ -189,6 +193,8 @@ label ending_metaphysical_materialism:
     
     scene black with dissolve_scene_full
     centered "{size=30}{color=#ffffff}NORMAL ENDING: THỰC TẠI CHẤP NHẬN{/color}{/size}"
+    
+    call ending_explanation("metaphysical")
     return
 
 label ending_dialectical_materialism:
@@ -219,4 +225,6 @@ label ending_dialectical_materialism:
     
     scene black with dissolve_scene_full
     centered "{size=40}{color=#ffdd00}TRUE ENDING{/color}{/size}\n{size=24}HÀNH TRÌNH TRIẾT HỌC{/size}"
+    
+    call ending_explanation("dialectical")
     return

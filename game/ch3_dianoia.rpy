@@ -220,5 +220,8 @@ label ending_fascist:
     scene black with dissolve_scene_full
     centered "{size=40}{color=#ff0000}SECRET ENDING: HOẠ SĨ NGƯỜI ÁO{/color}{/size}"
     
+    # Philosophical Recap
+    call ending_explanation("fascist")
+    
     return
 
