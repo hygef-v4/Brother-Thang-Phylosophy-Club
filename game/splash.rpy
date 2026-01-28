@@ -80,11 +80,25 @@ image menu_logo:
     menu_logo_move
 
 image menu_particles:
-    2.481
-    xpos 224
-    ypos 104
-    ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=40, particleTime=2.0, particleXSpeed=3, particleYSpeed=3).sm
-    particle_fadeout
+    block:
+        ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=35, particleTime=5.0, particleXSpeed=4, particleYSpeed=3).sm
+        alpha 0.6
+        5.0
+        repeat
+
+image menu_particles_slow:
+    block:
+        ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=25, particleTime=7.0, particleXSpeed=2, particleYSpeed=2).sm
+        alpha 0.5
+        7.0
+        repeat
+
+image menu_particles_fast:
+    block:
+        ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=30, particleTime=3.5, particleXSpeed=6, particleYSpeed=4).sm
+        alpha 0.7
+        3.5
+        repeat
 
 transform particle_fadeout:
     easeout 1.5 alpha 0
@@ -307,8 +321,6 @@ label splashscreen:
     $ pause(6.0 - (datetime.datetime.now() - starttime).total_seconds())
 
     hide splash_warning with Dissolve(max(0, 6.5 - (datetime.datetime.now() - starttime).total_seconds()), alpha=True)
-
-    $ pause(6.5 - (datetime.datetime.now() - starttime).total_seconds())
 
     $ config.allow_skipping = True
 

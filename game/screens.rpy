@@ -402,9 +402,9 @@ init -501 screen main_menu():
                 style "main_menu_version"
 
     if not persistent.ghost_menu:
+        add "menu_particles_slow"
         add "menu_particles"
-        add "menu_particles"
-        add "menu_particles"
+        add "menu_particles_fast"
         add "menu_logo"
 
     if persistent.ghost_menu:
@@ -972,7 +972,7 @@ init -1 style confirm_frame:
 
 init -1 style confirm_prompt_text:
     color "#000"
-    outlines [(2, "#000000", 0, 0)]  # Black outline for readability
+    outlines []  # No outline, plain black text
     text_align 0.5
     layout "subtitle"
 
