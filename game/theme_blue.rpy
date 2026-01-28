@@ -6,7 +6,8 @@ init -1 python:
     mw_textbox = im.MatrixColor("gui/textbox.png", blue_tint)
     mw_namebox = im.MatrixColor("gui/namebox.png", blue_tint)
     menu_bg = im.MatrixColor("gui/menu_bg.png", blue_tint)
-    game_menu_bg = im.MatrixColor("gui/game_menu.png", blue_tint)
+    # Use menu_bg for game_menu as well to ensure consistent blue, working background
+    game_menu_bg = im.MatrixColor("gui/menu_bg.png", blue_tint)
     
     # Overlay images
     overlay_game_menu = im.MatrixColor("gui/overlay/game_menu.png", blue_tint)

@@ -79,9 +79,10 @@ label ch3_dianoia:
         
         "Dạ… Vâng ạ….":
              # ENDING PHÁT XÍT
+             mc "\"Dạ… Vâng ạ….\""
              jump ending_fascist
         
-        "Con có thể tự lo cho bản thân mình rồi!":
+        "Con có thể tự lo cho bản thân mình rồi, không cần bố bao bọc nữa!":
              mc "\"Con có thể tự lo cho bản thân mình rồi, không cần bố bao bọc nữa!\""
              
              dad "\"GIỎI! ĐƯỢC LẮM!\""
@@ -100,7 +101,7 @@ label ch3_dianoia:
 
 label ending_fascist:
     
-    mc "\"Dạ… Vâng ạ….\""
+    # Text already spoken in choice block
     
     scene black with dissolve_scene_full
     
@@ -112,7 +113,7 @@ label ending_fascist:
     
     "Mấy chục năm sau, thế giới bước qua cuộc Chiến tranh Thế Giới thứ 3."
     "Cuộc chiến kết thúc với sự thống trị của một tên độc tài."
-    "Khi ấy, tên độc tài ấy đang trong một boong ke chuẩn bị cho buổi tử hình tập thể các nhà triết gia."
+    "Khi ấy, tên độc tài ấy đang trong một bong ke chuẩn bị cho buổi tử hình tập thể các nhà triết gia."
     
     show dad at t11
     
@@ -156,20 +157,23 @@ label ch3_day14:
     
     "Điện thoại rung."
     
-    "Xỉu: <Đi uống không cu? Nay chị bao!>"
+    "VÕ MINH XỈU: <Đi uống không cu? Nay chị bao!>"
     
-    mc "\"Của rẻ là của ôi… Có khi nào chị ấy bị bắt nên khai ra mình không nhỉ?\""
+    mc "\"Của rẻ là của công an… Có khi nào chị ấy bị bắt nên khai ra mình không nhỉ?\""
     
     menu:
+        # xiu variable might be object or string, better use "VÕ MINH XỈU" or narrator if xiu object not shown yet
         xiu "\"Đi không?\""
         
         "Nổ cho em cái địa chỉ nào!":
-             mc "OK, tới luôn!"
+             mc "<Nổ cho em cái địa chỉ nào!>"
              jump ch3_day14_drinking
         
         "Tiếc quá, nay em lại có việc bận rồi…":
+             mc "<Tiếc quá, nay em lại có việc bận rồi…>"
              "Tôi từ chối khéo. Bỏ lỡ một dịp hiểu thêm về Xỉu."
              jump ch3_day18_pre
+
 
 label ch3_day14_drinking:
     
@@ -178,7 +182,7 @@ label ch3_day14_drinking:
     
     "Đến quán nhậu Xỉu gửi, thấy đàn chị đang say khướt."
     
-    show monika 1d at t11
+    show monika "1d" at t11
     
     xiu "\"Cu em đến rồi à? Lại đây uống với chị nào!\""
     
@@ -193,7 +197,7 @@ label ch3_day14_drinking:
     mc "\"Em thấy nay chị uống hơi nhiều rồi đấy. Nếu có gì buồn phiền, cứ nói em.\""
     mc "\"Chẳng giúp được gì chị đâu, cơ mà đỡ hơn là giữ trong lòng.\""
     
-    show monika 1f
+    show monika "1f"
     
     xiu "\"…\""
     xiu "\"Gia đình chị sắp không còn nữa rồi…\""
@@ -230,7 +234,7 @@ label ch3_day14_drinking:
     mc "\"Vậy sao….\""
     mc "\"Chị an tâm. Em tin rằng mọi người sẽ ổn thôi.\""
     
-    show monika 1a
+    show monika "1a"
     
     xiu "\"….\""
     xiu "\"Cảm ơn em.\""
@@ -239,7 +243,7 @@ label ch3_day14_drinking:
     
     if stats.rel_xiu > 80:
         
-        show monika 1k
+        show monika "1k"
         
         xiu "\"Này, muốn làm một ván cá cược với chị không?\""
         xiu "\"Đoán xem…. Chị có đang phải lòng em không?\""
@@ -252,7 +256,7 @@ label ch3_day14_drinking:
             "Có":
                  mc "\"Có.\""
                  
-                 show monika 1l
+                 show monika "1l"
                  
                  xiu "\"Lần này…. Em thắng rồi….\""
                  
@@ -261,7 +265,7 @@ label ch3_day14_drinking:
             "Không":
                  mc "\"Không.\""
                  
-                 show monika 1f
+                 show monika "1f"
                  
                  xiu "\"… Tiếc quá….\""
             
@@ -271,7 +275,7 @@ label ch3_day14_drinking:
                  
                  xiu "\"Hmm... Chắc vậy.\""
 
-    show monika 1a
+    show monika "1a"
     
     xiu "\"Thôi vậy chị về trước đây.\""
     xiu "\"Nay cảm ơn cu em nhiều nha!\""
@@ -301,12 +305,12 @@ label ch3_day18_new:
     
     "Điện thoại rung."
     
-    "Hải Nữ: <Đang có một bộ phim khá cuốn mà chị muốn xem, cơ mà đi một mình thì lại hơi ngại, em có muốn đi xem cùng chị không?>"
+    "VŨ HẢI NỮ: <Đang có một bộ phim khá cuốn mà chị muốn xem, cơ mà đi một mình thì lại hơi ngại, em có muốn đi xem cùng chị không?>"
     
-    mc "(Lâu rồi mình chưa đi xem phim, nhưng mà giá vé lại đắt quá…. Nên làm gì đây?)"
+    mc "\"Lâu rồi mình chưa đi xem phim, nhưng mà giá vé lại đắt quá…. Nên làm gì đây?\""
     
     menu:
-        hainu "\"Đi xem phim không?\""
+        hainu "<Đi xem phim không?>"
         
         "Đi luôn!":
              mc "Chị xem rạp nào vậy em tới đây!"
@@ -325,32 +329,32 @@ label ch3_day18_movie:
     "Đến rạp chiếu phim cùng Hội Trưởng để xem phim \"The Truman Show\"."
     "Phim khá ấn tượng, làm mình cũng phải nghi ngờ rằng liệu mình có đang ở trong một con game tình cảm nào đó không…."
     
-    show yuri 1a at t11
+    show yuri "1a" at t11
     
-    hainu "\"Bộ phim hay thật đấy nhỉ?\""
+    "VŨ HẢI NỮ: \"Bộ phim hay thật đấy nhỉ?\""
     
     mc "\"Ừ! Cảnh kết lúc Truman cúi chào khán giả lần cuối quả thật là Absolutely Cinema.\""
     
-    show yuri 2f
+    show yuri "2f"
     
-    hainu "\"…\""
-    hainu "\"Cảnh đó… Cậu có nghĩ rằng, quyết định bước ra khỏi trường quay là đúng đắn chứ?\""
+    "VŨ HẢI NỮ: \"…\""
+    "VŨ HẢI NỮ: \"Cảnh đó… Cậu có nghĩ rằng, quyết định bước ra khỏi trường quay là đúng đắn chứ?\""
     
     mc "\"Chắc chắn rồi, sao lại không chứ?\""
     
-    hainu "\"Theo tôi thì, nếu lơ những điều kỳ lạ xung quanh đi, có lẽ cuộc sống của cậu ấy sẽ hạnh phúc hơn.\""
-    hainu "\"Nhưng nó chỉ là một hạnh phúc giả tạo, theo kịch bản chứ không thực sự là điều cậu ta muốn.\""
+    "VŨ HẢI NỮ: \"Theo tôi thì, nếu lơ những điều kỳ lạ xung quanh đi, có lẽ cuộc sống của cậu ấy sẽ hạnh phúc hơn.\""
+    "VŨ HẢI NỮ: \"Nhưng nó chỉ là một hạnh phúc giả tạo, theo kịch bản chứ không thực sự là điều cậu ta muốn.\""
     
     if stats.rel_hainu > 80:
         
-        show yuri 3a
+        show yuri "3a"
         
-        hainu "\"…\""
-        hainu "\"Cậu còn nhớ ngụ ngôn về cái hang chứ?\""
-        hainu "\"Tình cảnh của Truman giống như những người cổ đại vậy.\""
-        hainu "\"Đều bị mắc kẹt trong những quan niệm, những điều thân thuộc với bản thân.\""
-        hainu "\"Tuy nhiên, Truman đã phá bỏ những tưởng chừng như là chân lý để mà đến với thực tiễn.\""
-        hainu "\"Theo cậu, tại sao lại có sự khác nhau vậy?\""
+        "VŨ HẢI NỮ: \"…\""
+        "VŨ HẢI NỮ: \"Cậu còn nhớ ngụ ngôn về cái hang chứ?\""
+        "VŨ HẢI NỮ: \"Tình cảnh của Truman giống như những người cổ đại vậy.\""
+        "VŨ HẢI NỮ: \"Đều bị mắc kẹt trong những quan niệm, những điều thân thuộc với bản thân.\""
+        "VŨ HẢI NỮ: \"Tuy nhiên, Truman đã phá bỏ những tưởng chừng như là chân lý để mà đến với thực tiễn.\""
+        "VŨ HẢI NỮ: \"Theo cậu, tại sao lại có sự khác nhau vậy?\""
         
         menu:
             "Tại sao khác nhau?"
@@ -361,17 +365,17 @@ label ch3_day18_movie:
             "Ờ… Cậu ta may mắn hơn sao?":
                  mc "\"Ờ… Cậu ta may mắn hơn sao?\""
             
-            "Là do Dianoia (Suy nghĩ)":
+            "Có lẽ là do điều làm nên sự khác biệt giữa hai nhân vật…":
                  mc "\"Có lẽ là do điều làm nên sự khác biệt giữa hai nhân vật…\""
                  mc "\"Nó là nhờ khát khao tìm ra chân lý, là nhờ sự tư duy và nhận thức của bản thân cậu ta, là nhờ Dianoia.\""
                  
                  $ stats.modify_relationship("hainu", 10)
         
-        show yuri 2f
+        show yuri "2f"
         
-        hainu "\"…\""
-        hainu "\"Ông tôi là một nhà triết gia…. Cả đời ông đi giao giảng về tầm quan trọng của triết học cho mọi người…\""
-        hainu "\"Nhưng họ lại nghĩ ông chỉ là một lão già lắm lời, cho rằng ông bị điên…. Họ cho rằng ông chỉ làm những điều vô nghĩa….\""
+        "VŨ HẢI NỮ: \"…\""
+        "VŨ HẢI NỮ: \"Ông tôi là một nhà triết gia…. Cả đời ông đi giao giảng về tầm quan trọng của triết học cho mọi người…\""
+        "VŨ HẢI NỮ: \"Nhưng họ lại nghĩ ông chỉ là một lão già lắm lời, cho rằng ông bị điên…. Họ cho rằng ông chỉ làm những điều vô nghĩa….\""
         
         mc "\"…\""
         mc "\"Em không nghĩ thế đâu!\""
@@ -380,18 +384,18 @@ label ch3_day18_movie:
         mc "\"…Và nhờ chị, em cũng đã yêu thích môn này rồi…\""
         mc "\"Vì vậy, hành động của ông không hề là vô ích.\""
         
-        show yuri 3y
+        show yuri "3y"
         
-        hainu "\"…\""
-        hainu "\"Cảm ơn em.\""
-        hainu "\"Em đã từng nghe đến hiện tượng vướng víu lượng tử chưa?\""
-        hainu "\"Có những hạt liên kết với nhau dù ở cách xa bao nhiêu, khi tính chất một hạt thay đổi thì cái kia cũng đổi theo.\""
-        hainu "\"Tôi từng không tin một vật có thể tác động đến vật khác ở khoảng cách xa vậy.\""
-        hainu "\"Cho đến khi, em tác động vào cuộc đời tôi….\""
+        "VŨ HẢI NỮ: \"…\""
+        "VŨ HẢI NỮ: \"Cảm ơn em.\""
+        "VŨ HẢI NỮ: \"Em đã từng nghe đến hiện tượng vướng víu lượng tử chưa?\""
+        "VŨ HẢI NỮ: \"Có những hạt liên kết với nhau dù ở cách xa bao nhiêu, khi tính chất một hạt thay đổi thì cái kia cũng đổi theo.\""
+        "VŨ HẢI NỮ: \"Tôi từng không tin một vật có thể tác động đến vật khác ở khoảng cách xa vậy.\""
+        "VŨ HẢI NỮ: \"Cho đến khi, em tác động vào cuộc đời tôi….\""
         
         mc "\"…\""
         
-        hainu "\"Thôi muộn rồi…. Tôi về trước đây.\""
+        "VŨ HẢI NỮ: \"Thôi muộn rồi…. Tôi về trước đây.\""
         
         mc "(Vừa nãy, có phải ý chị ấy là….)"
     
