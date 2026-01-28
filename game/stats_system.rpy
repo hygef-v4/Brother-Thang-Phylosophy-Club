@@ -176,10 +176,9 @@ init python:
         
         stat_display = {
             "hoc_tap": "Học tập",
-            "doi_song": "Đời sống",
+            "doi_song": "Sức khỏe",
             "tien": "Tiền",
-            # "rel_ischyros": "❤ Ischyros",  # REMOVED
-            "rel_huong": "❤ Hương",
+
             "rel_hainu": "❤ Hải Nữ",
             "rel_xiu": "❤ Xỉu"
         }
