@@ -102,3 +102,10 @@ define audio.phone_ring = "sfx/fall.ogg"  # Placeholder
 define audio.notification = "sfx/pageflip.ogg"  # Placeholder
 define audio.love_theme = "<loop 5.861>bgm/10.ogg"
 define audio.happy = "<loop 4.444>bgm/5.ogg"
+
+# New Varied Tracks
+define audio.library_theme = "<loop 4.499>bgm/4.ogg"  # Calm / Study
+define audio.gym_theme = "<loop 4.444>bgm/5.ogg"     # Upbeat / Active (Same as happy for now, or 5_monika)
+define audio.argument = "<loop 4.444>bgm/6.ogg"       # Tense / Debate (Poem Panic)
+define audio.deep_thought = "<loop 4.444>bgm/9.ogg"   # Sad / Introspective (My Feelings)
+define audio.ending_sad = "<loop 4.444>bgm/10.ogg"    # Very sad / Ending (I Still Love You)

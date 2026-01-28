@@ -51,7 +51,7 @@ label ch2_day3:
     $ renpy.pause(1.5, hard=True)
 
     scene bg club_day with wipeleft_scene
-    play music club_theme fadein 1.0
+    play music argument fadein 1.0
 
     "Chiều ngày thứ 6, tôi đến CLB như thường lệ."
     "Nhưng hôm nay không khí có vẻ căng thẳng lạ thường."
@@ -224,8 +224,10 @@ label ch2_afternoon_activity:
 
 label ch2_gym_event:
     scene bg gym with wipeleft_scene
-    
+    play music gym_theme fadein 1.0
+
     # Increment count
+
     $ stats.gym_count += 1
     
     if stats.gym_count == 1:
@@ -269,6 +271,7 @@ label ch2_gym_event:
 
 label ch2_library_event:
     scene bg library with wipeleft_scene
+    play music library_theme fadein 1.0
     
     # Increment count
     $ stats.lib_count += 1
@@ -326,23 +329,23 @@ label ch2_evening_activity:
 
     menu:
         "Sang phòng Xỉu chơi (Tăng thiện cảm)" if current_day % 2 == 0: # Available on even days
-             scene bg ktx with wipeleft
-             "Tôi sang phòng bà chị Xỉu chơi game."
-             "Tuy thua liểng xiểng nhưng cũng xả được stress."
-             $ stats.modify_doi_song(5)
-             $ gained = stats.modify_relationship("xiu", 3)
-             $ show_stat_change("rel_xiu", gained)
+            scene bg ktx with wipeleft
+            "Tôi sang phòng bà chị Xỉu chơi game."
+            "Tuy thua liểng xiểng nhưng cũng xả được stress."
+            $ stats.modify_doi_song(5)
+            $ gained = stats.modify_relationship("xiu", 3)
+            $ show_stat_change("rel_xiu", gained)
              
         "Nhắn tin hỏi bài Nữ (Tăng thiện cảm)" if current_day % 2 != 0: # Available on odd days
-             "Tôi nhắn tin hỏi chị Nữ về vài thuật ngữ chưa hiểu."
-             "Chị ấy rep khá nhanh và giải thích rất cặn kẽ."
-             $ stats.modify_hoc_tap(5)
-             $ gained = stats.modify_relationship("hainu", 3)
-             $ show_stat_change("rel_hainu", gained)
+            "Tôi nhắn tin hỏi chị Nữ về vài thuật ngữ chưa hiểu."
+            "Chị ấy rep khá nhanh và giải thích rất cặn kẽ."
+            $ stats.modify_hoc_tap(5)
+            $ gained = stats.modify_relationship("hainu", 3)
+            $ show_stat_change("rel_hainu", gained)
              
         "Ngủ sớm (Hồi phục)":
-             "Tôi quyết định ngủ sớm để giữ gìn sức khỏe."
-             $ stats.modify_doi_song(10)
-             $ show_stat_change("doi_song", 10)
+            "Tôi quyết định ngủ sớm để giữ gìn sức khỏe."
+            $ stats.modify_doi_song(10)
+            $ show_stat_change("doi_song", 10)
 
     return

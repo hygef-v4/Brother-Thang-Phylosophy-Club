@@ -31,45 +31,13 @@ init python:
             renpy.unlink_save(savegame)
 
     def delete_character(name):
-        import os
-
-        try:
-            os.remove(config.basedir + "/characters/" + name + ".chr")
-        except:
-            pass
+        pass
 
     def restore_all_characters():
-        try:
-            renpy.file("../characters/monika.chr")
-        except:
-            open(config.basedir + "/characters/monika.chr", "wb").write(renpy.file("monika.chr").read())
-
-        try:
-            renpy.file("../characters/natsuki.chr")
-        except:
-            open(config.basedir + "/characters/natsuki.chr", "wb").write(renpy.file("natsuki.chr").read())
-
-        try:
-            renpy.file("../characters/yuri.chr")
-        except:
-            open(config.basedir + "/characters/yuri.chr", "wb").write(renpy.file("yuri.chr").read())
-
-        try:
-            renpy.file("../characters/sayori.chr")
-        except:
-            open(config.basedir + "/characters/sayori.chr", "wb").write(renpy.file("sayori.chr").read())
+        pass
 
     def restore_relevant_characters():
-        restore_all_characters()
-
-        if persistent.playthrough == 1 or persistent.playthrough == 2:
-            delete_character("sayori")
-        elif persistent.playthrough == 3:
-            delete_character("sayori")
-            delete_character("natsuki")
-            delete_character("yuri")
-        elif persistent.playthrough == 4:
-            delete_character("monika")
+        pass
 
     def pause(time=None):
         global _windows_hidden
@@ -174,6 +142,7 @@ image bg hallway = "bg/hallway.png"  # Custom: Hành lang FPT
 image bg sayori_bedroom = "bg/sayori_bedroom.png"
 image bg house = "bg/house.png"
 image bg kitchen = "bg/kitchen.png"
+image bg bar = "bg/club_night.png"  # Fallback for missing bar image
 image bg notebook = "bg/notebook.png"
 image bg notebook-glitch = "bg/notebook-glitch.png"
 image bg glitch = LiveTile("bg/glitch.jpg")

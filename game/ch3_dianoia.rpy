@@ -170,7 +170,7 @@ label ch3_reflection:
     $ renpy.pause(2.0, hard=True)
     
     scene bg mc_room with dissolve_scene_full
-    play music sad fadein 1.0
+    play music deep_thought fadein 1.0
     
     $ current_day = 13
     

@@ -53,9 +53,9 @@ label ending_explanation(ending_id):
     
     # Title - Red for Bad, White/Gold for others? Let's keep it simple White/Gold styles.
     if ending_id == "dialectical":
-         centered "{size=50}{color=#ffdd00}[box_title]{/color}{/size}"
+        centered "{size=50}{color=#ffdd00}[box_title]{/color}{/size}"
     else:
-         centered "{size=50}{color=#ffffff}[box_title]{/color}{/size}"
+        centered "{size=50}{color=#ffffff}[box_title]{/color}{/size}"
          
     # Philosophy Name
     centered "{size=35}{i}[box_philosophy]{/i}{/size}"

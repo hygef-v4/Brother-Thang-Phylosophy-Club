@@ -135,7 +135,7 @@ label ch4_path_lonely:
 label ending_objective_idealism:
     $ current_day = 15
     scene bg ktx with dissolve_scene_full
-    play music sad fadein 1.0
+    play music deep_thought fadein 1.0
     
     centered "{size=40}Ngày 15{/size}"
     
