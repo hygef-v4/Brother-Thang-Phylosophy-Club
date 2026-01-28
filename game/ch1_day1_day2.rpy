@@ -17,7 +17,7 @@ label ch1_day1_day2:
     scene black
     with dissolve
     
-    centered "{size=40}{color=#ffdd00}CẢ NH 1{/color}{/size}\n{size=24}NHÀ - ĐÊM{/size}"
+    centered "{size=40}{color=#ffdd00}CẢNH 1{/color}{/size}\n{size=24}NHÀ - ĐÊM{/size}"
     
     $ renpy.pause(2.0, hard=True)
     
