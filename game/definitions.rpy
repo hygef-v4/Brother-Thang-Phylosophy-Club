@@ -147,7 +147,9 @@ image bg notebook = "bg/notebook.png"
 image bg notebook-glitch = "bg/notebook-glitch.png"
 image bg glitch = LiveTile("bg/glitch.jpg")
 
-image bg mc_room = "bg/bedroom.png"
+image bg mc_room:
+    "bg/mc_room.jpg"
+    zoom 1.25
 image bg camp_morning = "bg/residential.png"
 image bg cinema = "bg/club_night.png"
 
