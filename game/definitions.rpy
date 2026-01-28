@@ -159,6 +159,7 @@ image bg club_day2:
         "bg/club-skill.png"
 image bg closet = "bg/closet.png"
 image bg bedroom = "bg/bedroom.png"
+image bg fpt_yard = "bg/fpt_yard.png"  # Custom: Sân trường FPT
 image bg sayori_bedroom = "bg/sayori_bedroom.png"
 image bg house = "bg/house.png"
 image bg kitchen = "bg/kitchen.png"

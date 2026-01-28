@@ -89,7 +89,7 @@ label ch1_day1_day2:
     # CẢNH 2: NGÀY 1 (SÂN - SÁNG)
     # ========================================
     
-    scene bg class_day with wipeleft_scene
+    scene bg fpt_yard with wipeleft_scene  # Custom: Sân trường FPT
     
     play music daily_life fadein 1.0
     

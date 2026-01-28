@@ -44,7 +44,7 @@ label ch2_day3:
     # CLB - SÁNG CHIỀU (Philosophy Discussion)
     # ========================================
     
-    scene bg class_day with wipeleft_scene
+    scene bg fpt_yard with wipeleft_scene  # Đi qua sân FPT đến CLB
     
     mc "Buổi đầu tiên có lẽ mình nên đến CLB xem thử…"
     
