@@ -346,7 +346,10 @@ init -501 screen navigation():
                 textbutton _("Lịch Sử") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
                 textbutton _("Lưu Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
 
-            textbutton _("Tải Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+            textbutton _("Tiếp Tục") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+
+            if main_menu:
+                textbutton _("Thành Tựu") action ShowMenu("achievements")
 
             if _in_replay:
                 textbutton _("Kết Thúc Replay") action EndReplay(confirm=True)

@@ -4,6 +4,8 @@
 # Central configuration file - Không hardcode!
 
 init -1 python:
+    if persistent.unlocked_endings is None:
+        persistent.unlocked_endings = set()
     # ========================================
     # GAME METADATA
     # ========================================

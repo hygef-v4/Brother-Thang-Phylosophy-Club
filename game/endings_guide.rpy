@@ -11,6 +11,11 @@ label ending_explanation(ending_id):
     # Pause for dramatic effect
     $ renpy.pause(2.0, hard=True)
     
+    # Unlock the ending
+    if persistent.unlocked_endings is None:
+        $ persistent.unlocked_endings = set()
+    $ persistent.unlocked_endings.add(ending_id)
+    
     # 2. Define Content Map
     if ending_id == "fascist":
         $ box_color = "#ff0000"
