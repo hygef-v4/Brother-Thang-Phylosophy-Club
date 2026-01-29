@@ -84,7 +84,7 @@ define huong = Character(GameConfig.CHAR_HUONG, color="#FFFFFF")
 define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF")  # Now president
 define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF")  # Recruits MC
 define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF")  # Đại Tá
-define narrator = Character(None, kind=nvl)  # Cho narration
+define narrator = Character(None)  # Cho narration
 
 # ========================================
 # AUDIO DEFINITIONS (Tạm sử dụng DDLC audio)

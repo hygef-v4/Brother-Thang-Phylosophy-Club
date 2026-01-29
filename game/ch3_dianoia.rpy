@@ -367,7 +367,7 @@ label ending_fascist:
     "Cuộc chiến kết thúc với sự thống trị của một tên độc tài."
     "Khi ấy, tên độc tài ấy đang trong một bong ke chuẩn bị cho buổi tử hình tập thể các nhà triết gia."
     
-    show mc_dictator at t11 # Nếu có sprite MC độc tài
+    # show mc_dictator at t11 # Nếu có sprite MC độc tài
     
     mc "\"Khi đứng đây thì tôi muốn nói chuyện với bố tôi!\""
     mc "\"Bố ơi, bố ơi, bố thấy đúng khi cho con nghỉ học chưa.\""

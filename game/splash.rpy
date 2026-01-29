@@ -79,26 +79,7 @@ image menu_logo:
     zoom 0.25
     menu_logo_move
 
-image menu_particles:
-    block:
-        ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=35, particleTime=5.0, particleXSpeed=4, particleYSpeed=3).sm
-        alpha 0.6
-        5.0
-        repeat
 
-image menu_particles_slow:
-    block:
-        ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=25, particleTime=7.0, particleXSpeed=2, particleYSpeed=2).sm
-        alpha 0.5
-        7.0
-        repeat
-
-image menu_particles_fast:
-    block:
-        ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=30, particleTime=3.5, particleXSpeed=6, particleYSpeed=4).sm
-        alpha 0.7
-        3.5
-        repeat
 
 transform particle_fadeout:
     easeout 1.5 alpha 0
@@ -194,51 +175,19 @@ label splashscreen:
             except:
                 pass
 
-    python:
-        firstrun = ""
-
-        try:
-            firstrun = renpy.file("firstrun").read(1)
-        except:
-            with open(config.basedir + "/game/firstrun", "wb") as f:
-                pass
-
-    if not firstrun:
-        if persistent.first_run and (config.version == persistent.oldversion or persistent.autoload == "postcredits_loop"):
-            # Quick menu enabled for ESC access
-
-            scene black
-
-            menu:
-
-                "A previous save file has been found. Would you like to delete your save data and start over?"
-
-                "Yes, delete my existing data.":
-
-                    "Deleting save data...{nw}"
-
-                    python:
-                        delete_all_saves()
-                        renpy.loadsave.location.unlink_persistent()
-                        renpy.persistent.should_save_persistent = False
-                        renpy.utter_restart()
-
-                "No, continue where I left off.":
-
-                    $ restore_relevant_characters()
-
-        python:
-            if not firstrun:
-                try:
-                    with open(config.basedir + "/game/firstrun", "w") as f:
-                        f.write("1")
-                except:
-                    renpy.jump("readonly")
-
+    # First run check using persistent only
+    if not persistent.first_run:
+        $ quick_menu = False
+        scene black
+        
+        # Show TOS or warning directly
+        
+    # Check for version update
     if config.version != persistent.oldversion:
-        $ restore_relevant_characters()
         $ persistent.oldversion = config.version
         $ renpy.save_persistent()
+
+
 
     if not persistent.first_run:
         python:
@@ -277,25 +226,11 @@ label splashscreen:
         scene white
 
 
-    # Character file checks removed for philosophy focus
 
-    if not persistent.special_poems:
-        python hide:
-            persistent.special_poems = [0,0,0]
-
-            a = range(1,12)
-
-            for i in range(3):
-                b = renpy.random.choice(a)
-
-                persistent.special_poems[i] = b
-
-                a.remove(b)
 
     $ basedir = config.basedir.replace('\\', '/')
 
-    if persistent.autoload:
-        jump autoload
+
 
     $ config.allow_skipping = True  # Always allow skipping
 
@@ -344,34 +279,7 @@ label after_load:
 
     return
 
-label autoload:
 
-    python:
-        if "_old_game_menu_screen" in globals():
-            _game_menu_screen = _old_game_menu_screen
-
-            del _old_game_menu_screen
-
-        if "_old_history" in globals():
-            _history = _old_history
-
-            del _old_history
-
-        renpy.block_rollback()
-
-        renpy.context()._menu = False
-        renpy.context()._main_menu = False
-        main_menu = False
-        _in_replay = None
-
-    # Yuri kill removed for philosophy focus
-
-    if renpy.get_return_stack():
-        $ renpy.pop_call()
-
-    jump expression persistent.autoload
-
-# autoload_yurikill removed for philosophy focus
 
 label before_main_menu:
 
@@ -383,15 +291,5 @@ label quit:
 
     return
 
-label readonly:
 
-    scene black
-
-    "The game cannot be run because you are trying to run it from a read-only location."
-
-    "Please copy the DDLC application to your desktop or other accessible location and try again."
-
-    $ renpy.quit()
-
-    return
 

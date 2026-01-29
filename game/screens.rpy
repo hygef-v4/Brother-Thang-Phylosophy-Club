@@ -110,7 +110,7 @@ init -1 style vslider:
 
 init -1 style frame:
     padding gui.frame_borders.padding
-    background Frame(mw_frame, gui.frame_borders, tile=gui.frame_tile)
+    background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
 init -501 screen say(who, what):
     style_prefix "say"
@@ -147,7 +147,7 @@ init -1 style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
     # Restore patterned textbox ("họa tiết")
-    background Frame(mw_textbox, 20, 20)
+    background Frame("textbox_blue", 20, 20)
 
 # init -1 style window_monika is window:
 #    background Image("gui/textbox_monika.png", xalign=0.5, yalign=1.0)
@@ -158,7 +158,7 @@ init -1 style namebox:
     xsize gui.namebox_width
     ypos gui.name_ypos
     ysize gui.namebox_height
-    background Frame(mw_namebox, gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    background Frame("namebox_blue", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 init -1 style say_label:
@@ -177,11 +177,13 @@ init -1 style say_dialogue:
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
     text_align gui.dialogue_text_xalign
-    layout ("subtitle" if gui.dialogue_text_xalign else "tex")
-    line_spacing 16
+    layout "subtitle"
+    line_spacing 10
+    line_overlap_split 0
     color "#ffffff"
-    # Black outline ("text viền đen") as requested
-    outlines [(2, "#000000", 0, 0), (2, "#000000", 1, 1), (1, "#000000", 2, 2)]
+    # Simplified outline as recommended to prevent bounding box overlap
+    outlines [(2, "#000")]
+    slow_cps 30
     language "unicode"
 
 init 499 image ctc:
@@ -388,7 +390,7 @@ init -501 screen main_menu():
         add "menu_art_y_ghost"
         add "menu_art_n_ghost"
     else:
-        add "menu_bg"
+        add "menu_bg_blue"
         add "menu_art_y"
         add "menu_art_n"
         frame
@@ -402,9 +404,6 @@ init -501 screen main_menu():
                 style "main_menu_version"
 
     if not persistent.ghost_menu:
-        add "menu_particles_slow"
-        add "menu_particles"
-        add "menu_particles_fast"
         add "menu_logo"
 
     if persistent.ghost_menu:
@@ -527,7 +526,7 @@ init -1 style return_button_text is navigation_button_text
 init -1 style game_menu_outer_frame:
     bottom_padding 30
     top_padding 120
-    background overlay_game_menu
+    background "overlay_game_menu_blue"
 
 init -1 style game_menu_navigation_frame:
     xsize 280
