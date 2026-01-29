@@ -4,6 +4,12 @@
 
 label start:
     # Entry point của game
+    # Reset characters and styles to ensure clean state for New Game
+    $ restore_all_characters()
+    $ style.say_dialogue = style.normal
+    $ config.allow_skipping = True
+    $ _dismiss_pause = config.developer
+
     # Call Chapter 1 Day 1+2
     call ch1_day1_day2
     
