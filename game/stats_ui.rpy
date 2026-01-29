@@ -13,7 +13,7 @@ screen stats_display():
         xalign 0.985
         yalign 0.03
         xsize 145  # More compact
-        ymaximum 280  # Much shorter without relationships
+        ymaximum 380  # Increased to fit new stats
         # Slightly more visible glassmorphism
         background Solid("#ffffff12")  # A bit more visible
         padding (6, 6)
@@ -68,6 +68,36 @@ screen stats_display():
                     left_gutter 0
                     right_gutter 0
                 text "[stats.doi_song]" size 8 color "#ffffffcc" outlines [(1, "#00000030", 0, 1)]
+            
+            # Vũ Hải Nữ
+            vbox:
+                spacing 1
+                text "Vũ Hải Nữ" size 9 color "#ffffffdd" outlines [(1, "#00000035", 0, 1)]
+                bar:
+                    value stats.rel_hainu
+                    range 100
+                    xsize 120
+                    ysize 4
+                    left_bar Solid("#f48fb1dd")  # Pink
+                    right_bar Solid("#00000000")
+                    left_gutter 0
+                    right_gutter 0
+                text "[stats.rel_hainu]" size 8 color "#ffffffcc" outlines [(1, "#00000030", 0, 1)]
+            
+            # Võ Minh Xỉu
+            vbox:
+                spacing 1
+                text "Võ Minh Xỉu" size 9 color "#ffffffdd" outlines [(1, "#00000035", 0, 1)]
+                bar:
+                    value stats.rel_xiu
+                    range 100
+                    xsize 120
+                    ysize 4
+                    left_bar Solid("#ffcc80dd")  # Orange
+                    right_bar Solid("#00000000")
+                    left_gutter 0
+                    right_gutter 0
+                text "[stats.rel_xiu]" size 8 color "#ffffffcc" outlines [(1, "#00000030", 0, 1)]
             
             # Tiền - minimal
             vbox:
