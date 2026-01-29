@@ -149,8 +149,8 @@ init -1 style window:
     # Restore patterned textbox ("họa tiết")
     background Frame(mw_textbox, 20, 20)
 
-init -1 style window_monika is window:
-    background Image("gui/textbox_monika.png", xalign=0.5, yalign=1.0)
+# init -1 style window_monika is window:
+#    background Image("gui/textbox_monika.png", xalign=0.5, yalign=1.0)
 
 init -1 style namebox:
     xpos gui.name_xpos
