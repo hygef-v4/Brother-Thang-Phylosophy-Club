@@ -41,7 +41,7 @@ label ch4_path_both:
     "Điện thoại rung."
     "VÕ MINH XỈU: <Ây cu. Tới CLB tí đi. Có việc.>"
     
-    scene bg club_night with fade
+    scene bg club_party with fade
     play music t3 fadein 1.0
     
     "Giữa phòng trưng một băng rôn Happy Birthday (Sớm)."
@@ -138,7 +138,7 @@ label ch4_path_hainu:
     
     "Điện thoại rung. Hải Nữ gọi lên CLB."
     
-    scene bg club_night with fade
+    scene bg club_party with fade
     play music t7 fadein 1.0 # Yuri (Hainu)
     
     "Giữa phòng trưng một băng rôn Happy Birthday."
@@ -259,7 +259,7 @@ label ending_subjective_idealism_xiu:
 
 label ending_metaphysical_materialism:
     $ current_day = 15
-    scene bg mc_room with fade # Nhà
+    scene bg living_room with fade # Nhà
     play music t1 fadein 1.0 # Normal daily life
     
     centered "{size=40}Ngày 15{/size}"
@@ -301,7 +301,7 @@ label ending_metaphysical_materialism:
 
 label ending_dialectical_materialism:
     $ current_day = 15
-    scene bg mc_room with fade
+    scene bg living_room with fade
     play music t6 fadein 1.0 # Argument/Tension
     
     centered "{size=40}Ngày 15{/size}"

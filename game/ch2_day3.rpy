@@ -419,7 +419,7 @@ label ch2_evening_activity:
     menu:
         # Text 322-329 (Xiu KTX logic)
         "Sang phòng Xỉu chơi (Tăng thiện cảm)" if current_day % 2 == 0:
-            scene bg ktx with wipeleft
+            scene bg ktx_xiu_room with wipeleft
             
             stop music fadeout 1.0
             play music t5 fadein 1.0 # Playful

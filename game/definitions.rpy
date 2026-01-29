@@ -174,6 +174,10 @@ image bg kitchen = "bg/kitchen.png"
 image bg bar = "bg/bar.png"  # Custom: Quầy bar/quán nhậu
 image bg sota = "bg/sota.png"  # Custom: Khu quân sự
 image bg cinema = "bg/cinema.png"  # Custom: Rạp chiếu phim
+image bg living_room = "bg/living_room.png"  # Custom: Phòng khách nhà MC
+image bg club_party = "bg/club_party.png"  # Custom: CLB trang trí tiệc sinh nhật
+image bg ktx_xiu_room = "bg/ktx_xiu_room.png"  # Custom: Phòng của Xỉu
+image bg club_messy = "bg/club_messy.png"  # Custom: CLB lộn xộn giấy tờ
 image bg notebook = "bg/notebook.png"
 
 image bg glitch = LiveTile("bg/glitch.jpg")

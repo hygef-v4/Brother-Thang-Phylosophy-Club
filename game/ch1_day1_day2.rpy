@@ -588,7 +588,7 @@ label ch1_day1_day2:
     mc "\"Thôi chết, chìa khoá đâu rồi?\""
     mc "\"Hình như mình để quên trên phòng CLB rồi.\""
     
-    scene bg club_night with fade  # Tối - CLB vẫn đèn sáng
+    scene bg club_messy with fade  # CLB lộn xộn giấy tờ
     play music t7 fadein 1.0 # Yuri theme
     
     "Phòng CLB vẫn sáng đèn."
