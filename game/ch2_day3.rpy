@@ -197,7 +197,7 @@ label ch2_day_start:
     centered "{size=40}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
 
-    scene bg mc_room with dissolve_scene_full
+    scene bg ktx_day with dissolve_scene_full
     play music daily_life fadein 1.0
     
     # Daily logic: regen stats

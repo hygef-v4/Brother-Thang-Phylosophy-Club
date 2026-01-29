@@ -165,12 +165,15 @@ image bg canteen = "bg/canteen.png"  # Custom: Canteen FPT
 image bg club_day = "bg/club_day.png"  # Custom: Phòng CLB - ban ngày
 image bg club_night = "bg/club_night.png"  # Custom: Phòng CLB - tối
 image bg library = "bg/library.png"  # Custom: Thư viện FPT
-image bg ktx = "bg/ktx.png"  # Custom: Ký túc xá FPT
+image bg ktx = "bg/ktx.png"  # Custom: Ký túc xá FPT - ban đêm/tối
+image bg ktx_day = "bg/ktx_day.png"  # Custom: Ký túc xá FPT - ban ngày (khi MC tỉnh dậy)
 image bg hallway = "bg/hallway.png"  # Custom: Hành lang FPT
 image bg sayori_bedroom = "bg/sayori_bedroom.png"
 image bg house = "bg/house.png"
 image bg kitchen = "bg/kitchen.png"
-image bg bar = "bg/club_night.png"  # Fallback for missing bar image
+image bg bar = "bg/bar.png"  # Custom: Quầy bar/quán nhậu
+image bg sota = "bg/sota.png"  # Custom: Khu quân sự
+image bg cinema = "bg/cinema.png"  # Custom: Rạp chiếu phim
 image bg notebook = "bg/notebook.png"
 
 image bg glitch = LiveTile("bg/glitch.jpg")
@@ -178,8 +181,6 @@ image bg glitch = LiveTile("bg/glitch.jpg")
 image bg mc_room:
     "bg/mc_room.jpg"
     zoom 1.25
-image bg camp_morning = "bg/residential.png"
-image bg cinema = "bg/club_night.png"
 
 image glitch_color:
     ytile 3

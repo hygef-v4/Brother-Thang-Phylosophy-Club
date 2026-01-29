@@ -35,7 +35,7 @@ label ch4_noesis:
         jump ch4_path_lonely
 
 label ch4_path_both:
-    scene bg ktx with wipeleft_scene
+    scene bg ktx_day with wipeleft_scene
     play music daily_life fadein 1.0
     
     "Điện thoại rung."
@@ -95,7 +95,7 @@ label ch4_path_both:
             jump ending_dialectical_materialism
 
 label ch4_path_xiu:
-    scene bg ktx with wipeleft_scene
+    scene bg ktx_day with wipeleft_scene
     play music daily_life fadein 1.0
     
     show monika 1a at t11
@@ -133,7 +133,7 @@ label ch4_path_xiu:
             jump ending_metaphysical_materialism
 
 label ch4_path_hainu:
-    scene bg ktx with wipeleft_scene
+    scene bg ktx_day with wipeleft_scene
     play music daily_life fadein 1.0
     
     "Điện thoại rung. Hải Nữ gọi lên CLB."
@@ -176,7 +176,7 @@ label ch4_path_hainu:
             jump ending_objective_idealism
 
 label ch4_path_lonely:
-    scene bg ktx with fade
+    scene bg ktx_day with fade
     "Ngày sinh nhật đến gần, nhưng tôi cảm thấy trống trải."
     "Có lẽ mình nên về nhà xin lỗi bố..."
     

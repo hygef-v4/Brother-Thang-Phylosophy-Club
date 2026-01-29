@@ -22,7 +22,7 @@ label ch3_dianoia:
     # NGÀY 10: BIẾN CỐ (BỐ GỌI & TRẠI QUÂN SỰ)
     # ========================================
     
-    scene bg mc_room with dissolve_scene_full
+    scene bg ktx_day with dissolve_scene_full
     play music t2 fadein 1.0
     
     "Sáng ngày thứ 10."
@@ -35,7 +35,7 @@ label ch3_dianoia:
     mc "\"Đang yên đang lành sao tự nhiên bố lại bảo đi lính?\""
     mc "\"Thôi thì đến hỏi cho ra lẽ vậy.\""
     
-    scene bg camp_morning with wipeleft_scene # Cần BG trại lính
+    scene bg sota with wipeleft_scene # Trại quân sự
     stop music fadeout 2.0
     play music t10 fadein 2.0 # Ominous/Strict
     
@@ -104,7 +104,7 @@ label ch3_day10_night:
     $ renpy.pause(1.5, hard=True)
     $ current_day = 11
 
-    scene bg mc_room with dissolve_scene_full
+    scene bg ktx_day with dissolve_scene_full
     
     "Điện thoại rung."
     
@@ -129,7 +129,7 @@ label ch3_day11_xiu_drunk:
             mc "\"Mà thôi... Chị ấy mời nhiệt tình thế mà.\""
             pass
 
-    scene bg bar with wipeleft_scene # Cần BG quán rượu hoặc quán vỉa hè
+    scene bg bar with wipeleft_scene # Quán bar/nhậu
     play music t3 fadein 1.0
     
     "Đến quán nhậu Xỉu gửi, thấy đàn chị đang say khướt."
@@ -246,7 +246,7 @@ label ch3_day11_hainu_movie:
         "\<Em cũng muốn đi lắm… Cơ mà tài khoản em lại không cho phép…\>":
             mc "Nhưng rồi Hải Nữ nhắn lại: <Tôi bao.>"
     
-    scene bg cinema with wipeleft_scene # Cần BG rạp phim
+    scene bg cinema with wipeleft_scene # Rạp phim
     play music t7 fadein 1.0 # Yuri theme (Intellectual/Romance)
     
     "Đến rạp chiếu phim cùng Hội Trưởng để xem phim “The Truman Show”."
@@ -331,7 +331,7 @@ label ch3_reflection:
     centered "{size=40}Ngày 12 & 13{/size}"
     $ renpy.pause(2.0, hard=True)
     
-    scene bg mc_room with dissolve_scene_full
+    scene bg ktx_day with dissolve_scene_full
     play music t4 fadein 1.0 # Monika theme (Piano/Thinking)
     
     $ current_day = 13
@@ -360,7 +360,7 @@ label ending_fascist:
     centered "{size=40}Nhiều năm sau...{/size}"
     $ renpy.pause(2.0, hard=True)
     
-    scene bg camp_morning with fade # Cần BG trại lính hoặc tương tự
+    scene bg sota with fade # Trại quân sự
     play music t10 fadein 1.0
     
     "Mấy chục năm sau, thế giới bước qua cuộc Chiến tranh Thế Giới thứ 3."
