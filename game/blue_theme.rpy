@@ -18,9 +18,16 @@ init -1:
     # Overlays
     image overlay_game_menu_blue = Transform("gui/overlay/game_menu.png", matrixcolor=HueMatrix(240))
     image overlay_main_menu_blue = Transform("gui/overlay/main_menu.png", matrixcolor=HueMatrix(240))
+    image menu_nav_blue:
+        Transform("gui/overlay/main_menu.png", matrixcolor=HueMatrix(240))
+        menu_nav_move
 
     # Choice button backgrounds
     image choice_hover_blue = Transform("gui/button/choice_hover_background.png", matrixcolor=HueMatrix(240))
+
+    # Slot button backgrounds
+    image slot_idle_blue = Transform("gui/button/slot_idle_background.png", matrixcolor=HueMatrix(240))
+    image slot_hover_blue = Transform("gui/button/slot_hover_background.png", matrixcolor=HueMatrix(240))
 
     # Menu Particles
     image menu_particles:

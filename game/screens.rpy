@@ -438,7 +438,7 @@ init -1 style main_menu_version is main_menu_text:
 init -1 style main_menu_frame:
     xsize 310
     yfill True
-    background "menu_nav"
+    background "menu_nav_blue"
 
 init -1 style main_menu_vbox:
     xalign 1.0
@@ -592,7 +592,7 @@ init -501 screen save():
 
 init -501 screen load():
     tag menu
-    use file_slots(_("Tải Game"))
+    use file_slots(_("Tiếp Tục"))
 
 init -1 python:
     def FileActionMod(name, page=None, **kwargs):
@@ -671,6 +671,9 @@ init -1 style page_button_text:
 
 init -1 style slot_button:
     properties gui.button_properties("slot_button")
+    idle_background Frame("slot_idle_blue", gui.slot_button_borders)
+    hover_background Frame("slot_hover_blue", gui.slot_button_borders)
+    insensitive_background Frame("slot_idle_blue", gui.slot_button_borders)
 
 init -1 style slot_button_text:
     properties gui.button_text_properties("slot_button")
