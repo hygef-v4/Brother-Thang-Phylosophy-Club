@@ -451,3 +451,31 @@ transform malpha(a=1.00):
     i11
     alpha a
 
+# Animated particles for main menu background
+transform particles_move_1:
+    subpixel True
+    xoffset 0 yoffset 0
+    block:
+        linear 30.0 xoffset 50 yoffset -30
+        linear 30.0 xoffset -50 yoffset 30
+        linear 30.0 xoffset 0 yoffset 0
+        repeat
+
+transform particles_move_2:
+    subpixel True
+    xoffset 0 yoffset 0
+    block:
+        linear 25.0 xoffset -40 yoffset 40
+        linear 25.0 xoffset 40 yoffset -20
+        linear 25.0 xoffset 0 yoffset 0
+        repeat
+
+transform particles_move_3:
+    subpixel True
+    xoffset 0 yoffset 0
+    block:
+        linear 35.0 xoffset 30 yoffset 50
+        linear 35.0 xoffset -30 yoffset -50
+        linear 35.0 xoffset 0 yoffset 0
+        repeat
+

@@ -4,6 +4,8 @@
 # Central configuration file - Không hardcode!
 
 init -1 python:
+    if persistent.unlocked_endings is None:
+        persistent.unlocked_endings = set()
     # ========================================
     # GAME METADATA
     # ========================================
@@ -78,13 +80,13 @@ default current_time_slot = "morning"
 # ========================================
 # DEFINE CHARACTERS
 # ========================================
-define mc = Character("[mc_name]", color="#FFFFFF", what_prefix='"', what_suffix='"')
+define mc = Character("[mc_name]", color="#FFFFFF")
 # define ischyros - REMOVED: character no longer exists in new story
-define huong = Character(GameConfig.CHAR_HUONG, color="#FFFFFF", what_prefix='"', what_suffix='"')
-define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF", what_prefix='"', what_suffix='"')  # Now president
-define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF", what_prefix='"', what_suffix='"')  # Recruits MC
-define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF", what_prefix='"', what_suffix='"')  # Đại Tá
-define narrator = Character(None, kind=nvl)  # Cho narration
+define huong = Character(GameConfig.CHAR_HUONG, color="#FFFFFF")
+define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF")  # Now president
+define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF")  # Recruits MC
+define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF")  # Đại Tá
+define narrator = Character(None)  # Cho narration
 
 # ========================================
 # AUDIO DEFINITIONS (Tạm sử dụng DDLC audio)
@@ -100,3 +102,12 @@ define audio.sad = "<loop 9.938>bgm/8.ogg"
 # SFX
 define audio.phone_ring = "sfx/fall.ogg"  # Placeholder
 define audio.notification = "sfx/pageflip.ogg"  # Placeholder
+define audio.love_theme = "<loop 5.861>bgm/10.ogg"
+define audio.happy = "<loop 4.444>bgm/5.ogg"
+
+# New Varied Tracks
+define audio.library_theme = "<loop 4.499>bgm/4.ogg"  # Calm / Study
+define audio.gym_theme = "<loop 4.444>bgm/5.ogg"     # Upbeat / Active (Same as happy for now, or 5_monika)
+define audio.argument = "<loop 4.444>bgm/6.ogg"       # Tense / Debate (Poem Panic)
+define audio.deep_thought = "<loop 4.444>bgm/9.ogg"   # Sad / Introspective (My Feelings)
+define audio.ending_sad = "<loop 4.444>bgm/10.ogg"    # Very sad / Ending (I Still Love You)

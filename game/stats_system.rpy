@@ -25,6 +25,13 @@ init -1 python:
             self.met_hainu = False
             self.met_xiu = False
             
+            # Activity Counters (For Daily Progression)
+            self.gym_count = 0
+            self.lib_count = 0
+            
+            # Unlockables
+            self.unlocked_dialectics = False  # True Ending condition (Library Level 4+)
+            
         def clamp(self, value, min_val, max_val):
             """Clamp value giữa min và max"""
             return max(min_val, min(max_val, value))
@@ -176,10 +183,9 @@ init python:
         
         stat_display = {
             "hoc_tap": "Học tập",
-            "doi_song": "Đời sống",
+            "doi_song": "Sức khỏe",
             "tien": "Tiền",
-            # "rel_ischyros": "❤ Ischyros",  # REMOVED
-            "rel_huong": "❤ Hương",
+
             "rel_hainu": "❤ Hải Nữ",
             "rel_xiu": "❤ Xỉu"
         }

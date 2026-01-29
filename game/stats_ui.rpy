@@ -8,98 +8,72 @@ screen stats_display():
     tag stats_ui
     zorder 50  # Lower than quick_menu (which is zorder 100)
     
-    # Main container
+    # Main container - ultra minimal glassmorphism
     frame:
-        xalign 0.98
-        yalign 0.02
-        xsize 250
-        ymaximum 550  # Limit height to not cover quick menu at bottom
-        background Frame(mw_frame, 10, 10)
-        padding (15, 15)
+        xalign 0.985
+        yalign 0.03
+        xsize 145  # More compact
+        ymaximum 280  # Much shorter without relationships
+        # Slightly more visible glassmorphism
+        background Solid("#ffffff12")  # A bit more visible
+        padding (6, 6)
         
         vbox:
-            spacing 10
+            spacing 5
             
-            # Header
-            text "STATS" size 24 bold True xalign 0.5 color "#ffffff"
+            # Very subtle header
+            text "Thông số":
+                size 12
+                xalign 0.5
+                color "#ffffff"  # Pure white, more visible
+                outlines [(1, "#00000040", 0, 1)]  # Slightly stronger shadow
             
-            null height 5
+            null height 2
             
-            # Ngày
+            # Day - minimal
             hbox:
-                spacing 5
-                text "Ngày:" size 18 color "#aaaaaa"
-                text "[current_day]" size 18 bold True color "#ffff00"
+                spacing 3
+                text "Ngày" size 9 color "#ffffffdd" outlines [(1, "#00000030", 0, 1)]
+                text "[current_day]" size 10 bold True color "#e3f2fd" outlines [(1, "#00000040", 0, 1)]
             
-            null height 10
+            null height 4
             
+            # Stats - ultra thin, short bars
             # Học tập
             vbox:
-                spacing 3
-                text "Học tập" size 16 color "#00ccff"
+                spacing 1
+                text "Học tập" size 9 color "#ffffffdd" outlines [(1, "#00000035", 0, 1)]
                 bar:
                     value stats.hoc_tap
                     range 100
-                    xsize 220
-                    left_bar Frame(mw_bar_left, 4, 4)
-                    right_bar Frame(mw_bar_right, 4, 4)
-                text "[stats.hoc_tap]/100" size 14 color "#ffffff"
+                    xsize 120
+                    ysize 4
+                    left_bar Solid("#90caf9dd")
+                    right_bar Solid("#00000000")
+                    left_gutter 0
+                    right_gutter 0
+                text "[stats.hoc_tap]" size 8 color "#ffffffcc" outlines [(1, "#00000030", 0, 1)]
             
-            # Sức khỏe (Đời sống)
+            # Sức khỏe
             vbox:
-                spacing 3
-                text "Sức khỏe" size 16 color "#00ff88"
+                spacing 1
+                text "Sức khỏe" size 9 color "#ffffffdd" outlines [(1, "#00000035", 0, 1)]
                 bar:
                     value stats.doi_song
                     range 100
-                    xsize 220
-                    left_bar Frame(mw_bar_left, 4, 4)
-                    right_bar Frame(mw_bar_right, 4, 4)
-                text "[stats.doi_song]/100" size 14 color "#ffffff"
+                    xsize 120
+                    ysize 4
+                    left_bar Solid("#80cbc4dd")
+                    right_bar Solid("#00000000")
+                    left_gutter 0
+                    right_gutter 0
+                text "[stats.doi_song]" size 8 color "#ffffffcc" outlines [(1, "#00000030", 0, 1)]
             
-            # Tiền
+            # Tiền - minimal
             vbox:
-                spacing 3
-                text "Tiền" size 16 color "#ffdd00"
-                text "{size=14}[stats.tien:,] VNĐ{/size}" color "#ffffff"
-            
-            null height 10
-            
-            # Tình cảm (chỉ hiển thị nếu đã gặp)
-            # Ischyros relationship REMOVED - character no longer exists
-            
-            if stats.met_huong:
-                vbox:
-                    spacing 2
-                    text "❤ Hương" size 14 color "#33ccff"
-                    bar:
-                        value stats.rel_huong
-                        range 100
-                        xsize 220
-                        left_bar Frame("gui/bar/left.png", 4, 4)
-                        right_bar Frame("gui/bar/right.png", 4, 4)
-            
-            if stats.met_hainu:
-                vbox:
-                    spacing 2
-                    text "❤ Hải Nữ" size 14 color "#9966ff"
-                    bar:
-                        value stats.rel_hainu
-                        range 100
-                        xsize 220
-                        left_bar Frame("gui/bar/left.png", 4, 4)
-                        right_bar Frame("gui/bar/right.png", 4, 4)
-            
-            if stats.met_xiu:
-                vbox:
-                    spacing 2
-                    text "❤ Xỉu" size 14 color "#ffcc00"
-                    bar:
-                        value stats.rel_xiu
-                        range 100
-                        xsize 220
-                        left_bar Frame("gui/bar/left.png", 4, 4)
-                        right_bar Frame("gui/bar/right.png", 4, 4)
+                spacing 1
+                text "Tiền" size 9 color "#ffffffdd" outlines [(1, "#00000035", 0, 1)]
+                text "[stats.tien:,]₫" size 8 color "#fff9c4" outlines [(1, "#00000035", 0, 1)]
 
 
 # Coming Soon screen

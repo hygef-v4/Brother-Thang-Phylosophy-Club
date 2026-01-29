@@ -110,19 +110,24 @@ init -1 style vslider:
 
 init -1 style frame:
     padding gui.frame_borders.padding
-    background Frame(mw_frame, gui.frame_borders, tile=gui.frame_tile)
+    background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
 init -501 screen say(who, what):
     style_prefix "say"
 
     window:
         id "window"
+        xsize int(config.screen_width * 0.7)  # 70% width
+        xalign 0.5  # Centered
         text what id "what"
 
         if who is not None:
             window:
                 style "namebox"
                 text who id "who"
+
+        # Separator line: Soft blue
+        add Solid("#81d4fa") xalign 0.5 yalign 0.77 xsize 0.7 ysize 1 alpha 0.5
 
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
@@ -138,13 +143,14 @@ init -1 style namebox_label is say_label
 
 init -1 style window:
     xalign 0.5
-    xfill True
+    xsize 1350  # 75% of 1920 = narrower textbox
     yalign gui.textbox_yalign
     ysize gui.textbox_height
-    background Frame(mw_textbox, 20, 20)
+    # Restore patterned textbox ("họa tiết")
+    background Frame("textbox_blue", 20, 20)
 
-init -1 style window_monika is window:
-    background Image("gui/textbox_monika.png", xalign=0.5, yalign=1.0)
+# init -1 style window_monika is window:
+#    background Image("gui/textbox_monika.png", xalign=0.5, yalign=1.0)
 
 init -1 style namebox:
     xpos gui.name_xpos
@@ -152,16 +158,18 @@ init -1 style namebox:
     xsize gui.namebox_width
     ypos gui.name_ypos
     ysize gui.namebox_height
-    background Frame(mw_namebox, gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    background Frame("namebox_blue", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 init -1 style say_label:
-    color gui.accent_color
+    # White text like DDLC
+    color "#ffffff" 
     font gui.name_font
     size gui.name_text_size
     xalign gui.name_xalign
     yalign 0.5
-    outlines [(3, "#0288d1", 0, 0), (1, "#0288d1", 1, 1)]
+    # Light blue outline - thin and clean like DDLC
+    outlines [(2, "#29b6f6", 0, 0)]
 
 init -1 style say_dialogue:
     xpos gui.dialogue_xpos
@@ -169,10 +177,13 @@ init -1 style say_dialogue:
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
     text_align gui.dialogue_text_xalign
-    layout ("subtitle" if gui.dialogue_text_xalign else "tex")
-    line_spacing 16
-    color "#FFFFFF"
-    outlines []
+    layout "subtitle"
+    line_spacing 10
+    line_overlap_split 0
+    color "#ffffff"
+    # Simplified outline as recommended to prevent bounding box overlap
+    outlines [(2, "#000")]
+    slow_cps 30
     language "unicode"
 
 init 499 image ctc:
@@ -234,6 +245,9 @@ init -1 style choice_button is default:
     properties gui.button_properties("choice_button")
     hover_sound gui.hover_sound
     activate_sound gui.activate_sound
+    # Blue backgrounds - created directly instead of using PNG
+    idle_background Frame(Solid("#e3f2fd"), gui.choice_button_borders)
+    hover_background Frame(Solid("#42a5f5"), gui.choice_button_borders)
 
 init -1 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
@@ -271,6 +285,9 @@ init -1 style choice_button is default:
     properties gui.button_properties("choice_button")
     hover_sound gui.hover_sound
     activate_sound gui.activate_sound
+    # Blue backgrounds - same as above
+    idle_background Frame(Solid("#e3f2fd"), gui.choice_button_borders)
+    hover_background Frame(Solid("#42a5f5"), gui.choice_button_borders)
 
 init -1 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
@@ -329,7 +346,10 @@ init -501 screen navigation():
                 textbutton _("Lịch Sử") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
                 textbutton _("Lưu Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
 
-            textbutton _("Tải Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+            textbutton _("Tiếp Tục") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+
+            if main_menu:
+                textbutton _("Thành Tựu") action ShowMenu("achievements")
 
             if _in_replay:
                 textbutton _("Kết Thúc Replay") action EndReplay(confirm=True)
@@ -373,9 +393,10 @@ init -501 screen main_menu():
         add "menu_art_y_ghost"
         add "menu_art_n_ghost"
     else:
-        add "menu_bg"
+        add "menu_bg_blue"
         add "menu_art_y"
-        add "menu_art_n"
+        add "menu_art_dad"
+        add "menu_art_m"
         frame
         use navigation
 
@@ -387,24 +408,12 @@ init -501 screen main_menu():
                 style "main_menu_version"
 
     if not persistent.ghost_menu:
-        add "menu_particles"
-        add "menu_particles"
-        add "menu_particles"
         add "menu_logo"
 
     if persistent.ghost_menu:
-        add "menu_art_s_ghost"
         add "menu_art_m_ghost"
     else:
-        if persistent.playthrough == 1 or persistent.playthrough == 2:
-            add "menu_art_s_glitch"
-        else:
-            add "menu_art_s"
-
         add "menu_particles"
-
-        if persistent.playthrough != 4:
-            add "menu_art_m"
         add "menu_fade"
 
     key "K_ESCAPE" action Quit(confirm=False)
@@ -421,7 +430,7 @@ init -1 style main_menu_version is main_menu_text:
 init -1 style main_menu_frame:
     xsize 310
     yfill True
-    background "menu_nav"
+    background "menu_nav_blue"
 
 init -1 style main_menu_vbox:
     xalign 1.0
@@ -512,7 +521,7 @@ init -1 style return_button_text is navigation_button_text
 init -1 style game_menu_outer_frame:
     bottom_padding 30
     top_padding 120
-    background overlay_game_menu
+    background "overlay_game_menu_blue"
 
 init -1 style game_menu_navigation_frame:
     xsize 280
@@ -575,7 +584,7 @@ init -501 screen save():
 
 init -501 screen load():
     tag menu
-    use file_slots(_("Tải Game"))
+    use file_slots(_("Tiếp Tục"))
 
 init -1 python:
     def FileActionMod(name, page=None, **kwargs):
@@ -654,6 +663,9 @@ init -1 style page_button_text:
 
 init -1 style slot_button:
     properties gui.button_properties("slot_button")
+    idle_background Frame("slot_idle_blue", gui.slot_button_borders)
+    hover_background Frame("slot_hover_blue", gui.slot_button_borders)
+    insensitive_background Frame("slot_idle_blue", gui.slot_button_borders)
 
 init -1 style slot_button_text:
     properties gui.button_text_properties("slot_button")
@@ -927,7 +939,7 @@ init -501 screen confirm(message, yes_action, no_action):
     modal True
     zorder 200
     style_prefix "confirm"
-    add "gui/overlay/confirm.png"
+    add Solid("#64b5f680")  # Semi-transparent blue overlay
 
     frame:
         has vbox:
@@ -950,14 +962,14 @@ init -1 style confirm_button is gui_medium_button
 init -1 style confirm_button_text is gui_medium_button_text
 
 init -1 style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
+    background Frame(Solid("#e3f2fd"), gui.confirm_frame_borders, tile=gui.frame_tile)  # Light blue background
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
 
 init -1 style confirm_prompt_text:
     color "#000"
-    outlines []
+    outlines []  # No outline, plain black text
     text_align 0.5
     layout "subtitle"
 

@@ -1,116 +1,259 @@
 # ================================================
-# CHAPTER 2: PISTIS (NIỀM TIN) - DAY 3
+# CHAPTER 2: PISTIS (NIỀM TIN) - DAY 4 TO 9
 # Brother Thang Philosophy Club
 # ================================================
 
 label ch2_day3:
     
-    # Show stats UI
     show screen stats_display
-    
-    $ current_day = 3  # FIX: This is Day 3 (Chapter 1 = Day 1+2)
     $ current_chapter = 2
     
-    # Daily stats update
-    $ daily_changes = stats.update_daily()
+    # ========================================
+    # NGÀY 4
+    # ========================================
+    $ current_day = 4
+    call ch2_day_start from ch2_day4_start
     
-    # Show daily stat changes
-    $ show_stat_change("hoc_tap", daily_changes["hoc_tap"])
-    $ show_stat_change("doi_song", daily_changes["doi_song"])
-    $ show_stat_change("rel_xiu", daily_changes["rel_xiu"])
-    $ show_stat_change("tien", daily_changes["tien"])
+    # Text Scenes: 251-256 (Salary)
+    "Chuông báo thức reo."
+    mc "(ngáp) \"Buồn ngủ quá… Qua thức xem stream anh Độ hơi khuya rồi…\""
+    mc "\"Tài khoản tự nhiên được cộng thêm tiền này! Hội trưởng bảo trả lương theo ngày là thật sao?\""
+    "Ting! Bạn nhận được 50.000đ."
+    $ stats.modify_tien(50000)
+    $ show_stat_change("tien", 50000)
+    
+    play music t2 fadein 1.0 # Ohayou Sayori (Happy)
+    
+    mc "\"Chà… Người đâu mà đã xinh đẹp, giàu có lại tốt tính. Có phú bà bao nuôi thế này, cuộc sống đại học mình bắt đầu từ đây!\""
+
+    "Ngày thứ 4 tại FPT đã bắt đầu."
+    "Sau những sự kiện dồn dập của những ngày đầu, hôm nay tôi muốn tìm một nhịp điệu riêng cho mình."
+    
+    # Force CLB Event (Cave Allegory) instead of generic choice
+    call ch2_day4_clb_event
+    
+    call ch2_evening_activity from ch2_day4_eve
+    
+    call ch2_day_end from ch2_day4_end
+
+    # ========================================
+    # NGÀY 5
+    # ========================================
+    $ current_day = 5
+    call ch2_day_start from ch2_day5_start
+    
+    "Ngày thứ 5."
+    "Việc học trên lớp bắt đầu nặng dần, nhưng tôi vẫn muốn dành thời gian buổi chiều cho bản thân."
+    
+    call ch2_afternoon_activity from ch2_day5_act
+    call ch2_evening_activity from ch2_day5_eve
+    
+    call ch2_day_end from ch2_day5_end
+
+    # ========================================
+    # NGÀY 6: SỰ KIỆN TRANH BIỆN (CỐ ĐỊNH)
+    # ========================================
+    $ current_day = 6
+    
+    scene black with dissolve_scene_full
+    centered "{size=40}Ngày 6{/size}"
+    $ renpy.pause(1.5, hard=True)
+
+    scene bg club_day with wipeleft_scene
+    play music t6 fadein 1.0
+
+    "Chiều ngày thứ 6, tôi đến CLB như thường lệ."
+    "Nhưng hôm nay không khí có vẻ căng thẳng lạ thường."
+
+    show yuri 1f at t21
+    show monika 2p at t22
+
+    xiu "\"Tiền là phương tiện để tự do! Có tiền mới có lựa chọn! Bà cứ lý thuyết suông mãi thế không chán à?\""
+    
+    hainu "\"Nhưng nếu dùng tiền để mua vui nhất thời, cô chỉ đang nô lệ cho dục vọng thôi. Tự do đích thực phải đến từ nhận thức!\""
+
+    mc "(Lại cãi nhau rồi...)"
+
+    show monika 1k at t22
+
+    xiu "\"Á à, cu em đến rồi!\""
+    xiu "\"Phân xử đi! Theo em, Hạnh phúc là gì?\""
+    xiu "\"Là có tiền tiêu xả láng, sống sướng thân...\""
+    xiu "\"Hay là ngồi gặm nhấm mấy cuốn sách triết học dày cộp này?\""
+
+    menu:
+        "Theo bạn, hạnh phúc là..."
+
+        "Thỏa mãn bản thân (Ủng hộ Xỉu)":
+            mc "\"Em nghĩ... Sống là phải vui. Cứ thoải mái, sảng khoái như chị Xỉu là sướng nhất.\""
+            mc "\"Đời người ngắn ngủi, tội gì phải khổ hạnh?\""
+
+            show monika 1l at t22
+            show yuri 2h at t21
+
+            xiu "\"Chuẩn! 10 điểm! Thằng bé này khá lắm!\""
+            hainu "\"Hừmm... Cậu cũng thiển cận như cô ta vậy.\""
+
+            $ gained = stats.modify_relationship("xiu", 10)
+            $ show_stat_change("rel_xiu", gained)
+            $ gained = stats.modify_relationship("hainu", -2)
+            $ show_stat_change("rel_hainu", gained)
+
+        "Đi tìm ý nghĩa (Ủng hộ Hải Nữ)":
+            mc "\"Em nghĩ hạnh phúc là khi mình tìm thấy ý nghĩa sống, hoặc làm được gì đó có ích.\""
+            mc "\"Như chị Nữ nói, vui thú nhất thời rồi cũng sẽ qua, cái đọng lại mới quan trọng.\""
+
+            show yuri 1a at t21
+            show monika 2p at t22
+
+            hainu "\"Nghe chưa? Cậu ấy hiểu chuyện hơn cô tưởng đấy.\""
+            xiu "\"Hứ! Đồ ẻo lả. Chả thú vị gì cả.\""
+
+            $ gained = stats.modify_relationship("hainu", 10)
+            $ show_stat_change("rel_hainu", gained)
+            $ gained = stats.modify_relationship("xiu", -2)
+            $ show_stat_change("rel_xiu", gained)
+
+    show yuri 1a at t21
+    show monika 1a at t22
+
+    "Cuộc tranh luận kết thúc, nhưng dường như nó đã định hình một cái gì đó trong tôi."
+
+    hide yuri with dissolve
+    hide monika with dissolve
+    
+    call ch2_evening_activity from ch2_day6_eve
+    
+    call ch2_day_end from ch2_day6_end
+
+    # ========================================
+    # NGÀY 7
+    # ========================================
+    $ current_day = 7
+    call ch2_day_start from ch2_day7_start
+    
+    "Ngày thứ 7."
+    "Dư âm của cuộc tranh luận hôm qua vẫn còn đâu đó trong đầu tôi."
+    
+    call ch2_afternoon_activity from ch2_day7_act
+    call ch2_evening_activity from ch2_day7_eve
+    
+    call ch2_day_end from ch2_day7_end
+
+    # ========================================
+    # NGÀY 8
+    # ========================================
+    $ current_day = 8
+    call ch2_day_start from ch2_day8_start
+    
+    "Ngày thứ 8."
+    "Một tuần học đã trôi qua. Tôi cảm thấy mình đang dần hòa nhập vào nơi này."
+    
+    call ch2_afternoon_activity from ch2_day8_act
+    call ch2_evening_activity from ch2_day8_eve
+    
+    call ch2_day_end from ch2_day8_end
+    
+    # ========================================
+    # NGÀY 9: TRƯỚC BÃO
+    # ========================================
+    $ current_day = 9
+    call ch2_day_start from ch2_day9_start
+    
+    "Ngày thứ 9."
     
     stop music fadeout 2.0
-    scene bg bedroom with dissolve_scene_full
     
+    "Hôm nay... tôi có một dự cảm lạ lùng."
+    "Mọi thứ dường như quá bình yên."
+    
+    call ch2_afternoon_activity from ch2_day9_act
+    call ch2_evening_activity from ch2_day9_eve
+    
+    # Lương về
+    "Ding!"
+    "Thông báo tin nhắn ngân hàng."
+    "Là lương làm thêm từ Hải Nữ chuyển khoản."
+    
+    $ stats.modify_tien(100000)
+    $ show_stat_change("tien", 100000)
+
+    mc "\"Có tiền rồi...\""
+    mc "\"Mình suýt nữa đã quên mất áp lực ở nhà...\""
+    
+    call ch2_day_end from ch2_day9_end
+
+    # Transition to Chapter 3
+    call ch3_dianoia
+
+    return
+
+# ========================================
+# HELPER LABELS
+# ========================================
+
+label ch2_day_start:
+    scene black with dissolve_scene_full
+    centered "{size=40}Ngày [current_day]{/size}"
+    $ renpy.pause(1.5, hard=True)
+
+    scene bg mc_room with dissolve_scene_full
     play music daily_life fadein 1.0
     
-    # ========================================
-    # SCENE MỞ ĐẦU: KÝ TÚC XÁ - SÁNG
-    # ========================================
+    # Daily logic: regen stats
+    $ daily_changes = stats.update_daily()
     
-    "Chuông báo thức reo."
-    
-    mc "(ngáp) \"Buồn ngủ quá… Qua thức xem stream anh Độ hơi khuya rồi…\""
-    
-    "Tôi mở điện thoại kiểm tra."
-    
-    mc "\"Tài khoản tự nhiên được cộng thêm tiền này! Là từ chị thủ quỹ tối qua sao?\""
-    mc "\"Chà… Người đâu mà đã xinh đẹp, giàu có lại tốt tính. Phú bà của cuộc đời ta đây rồi!\""
-    
-    "Nhìn lại stats, tiền đã tăng lên khá nhiều nhờ bonus từ Hải Nữ."
-    
-    # ========================================
-    # CLB - SÁNG CHIỀU (Philosophy Discussion)
-    # ========================================
-    
-    scene bg fpt_yard with wipeleft_scene  # Đi qua sân FPT đến CLB
-    
-    mc "Buổi đầu tiên có lẽ mình nên đến CLB xem thử…"
-    
+    return
+
+label ch2_day_end:
+    scene black with dissolve
+    "Một ngày nữa lại kết thúc."
+    $ renpy.pause(1.0)
+    return
+
+label ch2_day4_clb_event:
+    # Text Scenes: 258-301 (Cave Allegory)
     scene bg club_day with wipeleft_scene
-    play music club_theme fadein 1.0
-    
-    # Direct to philosophy conversation with Hải Nữ
-    "Tôi đến phòng CLB, thấy Hải Nữ đang ngồi đọc sách."
+    play music t7 fadein 1.0
+
+    "Tôi quyết định đến CLB sớm."
     
     show yuri 1a at t11
-    
+
     hainu "\"Cậu… Có vẻ đã thoát khỏi cái hang của mình rồi nhỉ?\""
     
     mc "(bối rối) \"Ơ… Dạ?\""
-    
-    "…"
-    
+    mc "\"…\""
     mc "\"Chuyện lần trước… Cảm ơn chị đã nhắc em về trò lừa bịp của chị Xỉu.\""
-    
-    show yuri 1f
     
     hainu "\"Không có gì.\""
     
     mc "\"…\""
     mc "\"Mạn phép cho em hỏi, cái từ mà lần trước chị nói khi mới gặp em ấy. Eika… gì ấy nhở?\""
     
-    show yuri 2a
-    
     hainu "\"Eikasia.\""
     
     mc "\"Nó là gì vậy ạ?\""
     
-    show yuri 2f
+    show yuri 1f
     
     hainu "\"…\""
     hainu "\"Cậu biết ngụ ngôn về cái hang của Plato chứ?\""
     
     mc "\"Dạ không.\""
     
-    show yuri 1a
-    
-    # ========================================
-    # PLATO'S CAVE ALLEGORY
-    # ========================================
-    
     hainu "\"Ngày xửa ngày xưa, có vài người cổ đại sống ở dưới đáy của một cái hang động.\""
-    
-    show yuri 1f
-    
     hainu "\"Cái hang đấy có một cái lỗ nhỏ, nơi một ít ánh sáng lọt vào.\""
     hainu "\"Từ cái lỗ đó, có những cái bóng lấp ló hắt lên trên bức tường của cái hang.\""
+    hainu "\"Những người cổ đại nhìn thấy nó và đặt tên cho những ảo ảnh này và tin rằng vạn vật chỉ là những cái bóng.\""
     
     show yuri 2f
     
-    hainu "\"Những người cổ đại nhìn thấy nó và đặt tên cho những ảo ảnh này và tin rằng vạn vật chỉ là những cái bóng.\""
-    
-    show yuri 1a
-    
     hainu "\"Một ngày nọ, một người cổ đại tìm được cách thoát ra khỏi cái hang.\""
     hainu "\"Lần đầu tiên trong đời, anh ta thấy được hình dạng thực của những cái bóng.\""
-    
-    show yuri 2g
-    
     hainu "\"Anh ta vui mừng quay lại hang động và kể cho những người bạn nghe.\""
     
-    show yuri 2w
+    show yuri 1g
     
     hainu "\"Tuy nhiên, những người bạn lại nghĩ anh ta bị điên… Và thế là họ... Cô lập anh ta đến chết.\""
     
@@ -121,448 +264,196 @@ label ch2_day3:
     hainu "\"…\""
     hainu "\"Những người cổ đại, họ chỉ thấy những cái bóng.\""
     hainu "\"Họ bị kẹt trong cái gọi là Eikasia. Họ chỉ nhìn thấy những thứ được cho nhìn thấy.\""
-    
-    show yuri 2f
-    
     hainu "\"Vậy theo cậu, người đàn ông tìm được đường ra khỏi hang liệu đã thấy được hình dạng thật của những chiếc bóng?\""
     
-    # CHOICE: Philosophy question
+    stop music fadeout 2.0 # Silence for thought
+    
     menu:
-        hainu "\"Cậu nghĩ sao?\""
+        "Ý kiến của bạn?"
         
         "Nhìn thấy được rồi thì tức là thật!":
             mc "\"Nhìn thấy được rồi thì tức là thật!\""
-            mc "\"Anh ta đã thoát ra ngoài, đương nhiên là thấy được sự thật rồi.\""
-            
-            show yuri 1h
-            
-            hainu "\"Sai rồi.\""
-            
-            # Không tăng stats
         
         "Có lẽ là chưa….":
             mc "\"Có lẽ là chưa….\""
-            mc "\"Làm sao chúng ta biết được thứ bên ngoài hang là thật?\""
             
-            show yuri 3a
-            
-            hainu "\"Chính xác!\""
-            
-            # Tăng học tập
-            $ stats.modify_hoc_tap(5)
-            $ show_stat_change("hoc_tap", 5)
-            
-            # Tăng relationship
-            $ multiplier = stats.get_stat_multiplier_hainu()
-            $ gained = stats.modify_relationship("hainu", 5, multiplier)
-            $ show_stat_change("rel_hainu", gained)
+    show yuri 1s
     
-    show yuri 2k
-    
-    hainu "(cười mỉm) \"Thật ra thì, cái hang của họ nằm trong một khu bảo tồn người cổ đại!\""
+    hainu "(cười mỉm) \"Thật ra thì, cái hang của nằm trong một khu bảo tồn người cổ đại!\""
     hainu "\"Những thứ mà người đàn ông đó thấy chỉ là những đồ giả mà thôi.\""
-    
-    show yuri 2f
-    
     hainu "\"Vì vậy, anh ta vẫn chưa thoát khỏi ý niệm của bản thân, vẫn bị kẹt trong Pistis…\""
-    hainu "\"Niềm tin dựa trên những gì anh ta nhìn thấy, nhưng chưa phải là chân lý.\""
     
-    mc "\"Vậy… Làm sao để thoát khỏi Pistis?\""
+    "Chúng tôi bàn luận về triết học cùng Hội Trưởng tới hết buổi."
     
-    show yuri 1f
+    $ gained = stats.modify_relationship("hainu", 10)
+    $ show_stat_change("rel_hainu", gained)
+    $ stats.modify_hoc_tap(10)
+    $ show_stat_change("hoc_tap", 10)
     
-    hainu "\"Đó là con đường dài. Từ Eikasia đến Pistis, rồi Dianoia, và cuối cùng là Noesis.\""
-    hainu "\"Nhưng đó là chuyện của những ngày sau. Hôm nay cậu đã hiểu được bước đầu tiên.\""
-    
-    hide yuri with dissolve
-    
-    "Bàn luận về triết học cùng Hội Trưởng khiến tôi cảm thấy học được nhiều thứ."
-    
-    # ========================================
-    # TIME SLOT ACTIVITY SYSTEM
-    # Buổi SÁNG đã dùng cho Philosophy → Còn CHIỀU + TỐI
-    # ========================================
-    
-    # Initialize time slot variables
-    # Buổi sáng đã hết (Philosophy discussion), bắt đầu từ slot 1 (Chiều)
-    $ time_slots_used = 1
-    $ max_time_slots = 2  # Sáng (đã dùng) + Chiều (còn lại)
-    
-label ch2_activity_loop:
-    
-    # Check if all time slots used (both morning and afternoon)
-    if time_slots_used >= max_time_slots:
-        # Auto transition to evening (dorm)
-        jump ch2_evening_transition
-    
-    # Time period indicator
-    if time_slots_used == 0:
-        scene black
-        centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Chọn hoạt động buổi sáng{/size}"
-        $ renpy.pause(1.5, hard=True)
-    elif time_slots_used == 1:
-        scene black
-        centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Chọn hoạt động buổi chiều{/size}"
-        $ renpy.pause(1.5, hard=True)
-    
-    scene bg class_day with fade
-    
-    # Activity selection menu
+    return
+
+# -------------------------------------------------------------------------
+# SYSTEM: ACTIVITY PROGRESSION (COUNT-BASED)
+# -------------------------------------------------------------------------
+
+label ch2_afternoon_activity:
     menu:
-        "Chọn hoạt động:"
+        "Chiều nay bạn sẽ làm gì?"
         
-        "Đến CLB" if time_slots_used < max_time_slots:
-            jump ch2_club_activities
+        "Đến Phòng Gym (Sức khỏe)":
+            call ch2_gym_event
         
-        "Đến Thư viện" if time_slots_used < max_time_slots:
-            jump ch2_library_activities
-        
-        "Đến Gym" if time_slots_used < max_time_slots:
-            jump ch2_gym_activities
-        
-        "Bỏ qua (về phòng sớm)":
-            jump ch2_evening_transition
+        "Đến Thư Viện (Học tập)":
+            call ch2_library_event
+            
+        "Làm việc tại CLB (Kiếm tiền)":
+            scene bg club_day with wipeleft_scene
+            "Tôi ghé qua CLB phụ giúp một chút việc vặt."
+            "Tuy hơi chán nhưng có thêm chút tiền tiêu vặt cũng tốt."
+            $ stats.modify_tien(50000)
+            $ show_stat_change("tien", 50000)
+            
+    return
 
-# ========================================
-# CLB ACTIVITIES
-# ========================================
+label ch2_gym_event:
+    scene bg gym with wipeleft_scene
+    play music t2 fadein 1.0
 
-label ch2_club_activities:
-    scene bg club_day with wipeleft_scene
-    play music club_theme fadein 1.0
+    # Increment count
+    $ stats.gym_count += 1
     
+    if stats.gym_count == 1:
+        # Text 315
+        mc "\"Mệt quá… Chịu rồi...\""
+        
+        show monika 2l at t11
+        xiu "\"Yếu nhớt! Cầm cái tạ như cầm ly trà sữa thế kia bao giờ mới có người yêu?\""
+        
+        $ stats.modify_doi_song(5)
+        $ show_stat_change("doi_song", 5)
+        
+    elif stats.gym_count <= 3:
+        # Text 317
+        mc "\"Cố thêm… Một xíu nữa thôi…\""
+        
+        show monika 1k at t11
+        xiu "\"Khá đấy cu. Nay đẩy ngực được 20kg rồi à? Cố lên, sắp đủ trình làm bao cát cho chị rồi.\""
+        
+        $ stats.modify_doi_song(10)
+        $ show_stat_change("doi_song", 10)
+        $ gained = stats.modify_relationship("xiu", 2)
+        $ show_stat_change("rel_xiu", gained)
+        
+    else:
+        # Text 318
+        mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
+        
+        show monika 3b at t11
+        xiu "\"Uầy, nhìn 'mlem' phết rồi đấy. Tối nay đi làm bát phở gầu bò nạm thưởng cho cái body này không?\""
+        
+        $ stats.modify_doi_song(15)
+        $ show_stat_change("doi_song", 15)
+        $ gained = stats.modify_relationship("xiu", 5)
+        $ show_stat_change("rel_xiu", gained)
+        
+    return
+
+label ch2_library_event:
+    scene bg library with wipeleft_scene
+    play music t3 fadein 1.0
+    
+    # Increment count
+    $ stats.lib_count += 1
+    
+    if stats.lib_count == 1:
+        # Text 306
+        mc "\"Ra là thế… Chả hiểu gì cả.\""
+        mc "\"Mở cuốn 'Phê phán lý tính thuần túy' ra đọc được 2 dòng thì mắt díp lại.\""
+        
+        show yuri 2h at t11
+        hainu "\"Thư viện là nơi nuôi dưỡng tâm hồn, không phải chỗ ngủ trọ. Ngồi thẳng lưng lên.\""
+        
+        $ stats.modify_hoc_tap(5)
+        $ show_stat_change("hoc_tap", 5)
+        
+    elif stats.lib_count <= 3:
+        # Text 309
+        mc "\"Ồ, kiến thức mới đã được tiếp thu.\""
+        mc "\"Hoá ra triết học không khô khan như mình tưởng, nó giống như giải một bài toán về cuộc đời vậy.\""
+        
+        show yuri 1a at t11
+        hainu "\"Cậu đang đọc Kant sao? Một lựa chọn không tồi. Nếu có chỗ nào không hiểu, tôi có thể... gợi ý một chút.\""
+        
+        $ stats.modify_hoc_tap(10)
+        $ show_stat_change("hoc_tap", 10)
+        $ gained = stats.modify_relationship("hainu", 2)
+        $ show_stat_change("rel_hainu", gained)
+        
+    else:
+        # Text 310
+        mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
+        mc "\"Mình tìm thấy sự liên kết giữa Hội hoạ và Triết học. Cả hai đều là cách con người mô tả thế giới.\""
+        
+        show yuri 1s at t11
+        hainu "\"Cậu đã bắt đầu chạm vào được Noesis rồi đấy. Ánh mắt cậu nhìn trang sách... đã khác xưa nhiều.\""
+        
+        $ stats.modify_hoc_tap(15)
+        $ show_stat_change("hoc_tap", 15)
+        $ gained = stats.modify_relationship("hainu", 5)
+        $ show_stat_change("rel_hainu", gained)
+        
+        # Unlock condition
+        $ stats.unlocked_dialectics = True
+        $ renpy.notify("Đã mở khóa: Tư duy Biện chứng")
+        
+    return
+
+# -------------------------------------------------------------------------
+# SYSTEM: EVENING ACTIVITY (SOCIAL)
+# -------------------------------------------------------------------------
+
+label ch2_evening_activity:
+    scene bg ktx with fade
+    "Về phòng rồi. Tối nay làm gì nhỉ?"
+
     menu:
-        "Làm gì tại CLB?"
-        
-        "Nói chuyện với Hội Trưởng":
-            show yuri 1a at t11
+        # Text 322-329 (Xiu KTX logic)
+        "Sang phòng Xỉu chơi (Tăng thiện cảm)" if current_day % 2 == 0:
+            scene bg ktx with wipeleft
             
-            hainu "\"Cậu muốn tìm hiểu thêm về triết học sao?\""
+            stop music fadeout 1.0
+            play music t5 fadein 1.0 # Playful
             
-            mc "\"Dạ vâng, em thấy những gì chị nói rất thú vị.\""
-            
-            show yuri 2f
-            
-            hainu "\"Triết học không chỉ là kiến thức, mà là cách sống.\""
-            hainu "\"Mỗi ngày đặt câu hỏi về những gì ta tin là chân lý.\""
-            
-            # Tăng relationship
-            $ multiplier = stats.get_stat_multiplier_hainu()
-            $ gained = stats.modify_relationship("hainu", 5, multiplier)
-            $ show_stat_change("rel_hainu", gained)
-            
-            # Tăng học tập
-            $ stats.modify_hoc_tap(3)
-            $ show_stat_change("hoc_tap", 3)
-            
-            hide yuri with dissolve
-            
-            # Activity completed - consume time slot
-            $ time_slots_used += 1
-            jump ch2_activity_loop
-        
-        "Giúp Hải Nữ kế toán":
-            show yuri 1a at t11
-            
-            hainu "\"Cậu tới đúng lúc lắm, hội trưởng vừa bảo tôi kiểm toán lại chi tiêu tháng vừa rồi.\""
-            hainu "\"Tôi để sổ sách đằng kia, cậu ra làm đi.\""
-            
-            mc "\"Dạ vâng, em làm ngay!\""
-            
-            show yuri 2f
-            
-            "Sắp xếp tài liệu..."
-            "Kiểm tra số liệu..."
-            "Nhập dữ liệu vào máy tính..."
-            
-            "Cả một núi sổ sách phải giải quyết!"
-            
-            # Mất thêm 1 time slot vì công việc nhiều
-            $ time_slots_used += 1
-            
-            if time_slots_used > max_time_slots:
-                $ time_slots_used = max_time_slots
-                
-                "Làm việc đến tận chiều muộn mới xong..."
-            
-            show yuri 1a
-            
-            hainu "\"Xong rồi à? Cậu làm việc khá nhanh đấy.\""
-            hainu "\"Tiền công ngày hôm nay đây.\""
-            
-            # Nhận tiền bonus
-            $ bonus = int(stats.rel_hainu * 500)
-            $ stats.modify_tien(bonus)
-            $ show_stat_change("tien", bonus)
-            
-            # Tăng relationship
-            $ multiplier = stats.get_stat_multiplier_hainu()
-            $ gained = stats.modify_relationship("hainu", 8, multiplier)
-            $ show_stat_change("rel_hainu", gained)
-            
-            # Tăng học tập nhưng giảm đời sống
-            $ stats.modify_hoc_tap(5)
-            $ show_stat_change("hoc_tap", 5)
-            $ stats.modify_doi_song(-5)
-            $ show_stat_change("doi_song", -5)
-            
-            hide yuri with dissolve
-            
-            jump ch2_activity_loop
-        
-        "Quay lại":
-            jump ch2_activity_loop
-
-# ========================================
-# EVENING TRANSITION
-# ========================================
-
-label ch2_evening_transition:
-    # Transition to evening
-    scene black with dissolve_scene_full
-    stop music fadeout 2.0
-    
-    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Về ký túc xá{/size}"
-    $ renpy.pause(2.0, hard=True)
-    
-    # Go to dorm activities
-    jump ch2_dorm_activities
- 
-# ========================================
-# LIBRARY ACTIVITIES
-# ========================================
-
-label ch2_library_activities:
-    scene bg corridor with wipeleft_scene
-    play music daily_life fadein 1.0
-    
-    menu:
-        "Làm gì tại Thư viện?"
-        
-        "Học bài":
-            "Giở sách ra ôn lại bài cũ..."
-            
-            # Stat-dependent dialogue
-            if stats.hoc_tap < 20:
-                mc "\"Ra là thế… Chả hiểu gì cả.\""
-            elif stats.hoc_tap < 50:
-                mc "\"Hừm…. Bài này khó hiểu quá…\""
-            elif stats.hoc_tap < 80:
-                mc "\"Có một số chỗ chưa hiểu lắm, lần sau lên lớp hỏi lại cô vậy.\""
-            elif stats.hoc_tap < 100:
-                mc "\"Ồ, kiến thức mới đã được tiếp thu.\""
-            else:
-                mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
-            
-            # Tăng học tập, giảm sức khỏe nhẹ
-            $ stats.modify_hoc_tap(10)
-            $ show_stat_change("hoc_tap", 10)
-            $ stats.modify_doi_song(-5)
-            $ show_stat_change("doi_song", -5)
-            
-            # Activity completed - consume time slot
-            $ time_slots_used += 1
-            jump ch2_activity_loop
-        
-        "Quay lại":
-            jump ch2_activity_loop
-
-# ========================================
-# GYM ACTIVITIES
-# ========================================
-
-label ch2_gym_activities:
-    scene bg class_day with wipeleft_scene
-    
-    menu:
-        "Làm gì tại Gym?"
-        
-        "Nâng tạ":
-            "Nâng tạ rèn luyện cơ tay..."
-            
-            # Stat-dependent dialogue (sức khoẻ = đời sống)
-            if stats.doi_song < 20:
-                mc "\"Mệt quá… Chịu rồi...\""
-            elif stats.doi_song < 50:
-                mc "\"Phù… Nay đến đây thôi vậy.\""
-            elif stats.doi_song < 80:
-                mc "\"Cố thêm… Một xíu nữa thôi…\""
-            elif stats.doi_song < 100:
-                mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
-            else:
-                mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
-            
-            # Tăng sức khỏe
-            $ stats.modify_doi_song(12)
-            $ show_stat_change("doi_song", 12)
-            
-            # Activity completed - consume time slot
-            $ time_slots_used += 1
-            jump ch2_activity_loop
-        
-        "Chạy bộ":
-            "Chạy bộ rèn luyện cơ chân..."
-            
-            # Stat-dependent dialogue
-            if stats.doi_song < 20:
-                mc "\"Mệt quá… Chịu rồi...\""
-            elif stats.doi_song < 50:
-                mc "\"Phù… Nay đến đây thôi vậy.\""
-            elif stats.doi_song < 80:
-                mc "\"Cố thêm… Một xíu nữa thôi…\""
-            elif stats.doi_song < 100:
-                mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
-            else:
-                mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
-            
-            # Tăng sức khỏe
-            $ stats.modify_doi_song(12)
-            $ show_stat_change("doi_song", 12)
-            
-            # FIX: Activity completed - consume time slot
-            $ time_slots_used += 1
-            jump ch2_activity_loop
-        
-        "Quay lại":
-            jump ch2_activity_loop
-
-# ========================================
-# DORM ACTIVITIES
-# ========================================
-
-label ch2_dorm_activities:
-    scene bg bedroom with wipeleft_scene
-    play music tense fadein 1.0
-    
-    menu:
-        "Làm gì tại KTX?"
-        
-        "Nói chuyện với Xỉu":
             show monika 1d at t11
-            
             xiu "\"Chào mừng đến với dịch vụ Campuchia gì cũng tôn của Xỉu. Cu em cần gì nào?\""
             
             menu:
-                "Cần gì từ Xỉu?"
-                
                 "Dịch vụ gia sư học tập":
-                    show monika 1a
-                    
-                    xiu "\"OK luôn. Cứ giao cho chị. Giá 20,000 VNĐ nha!\""
-                    
-                    if stats.tien >= 20000:
-                        mc "\"Được, anh nhờ chị!\""
-                        
-                        $ stats.modify_tien(-20000)
-                        $ show_stat_change("tien", -20000)
-                        
-                        "Xỉu dạy kèm một lúc..."
-                        
-                        $ stats.modify_hoc_tap(10)
-                        $ show_stat_change("hoc_tap", 10)
-                        
-                        $ gained = stats.modify_relationship("xiu", 3)
-                        $ show_stat_change("rel_xiu", gained)
-                        
-                        show monika 1k
-                        
-                        xiu "\"Xong rồi đó! Cu em thông minh lắm, học nhanh!\""
-                    else:
-                        mc "\"Ủa, anh không đủ tiền…\""
-                        
-                        show monika 2p
-                        
-                        xiu "\"Thế thì đi kiếm tiền rồi quay lại!\""
+                    xiu "\"OK luôn. Cứ giao cho chị. Tối nay chị sẽ chăm sóc cu em nhiệt tình.\""
+                    "Tuy nhiên, 'gia sư' kiểu Xỉu lại là dạy cách đối nhân xử thế."
+                    $ stats.modify_doi_song(3)
+                    $ stats.modify_hoc_tap(2)
                 
                 "Dịch vụ bồi bổ đời sống":
-                    show monika 5a
-                    
-                    xiu "\"Oho~ Thú vị đấy! Giá cũng 20,000 VNĐ thôi!\""
-                    
-                    if stats.tien >= 20000:
-                        mc "\"OK, deal!\""
-                        
-                        $ stats.modify_tien(-20000)
-                        $ show_stat_change("tien", -20000)
-                        
-                        "Xỉu dẫn đi ăn uống thư giãn..."
-                        
-                        $ stats.modify_doi_song(10)
-                        $ show_stat_change("doi_song", 10)
-                        
-                        $ gained = stats.modify_relationship("xiu", 3)
-                        $ show_stat_change("rel_xiu", gained)
-                        
-                        show monika 1k
-                        
-                        xiu "\"Thế nào, sảng khoái chưa?\""
-                    else:
-                        mc "\"Anh hết tiền rồi…\""
-                        
-                        show monika 2p
-                        
-                        xiu "\"Nghèo thế mà còn đòi hưởng thụ!\""
-                
-                "Không cần gì":
-                    mc "\"Không, cảm ơn chị.\""
-                    
-                    show monika 2a
-                    
-                    xiu "\"Vậy sao, cần gì cứ tìm chị!\""
+                    xiu "\"OK luôn. Cứ giao cho chị. Tối nay chị sẽ chăm sóc cu em nhiệt tình.\""
+                    "Chúng tôi chơi game và ăn vặt tới khuya."
+                    $ stats.modify_doi_song(5)
             
-            hide monika with dissolve
+            hide monika
             
-            # End day after talking to Xỉu
-            jump ch2_end_of_day
-        
-        "Đi ngủ (kết thúc ngày)":
-            jump ch2_end_of_day
+            $ gained = stats.modify_relationship("xiu", 3)
+            $ show_stat_change("rel_xiu", gained)
+             
+        "Nhắn tin hỏi bài Nữ (Tăng thiện cảm)" if current_day % 2 != 0:
+            "Tôi nhắn tin hỏi chị Nữ về vài thuật ngữ chưa hiểu."
+            "Chị ấy rep khá nhanh và giải thích rất cặn kẽ."
+            $ stats.modify_hoc_tap(5)
+            $ gained = stats.modify_relationship("hainu", 3)
+            $ show_stat_change("rel_hainu", gained)
+             
+        "Ngủ sớm (Hồi phục)":
+            "Tôi quyết định ngủ sớm để giữ gìn sức khỏe."
+            $ stats.modify_doi_song(10)
+            $ show_stat_change("doi_song", 10)
 
-# ========================================
-# END OF DAY 3 (CHAPTER 2)
-# ========================================
-
-label ch2_end_of_day:
-    
-    scene bg bedroom with fade
-    play music sad fadein 1.0
-    
-    "Về đến phòng..."
-    
-    mc "(ngáp) \"Hôm nay học được khá nhiều thứ…\""
-    mc "\"Eikasia, Pistis… Nghe có vẻ sâu sắc nhưng cũng hơi khó hiểu.\""
-    
-    # Stats summary
-    "Nhìn lại stats của ngày hôm nay..."
-    
-    if stats.hoc_tap >= 70:
-        mc "\"Học tập tiến bộ khá tốt!\""
-    elif stats.hoc_tap <= 30:
-        mc "\"Học hành có vẻ đang sa sút… Phải cố gắng hơn.\""
-    
-    if stats.doi_song >= 70:
-        mc "\"Sức khỏe thì đang ổn.\""
-    elif stats.doi_song <= 30:
-        mc "\"Mệt mỏi quá… Cần chăm sóc bản thân hơn.\""
-    
-    mc "\"Ngày mai lại là một ngày mới…\""
-    
-    scene black with dissolve_scene_full
-    stop music fadeout 2.0
-    
-    $ renpy.pause(2.0)
-    
-    # ========================================
-    # TRANSITION TO DAILY ROUTINE (Day 4-9)
-    # ========================================
-    
-    # Set day to 4 and start daily routine loop
-    $ current_day = 4
-    
-    # Call daily routine system
-    call daily_routine_loop
-    
-    # Return to main menu
     return
-
-
