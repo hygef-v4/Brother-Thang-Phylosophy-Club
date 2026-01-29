@@ -395,7 +395,8 @@ init -501 screen main_menu():
     else:
         add "menu_bg_blue"
         add "menu_art_y"
-        add "menu_art_n"
+        add "menu_art_dad"
+        add "menu_art_m"
         frame
         use navigation
 
@@ -410,18 +411,9 @@ init -501 screen main_menu():
         add "menu_logo"
 
     if persistent.ghost_menu:
-        add "menu_art_s_ghost"
         add "menu_art_m_ghost"
     else:
-        if persistent.playthrough == 1 or persistent.playthrough == 2:
-            add "menu_art_s_glitch"
-        else:
-            add "menu_art_s"
-
         add "menu_particles"
-
-        if persistent.playthrough != 4:
-            add "menu_art_m"
         add "menu_fade"
 
     key "K_ESCAPE" action Quit(confirm=False)

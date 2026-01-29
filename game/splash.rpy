@@ -36,10 +36,10 @@ image menu_fade:
 image menu_art_y:
     subpixel True
     "gui/menu_art_y.png"
-    xcenter 600
+    xcenter 450
     ycenter 335
     zoom 0.60
-    menu_art_move(0.54, 600, 0.60)
+    menu_art_move(0.54, 450, 0.60)
 
 image menu_art_n:
     subpixel True
@@ -52,18 +52,26 @@ image menu_art_n:
 image menu_art_s:
     subpixel True
     "gui/menu_art_s.png"
-    xcenter 510
-    ycenter 500
-    zoom 0.68
-    menu_art_move(0.68, 510, 0.68)
+    xcenter 450
+    ycenter 335
+    zoom 0.60
+    menu_art_move(0.54, 450, 0.60)
 
 image menu_art_m:
     subpixel True
     "gui/menu_art_m.png"
-    xcenter 1000
+    xcenter 900
     ycenter 640
     zoom 1.00
-    menu_art_move(1.00, 1000, 1.00)
+    menu_art_move(1.00, 900, 1.00)
+
+image menu_art_dad:
+    subpixel True
+    "images/dad.png"
+    xcenter 640
+    ycenter 385
+    zoom 0.50
+    menu_art_move(0.50, 640, 0.50)
 
 # Ghost art and glitch removed for philosophy focus
 
