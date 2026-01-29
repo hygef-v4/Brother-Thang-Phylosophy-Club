@@ -513,9 +513,12 @@ label ch1_day1_day2:
     
     xiu "\"Cuối cùng là căng tin, nơi sinh hoạt văn hoá của hội những người không biết xấu hổ.\""
     
+    show monika 1a at t21
+    show t31 at t22 with dissolve
+    
     mc "\"A! Con lợn này.\""
     
-    show monika 1d at t11
+    show monika 1d at t21
     
     xiu "\"Đây là robot bán hàng số hiệu T31 tên đầy đủ là DaoChiCuong do tập đoàn FPT sản xuất.\""
     xiu "\"Phế lắm, chị chửi nó suốt. Mong sau này robot xâm chiếm thế giới nó không nhớ mặt chị.\""
@@ -526,7 +529,7 @@ label ch1_day1_day2:
     "Robot T31 quay lại nhìn tôi với đôi mắt LED đỏ."
     play sound "sfx/glitch1.ogg"
     
-    "T31" "\"Hasta la vista, baby.\""
+    robot "\"Hasta la vista, baby.\""
     
     mc "(Ủa... Sao lại tiếng Tây???)"
     
@@ -534,7 +537,7 @@ label ch1_day1_day2:
     
     xiu "\"Thấy chưa! Nó bị lỗi phần mềm rồi đấy. Bảo sửa mãi không chịu.\""
     
-    "T31" "\"I'll be back.\""
+    robot "\"I'll be back.\""
     
     "Robot T31 lăn đi về phía kho."
     
