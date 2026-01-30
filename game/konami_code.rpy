@@ -30,6 +30,8 @@ label konami_menu:
             jump ch2_day3
         "Jump Chapter 3":
             jump ch3_dianoia
+        "Jump Daily":
+            jump daily_routine_loop
         "Add money":
             $ stats.modify_tien(1000000)
         "Max live":

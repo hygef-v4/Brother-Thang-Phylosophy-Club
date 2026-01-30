@@ -51,7 +51,7 @@ label daily_routine_loop:
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(2.0, hard=True)
     
-    call daily_evening_dorm
+    call daily_dorm
     
     # ========================================
     # END OF DAY - INCREMENT DAY COUNTER
@@ -87,19 +87,17 @@ label daily_activity:
 # EVENING DORM ACTIVITIES
 # ========================================
 
-label daily_evening_dorm:
+label daily_dorm:
     scene bg ktx with wipeleft_scene  # Custom: Ký túc xá FPT
     play music tense fadein 1.0
     
-    "Về đến phòng, kết thúc một ngày dài..."
+    "Về phòng, kết thúc một ngày dài..."
     
     menu:
-        "Làm gì trước khi ngủ?"
-        
         "Nói chuyện với Xỉu":
             show monika 1d at t11
             
-            xiu "\"Ê cu em! Hôm nay thế nào?\""
+            xiu "\"Chào mừng đến với dịch vụ Campuchia gì cũng tôn của Xỉu. Cu em cần gì nào?\""
             
             menu:
                 "Dịch vụ gia sư học tập (20,000 VNĐ)":
@@ -114,11 +112,11 @@ label daily_evening_dorm:
                         $ show_stat_change("rel_xiu", gained)
                         
                         show monika 1k
-                        xiu "\"OK! Chị dạy cho.\""
+                        xiu "\"OK luôn. Cứ giao cho chị. Tối nay chị sẽ chăm sóc cu em nhiệt tình.\""
                         "..."
                     else:
                         show monika 2p
-                        xiu "\"Nghèo thế mà học?\""
+                        xiu "\"Không có tiền thì nghỉ!\""
                 
                 "Dịch vụ bồi bổ sức khỏe (20,000 VNĐ)":
                     if stats.tien >= 20000:
@@ -132,19 +130,19 @@ label daily_evening_dorm:
                         $ show_stat_change("rel_xiu", gained)
                         
                         show monika 1k
-                        xiu "\"Đi đây!\""
+                        xiu "\"OK luôn. Cứ giao cho chị. Tối nay chị sẽ chăm sóc cu em nhiệt tình.\""
                         "..."
                     else:
                         show monika 2p
-                        xiu "\"Không tiền thì nghỉ!\""
+                        xiu "\"Không có tiền thì nghỉ!\""
                 
                 "Không cần":
                     show monika 2a
-                    xiu "\"Vậy sao.\""
+                    xiu "\"Thế thôi...\""
             
             hide monika with dissolve
         
-        "Đi ngủ luôn":
+        "Đi ngủ":
             mc "\"Mệt quá, ngủ sớm vậy...\""
     
     # End of day summary
@@ -158,129 +156,6 @@ label daily_evening_dorm:
     stop music fadeout 2.0
     
     return
-
-
-# ========================================
-# REUSABLE ACTIVITIES - MORNING
-# ========================================
-
-label daily_clb_morning:
-    scene bg club_day with wipeleft_scene
-    play music club_theme fadein 1.0
-    
-    "Đến CLB, không gian yên tĩnh..."
-    
-    show yuri 1a at t11
-    
-    hainu "\"Chào cậu.\""
-    
-    mc "\"Chào chị.\""
-    
-    menu:
-        "Nói chuyện với Hải Nữ":
-            hainu "\"Hôm nay có gì muốn học không?\""
-            mc "\"Dạ, em muốn tìm hiểu thêm về triết học.\""
-            
-            "Hải Nữ chia sẻ thêm về triết học..."
-            
-            # Balanced gains for farming
-            $ stats.modify_hoc_tap(8)
-            $ show_stat_change("hoc_tap", 8)
-            
-            $ multiplier = stats.get_stat_multiplier_hainu()
-            $ gained = stats.modify_relationship("hainu", 7, multiplier)
-            $ show_stat_change("rel_hainu", gained)
-        
-        "Giúp Hải Nữ kế toán (kiếm tiền)":
-            "Ngồi đọc sách triết học và giúp chị kế toán..."
-            
-            # Earn money + study + relationship
-            $ bonus = 15000
-            $ stats.modify_tien(bonus)
-            $ show_stat_change("tien", bonus)
-            
-            $ stats.modify_hoc_tap(5)
-            $ show_stat_change("hoc_tap", 5)
-            
-            $ multiplier = stats.get_stat_multiplier_hainu()
-            $ gained = stats.modify_relationship("hainu", 5, multiplier)
-            $ show_stat_change("rel_hainu", gained)
-    
-    hide yuri with dissolve
-    return
-
-label daily_library_morning:
-    scene bg library with wipeleft_scene  # Custom: Thư viện FPT
-    play music daily_life fadein 1.0
-    
-    "Thư viện yên tĩnh, thích hợp để học..."
-    
-    "Giở sách vở ra, ôn lại bài cũ..."
-    
-    # Stat-dependent dialogue (học tập)
-    if stats.hoc_tap < 20:
-        mc "\"Ra là thế… Chả hiểu gì cả.\""
-    elif stats.hoc_tap < 50:
-        mc "\"Hừm…. Bài này khó hiểu quá…\""
-    elif stats.hoc_tap < 80:
-        mc "\"Có một số chỗ chưa hiểu lắm, lần sau lên lớp hỏi lại cô vậy.\""
-    elif stats.hoc_tap < 100:
-        mc "\"Ồ, kiến thức mới đã được tiếp thu.\""
-    else:
-        mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
-    
-    # Balanced study gains
-    $ stats.modify_hoc_tap(12)
-    $ show_stat_change("hoc_tap", 12)
-    
-    return
-
-label daily_gym_morning:
-    scene bg gym with wipeleft_scene  # Custom: Phòng gym FPT
-    
-    "Phòng gym, rèn luyện sức khỏe..."
-    
-    menu:
-        "Nâng tạ":
-            "Rèn luyện cơ thể, giải toả tinh thần..."
-            
-            # Stat-dependent dialogue (sức khoẻ = đời sống)
-            if stats.doi_song < 20:
-                mc "\"Mệt quá… Chịu rồi...\""
-            elif stats.doi_song < 50:
-                mc "\"Phù… Nay đến đây thôi vậy.\""
-            elif stats.doi_song < 80:
-                mc "\"Cố thêm… Một xíu nữa thôi…\""
-            elif stats.doi_song < 100:
-                mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
-            else:
-                mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
-            
-            # Good health gains
-            $ stats.modify_doi_song(15)
-            $ show_stat_change("doi_song", 15)
-        
-        "Chạy bộ":
-            "Rèn luyện cơ thể, giải toả tinh thần..."
-            
-            # Stat-dependent dialogue (sức khoẻ = đời sống)
-            if stats.doi_song < 20:
-                mc "\"Mệt quá… Chịu rồi...\""
-            elif stats.doi_song < 50:
-                mc "\"Phù… Nay đến đây thôi vậy.\""
-            elif stats.doi_song < 80:
-                mc "\"Cố thêm… Một xíu nữa thôi…\""
-            elif stats.doi_song < 100:
-                mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
-            else:
-                mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
-            
-            # Good health gains
-            $ stats.modify_doi_song(15)
-            $ show_stat_change("doi_song", 15)
-    
-    return
-
 
 # ========================================
 # REUSABLE ACTIVITIES
@@ -306,53 +181,61 @@ label daily_clb:
             
             hide yuri with dissolve
         "Quay lại":
-            return
+            jump daily_activity
     
     return
 
-label daily_library_afternoon:
+label daily_library:
     scene bg library with wipeleft_scene  # Custom: Thư viện FPT
     play music daily_life fadein 1.0
     
-    "Giở sách vở ra, ôn lại bài cũ..."
-    
-    # Stat-dependent dialogue (học tập)
-    if stats.hoc_tap < 20:
-        mc "\"Ra là thế… Chả hiểu gì cả.\""
-    elif stats.hoc_tap < 50:
-        mc "\"Hừm…. Bài này khó hiểu quá…\""
-    elif stats.hoc_tap < 80:
-        mc "\"Có một số chỗ chưa hiểu lắm, lần sau lên lớp hỏi lại cô vậy.\""
-    elif stats.hoc_tap < 100:
-        mc "\"Ồ, kiến thức mới đã được tiếp thu.\""
-    else:
-        mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
-    
-    # Balanced afternoon study
-    $ stats.modify_hoc_tap(10)
-    $ show_stat_change("hoc_tap", 10)
+    menu:
+        "Ôn bài":
+            "Giở sách vở ra, ôn lại bài cũ..."
+            
+            # Stat-dependent dialogue (học tập)
+            if stats.hoc_tap < 20:
+                mc "\"Ra là thế… Chả hiểu gì cả.\""
+            elif stats.hoc_tap < 50:
+                mc "\"Hừm…. Bài này khó hiểu quá…\""
+            elif stats.hoc_tap < 80:
+                mc "\"Có một số chỗ chưa hiểu lắm, lần sau lên lớp hỏi lại cô vậy.\""
+            elif stats.hoc_tap < 100:
+                mc "\"Ồ, kiến thức mới đã được tiếp thu.\""
+            else:
+                mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
+            
+            # Balanced afternoon study
+            $ stats.modify_hoc_tap(10)
+            $ show_stat_change("hoc_tap", 10)
+        "Quay lại":
+            jump daily_activity
     
     return
 
-label daily_gym_afternoon:
+label daily_gym:
     scene bg gym with wipeleft_scene  # Custom: Phòng gym FPT
     
-    "Rèn luyện cơ thể, giải toả tinh thần..."
-    
-    # Stat-dependent dialogue (sức khoẻ = đời sống)
-    if stats.doi_song < 20:
-        mc "\"Mệt quá… Chịu rồi...\""
-    elif stats.doi_song < 50:
-        mc "\"Phù… Nay đến đây thôi vậy.\""
-    elif stats.doi_song < 80:
-        mc "\"Cố thêm… Một xíu nữa thôi…\""
-    elif stats.doi_song < 100:
-        mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
-    else:
-        mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
-    
-    # Good health gains
-    $ stats.modify_doi_song(10)
-    $ show_stat_change("doi_song", 10)
+    menu:
+        "Luyện tập":
+            "Rèn luyện cơ thể, giải toả tinh thần..."
+            
+            # Stat-dependent dialogue (sức khoẻ = đời sống)
+            if stats.doi_song < 20:
+                mc "\"Mệt quá… Chịu rồi...\""
+            elif stats.doi_song < 50:
+                mc "\"Phù… Nay đến đây thôi vậy.\""
+            elif stats.doi_song < 80:
+                mc "\"Cố thêm… Một xíu nữa thôi…\""
+            elif stats.doi_song < 100:
+                mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
+            else:
+                mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
+            
+            # Good health gains
+            $ stats.modify_doi_song(10)
+            $ show_stat_change("doi_song", 10)
+        "Quay lại":
+            jump daily_activity
     
     return
