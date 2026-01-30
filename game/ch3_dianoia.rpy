@@ -257,7 +257,7 @@ label ch3_day11_hainu_movie:
     hainu "\"Bộ phim hay thật đấy nhỉ?\""
     mc "\"Ừ! Cảnh kết lúc Truman cúi chào khán giả lần cuối quả thật là Absolutely Cinema.\""
     
-    show yuri 1f
+    show hainu 1b
     
     hainu "\"…\""
     hainu "\"Cảnh đó… Cậu có nghĩ rằng, quyết định bước ra khỏi trường quay là đúng đắn chứ?\""
@@ -266,7 +266,7 @@ label ch3_day11_hainu_movie:
     "VŨ HẢI NỮ: \"Theo tôi thì, nếu lơ những điều kỳ lạ xung quanh đi, có lẽ cuộc sống của cậu ấy sẽ hạnh phúc hơn.\""
     "VŨ HẢI NỮ: \"Nhưng nó chỉ là một hạnh phúc giả tạo, theo kịch bản chứ không thực sự là điều cậu ta muốn.\""
     
-    show yuri 2f
+    show hainu 1c
     
     hainu "\"…\""
     hainu "\"Cậu còn nhớ ngụ ngôn về cái hang chứ?\""
@@ -286,7 +286,7 @@ label ch3_day11_hainu_movie:
     hainu "\"Nó là nhờ khát khao tìm ra chân lý, là nhờ sự tư duy và nhận thức của bản thân cậu ta, là nhờ Dianoia.\""
     hainu "\"…\""
     
-    show yuri 1g
+    show hainu 1e
     
     hainu "\"Ông tôi là một nhà triết gia…. Cả đời ông đi giao giảng về tầm quan trọng của triết học cho mọi người…\""
     hainu "\"Nhưng họ lại nghĩ ông chỉ là một lão già lắm lời, cho rằng ông bị điên…. Họ cho rằng ông chỉ làm những điều vô nghĩa….\""
@@ -298,7 +298,7 @@ label ch3_day11_hainu_movie:
     mc "\"…Và nhờ chị, em cũng đã yêu thích môn này rồi…\""
     mc "\"Vì vậy, hành động của ông không hề là vô ích.\""
     
-    show yuri 1s
+    show hainu 1e
     
     hainu "\"…\""
     hainu "\"Cảm ơn em.\""
@@ -322,7 +322,7 @@ label ch3_reflection:
     # ========================================
     
     hide xiu
-    hide yuri
+    hide hainu
     with dissolve
     
     scene black with dissolve_scene_full

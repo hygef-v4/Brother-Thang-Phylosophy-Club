@@ -43,6 +43,16 @@ image xiu 1f = "xiu/xiu_embarrassed.png"  # Embarrassed - shy
 image xiu 1g = "xiu/xiu_smirk.png"        # Smirk - confident, playful
 image xiu 1h = "xiu/xiu_thinking.png"     # Thinking - pondering, contemplative
 
+# Vũ Hải Nữ (Philosophy Club President) sprite definitions
+image hainu 1a = "hainu/hainu_neutral.png"        # Neutral - calm, observing
+image hainu 1b = "hainu/hainu_thinking.png"       # Thinking - adjusting glasses
+image hainu 1c = "hainu/hainu_explaining.png"     # Explaining - teaching philosophy
+image hainu 1d = "hainu/hainu_stern.png"          # Stern - serious, strict
+image hainu 1e = "hainu/hainu_gentle_smile.png"   # Gentle Smile - warm, caring
+image hainu 1f = "hainu/hainu_tired.png"          # Tired - exhausted from work
+image hainu 1g = "hainu/hainu_surprised.png"      # Surprised - shocked
+image hainu 1h = "hainu/hainu_embarrassed.png"    # Embarrassed - shy, flustered
+
 define robot = Character("T31", image="t31")
 
 python early:

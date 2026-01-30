@@ -183,26 +183,26 @@ label ch1_day1_day2:
     "Mở cửa ra, trước mặt là một người con gái đứng nhìn xuống dưới sân trường."
     "Đó có lẽ là hội trưởng CLB Triết học Plato – Vũ Hải Nữ."
     
-    show yuri 1a at t11
+    show hainu 1a at t11
     
     hainu "\"Eikasia.\""
     
     mc "\"..?\""
     mc "(Nghe giống như tên một món vũ khí trong game RPG nào đó vậy.)"
     
-    show yuri 1f
+    show hainu 1b
     
     hainu "\"Là cấp độ thấp nhất của nhận thức.\""
     
     "Hội Trưởng quay lại, nhìn thẳng vào tôi."
     
-    show yuri 2f at t11
+    show hainu 1c at t11
     
     hainu "\"Cậu kia. Cậu thấy bầu trời màu gì?\""
     
     mc "(bối rối) \"Ờ… màu xanh ạ.\""
     
-    show yuri 3h
+    show hainu 1d
     
     hainu "\"Thiển cận!\""
     hainu "\"Mặt trời không chỉ phát ra một màu, mà là cả một phổ ánh sáng.\""
@@ -210,7 +210,7 @@ label ch1_day1_day2:
     
     mc "\"…Hả?\""
     
-    show yuri 2f
+    show hainu 1c
     
     hainu "\"Bầu trời vốn không hề xanh.\""
     hainu "\"Màu xanh cậu thấy… Là ánh sáng bị tán xạ… Chỉ là ảo ảnh mà cậu tạo ra để diễn giải về thế giới.\""
@@ -219,17 +219,17 @@ label ch1_day1_day2:
     
     $ stats.met_hainu = True
     
-    show yuri 1a
+    show hainu 1a
     
     hainu "\"Vậy cậu đến đây làm gì?\""
     
     mc "(Gượng cười) \"Dạ em muốn gia nhập CLB ạ!\""
     
-    show yuri 1f
+    show hainu 1b
     
     hainu "\"…\""
     
-    show yuri 1a
+    show hainu 1a
     
     hainu "\"Được thôi… Cậu được nhận.\""
     
@@ -238,7 +238,7 @@ label ch1_day1_day2:
     $ gained = stats.modify_relationship("hainu", 3, multiplier)
     $ show_stat_change("rel_hainu", gained)
     
-    hide yuri with dissolve
+    hide hainu with dissolve
     
     # ========================================
     # CẢNH 4: KTX - TỐI (NGÀY 1)
@@ -410,7 +410,7 @@ label ch1_day1_day2:
     
     "Hội trưởng bước vào."
     
-    show yuri 4c at t22
+    show hainu 1d at t22
     
     hainu "\"BÀ LẠI ĐI GỌI ĐIỆN CHÈO KÉO THÀNH VIÊN VÀO CLB ĐỂ TIỆN TAY LỪA ĐẢO NỮA HẢ?\""
     hainu "\"HÔM QUA CÓ MỘT NGƯỜI MỚI GIA NHẬP, CÓ PHẢI LÀ DO BÀ DỤ DỖ KHÔNG HẢ?\""
@@ -420,22 +420,22 @@ label ch1_day1_day2:
     
     xiu "(lủi mất) \"Đùa tí, làm gì căng.\""
     
-    show yuri 2f at t22
+    show hainu 1c at t22
     
     hainu "\"Còn cả cậu nữa, ai rủ gì cậu cũng làm à? Chính kiến của cậu đâu hả?\""
     
     mc "\"Dạ…. Dạ…. Tại em nghĩ chỉ chơi cho vui thôi chứ đâu có biết là lừa đảo….\""
     
-    show yuri 1h
+    show hainu 1d
     
     hainu "\"…. Thật là một niềm tin mù quáng….\""
     hainu "\"Sống trên đời phải biết nghi ngờ, nếu không thì chả khác nào mấy thằng nghe lời người ta cầm 2 tỷ đầu tư vào HDPE để rồi tán gia bại sản.\""
     
-    show yuri 1g
+    show hainu 1e
     
     hainu "\"Thôi được rồi… nay cậu về đi.\""
     
-    hide yuri with dissolve
+    hide hainu with dissolve
     hide monika with dissolve
     
     # CẢNH 6 CŨ: TOUR TRƯỜNG (Chiều Ngày 2)
@@ -596,19 +596,19 @@ label ch1_day1_day2:
     "Phòng CLB vẫn sáng đèn."
     "Hội Trưởng ở trong phòng, trước mặt là một chồng sổ sách cao chạm trần!!?"
     
-    show yuri 1a at t11
+    show hainu 1a at t11
     
     hainu "\"Cậu là thành viên mới. Muộn rồi còn tới đây làm gì?\""
     
     mc "\"Em để quên chìa khoá ạ.\""
     
-    show yuri 1f
+    show hainu 1b
     
     hainu "\"Chìa khoá hả? Tôi thấy nó nên đặt ở kia kìa.\""
     
     "Đã tìm thấy chìa khoá, đang định đi về…."
     
-    show yuri 2f
+    show hainu 1c
     
     hainu "\"Này.\""
     
@@ -631,13 +631,13 @@ label ch1_day1_day2:
             $ stats.modify_doi_song(-5)
             $ show_stat_change("doi_song", -5)
             
-            show yuri 1a
+            show hainu 1a
             
             hainu "\"Nay cảm ơn cậu. Không có cậu chắc tôi bị đống giấy tờ này bán hành đến chết mất!\""
             hainu "\"…\""
             hainu "\"Chiều nay… Tôi có hơi nặng lời.\""
             
-            show yuri 2f
+            show hainu 1c
             
             hainu "\"Nhưng mà… Con người khác với mọi sinh vật ở khả năng suy nghĩ và phản biện.\""
             hainu "\"Suy nghĩ và phản biện là nền móng của triết học.\""
@@ -659,7 +659,7 @@ label ch1_day1_day2:
             
             mc "\"…Thôi được rồi, em sẽ giúp chị.\""
             
-            show yuri 1a
+            show hainu 1a
             
             "Tài liệu chất đống như núi, xử lý xong thì cũng đã muộn."
             
@@ -671,7 +671,7 @@ label ch1_day1_day2:
             hainu "\"…\""
             hainu "\"Chiều nay… Tôi có hơi nặng lời.\""
             
-            show yuri 2f
+            show hainu 1c
             
             hainu "\"Nhưng mà… Con người khác với mọi sinh vật ở khả năng suy nghĩ và phản biện.\""
             hainu "\"Suy nghĩ và phản biện là nền móng của triết học.\""
@@ -686,7 +686,7 @@ label ch1_day1_day2:
             $ stats.modify_hoc_tap(5)
             $ show_stat_change("hoc_tap", 5)
     
-    hide yuri with dissolve
+    hide hainu with dissolve
     
     # Kết thúc ngày 3
     scene black with dissolve_scene_full

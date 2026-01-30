@@ -198,7 +198,7 @@ label daily_clb_morning:
     
     "Đến CLB, không gian yên tĩnh..."
     
-    show yuri 1a at t11
+    show hainu 1a at t11
     
     hainu "\"Chào cậu.\""
     
@@ -234,7 +234,7 @@ label daily_clb_morning:
             $ gained = stats.modify_relationship("hainu", 5, multiplier)
             $ show_stat_change("rel_hainu", gained)
     
-    hide yuri with dissolve
+    hide hainu with dissolve
     return
 
 label daily_library_morning:
@@ -329,7 +329,7 @@ label daily_clb_afternoon:
             $ show_stat_change("hoc_tap", 8)
         
         "Nói chuyện với Hải Nữ":
-            show yuri 1a at t11
+            show hainu 1a at t11
             hainu "\"Buổi chiều cậu vẫn ở đây à?\""
             mc "\"Dạ, em muốn học thêm với chị.\""
             
@@ -341,7 +341,7 @@ label daily_clb_afternoon:
             $ stats.modify_hoc_tap(4)
             $ show_stat_change("hoc_tap", 4)
             
-            hide yuri with dissolve
+            hide hainu with dissolve
     
     return
 

@@ -46,7 +46,7 @@ label ch4_path_both:
     
     "Giữa phòng trưng một băng rôn Happy Birthday (Sớm)."
     
-    show yuri "1a" at t21
+    show hainu 1a at t21
     show monika "1k" at t22
     
     "VŨ HẢI NỮ: \"snvv nghen.\""
@@ -63,7 +63,7 @@ label ch4_path_both:
     
     "Cả phòng bỗng im bặt."
     
-    show yuri "1f"
+    show hainu 1b
     
     "VŨ HẢI NỮ: \"Ngày mai, chị nghĩ em nên về nhà làm hoà với bố.\""
     "VŨ HẢI NỮ: \"Dù sao cũng là gia đình, bố em thực sự chỉ lo cho em mà thôi….\""
@@ -75,7 +75,7 @@ label ch4_path_both:
     xiu "\"Nói gì sai hả. Mấy người có gia đình hạnh phúc làm sao hiểu được nỗi khổ khi phải làm tất cả để hài lòng gia đình chứ?\""
     xiu "\"Chị nghĩ em nên kệ họ đi, cứ làm theo mong muốn của bản thân là được.\""
     
-    show yuri 1a
+    show hainu 1a
     
     hainu "\"Vậy… Mong muốn của em là gì?\""
     
@@ -143,7 +143,7 @@ label ch4_path_hainu:
     
     "Giữa phòng trưng một băng rôn Happy Birthday."
     
-    show yuri "1a" at t11
+    show hainu 1a at t11
     
     "VŨ HẢI NỮ: \"snvv nghen.\""
     
@@ -372,7 +372,7 @@ label ending_dialectical_materialism:
     
     "Làm hoà được với bố, vui vẻ quay lại CLB."
     
-    show yuri "1a" at t11
+    show hainu 1a at t11
     
     "VŨ HẢI NỮ: \"Em về rồi à, chuyện với bố em thế nào rồi?\""
     
@@ -389,19 +389,19 @@ label ending_dialectical_materialism:
     
     mc "\"Là chân lý.\""
     
-    show yuri 1s
+    show hainu 1e
     
     hainu "(gật đầu) \"Đúng vậy, nó là thứ lý tưởng đẹp đẽ mà con người luôn tìm kiếm.\""
     hainu "\"Thứ lý tưởng sáng rọi như mặt trời.\""
     hainu "\"Con người từ khi sinh ra đã khao khát được thấy hình dạng thật của mặt trời, nhưng lại bị ánh sáng chói rọi của nó làm cho mù mắt.\""
     hainu "\"Họ kinh sợ ánh sáng đó, tôn nó lên làm các vị thần.\""
     
-    show yuri 2f
+    show hainu 1c
     
     hainu "\"Nhưng rồi họ phát triển hơn, tìm được những cách để nhìn vào mặt trời mà không làm mù loà đôi mắt.\""
     hainu "\"Nhưng khi đó mặt trời không còn là thiên thể sáng nhất, rực rỡ nhất mà họ hằng tưởng tượng nữa.\""
     
-    show yuri 1a
+    show hainu 1a
     
     hainu "\"Em có nghĩ rằng, một ngày nào đó nhân loại sẽ chạm được đến chân lý chứ?\""
     
