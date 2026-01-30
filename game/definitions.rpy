@@ -168,9 +168,6 @@ image bg library = "bg/library.png"  # Custom: Thư viện FPT
 image bg ktx = "bg/ktx.png"  # Custom: Ký túc xá FPT - ban đêm/tối
 image bg ktx_day = "bg/ktx_day.png"  # Custom: Ký túc xá FPT - ban ngày (khi MC tỉnh dậy)
 image bg hallway = "bg/hallway.png"  # Custom: Hành lang FPT
-image bg sayori_bedroom = "bg/sayori_bedroom.png"
-image bg house = "bg/house.png"
-image bg kitchen = "bg/kitchen.png"
 image bg bar = "bg/bar.png"  # Custom: Quầy bar/quán nhậu
 image bg sota = "bg/sota.png"  # Custom: Khu quân sự
 image bg cinema = "bg/cinema.png"  # Custom: Rạp chiếu phim
@@ -185,6 +182,10 @@ image bg glitch = LiveTile("bg/glitch.jpg")
 image bg mc_room:
     "bg/mc_room.jpg"
     zoom 1.25
+
+image bg ktx_xiu_room:
+    "bg/ktx_xiu_room.png"
+    zoom 0.85
 
 image glitch_color:
     ytile 3
