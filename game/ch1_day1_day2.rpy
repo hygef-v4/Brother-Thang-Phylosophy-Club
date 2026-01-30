@@ -115,7 +115,7 @@ label ch1_day1_day2:
     # Accept call
     "Click."
     
-    show monika 1d at t11
+    show xiu 1a at t11
     
     xiu "\"Alo Thắng à, em có phải là Thắng không?\""
     
@@ -124,25 +124,25 @@ label ch1_day1_day2:
     
     mc "(???) \"Dạ vâng. Cho hỏi ai đấy ạ?\""
     
-    show monika 1j
+    show xiu 1b
     
     xiu "\"Chị là Võ Minh Xỉu, thành viên câu lạc bộ Triết học Plato.\""
     xiu "\"Nghe bảo cu em là sinh viên mới, không biết có rảnh không nhỉ?\""
     
-    show monika 5a
+    show xiu 1g
     
     xiu "\"Nếu rảnh thì tham gia CLB của bọn chị đi. Khi tham gia sẽ có cơ hội nhận được rất nhiều ưu đãi hấp dẫn…\""
     
     mc "\"Dạ thôi chị ơi, em hơi bận xíu...\""
     
-    show monika 1j
+    show xiu 1b
     
     xiu "\"Ui, thôi em đừng có chối, thông tin về chiều cao, cân nặng, sở thích, địa chỉ nhà trọ, lịch sinh hoạt của em,… chị có cả rồi ở đây rồi.\""
     xiu "\"Cu em có cần chị đọc cho nghe một số thông tin không?\""
     
     mc "\"Hả? Thôi thôi cho em xin…\""
     
-    show monika 1k
+    show xiu 1b
     
     xiu "\"Nếu vậy thì hãy tham gia ngay cùng bọn chị nào!\""
     xiu "\"Vậy nhá, chị rất mong chờ được gặp lại em tại CLB Triết học Plato, tầng 2, phòng 217, toà Beta, Trường Đại học FPT!\""
@@ -161,11 +161,11 @@ label ch1_day1_day2:
             $ gained = stats.modify_relationship("xiu", 5, multiplier)
             $ show_stat_change("rel_xiu", gained)
             
-            show monika 1k
+            show xiu 1b
             
             xiu "\"Ngon~ Học xong nhớ lên đăng ký em nhé. Bái bai!\""
     
-    hide monika with dissolve
+    hide xiu with dissolve
     
     # Scene label
     scene black with dissolve
@@ -258,7 +258,7 @@ label ch1_day1_day2:
     "Ngày nhập học đầu tiên kết thúc."
     "Về đến ký túc xá, tôi định ngả lưng nghỉ ngơi chút thì..."
     
-    show monika 1d at t11
+    show xiu 1a at t11
     
     xiu "\"Ê cu.\""
     
@@ -266,14 +266,14 @@ label ch1_day1_day2:
     
     $ stats.met_xiu = True
     
-    show monika 1j
+    show xiu 1g
     
     xiu "(cười đểu) \"Tân sinh viên hả?\""
     xiu "\"Muốn chơi một trò chơi đêm muộn khiến bao con người thổn thức chứ?\""
     
     mc "(Đỏ mặt) \"Dạ?\""
     
-    show monika 5a
+    show xiu 1g
     
     xiu "\"Đùa xíu thôi! Tối nay đang có trận MU đá với MC, cu em có muốn vào xem cùng chị không nào?\""
     xiu "\"Cơ mà chỉ xem thôi thì chán phèo, hay là chị em mình làm trận cá cược đi nhỉ?\""
@@ -287,7 +287,7 @@ label ch1_day1_day2:
         "Chơi thì chơi, sợ gì?":
             mc "\"Chơi thì chơi, sợ gì?\""
             
-            show monika 1k
+            show xiu 1b
             
             xiu "\"Có chí khí đấy, vậy cu em theo đội nào?\""
             
@@ -302,7 +302,7 @@ label ch1_day1_day2:
                     mc "\"Dạo này MU đá đần lắm… Thôi thì theo MC vậy!\""
                     $ xiu_bet_choice = "MC"
             
-            show monika 2a
+            show xiu 1a
             
             xiu "\"OK! OK! Vậy thì chị theo đội còn lại.\""
             
@@ -315,7 +315,7 @@ label ch1_day1_day2:
             
             if xiu_bet_choice == match_result:
                 # Thắng!
-                show monika 2h
+                show xiu 1c
                 
                 xiu "\"Ây da! Thua mất rồi! Lần này coi như em gặp may.\""
                 xiu "\"Cu em được đấy! Lần sau lại chơi tiếp nhá.\""
@@ -330,7 +330,7 @@ label ch1_day1_day2:
                 
             else:
                 # Thua
-                show monika 1k
+                show xiu 1b
                 
                 xiu "\"Hehe! Chị thắng rồi! Tiền cu em chị xin nhá!\""
                 
@@ -342,7 +342,7 @@ label ch1_day1_day2:
                 $ gained = stats.modify_relationship("xiu", -5)
                 $ show_stat_change("rel_xiu", gained)
             
-            show monika 1a
+            show xiu 1a
             
             xiu "\"Chị ở phòng bên cạnh, nếu cần gì cứ sang gọi chị nhá!\""
         
@@ -350,7 +350,7 @@ label ch1_day1_day2:
             mc "\"Dạ thôi chị, em không muốn chơi cá cược ạ.\""
             mc "\"Em sợ mất tiền lắm.\""
             
-            show monika 5a
+            show xiu 1g
             
             xiu "\"Ừ thì thôi. Nhát thế thì đành chịu vậy.\""
             xiu "\"Chị ở phòng bên cạnh, nếu cần gì cứ sang gọi chị nhá!\""
@@ -366,6 +366,7 @@ label ch1_day1_day2:
     scene black with dissolve_scene_full
     stop music fadeout 2.0
     
+    scene bg fpt_4 with dissolve
     centered "{size=40}Ngày 2{/size}"
     
     $ renpy.pause(2.0, hard=True)
@@ -386,19 +387,19 @@ label ch1_day1_day2:
     "Sáng hôm sau, tôi lên phòng CLB."
     "Vừa bước vào phòng, tình cờ thế nào lại gặp lại chị gái tối qua."
     
-    show monika 1d at t11
+    show xiu 1a at t11
     
     xiu "\"Ô! Xem ai đây kìa! Cu em là thành viên mới của cái CLB tẻ nhạt này à?\""
     xiu "\"Trùng hợp ghê, chị cũng là thành viên đó!\""
     
-    show monika 1k
+    show xiu 1b
     
     xiu "\"Hữu duyên thế này thì tối này chị em ta lại phải làm ván cá độ rồi!\""
     
     mc "\"Dạ… Dạ vâng…\""
     
     # Hải Nữ xuất hiện
-    show monika 1d at t21
+    show xiu 1a at t21
     show yuri 3f at t22
     
     hainu "\"Xỉu!!!\""
@@ -415,7 +416,7 @@ label ch1_day1_day2:
     hainu "\"HÔM QUA CÓ MỘT NGƯỜI MỚI GIA NHẬP, CÓ PHẢI LÀ DO BÀ DỤ DỖ KHÔNG HẢ?\""
     hainu "\"ĐÂY LÀ CLB TRIẾT CHỨ KHÔNG PHẢI Ổ LỪA ĐẢO CỦA BÀ ĐÂU NHÁ!\""
     
-    show monika 2p at t21
+    show xiu 1d at t21
     
     xiu "(lủi mất) \"Đùa tí, làm gì căng.\""
     
@@ -443,7 +444,7 @@ label ch1_day1_day2:
     
     "Vừa ra khỏi phòng CLB đã thấy Xỉu đuổi theo."
     
-    show monika 2a at t11
+    show xiu 1a at t11
     
     xiu "\"Ây cu.\""
     xiu "\"Đừng giận chị nha.\""
@@ -458,7 +459,7 @@ label ch1_day1_day2:
         "Không sao, em cũng không giận gì đâu":
             mc "\"Không sao, em cũng không giận gì đâu.\""
             
-            show monika 1k
+            show xiu 1b
             
             xiu "\"Ngon. Chị em mình cứ thế thôi, hẹ hẹ hẹ.\""
             xiu "\"Được rồi, để chị dẫn đoàn nhà mình đi tham quan trường nào!\""
@@ -470,7 +471,7 @@ label ch1_day1_day2:
         "Em cũng tham quan vòng rồi, không cần phiền chị đâu ạ":
             mc "\"Em cũng tham quan vòng rồi, không cần phiền chị đâu ạ.\""
             
-            show monika 5a
+            show xiu 1g
             
             xiu "\"Thế thôi vậy. Em về nha, chị đi trước đây.\""
             
@@ -483,11 +484,11 @@ label ch1_day1_day2:
     scene bg library with fade  # Custom: Thư viện FPT
     play music t2 fadein 1.0 # Reset to happy music
     
-    show monika 1a at t11
+    show xiu 1a at t11
     
     xiu "\"Đầu tiên là thư viện, là một nơi vô cùng lý tưởng để ngồi ôn lại bài cũ…, hoặc là ngủ.\""
     
-    show monika 1j
+    show xiu 1b
     
     xiu "\"Nghe bảo Hội Trưởng thích mấy anh zai học bá đó, nếu em định tán chị ấy thì tốt nhất thử thông thạo bảy mấy món triết học Mác Leenin hay Tư tưởng Hồ Chí Minh đi.\""
     
@@ -500,28 +501,28 @@ label ch1_day1_day2:
     # Tour 2: Gym
     scene bg gym with fade  # Custom: Phòng gym FPT
     
-    show monika 5a at t11
+    show xiu 1g at t11
     
     xiu "\"Kế đến là phòng Gym, nơi các anh giai sáu múi flex đống cơ của mình.\""
     xiu "\"Gu chị là mấy anh chàng cao to đen hôi thể hình lực lưỡng, thi thoảng ra ngó mấy anh giai chống đẩy mà them chảy nước giãi.\""
     
     mc "\"Tém tém thôi chị ơi, liêm xỉ trôi theo hàng nước của chị rồi kìa.\""
     
-    show monika 1k
+    show xiu 1b
     
     # Tour 3: Canteen & Robot T31
     scene bg canteen with fade  # Custom: Canteen FPT
     
-    show monika 1a at t11
+    show xiu 1a at t11
     
     xiu "\"Cuối cùng là căng tin, nơi sinh hoạt văn hoá của hội những người không biết xấu hổ.\""
     
-    show monika 1a at t21
+    show xiu 1a at t21
     show t31 at t22 with dissolve
     
     mc "\"A! Con lợn này.\""
     
-    show monika 1d at t21
+    show xiu 1a at t21
     
     xiu "\"Đây là robot bán hàng số hiệu T31 tên đầy đủ là DaoChiCuong do tập đoàn FPT sản xuất.\""
     xiu "\"Phế lắm, chị chửi nó suốt. Mong sau này robot xâm chiếm thế giới nó không nhớ mặt chị.\""
@@ -536,7 +537,7 @@ label ch1_day1_day2:
     
     mc "(Ủa... Sao lại tiếng Tây???)"
     
-    show monika 2p
+    show xiu 1d
     
     xiu "\"Thấy chưa! Nó bị lỗi phần mềm rồi đấy. Bảo sửa mãi không chịu.\""
     
@@ -545,14 +546,13 @@ label ch1_day1_day2:
     "Robot T31 lăn đi về phía kho."
     
     mc "\"Có vẻ nó thích phim Terminator nhỉ...\""
-    
-    show monika 1k
+
     
     xiu "\"Ai mà biết được. Chắc là ai đó cài đặt lỗi cho vui.\""
     
     "..."
     
-    show monika 2a
+    show xiu 1a
     
     xiu "\"Thôi muộn rồi, chị té trước đây nha.\""
     
@@ -562,7 +562,6 @@ label ch1_day1_day2:
     $ stats.modify_doi_song(5)
     $ show_stat_change("doi_song", 5)
     
-    hide monika with dissolve
     
     # ========================================
     # NGÀY 3: QUÊN CHÌA KHÓA & TRẢ NỢ
@@ -572,7 +571,7 @@ label ch1_day1_day2:
     
     scene black with dissolve_scene_full
     stop music fadeout 2.0
-    
+    scene bg fpt_5 with dissolve
     centered "{size=40}Ngày 3{/size}"
     
     $ renpy.pause(2.0, hard=True)

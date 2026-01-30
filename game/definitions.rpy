@@ -31,6 +31,18 @@ image dad angry = Transform("images/dad.png", zoom=0.85, xalign=0.5, yalign=1.0)
 image t31 = Transform("images/robot_t31.png", zoom=1.25, xalign=0.5, yalign=1.0)
 image side t31 = Transform("images/robot_t31_side.png", zoom=0.35, xalign=0.0, yalign=1.0)
 
+# ================================================
+# CHARACTER SPRITES - Võ Minh Xỉu
+# ================================================
+image xiu 1a = "xiu/xiu_neutral.png"      # Neutral - calm, default
+image xiu 1b = "xiu/xiu_happy.png"        # Happy - cheerful
+image xiu 1c = "xiu/xiu_sad.png"          # Sad - disappointed  
+image xiu 1d = "xiu/xiu_angry.png"        # Angry - frustrated
+image xiu 1e = "xiu/xiu_surprised.png"    # Surprised - shocked
+image xiu 1f = "xiu/xiu_embarrassed.png"  # Embarrassed - shy
+image xiu 1g = "xiu/xiu_smirk.png"        # Smirk - confident, playful
+image xiu 1h = "xiu/xiu_thinking.png"     # Thinking - pondering, contemplative
+
 define robot = Character("T31", image="t31")
 
 python early:
@@ -182,6 +194,9 @@ image bg yenlang = "bg/yenlang.jpg"
 image bg fpt_1 = "bg/fpt_1.png"
 image bg fpt_2 = "bg/fpt_2.png"
 image bg fpt_3 = "bg/fpt_3.png"
+image bg fpt_4 = "bg/fpt_4.png"
+image bg fpt_5 = "bg/fpt_5.png"
+
 
 image bg glitch = LiveTile("bg/glitch.jpg")
 
@@ -215,6 +230,14 @@ image bg fpt_2:
 
 image bg fpt_3:
     "bg/fpt_3.png"
+    zoom 0.85
+
+image bg fpt_4:
+    "bg/fpt_4.png"
+    zoom 0.85
+
+image bg fpt_5:
+    "bg/fpt_5.png"
     zoom 0.85
 
 image glitch_color:
