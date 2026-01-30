@@ -13,15 +13,11 @@ init -1 python:
             self.tien = GameConfig.STAT_INITIAL_TIEN
             
             # Relationship scores
-            # self.rel_ischyros = GameConfig.REL_INITIAL_ISCHYROS  # REMOVED - character no longer exists
-            self.rel_huong = GameConfig.REL_INITIAL_HUONG
             self.rel_hainu = GameConfig.REL_INITIAL_HAINU
             self.rel_xiu = GameConfig.REL_INITIAL_XIU
             
             # Flags
             self.dad_cutoff = False  # Bố cắt trợ cấp
-            # self.met_ischyros = False  # REMOVED
-            self.met_huong = False
             self.met_hainu = False
             self.met_xiu = False
             
@@ -62,13 +58,12 @@ init -1 python:
         def modify_relationship(self, char_name, amount, stat_multiplier=1.0):
             """
             Thay đổi tình cảm với nhân vật
-            char_name: "huong", "hainu", "xiu" (ischyros removed)
+            char_name: "hainu", "xiu"
             amount: số điểm thay đổi
             stat_multiplier: nhân với stats (Hải Nữ thích học tập, Hương thích đời sống)
             """
             final_amount = amount * stat_multiplier
             
-            # Note: ischyros case removed
             if char_name == "huong":
                 self.rel_huong = self.clamp(
                     self.rel_huong + final_amount,
@@ -92,77 +87,43 @@ init -1 python:
 
         def get_relationship(self, char_name):
             """Lấy giá trị tình cảm"""
-            # Note: ischyros case removed
-            if char_name == "huong":
-                return self.rel_huong
-            elif char_name == "hainu":
+            if char_name == "hainu":
                 return self.rel_hainu
             elif char_name == "xiu":
                 return self.rel_xiu
             return 0
         
-        # get_stat_multiplier_ischyros REMOVED - character no longer exists
-        
-        def get_stat_multiplier_huong(self):
-            """Hương thích đời sống cao"""
+        def get_stat_multiplier_xiu(self):
+            """Xỉu thích đời sống cao"""
             if self.doi_song >= 80:
+                return 2
+            elif self.doi_song >= 40:
                 return 1.5
-            elif self.doi_song >= 60:
-                return 1.2
             else:
                 return 1.0
         
         def get_stat_multiplier_hainu(self):
             """Hải Nữ (President) thích học tập cao"""
-            # Changed: Hải Nữ is now president, prefers high study stats
             if self.hoc_tap >= 80:
+                return 2
+            elif self.hoc_tap >= 40:
                 return 1.5
-            elif self.hoc_tap >= 60:
-                return 1.2
-            else:
-                return 1.0
-        
-        def get_stat_multiplier_xiu(self):
-            """Xỉu thích cân bằng + tiền"""
-            avg = (self.hoc_tap + self.doi_song) / 2
-            if avg >= 70 and self.tien > 100000:
-                return 1.5
-            elif avg >= 50:
-                return 1.2
             else:
                 return 1.0
         
         def update_daily(self):
-            """Gọi mỗi ngày mới - Returns dict of changes for display"""
-            # Hồi stats
-            hoc_tap_change = GameConfig.STAT_DAILY_HOC_TAP_REGEN
-            self.modify_hoc_tap(hoc_tap_change)
-            
-            doi_song_change = GameConfig.STAT_DAILY_DOI_SONG_REGEN
-            self.modify_doi_song(doi_song_change)
-            
-            # Xỉu relationship hồi
-            xiu_rel_change = self.modify_relationship("xiu", 5)
+            """Gọi mỗi ngày mới - Returns money changes for display"""
             
             # Nhận tiền (nếu không bị cắt)
             if not self.dad_cutoff:
-                base_money = GameConfig.STAT_DAILY_MONEY_BASE
+                total_money = GameConfig.STAT_DAILY_MONEY_BASE
             else:
-                base_money = 0
-            
-            # Bonus từ Hải Nữ
-            bonus_money = int(self.rel_hainu * 500)
-            total_money = base_money + bonus_money
+                total_money = 0
             
             self.modify_tien(total_money)
             
             # Return changes for notification display
-            return {
-                "hoc_tap": hoc_tap_change,
-                "doi_song": doi_song_change,
-                "rel_xiu": xiu_rel_change,
-                "tien": total_money
-            }
+            return total_money
 
 # Initialize stats globally
 default stats = StatsManager()

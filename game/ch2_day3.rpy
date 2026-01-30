@@ -202,6 +202,9 @@ label ch2_day_start:
     
     # Daily logic: regen stats
     $ daily_changes = stats.update_daily()
+
+    if daily_changes != 0:
+        $ show_stat_change("tien", daily_changes)
     
     return
 

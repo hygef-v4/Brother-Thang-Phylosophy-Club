@@ -18,10 +18,8 @@ label daily_routine_loop:
     $ daily_changes = stats.update_daily()
     
     # Show daily stat changes
-    $ show_stat_change("hoc_tap", daily_changes["hoc_tap"])
-    $ show_stat_change("doi_song", daily_changes["doi_song"])
-    $ show_stat_change("rel_xiu", daily_changes["rel_xiu"])
-    $ show_stat_change("tien", daily_changes["tien"])
+    if daily_changes != 0:
+        $ show_stat_change("tien", daily_changes)
     
     # ========================================
     # MORNING ACTIVITY (SÁNG)
@@ -31,7 +29,7 @@ label daily_routine_loop:
     centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
     
-    call daily_morning_activity
+    call daily_activity
     
     # ========================================
     # AFTERNOON ACTIVITY (CHIỀU)
@@ -41,7 +39,7 @@ label daily_routine_loop:
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
     
-    call daily_afternoon_activity
+    call daily_activity
     
     # ========================================
     # EVENING DORM (TỐI)
@@ -50,7 +48,7 @@ label daily_routine_loop:
     scene black with dissolve_scene_full
     stop music fadeout 2.0
     
-    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Về ký túc xá{/size}"
+    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(2.0, hard=True)
     
     call daily_evening_dorm
@@ -69,47 +67,21 @@ label daily_routine_loop:
 # MORNING ACTIVITY
 # ========================================
 
-label daily_morning_activity:
+label daily_activity:
     scene bg class_day with fade
     play music daily_life fadein 1.0
     
     menu:
-        "Chọn hoạt động buổi sáng:"
-        
         "Đến CLB":
-            jump daily_clb_morning
+            jump daily_clb
         
         "Đến Thư viện":
-            jump daily_library_morning
+            jump daily_library
         
         "Đến Gym":
-            jump daily_gym_morning
+            jump daily_gym
     
     return
-
-
-# ========================================
-# AFTERNOON ACTIVITY
-# ========================================
-
-label daily_afternoon_activity:
-    scene bg class_day with fade
-    play music daily_life fadein 1.0
-    
-    menu:
-        "Chọn hoạt động buổi chiều:"
-        
-        "Đến CLB":
-            jump daily_clb_afternoon
-        
-        "Đến Thư viện":
-            jump daily_library_afternoon
-        
-        "Đến Gym":
-            jump daily_gym_afternoon
-    
-    return
-
 
 # ========================================
 # EVENING DORM ACTIVITIES
@@ -260,8 +232,6 @@ label daily_library_morning:
     # Balanced study gains
     $ stats.modify_hoc_tap(12)
     $ show_stat_change("hoc_tap", 12)
-    $ stats.modify_doi_song(-3)
-    $ show_stat_change("doi_song", -3)
     
     return
 
@@ -313,43 +283,35 @@ label daily_gym_morning:
 
 
 # ========================================
-# REUSABLE ACTIVITIES - AFTERNOON
+# REUSABLE ACTIVITIES
 # ========================================
 
-label daily_clb_afternoon:
+label daily_clb:
     scene bg club_day with wipeleft_scene
     play music club_theme fadein 1.0
     
-    "CLB buổi chiều có nhiều người hơn..."
-    
     menu:
-        "Học triết":
-            # Good study gains
-            $ stats.modify_hoc_tap(8)
-            $ show_stat_change("hoc_tap", 8)
-        
-        "Nói chuyện với Hải Nữ":
+        "Giúp đỡ Hải Nữ":
             show yuri 1a at t11
-            hainu "\"Buổi chiều cậu vẫn ở đây à?\""
-            mc "\"Dạ, em muốn học thêm với chị.\""
+            hainu "\"Cậu tới rồi à? Giúp tôi một số việc được không?\""
+            mc "\"Dạ, vâng ạ.\""
             
             # Good relationship gains
             $ multiplier = stats.get_stat_multiplier_hainu()
             $ gained = stats.modify_relationship("hainu", 6, multiplier)
             $ show_stat_change("rel_hainu", gained)
             
-            $ stats.modify_hoc_tap(4)
-            $ show_stat_change("hoc_tap", 4)
+            $ stats.modify_tien(50000)
+            $ show_stat_change("tien", 50000)
             
             hide yuri with dissolve
+        "Quay lại":
     
     return
 
 label daily_library_afternoon:
     scene bg library with wipeleft_scene  # Custom: Thư viện FPT
     play music daily_life fadein 1.0
-    
-    "Thư viện buổi chiều đông người..."
     
     "Giở sách vở ra, ôn lại bài cũ..."
     
@@ -368,15 +330,11 @@ label daily_library_afternoon:
     # Balanced afternoon study
     $ stats.modify_hoc_tap(10)
     $ show_stat_change("hoc_tap", 10)
-    $ stats.modify_doi_song(-2)
-    $ show_stat_change("doi_song", -2)
     
     return
 
 label daily_gym_afternoon:
     scene bg gym with wipeleft_scene  # Custom: Phòng gym FPT
-    
-    "Gym buổi chiều, tập cùng mọi người..."
     
     "Rèn luyện cơ thể, giải toả tinh thần..."
     
@@ -393,7 +351,7 @@ label daily_gym_afternoon:
         mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
     
     # Good health gains
-    $ stats.modify_doi_song(12)
-    $ show_stat_change("doi_song", 12)
+    $ stats.modify_doi_song(10)
+    $ show_stat_change("doi_song", 10)
     
     return

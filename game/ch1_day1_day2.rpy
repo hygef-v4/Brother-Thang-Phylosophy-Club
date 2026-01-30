@@ -371,10 +371,8 @@ label ch1_day1_day2:
     $ daily_changes = stats.update_daily()
     
     # Show daily stat changes
-    $ show_stat_change("hoc_tap", daily_changes["hoc_tap"])
-    $ show_stat_change("doi_song", daily_changes["doi_song"])
-    $ show_stat_change("rel_xiu", daily_changes["rel_xiu"])
-    $ show_stat_change("tien", daily_changes["tien"])
+    if daily_changes != 0:
+        $ show_stat_change("tien", daily_changes)
     
     # CẢNH 5 CŨ: CLB - SÁNG (Bị mắng)
     scene bg club_day with wipeleft_scene
@@ -576,6 +574,9 @@ label ch1_day1_day2:
     
     $ current_day = 3
     $ daily_changes = stats.update_daily() # Update stats for Day 3 start
+
+    if daily_changes != 0:
+        $ show_stat_change("tien", daily_changes)
     
     # CẢNH 7 CŨ (Giờ là Chiều Ngày 3)
     

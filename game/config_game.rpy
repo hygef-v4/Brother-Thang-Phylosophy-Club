@@ -20,8 +20,6 @@ init -1 python:
         MC_NAME_DEFAULT = "Võ Chiến Thắng"
         MC_NICKNAME = "Võ Thắng"
         
-        # CHAR_ISCHYROS = "Đào Chí Ischyros"  # REMOVED - character no longer exists in new story
-        CHAR_HUONG = "Hương"
         CHAR_HAINU = "Vũ Hải Nữ"  # Now club president (full name)
         CHAR_XIU = "Võ Minh Xỉu"  # Full name
         CHAR_DAD = "Võ Quang Hưng"  # Full name - Đại Tá quân đội
@@ -31,28 +29,22 @@ init -1 python:
         # ========================================
         STAT_MAX = 100
         STAT_MIN = 0
-        STAT_INITIAL_HOC_TAP = 50
-        STAT_INITIAL_DOI_SONG = 50
+        STAT_INITIAL_HOC_TAP = 0
+        STAT_INITIAL_DOI_SONG = 0
         STAT_INITIAL_TIEN = 100000
         
         # Daily changes
-        STAT_DAILY_HOC_TAP_REGEN = 5
-        STAT_DAILY_DOI_SONG_REGEN = 5
-        STAT_DAILY_MONEY_BASE = 50000
+        STAT_DAILY_MONEY_BASE = 10000
         
         # Activity effects
         STAT_STUDY_HOC_TAP_GAIN = 15
         STAT_GYM_DOI_SONG_GAIN = 15
-        STAT_HANGOUT_HOC_TAP_LOSS = -10
-        STAT_HANGOUT_DOI_SONG_LOSS = -10
         
         # ========================================
         # RELATIONSHIP CONFIGURATION
         # ========================================
         REL_MIN = 0
         REL_MAX = 100
-        # REL_INITIAL_ISCHYROS = 0  # REMOVED - character no longer exists
-        REL_INITIAL_HUONG = 0
         REL_INITIAL_HAINU = 0  # Start neutral
         REL_INITIAL_XIU = 0  # Changed from 50 to 0 - start neutral
         
@@ -81,9 +73,7 @@ default current_time_slot = "morning"
 # DEFINE CHARACTERS
 # ========================================
 define mc = Character("[mc_name]", color="#FFFFFF")
-# define ischyros - REMOVED: character no longer exists in new story
-define huong = Character(GameConfig.CHAR_HUONG, color="#FFFFFF")
-define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF")  # Now president
+define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF")  # President
 define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF")  # Recruits MC
 define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF")  # Đại Tá
 define narrator = Character(None)  # Cho narration
