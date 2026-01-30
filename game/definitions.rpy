@@ -178,6 +178,7 @@ image bg club_messy = "bg/club_messy.png"  # Custom: CLB lộn xộn giấy tờ
 image bg notebook = "bg/notebook.png"
 image bg classroom = "bg/class.png"
 image bg library = "bg/library.png"
+image bg yenlang = "bg/yenlang.jpg"
 
 image bg glitch = LiveTile("bg/glitch.jpg")
 
@@ -193,9 +194,9 @@ image bg sota:
     "bg/sota.png"
     zoom 0.85
 
-image bg classroom:
-    "bg/class.png"
-    zoom 1.5
+image bg yenlang:
+    "bg/yenlang.jpg"
+    zoom 1.25
 
 image glitch_color:
     ytile 3
