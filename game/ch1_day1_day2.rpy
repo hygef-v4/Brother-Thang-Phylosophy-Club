@@ -17,6 +17,8 @@ label ch1_day1_day2:
     # Scene label
     scene black
     with dissolve
+
+    scene bg yenlang with fade
     
     centered "{size=40}Ngày 1{/size}"
     
