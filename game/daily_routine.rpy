@@ -306,6 +306,7 @@ label daily_clb:
             
             hide yuri with dissolve
         "Quay lại":
+            return
     
     return
 

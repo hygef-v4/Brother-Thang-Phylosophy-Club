@@ -7,6 +7,7 @@ label ch1_day1_day2:
     
     # Show stats UI
     show screen stats_display
+    show screen konami_listener
     
     $ current_day = 1
     $ current_chapter = 1
