@@ -125,7 +125,7 @@ label daily_evening_dorm:
         "Làm gì trước khi ngủ?"
         
         "Nói chuyện với Xỉu":
-            show monika 1d at t11
+            show xiu 1a at t11
             
             xiu "\"Ê cu em! Hôm nay thế nào?\""
             
@@ -141,11 +141,11 @@ label daily_evening_dorm:
                         $ gained = stats.modify_relationship("xiu", 6)
                         $ show_stat_change("rel_xiu", gained)
                         
-                        show monika 1k
+                        show xiu 1b
                         xiu "\"OK! Chị dạy cho.\""
                         "..."
                     else:
-                        show monika 2p
+                        show xiu 1d
                         xiu "\"Nghèo thế mà học?\""
                 
                 "Dịch vụ bồi bổ sức khỏe (20,000 VNĐ)":
@@ -159,18 +159,18 @@ label daily_evening_dorm:
                         $ gained = stats.modify_relationship("xiu", 6)
                         $ show_stat_change("rel_xiu", gained)
                         
-                        show monika 1k
+                        show xiu 1b
                         xiu "\"Đi đây!\""
                         "..."
                     else:
-                        show monika 2p
+                        show xiu 1d
                         xiu "\"Không tiền thì nghỉ!\""
                 
                 "Không cần":
-                    show monika 2a
+                    show xiu 1a
                     xiu "\"Vậy sao.\""
             
-            hide monika with dissolve
+            hide xiu with dissolve
         
         "Đi ngủ luôn":
             mc "\"Mệt quá, ngủ sớm vậy...\""

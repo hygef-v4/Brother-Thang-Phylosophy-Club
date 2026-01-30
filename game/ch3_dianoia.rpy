@@ -321,7 +321,7 @@ label ch3_reflection:
     # NGÀY 12 & 13: TỰ VẤN
     # ========================================
     
-    hide monika
+    hide xiu
     hide yuri
     with dissolve
     

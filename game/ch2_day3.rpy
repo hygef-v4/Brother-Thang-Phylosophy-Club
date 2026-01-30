@@ -66,7 +66,7 @@ label ch2_day3:
     "Nhưng hôm nay không khí có vẻ căng thẳng lạ thường."
 
     show yuri 1f at t21
-    show monika 2p at t22
+    show xiu 1d at t22
 
     xiu "\"Tiền là phương tiện để tự do! Có tiền mới có lựa chọn! Bà cứ lý thuyết suông mãi thế không chán à?\""
     
@@ -74,7 +74,7 @@ label ch2_day3:
 
     mc "(Lại cãi nhau rồi...)"
 
-    show monika 1k at t22
+    show xiu 1b at t22
 
     xiu "\"Á à, cu em đến rồi!\""
     xiu "\"Phân xử đi! Theo em, Hạnh phúc là gì?\""
@@ -88,7 +88,7 @@ label ch2_day3:
             mc "\"Em nghĩ... Sống là phải vui. Cứ thoải mái, sảng khoái như chị Xỉu là sướng nhất.\""
             mc "\"Đời người ngắn ngủi, tội gì phải khổ hạnh?\""
 
-            show monika 1l at t22
+            show xiu 1b at t22
             show yuri 2h at t21
 
             xiu "\"Chuẩn! 10 điểm! Thằng bé này khá lắm!\""
@@ -104,7 +104,7 @@ label ch2_day3:
             mc "\"Như chị Nữ nói, vui thú nhất thời rồi cũng sẽ qua, cái đọng lại mới quan trọng.\""
 
             show yuri 1a at t21
-            show monika 2p at t22
+            show xiu 1d at t22
 
             hainu "\"Nghe chưa? Cậu ấy hiểu chuyện hơn cô tưởng đấy.\""
             xiu "\"Hứ! Đồ ẻo lả. Chả thú vị gì cả.\""
@@ -115,12 +115,12 @@ label ch2_day3:
             $ show_stat_change("rel_xiu", gained)
 
     show yuri 1a at t21
-    show monika 1a at t22
+    show xiu 1a at t22
 
     "Cuộc tranh luận kết thúc, nhưng dường như nó đã định hình một cái gì đó trong tôi."
 
     hide yuri with dissolve
-    hide monika with dissolve
+    hide xiu with dissolve
     
     call ch2_evening_activity from ch2_day6_eve
     
@@ -326,7 +326,7 @@ label ch2_gym_event:
         # Text 315
         mc "\"Mệt quá… Chịu rồi...\""
         
-        show monika 2l at t11
+        show xiu 1d at t11
         xiu "\"Yếu nhớt! Cầm cái tạ như cầm ly trà sữa thế kia bao giờ mới có người yêu?\""
         
         $ stats.modify_doi_song(5)
@@ -336,7 +336,7 @@ label ch2_gym_event:
         # Text 317
         mc "\"Cố thêm… Một xíu nữa thôi…\""
         
-        show monika 1k at t11
+        show xiu 1b at t11
         xiu "\"Khá đấy cu. Nay đẩy ngực được 20kg rồi à? Cố lên, sắp đủ trình làm bao cát cho chị rồi.\""
         
         $ stats.modify_doi_song(10)
@@ -348,7 +348,7 @@ label ch2_gym_event:
         # Text 318
         mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
         
-        show monika 3b at t11
+        show xiu 1b at t11
         xiu "\"Uầy, nhìn 'mlem' phết rồi đấy. Tối nay đi làm bát phở gầu bò nạm thưởng cho cái body này không?\""
         
         $ stats.modify_doi_song(15)
@@ -424,7 +424,7 @@ label ch2_evening_activity:
             stop music fadeout 1.0
             play music t5 fadein 1.0 # Playful
             
-            show monika 1d at t11
+            show xiu 1a at t11
             xiu "\"Chào mừng đến với dịch vụ Campuchia gì cũng tôn của Xỉu. Cu em cần gì nào?\""
             
             menu:
@@ -439,7 +439,7 @@ label ch2_evening_activity:
                     "Chúng tôi chơi game và ăn vặt tới khuya."
                     $ stats.modify_doi_song(5)
             
-            hide monika
+            hide xiu
             
             $ gained = stats.modify_relationship("xiu", 3)
             $ show_stat_change("rel_xiu", gained)
