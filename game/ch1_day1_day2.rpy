@@ -84,7 +84,7 @@ label ch1_day1_day2:
     
     # CHUYỂN CẢNH: NHẬP HỌC (Vẫn là Ngày 1)
     
-    scene black with dissolve
+    scene bg fpt_1 with fade
     centered "{size=30}Sáng hôm sau...{/size}"
     $ renpy.pause(1.5, hard=True)
     
@@ -169,6 +169,7 @@ label ch1_day1_day2:
     
     # Scene label
     scene black with dissolve
+    scene bg fpt_2 with fade
     centered "{size=30}Chiều hôm đó...{/size}"
     $ renpy.pause(1.5, hard=True)
     
@@ -243,7 +244,7 @@ label ch1_day1_day2:
     # CẢNH 4: KTX - TỐI (NGÀY 1)
     # ========================================
     
-    scene black with dissolve
+    scene bg fpt_3 with dissolve
     centered "{size=40}Ngày 1 - Tối{/size}"
     $ renpy.pause(1.5, hard=True)
     

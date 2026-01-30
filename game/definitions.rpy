@@ -179,12 +179,19 @@ image bg notebook = "bg/notebook.png"
 image bg classroom = "bg/class.png"
 image bg library = "bg/library.png"
 image bg yenlang = "bg/yenlang.jpg"
+image bg fpt_1 = "bg/fpt_1.png"
+image bg fpt_2 = "bg/fpt_2.png"
+image bg fpt_3 = "bg/fpt_3.png"
 
 image bg glitch = LiveTile("bg/glitch.jpg")
 
 image bg mc_room:
     "bg/mc_room.jpg"
     zoom 1.25
+
+image bg living_room:
+    "bg/living_room.png"
+    zoom 0.85
 
 image bg ktx_xiu_room:
     "bg/ktx_xiu_room.png"
@@ -197,6 +204,18 @@ image bg sota:
 image bg yenlang:
     "bg/yenlang.jpg"
     zoom 1.25
+
+image bg fpt_1:
+    "bg/fpt_1.png"
+    zoom 0.9
+
+image bg fpt_2:
+    "bg/fpt_2.png"
+    zoom 0.9
+
+image bg fpt_3:
+    "bg/fpt_3.png"
+    zoom 0.85
 
 image glitch_color:
     ytile 3
