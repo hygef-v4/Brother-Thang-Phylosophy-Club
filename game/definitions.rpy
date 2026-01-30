@@ -176,6 +176,8 @@ image bg club_party = "bg/club_party.png"  # Custom: CLB trang trí tiệc sinh 
 image bg ktx_xiu_room = "bg/ktx_xiu_room.png"  # Custom: Phòng của Xỉu
 image bg club_messy = "bg/club_messy.png"  # Custom: CLB lộn xộn giấy tờ
 image bg notebook = "bg/notebook.png"
+image bg classroom = "bg/class.png"
+image bg library = "bg/library.png"
 
 image bg glitch = LiveTile("bg/glitch.jpg")
 
@@ -186,6 +188,14 @@ image bg mc_room:
 image bg ktx_xiu_room:
     "bg/ktx_xiu_room.png"
     zoom 0.85
+
+image bg sota:
+    "bg/sota.png"
+    zoom 0.85
+
+image bg classroom:
+    "bg/class.png"
+    zoom 1.5
 
 image glitch_color:
     ytile 3
