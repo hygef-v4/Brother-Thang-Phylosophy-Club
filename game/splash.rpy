@@ -159,8 +159,8 @@ image warning:
     "white" with Dissolve(0.5, alpha=True)
     0.5
 
-image tos = "bg/warning.png"
-image tos2 = "bg/warning2.png"
+image tos = Solid("#000")
+image tos2 = Solid("#000")
 
 label splashscreen:
     python:

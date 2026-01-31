@@ -3,9 +3,8 @@
 # ================================================
 # Central configuration file - Không hardcode!
 
+default persistent.unlocked_endings = set()
 init -1 python:
-    if persistent.unlocked_endings is None:
-        persistent.unlocked_endings = set()
     # ========================================
     # GAME METADATA
     # ========================================
@@ -77,6 +76,7 @@ define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF")  # President
 define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF")  # Recruits MC
 define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF")  # Đại Tá
 define narrator = Character(None)  # Cho narration
+define robot = Character("T31", image="t31")
 
 # ========================================
 # AUDIO DEFINITIONS (Tạm sử dụng DDLC audio)

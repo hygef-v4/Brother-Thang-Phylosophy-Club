@@ -95,7 +95,7 @@ label daily_dorm:
     
     menu:
         "Nói chuyện với Xỉu":
-            show monika 1d at t11
+            show xiu 1a at t11
             
             xiu "\"Chào mừng đến với dịch vụ Campuchia gì cũng tôn của Xỉu. Cu em cần gì nào?\""
             
@@ -140,7 +140,7 @@ label daily_dorm:
                     show monika 2a
                     xiu "\"Thế thôi...\""
             
-            hide monika with dissolve
+            hide xiu with dissolve
         
         "Đi ngủ":
             mc "\"Mệt quá, ngủ sớm vậy...\""

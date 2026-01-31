@@ -65,8 +65,8 @@ label ch2_day3:
     "Chiều ngày thứ 6, tôi đến CLB như thường lệ."
     "Nhưng hôm nay không khí có vẻ căng thẳng lạ thường."
 
-    show yuri 1f at t21
-    show monika 2p at t22
+    show hainu 1b at t21
+    show xiu 1d at t22
 
     xiu "\"Tiền là phương tiện để tự do! Có tiền mới có lựa chọn! Bà cứ lý thuyết suông mãi thế không chán à?\""
     
@@ -74,7 +74,7 @@ label ch2_day3:
 
     mc "(Lại cãi nhau rồi...)"
 
-    show monika 1k at t22
+    show xiu 1b at t22
 
     xiu "\"Á à, cu em đến rồi!\""
     xiu "\"Phân xử đi! Theo em, Hạnh phúc là gì?\""
@@ -88,8 +88,8 @@ label ch2_day3:
             mc "\"Em nghĩ... Sống là phải vui. Cứ thoải mái, sảng khoái như chị Xỉu là sướng nhất.\""
             mc "\"Đời người ngắn ngủi, tội gì phải khổ hạnh?\""
 
-            show monika 1l at t22
-            show yuri 2h at t21
+            show xiu 1b at t22
+            show hainu 1f at t21
 
             xiu "\"Chuẩn! 10 điểm! Thằng bé này khá lắm!\""
             hainu "\"Hừmm... Cậu cũng thiển cận như cô ta vậy.\""
@@ -103,8 +103,8 @@ label ch2_day3:
             mc "\"Em nghĩ hạnh phúc là khi mình tìm thấy ý nghĩa sống, hoặc làm được gì đó có ích.\""
             mc "\"Như chị Nữ nói, vui thú nhất thời rồi cũng sẽ qua, cái đọng lại mới quan trọng.\""
 
-            show yuri 1a at t21
-            show monika 2p at t22
+            show hainu 1a at t21
+            show xiu 1d at t22
 
             hainu "\"Nghe chưa? Cậu ấy hiểu chuyện hơn cô tưởng đấy.\""
             xiu "\"Hứ! Đồ ẻo lả. Chả thú vị gì cả.\""
@@ -114,13 +114,13 @@ label ch2_day3:
             $ gained = stats.modify_relationship("xiu", -2)
             $ show_stat_change("rel_xiu", gained)
 
-    show yuri 1a at t21
-    show monika 1a at t22
+    show hainu 1a at t21
+    show xiu 1a at t22
 
     "Cuộc tranh luận kết thúc, nhưng dường như nó đã định hình một cái gì đó trong tôi."
 
-    hide yuri with dissolve
-    hide monika with dissolve
+    hide hainu with dissolve
+    hide xiu with dissolve
     
     call ch2_evening_activity from ch2_day6_eve
     
@@ -221,7 +221,7 @@ label ch2_day4_clb_event:
 
     "Tôi quyết định đến CLB sớm."
     
-    show yuri 1a at t11
+    show hainu 1a at t11
 
     hainu "\"Cậu… Có vẻ đã thoát khỏi cái hang của mình rồi nhỉ?\""
     
@@ -238,7 +238,7 @@ label ch2_day4_clb_event:
     
     mc "\"Nó là gì vậy ạ?\""
     
-    show yuri 1f
+    show hainu 1b
     
     hainu "\"…\""
     hainu "\"Cậu biết ngụ ngôn về cái hang của Plato chứ?\""
@@ -250,19 +250,19 @@ label ch2_day4_clb_event:
     hainu "\"Từ cái lỗ đó, có những cái bóng lấp ló hắt lên trên bức tường của cái hang.\""
     hainu "\"Những người cổ đại nhìn thấy nó và đặt tên cho những ảo ảnh này và tin rằng vạn vật chỉ là những cái bóng.\""
     
-    show yuri 2f
+    show hainu 1c
     
     hainu "\"Một ngày nọ, một người cổ đại tìm được cách thoát ra khỏi cái hang.\""
     hainu "\"Lần đầu tiên trong đời, anh ta thấy được hình dạng thực của những cái bóng.\""
     hainu "\"Anh ta vui mừng quay lại hang động và kể cho những người bạn nghe.\""
     
-    show yuri 1g
+    show hainu 1e
     
     hainu "\"Tuy nhiên, những người bạn lại nghĩ anh ta bị điên… Và thế là họ... Cô lập anh ta đến chết.\""
     
     mc "\"Thật là một câu chuyện bi thảm.\""
     
-    show yuri 1f
+    show hainu 1b
     
     hainu "\"…\""
     hainu "\"Những người cổ đại, họ chỉ thấy những cái bóng.\""
@@ -280,7 +280,7 @@ label ch2_day4_clb_event:
         "Có lẽ là chưa….":
             mc "\"Có lẽ là chưa….\""
             
-    show yuri 1s
+    show hainu 1e
     
     hainu "(cười mỉm) \"Thật ra thì, cái hang của nằm trong một khu bảo tồn người cổ đại!\""
     hainu "\"Những thứ mà người đàn ông đó thấy chỉ là những đồ giả mà thôi.\""
@@ -329,7 +329,7 @@ label ch2_gym_event:
         # Text 315
         mc "\"Mệt quá… Chịu rồi...\""
         
-        show monika 2l at t11
+        show xiu 1d at t11
         xiu "\"Yếu nhớt! Cầm cái tạ như cầm ly trà sữa thế kia bao giờ mới có người yêu?\""
         
         $ stats.modify_doi_song(5)
@@ -339,7 +339,7 @@ label ch2_gym_event:
         # Text 317
         mc "\"Cố thêm… Một xíu nữa thôi…\""
         
-        show monika 1k at t11
+        show xiu 1b at t11
         xiu "\"Khá đấy cu. Nay đẩy ngực được 20kg rồi à? Cố lên, sắp đủ trình làm bao cát cho chị rồi.\""
         
         $ stats.modify_doi_song(10)
@@ -351,7 +351,7 @@ label ch2_gym_event:
         # Text 318
         mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
         
-        show monika 3b at t11
+        show xiu 1b at t11
         xiu "\"Uầy, nhìn 'mlem' phết rồi đấy. Tối nay đi làm bát phở gầu bò nạm thưởng cho cái body này không?\""
         
         $ stats.modify_doi_song(15)
@@ -373,7 +373,7 @@ label ch2_library_event:
         mc "\"Ra là thế… Chả hiểu gì cả.\""
         mc "\"Mở cuốn 'Phê phán lý tính thuần túy' ra đọc được 2 dòng thì mắt díp lại.\""
         
-        show yuri 2h at t11
+        show hainu 1f at t11
         hainu "\"Thư viện là nơi nuôi dưỡng tâm hồn, không phải chỗ ngủ trọ. Ngồi thẳng lưng lên.\""
         
         $ stats.modify_hoc_tap(5)
@@ -384,7 +384,7 @@ label ch2_library_event:
         mc "\"Ồ, kiến thức mới đã được tiếp thu.\""
         mc "\"Hoá ra triết học không khô khan như mình tưởng, nó giống như giải một bài toán về cuộc đời vậy.\""
         
-        show yuri 1a at t11
+        show hainu 1a at t11
         hainu "\"Cậu đang đọc Kant sao? Một lựa chọn không tồi. Nếu có chỗ nào không hiểu, tôi có thể... gợi ý một chút.\""
         
         $ stats.modify_hoc_tap(10)
@@ -397,7 +397,7 @@ label ch2_library_event:
         mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
         mc "\"Mình tìm thấy sự liên kết giữa Hội hoạ và Triết học. Cả hai đều là cách con người mô tả thế giới.\""
         
-        show yuri 1s at t11
+        show hainu 1e at t11
         hainu "\"Cậu đã bắt đầu chạm vào được Noesis rồi đấy. Ánh mắt cậu nhìn trang sách... đã khác xưa nhiều.\""
         
         $ stats.modify_hoc_tap(15)
@@ -427,7 +427,7 @@ label ch2_evening_activity:
             stop music fadeout 1.0
             play music t5 fadein 1.0 # Playful
             
-            show monika 1d at t11
+            show xiu 1a at t11
             xiu "\"Chào mừng đến với dịch vụ Campuchia gì cũng tôn của Xỉu. Cu em cần gì nào?\""
             
             menu:
@@ -442,7 +442,7 @@ label ch2_evening_activity:
                     "Chúng tôi chơi game và ăn vặt tới khuya."
                     $ stats.modify_doi_song(5)
             
-            hide monika
+            hide xiu
             
             $ gained = stats.modify_relationship("xiu", 3)
             $ show_stat_change("rel_xiu", gained)
