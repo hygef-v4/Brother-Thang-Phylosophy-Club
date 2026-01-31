@@ -3,16 +3,13 @@
 # Brother Thang Philosophy Club
 # ================================================
 
-label daily_routine_loop:
-    # Daily routine cho Day 4-9: Farm stats period
-    
-    # Check if reached Day 10 (Chapter 3)
+label daily:
     if current_day >= 10:
         # Transition to Chapter 3
         jump ch3_dianoia
-    
-    # Show stats UI
-    show screen stats_display
+    elif current_day >= 14:
+        # Transition to Chapter 3
+        jump ch4_noesis
     
     # Daily stats update
     $ daily_changes = stats.update_daily()
@@ -20,7 +17,10 @@ label daily_routine_loop:
     # Show daily stat changes
     if daily_changes != 0:
         $ show_stat_change("tien", daily_changes)
-    
+
+    return
+
+label daily_routine_morning:
     # ========================================
     # MORNING ACTIVITY (SÁNG)
     # ========================================
@@ -28,9 +28,24 @@ label daily_routine_loop:
     scene black
     centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
+    $ current_time_slot = 1
     
-    call daily_activity
+    call daily
+    call daily_dorm
+
+    return
+
+label daily_routine_noon:
+    scene black
+    centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
+    $ renpy.pause(1.5, hard=True)
+    $ current_time_slot = 2
     
+    call daily_dorm
+
+    jump daily_routine_evening
+
+label daily_routine_afternoon:
     # ========================================
     # AFTERNOON ACTIVITY (CHIỀU)
     # ========================================
@@ -38,21 +53,27 @@ label daily_routine_loop:
     scene black
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
+    $ current_time_slot = 2
     
     call daily_activity
-    
+
+    return
+
+label daily_routine_evening:
     # ========================================
     # EVENING DORM (TỐI)
     # ========================================
     
     scene black with dissolve_scene_full
     stop music fadeout 2.0
-    
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(2.0, hard=True)
+    $current_time_slot = 3
     
+    "Về phòng, kết thúc một ngày dài..."
+
     call daily_dorm
-    
+
     # ========================================
     # END OF DAY - INCREMENT DAY COUNTER
     # ========================================
@@ -62,6 +83,12 @@ label daily_routine_loop:
     # Loop back for next day (Day 4→9)
     jump daily_routine_loop
 
+label daily_routine_loop:
+    call daily_routine_morning
+
+    call daily_routine_afternoon
+
+    call daily_routine_evening
 
 # ========================================
 # MORNING ACTIVITY
@@ -80,21 +107,34 @@ label daily_activity:
         
         "Đến Gym":
             jump daily_gym
-    
-    return
 
+        "Về KTX":
+            jump daily_dorm
+    
 # ========================================
 # EVENING DORM ACTIVITIES
 # ========================================
 
 label daily_dorm:
-    scene bg ktx with wipeleft_scene  # Custom: Ký túc xá FPT
+    if current_time_slot == 3:
+        scene bg ktx with wipeleft_scene  # Custom: Ký túc xá FPT
+    else:
+        scene bg ktx_day with wipeleft_scene
     play music tense fadein 1.0
-    
-    "Về phòng, kết thúc một ngày dài..."
-    
+        
     menu:
-        "Nói chuyện với Xỉu":
+        "Đi ngủ":
+            # End of day summary
+            scene black with fade
+            play music sad fadein 1.0
+            
+            $ renpy.pause(1.0)
+            
+            stop music fadeout 1.0
+            if current_time_slot == 1:
+                jump daily_routine_noon
+
+        "Nói chuyện với Xỉu" if current_time_slot == 3:
             show xiu 1a at t11
             
             xiu "\"Chào mừng đến với dịch vụ Campuchia gì cũng tôn của Xỉu. Cu em cần gì nào?\""
@@ -113,10 +153,10 @@ label daily_dorm:
                         
                         show monika 1k
                         xiu "\"OK luôn. Cứ giao cho chị. Tối nay chị sẽ chăm sóc cu em nhiệt tình.\""
-                        "..."
                     else:
                         show monika 2p
                         xiu "\"Không có tiền thì nghỉ!\""
+                        jump daily_dorm
                 
                 "Dịch vụ bồi bổ sức khỏe (20,000 VNĐ)":
                     if stats.tien >= 20000:
@@ -131,29 +171,20 @@ label daily_dorm:
                         
                         show monika 1k
                         xiu "\"OK luôn. Cứ giao cho chị. Tối nay chị sẽ chăm sóc cu em nhiệt tình.\""
-                        "..."
                     else:
                         show monika 2p
                         xiu "\"Không có tiền thì nghỉ!\""
+                        jump daily_dorm
                 
                 "Không cần":
                     show monika 2a
                     xiu "\"Thế thôi...\""
+                    jump daily_dorm
             
             hide xiu with dissolve
-        
-        "Đi ngủ":
-            mc "\"Mệt quá, ngủ sớm vậy...\""
-    
-    # End of day summary
-    scene black with fade
-    play music sad fadein 1.0
-    
-    mc "(ngáp) \"Ngày mai lại là một ngày mới...\""
-    
-    $ renpy.pause(1.0)
-    
-    stop music fadeout 2.0
+
+        "Ra ngoài" if current_time_slot != 3:
+            jump daily_activity
     
     return
 
@@ -187,7 +218,7 @@ label daily_clb:
 
 label daily_library:
     scene bg library with wipeleft_scene  # Custom: Thư viện FPT
-    play music daily_life fadein 1.0
+    play music library_theme fadein 1.0
     
     menu:
         "Ôn bài":
@@ -215,6 +246,7 @@ label daily_library:
 
 label daily_gym:
     scene bg gym with wipeleft_scene  # Custom: Phòng gym FPT
+    play music gym_theme fadein 1.0
     
     menu:
         "Luyện tập":
