@@ -11,17 +11,18 @@ init -1 python:
     class GameConfig:
         GAME_TITLE = "Brother Thang Philosophy Club"
         GAME_VERSION = "0.1.0 - MVP Day 1"
-        DEVELOPER = "Your Name"
+        DEVELOPER = "Kumo Studio"
         
         # ========================================
         # CHARACTER NAMES
         # ========================================
-        MC_NAME_DEFAULT = "Võ Chiến Thắng"
-        MC_NICKNAME = "Võ Thắng"
+        CHAR_MAIN = "Võ Thắng"
         
-        CHAR_HAINU = "Vũ Hải Nữ"  # Now club president (full name)
-        CHAR_XIU = "Võ Minh Xỉu"  # Full name
-        CHAR_DAD = "Võ Quang Hưng"  # Full name - Đại Tá quân đội
+        CHAR_HAINU = "Hải Nữ"  # Now club president (full name)
+        CHAR_XIU = "Xỉu"  # Full name
+        CHAR_DAD = "Võ Hưng"  # Full name - Đại Tá quân đội
+
+        CHAR_T31 = "T31"
         
         # ========================================
         # STATS CONFIGURATION
@@ -63,7 +64,6 @@ default game_config = GameConfig()
 # ========================================
 # GAME VARIABLES
 # ========================================
-default mc_name = "Võ Thắng"
 default current_day = 1
 default current_chapter = 1
 default current_time_slot = 1
@@ -71,12 +71,12 @@ default current_time_slot = 1
 # ========================================
 # DEFINE CHARACTERS
 # ========================================
-define mc = Character("[mc_name]", color="#FFFFFF")
+define mc = Character(GameConfig.CHAR_MAIN, color="#FFFFFF")
 define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF")  # President
 define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF")  # Recruits MC
 define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF")  # Đại Tá
 define narrator = Character(None)  # Cho narration
-define robot = Character("T31", image="t31")
+define robot = Character(GameConfig.CHAR_T31, image="t31")
 
 # ========================================
 # AUDIO DEFINITIONS (Tạm sử dụng DDLC audio)

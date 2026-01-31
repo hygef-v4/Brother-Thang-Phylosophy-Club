@@ -3,23 +3,6 @@
 # Brother Thang Philosophy Club
 # ================================================
 
-label daily:
-    if current_day >= 10:
-        # Transition to Chapter 3
-        jump ch3_dianoia
-    elif current_day >= 14:
-        # Transition to Chapter 3
-        jump ch4_noesis
-    
-    # Daily stats update
-    $ daily_changes = stats.update_daily()
-    
-    # Show daily stat changes
-    if daily_changes != 0:
-        $ show_stat_change("tien", daily_changes)
-
-    return
-
 label daily_routine_morning:
     # ========================================
     # MORNING ACTIVITY (SÁNG)
@@ -30,7 +13,9 @@ label daily_routine_morning:
     $ renpy.pause(1.5, hard=True)
     $ current_time_slot = 1
     
-    call daily
+    # Daily stats update
+    $ daily_changes = stats.update_daily()
+
     call daily_dorm
 
     return
@@ -84,6 +69,13 @@ label daily_routine_evening:
     jump daily_routine_loop
 
 label daily_routine_loop:
+    if current_day >= 10:
+        # Transition to Chapter 3
+        jump ch3_dianoia
+    elif current_day >= 14:
+        # Transition to Chapter 3
+        jump ch4_noesis
+
     call daily_routine_morning
 
     call daily_routine_afternoon
@@ -140,10 +132,10 @@ label daily_dorm:
             xiu "\"Chào mừng đến với dịch vụ Campuchia gì cũng tôn của Xỉu. Cu em cần gì nào?\""
             
             menu:
-                "Dịch vụ gia sư học tập (20,000 VNĐ)":
-                    if stats.tien >= 20000:
-                        $ stats.modify_tien(-20000)
-                        $ show_stat_change("tien", -20000)
+                "Dịch vụ gia sư học tập (100,000 VNĐ)":
+                    if stats.tien >= 100000:
+                        $ stats.modify_tien(-100000)
+                        $ show_stat_change("tien", -100000)
                         
                         $ stats.modify_hoc_tap(10)
                         $ show_stat_change("hoc_tap", 10)
@@ -156,12 +148,11 @@ label daily_dorm:
                     else:
                         show monika 2p
                         xiu "\"Không có tiền thì nghỉ!\""
-                        jump daily_dorm
                 
-                "Dịch vụ bồi bổ sức khỏe (20,000 VNĐ)":
-                    if stats.tien >= 20000:
-                        $ stats.modify_tien(-20000)
-                        $ show_stat_change("tien", -20000)
+                "Dịch vụ bồi bổ sức khỏe (100,000 VNĐ)":
+                    if stats.tien >= 100000:
+                        $ stats.modify_tien(-100000)
+                        $ show_stat_change("tien", -100000)
                         
                         $ stats.modify_doi_song(10)
                         $ show_stat_change("doi_song", 10)
@@ -174,12 +165,10 @@ label daily_dorm:
                     else:
                         show monika 2p
                         xiu "\"Không có tiền thì nghỉ!\""
-                        jump daily_dorm
                 
                 "Không cần":
                     show monika 2a
                     xiu "\"Thế thôi...\""
-                    jump daily_dorm
             
             hide xiu with dissolve
 
@@ -203,8 +192,7 @@ label daily_clb:
             mc "\"Dạ, vâng ạ.\""
             
             # Good relationship gains
-            $ multiplier = stats.get_stat_multiplier_hainu()
-            $ gained = stats.modify_relationship("hainu", 6, multiplier)
+            $ gained = stats.modify_relationship("hainu", 6)
             $ show_stat_change("rel_hainu", gained)
             
             $ stats.modify_tien(50000)

@@ -18,15 +18,6 @@ init -1 python:
             
             # Flags
             self.dad_cutoff = False  # Bố cắt trợ cấp
-            self.met_hainu = False
-            self.met_xiu = False
-            
-            # Activity Counters (For Daily Progression)
-            self.gym_count = 0
-            self.lib_count = 0
-            
-            # Unlockables
-            self.unlocked_dialectics = False  # True Ending condition (Library Level 4+)
             
         def clamp(self, value, min_val, max_val):
             """Clamp value giữa min và max"""
@@ -55,35 +46,28 @@ init -1 python:
             self.tien = max(0, self.tien + amount)
             return amount
         
-        def modify_relationship(self, char_name, amount, stat_multiplier=1.0):
+        def modify_relationship(self, char_name, amount):
             """
             Thay đổi tình cảm với nhân vật
             char_name: "hainu", "xiu"
             amount: số điểm thay đổi
             stat_multiplier: nhân với stats (Hải Nữ thích học tập, Hương thích đời sống)
             """
-            final_amount = amount * stat_multiplier
             
-            if char_name == "huong":
-                self.rel_huong = self.clamp(
-                    self.rel_huong + final_amount,
-                    GameConfig.REL_MIN,
-                    GameConfig.REL_MAX
-                )
-            elif char_name == "hainu":
+            if char_name == "hainu":
                 self.rel_hainu = self.clamp(
-                    self.rel_hainu + final_amount,
+                    self.rel_hainu + amount * self.get_stat_multiplier_hainu(),
                     GameConfig.REL_MIN,
                     GameConfig.REL_MAX
                 )
             elif char_name == "xiu":
                 self.rel_xiu = self.clamp(
-                    self.rel_xiu + final_amount,
+                    self.rel_xiu + amount * self.get_stat_multiplier_xiu(),
                     GameConfig.REL_MIN,
                     GameConfig.REL_MAX
                 )
             
-            return final_amount
+            return self.get_relationship(char_name)
 
         def get_relationship(self, char_name):
             """Lấy giá trị tình cảm"""
@@ -135,7 +119,9 @@ default stats = StatsManager()
 init python:
     def show_stat_change(stat_name, amount):
         """Hiển thị thông báo khi stats thay đổi"""
-        if amount > 0:
+        if amount == 0:
+            return
+        elif amount > 0:
             symbol = "+"
             color = "#00ff00"
         else:
@@ -151,11 +137,7 @@ init python:
             "rel_xiu": "❤ Xỉu"
         }
         
-        display_name = stat_display.get(stat_name, stat_name)
-        
-        # Skip if amount is 0
-        if amount == 0:
-            return
+        display_name = stat_display.get(stat_name)
         
         # Show notification
         renpy.notify("{color=%s}%s %s%d{/color}" % (color, display_name, symbol, int(amount)))
