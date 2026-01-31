@@ -25,13 +25,12 @@ label konami_menu:
     menu:
         "Cheat Menu"
         "Jump Chapter 1":
-            jump ch1_day1_day2
+            jump day0
         "Jump Chapter 2":
-            jump ch2_day3
+            $ current_day = 2
+            jump daily_routine_loop
         "Jump Chapter 3":
             jump ch3_dianoia
-        "Jump Daily":
-            jump daily_routine_loop
         "Add money":
             $ stats.modify_tien(1000000)
         "Max live":

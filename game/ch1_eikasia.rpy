@@ -158,7 +158,7 @@ label day1_afternoon:
     # ========================================
     
     scene bg club_day with wipeleft_scene
-    play music club_theme fadein 1.0
+    play music deep_thought fadein 1.0
     
     "Mở cửa ra, trước mặt là một người con gái đứng nhìn xuống dưới sân trường."
     "Đó có lẽ là hội trưởng CLB Triết học Plato – Vũ Hải Nữ."

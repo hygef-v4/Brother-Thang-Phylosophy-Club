@@ -61,6 +61,8 @@ default current_day = 1
 default current_chapter = 1
 default current_time_slot = 1
 
+default first_talk = False
+
 # ========================================
 # DEFINE CHARACTERS
 # ========================================
@@ -79,19 +81,14 @@ define narrator = Character(None)  # Cho narration
 define audio.main_theme = "<loop 22.073>bgm/1.ogg"
 define audio.daily_life = "<loop 4.499>bgm/2.ogg"
 define audio.club_theme = "<loop 4.618>bgm/3.ogg"
-define audio.thinking = "<loop 10.893>bgm/6.ogg"
+define audio.gym_theme = "<loop 4.499>bgm/4.ogg"  # Calm / Study
+define audio.library_theme = "<loop 4.444>bgm/5.ogg"     # Upbeat / Active (Same as happy for now, or 5_monika)
+define audio.argument = "<loop 4.444>bgm/6.ogg"       # Tense / Debate (Poem Panic)
 define audio.tense = "<loop 2.291>bgm/7.ogg"
 define audio.sad = "<loop 9.938>bgm/8.ogg"
+define audio.deep_thought = "<loop 4.444>bgm/9.ogg"   # Sad / Introspective (My Feelings)
+define audio.love_theme = "<loop 4.444>bgm/10.ogg"    # Very sad / Ending (I Still Love You)
 
 # SFX
 define audio.phone_ring = "sfx/fall.ogg"  # Placeholder
 define audio.notification = "sfx/pageflip.ogg"  # Placeholder
-define audio.love_theme = "<loop 5.861>bgm/10.ogg"
-define audio.happy = "<loop 4.444>bgm/5.ogg"
-
-# New Varied Tracks
-define audio.gym_theme = "<loop 4.499>bgm/4.ogg"  # Calm / Study
-define audio.library_theme = "<loop 4.444>bgm/5.ogg"     # Upbeat / Active (Same as happy for now, or 5_monika)
-define audio.argument = "<loop 4.444>bgm/6.ogg"       # Tense / Debate (Poem Panic)
-define audio.deep_thought = "<loop 4.444>bgm/9.ogg"   # Sad / Introspective (My Feelings)
-define audio.ending_sad = "<loop 4.444>bgm/10.ogg"    # Very sad / Ending (I Still Love You)
