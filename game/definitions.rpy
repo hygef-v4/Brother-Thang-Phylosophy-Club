@@ -242,10 +242,6 @@ image bg fpt_5:
     "bg/fpt_5.png"
     zoom 0.85
 
-image glitch_color = Solid("#000")
-image glitch_color2 = Solid("#000")
-
-
 # =================================================================================
 # REMOVED DEPRECATED CHARACTER DEFINITIONS (Sayori, Natsuki, Old Yuri, Old Monika)
 # =================================================================================
@@ -253,14 +249,10 @@ image glitch_color2 = Solid("#000")
 # (hainu/xiu) and aliases.
 # =================================================================================
 
-
-define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-
 define _dismiss_pause = config.developer
 default persistent.playername = ""
 default player = persistent.playername
 default persistent.playthrough = 0
-default persistent.ghost_menu = None
 default persistent.menu_bg_m = None
 default persistent.first_load = None
 default persistent.autoload = ""

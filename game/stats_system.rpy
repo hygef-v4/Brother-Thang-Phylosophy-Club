@@ -79,19 +79,27 @@ init -1 python:
         
         def get_stat_multiplier_xiu(self):
             """Xỉu thích đời sống cao"""
-            if self.doi_song >= 80:
-                return 2
-            elif self.doi_song >= 40:
+            if self.doi_song== 100:
+                return 5.0
+            elif self.doi_song >= 80:
+                return 2.0
+            elif self.doi_song >= 50:
                 return 1.5
+            elif self.doi_song>= 20:
+                return 1.2
             else:
                 return 1.0
         
         def get_stat_multiplier_hainu(self):
             """Hải Nữ (President) thích học tập cao"""
-            if self.hoc_tap >= 80:
-                return 2
-            elif self.hoc_tap >= 40:
+            if self.hoc_tap == 100:
+                return 5.0
+            elif self.hoc_tap >= 80:
+                return 2.0
+            elif self.hoc_tap >= 50:
                 return 1.5
+            elif self.hoc_tap >= 20:
+                return 1.2
             else:
                 return 1.0
         

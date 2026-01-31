@@ -21,7 +21,7 @@ init -1 python:
         CHAR_HAINU = "Hải Nữ"  # Now club president (full name)
         CHAR_XIU = "Xỉu"  # Full name
         CHAR_DAD = "Võ Hưng"  # Full name - Đại Tá quân đội
-
+        
         CHAR_T31 = "T31"
         
         # ========================================
@@ -34,11 +34,7 @@ init -1 python:
         STAT_INITIAL_TIEN = 100000
         
         # Daily changes
-        STAT_DAILY_MONEY_BASE = 10000
-        
-        # Activity effects
-        STAT_STUDY_HOC_TAP_GAIN = 15
-        STAT_GYM_DOI_SONG_GAIN = 15
+        STAT_DAILY_MONEY_BASE = 100000
         
         # ========================================
         # RELATIONSHIP CONFIGURATION
@@ -47,9 +43,6 @@ init -1 python:
         REL_MAX = 100
         REL_INITIAL_HAINU = 0  # Start neutral
         REL_INITIAL_XIU = 0  # Changed from 50 to 0 - start neutral
-        
-        REL_THRESHOLD_GOOD_ENDING = 80
-        REL_THRESHOLD_BAD = 20
         
         # ========================================
         # TIME SYSTEM
