@@ -19,8 +19,8 @@ init -1 python:
         CHAR_MAIN = "Võ Thắng"
         
         CHAR_HAINU = "Hải Nữ"  # Now club president (full name)
-        CHAR_XIU = "Xỉu"  # Full name
-        CHAR_DAD = "Bố"  # Full name - Đại Tá quân đội
+        CHAR_XIU = "Minh Xỉu"  # Full name
+        CHAR_DAD = "Võ Hưng"  # Full name - Đại Tá quân đội
         
         CHAR_T31 = "T31"
         

@@ -190,12 +190,12 @@ label daily_clb:
             hainu "\"Cậu tới rồi à? Giúp tôi một số việc được không?\""
             mc "\"Dạ, vâng ạ.\""
             
+            $ stats.modify_tien(50000)
+            $ show_stat_change("tien", 50000)
+
             # Good relationship gains
             $ gained = stats.modify_relationship("hainu", 6)
             $ show_stat_change("rel_hainu", gained)
-            
-            $ stats.modify_tien(50000)
-            $ show_stat_change("tien", 50000)
             
             hide yuri with dissolve
         "Quay lại":

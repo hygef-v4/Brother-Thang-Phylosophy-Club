@@ -25,26 +25,29 @@ init -1 python:
         
         def modify_hoc_tap(self, amount):
             """Thay đổi học tập"""
+            init = self.hoc_tap
             self.hoc_tap = self.clamp(
                 self.hoc_tap + amount,
                 GameConfig.STAT_MIN,
                 GameConfig.STAT_MAX
             )
-            return amount
+            return self.hoc_tap - init
         
         def modify_doi_song(self, amount):
             """Thay đổi đời sống"""
+            init = self.doi_song
             self.doi_song = self.clamp(
                 self.doi_song + amount,
                 GameConfig.STAT_MIN,
                 GameConfig.STAT_MAX
             )
-            return amount
+            return self.doi_song - init
         
         def modify_tien(self, amount):
             """Thay đổi tiền"""
+            init = self.tien
             self.tien = max(0, self.tien + amount)
-            return amount
+            return self.tien - init
         
         def modify_relationship(self, char_name, amount):
             """
