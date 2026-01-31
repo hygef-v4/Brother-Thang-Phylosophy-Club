@@ -355,7 +355,7 @@ label ch1_day1_day2:
             xiu "\"Ừ thì thôi. Nhát thế thì đành chịu vậy.\""
             xiu "\"Chị ở phòng bên cạnh, nếu cần gì cứ sang gọi chị nhá!\""
     
-    hide monika with dissolve
+    hide xiu with dissolve
     
     # ========================================
     # NGÀY 2: BỊ MẮNG VÀ TOUR TRƯỜNG
@@ -400,7 +400,7 @@ label ch1_day1_day2:
     
     # Hải Nữ xuất hiện
     show xiu 1a at t21
-    show yuri 3f at t22
+    show hainu 1b at t22
     
     hainu "\"Xỉu!!!\""
     
@@ -436,7 +436,7 @@ label ch1_day1_day2:
     hainu "\"Thôi được rồi… nay cậu về đi.\""
     
     hide hainu with dissolve
-    hide monika with dissolve
+    hide xiu with dissolve
     
     # CẢNH 6 CŨ: TOUR TRƯỜNG (Chiều Ngày 2)
     
@@ -475,7 +475,7 @@ label ch1_day1_day2:
             
             xiu "\"Thế thôi vậy. Em về nha, chị đi trước đây.\""
             
-            hide monika with dissolve
+            hide xiu with dissolve
             
             # Skip tour
             jump ch1_day3_start

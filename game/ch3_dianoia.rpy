@@ -134,7 +134,7 @@ label ch3_day11_xiu_drunk:
     
     "Đến quán nhậu Xỉu gửi, thấy đàn chị đang say khướt."
     
-    show monika 1a at t11
+    show xiu 1a at t11
     
     xiu "\"Cu em đến rồi à? Lại đây uống với chị nào!\""
     mc "\"Chị ổn chứ, trông chị say lắm rồi đấy.\""
@@ -146,7 +146,7 @@ label ch3_day11_xiu_drunk:
     mc "\"Em thấy nay chị uống hơi nhiều rồi đấy. Nếu có gì buồn phiền, cứ nói em.\""
     mc "\"Chẳng giúp được gì chị đâu, cơ mà đỡ hơn là giữ trong lòng.\""
     
-    show monika 1d
+    show xiu 1c
     play music t9 fadein 1.0 # Sad backstory
     
     xiu "\"…\""
@@ -194,7 +194,7 @@ label ch3_day11_xiu_drunk:
     
     # Text 453 Tình cảm > 80 check (Assuming high enough here for the scene)
     
-    show monika 2a
+    show xiu 1g
     
     xiu "\"Này, muốn làm một ván cá cược với chị không?\""
     xiu "\"Đoán xem…. Chị có đang phải lòng em không?\""
@@ -214,7 +214,7 @@ label ch3_day11_xiu_drunk:
 
     # Text 464 (Assuming 'Có' or positive outcome for drama)
     
-    show monika 1k
+    show xiu 1c
     
     xiu "\"Lần này…. Em thắng rồi….\""
     
@@ -252,7 +252,7 @@ label ch3_day11_hainu_movie:
     "Đến rạp chiếu phim cùng Hội Trưởng để xem phim “The Truman Show”."
     "Phim khá ấn tượng, làm mình cũng phải nghi ngờ rằng liệu mình có đang ở trong một con game tình cảm nào đó không…."
     
-    show yuri "1a" at t11
+    show hainu 1a at t11
     
     hainu "\"Bộ phim hay thật đấy nhỉ?\""
     mc "\"Ừ! Cảnh kết lúc Truman cúi chào khán giả lần cuối quả thật là Absolutely Cinema.\""

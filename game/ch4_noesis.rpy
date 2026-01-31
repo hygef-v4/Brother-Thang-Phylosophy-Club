@@ -47,7 +47,7 @@ label ch4_path_both:
     "Giữa phòng trưng một băng rôn Happy Birthday (Sớm)."
     
     show hainu 1a at t21
-    show monika "1k" at t22
+    show xiu 1c at t22
     
     "VŨ HẢI NỮ: \"snvv nghen.\""
     "VÕ MINH XỈU: \"Em bé tuổi mới hay ăn chóng lớn nhá.\""
@@ -68,7 +68,7 @@ label ch4_path_both:
     "VŨ HẢI NỮ: \"Ngày mai, chị nghĩ em nên về nhà làm hoà với bố.\""
     "VŨ HẢI NỮ: \"Dù sao cũng là gia đình, bố em thực sự chỉ lo cho em mà thôi….\""
     
-    show monika "2p"
+    show xiu 1d
     
     xiu "\"Lo cho hộ lý khi về già thì có đấy!\""
     hainu "\"Xỉu!\""
@@ -98,7 +98,7 @@ label ch4_path_xiu:
     scene bg ktx with wipeleft_scene
     play music daily_life fadein 1.0
     
-    show monika 1a at t11
+    show xiu 1a at t11
     play music t5 fadein 1.0 # Playful (Xiu)
     
     "VÕ MINH XỈU: \"Ây cu, về rồi à?\""
@@ -231,7 +231,7 @@ label ending_subjective_idealism_xiu:
     
     centered "{size=40}Ngày 15{/size}"
     
-    show monika "1k" at t11
+    show xiu 1c at t11
     
     "VÕ MINH XỈU: \"Ái chà, bé Thắng hôm nay lớn thế nhở.\""
     "VÕ MINH XỈU: \"Sang tuổi mới có khác trông đĩnh đạc hẳn ra, 10 điểm không có nhưng.\""

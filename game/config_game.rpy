@@ -3,9 +3,8 @@
 # ================================================
 # Central configuration file - Không hardcode!
 
+default persistent.unlocked_endings = set()
 init -1 python:
-    if persistent.unlocked_endings is None:
-        persistent.unlocked_endings = set()
     # ========================================
     # GAME METADATA
     # ========================================
@@ -20,7 +19,7 @@ init -1 python:
         MC_NAME_DEFAULT = "Võ Chiến Thắng"
         MC_NICKNAME = "Võ Thắng"
         
-        # CHAR_ISCHYROS = "Đào Chí Ischyros"  # REMOVED - character no longer exists in new story
+      
         CHAR_HUONG = "Hương"
         CHAR_HAINU = "Vũ Hải Nữ"  # Now club president (full name)
         CHAR_XIU = "Võ Minh Xỉu"  # Full name
@@ -83,10 +82,11 @@ default current_time_slot = "morning"
 define mc = Character("[mc_name]", color="#FFFFFF")
 # define ischyros - REMOVED: character no longer exists in new story
 define huong = Character(GameConfig.CHAR_HUONG, color="#FFFFFF")
-define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF")  # Now president
-define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF")  # Recruits MC
+define hainu = Character(GameConfig.CHAR_HAINU, image='hainu', color="#FFFFFF", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")  # Now president
+define xiu = Character(GameConfig.CHAR_XIU, image='xiu', color="#FFFFFF", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")  # Recruits MC
 define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF")  # Đại Tá
 define narrator = Character(None)  # Cho narration
+define robot = Character("T31", image="t31")
 
 # ========================================
 # AUDIO DEFINITIONS (Tạm sử dụng DDLC audio)

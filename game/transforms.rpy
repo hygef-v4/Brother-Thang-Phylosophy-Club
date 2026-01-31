@@ -319,45 +319,7 @@ define wipeleft_scene = MultipleTransition([
 
 define tpause = Pause(0.25)
 
-image noise:
-    truecenter
-    "images/bg/noise1.jpg"
-    pause 0.1
-    "images/bg/noise2.jpg"
-    pause 0.1
-    "images/bg/noise3.jpg"
-    pause 0.1
-    "images/bg/noise4.jpg"
-    pause 0.1
-    xzoom -1
-    "images/bg/noise1.jpg"
-    pause 0.1
-    "images/bg/noise2.jpg"
-    pause 0.1
-    "images/bg/noise3.jpg"
-    pause 0.1
-    "images/bg/noise4.jpg"
-    pause 0.1
-    yzoom -1
-    "images/bg/noise1.jpg"
-    pause 0.1
-    "images/bg/noise2.jpg"
-    pause 0.1
-    "images/bg/noise3.jpg"
-    pause 0.1
-    "images/bg/noise4.jpg"
-    pause 0.1
-    xzoom 1
-    "images/bg/noise1.jpg"
-    pause 0.1
-    "images/bg/noise2.jpg"
-    pause 0.1
-    "images/bg/noise3.jpg"
-    pause 0.1
-    "images/bg/noise4.jpg"
-    pause 0.1
-    yzoom 1
-    repeat
+image noise = Null()
 
 transform noise_alpha:
     alpha 0.25
