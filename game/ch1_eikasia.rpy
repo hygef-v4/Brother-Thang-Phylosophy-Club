@@ -545,7 +545,7 @@ label day2_afternoon:
     
     pig "[t31_voice]"
     
-    hide pig with dissolve
+    hide t31 with dissolve
     
     show xiu 1a
     
