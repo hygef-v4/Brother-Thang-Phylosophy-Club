@@ -50,7 +50,7 @@ screen stats_display():
                     ysize 4
                     left_bar Solid("#90caf9dd")
                     right_bar Solid("#00000000")
-                    thumb None
+                    thumb Null()
                     left_gutter 0
                     right_gutter 0
                 text "[stats.hoc_tap]" size 8 color "#ffffffcc" outlines [(1, "#00000030", 0, 1)]
@@ -66,7 +66,7 @@ screen stats_display():
                     ysize 4
                     left_bar Solid("#80cbc4dd")
                     right_bar Solid("#00000000")
-                    thumb None
+                    thumb Null()
                     left_gutter 0
                     right_gutter 0
                 text "[stats.doi_song]" size 8 color "#ffffffcc" outlines [(1, "#00000030", 0, 1)]
@@ -82,7 +82,7 @@ screen stats_display():
                     ysize 4
                     left_bar Solid("#f48fb1dd")  # Pink
                     right_bar Solid("#00000000")
-                    thumb None
+                    thumb Null()
                     left_gutter 0
                     right_gutter 0
                 text "[stats.rel_hainu]" size 8 color "#ffffffcc" outlines [(1, "#00000030", 0, 1)]
@@ -98,7 +98,7 @@ screen stats_display():
                     ysize 4
                     left_bar Solid("#ffcc80dd")  # Orange
                     right_bar Solid("#00000000")
-                    thumb None
+                    thumb Null()
                     left_gutter 0
                     right_gutter 0
                 text "[stats.rel_xiu]" size 8 color "#ffffffcc" outlines [(1, "#00000030", 0, 1)]
