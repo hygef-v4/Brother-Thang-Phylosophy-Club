@@ -20,7 +20,7 @@ init -1 python:
         
         CHAR_HAINU = "Hải Nữ"  # Now club president (full name)
         CHAR_XIU = "Xỉu"  # Full name
-        CHAR_DAD = "Võ Hưng"  # Full name - Đại Tá quân đội
+        CHAR_DAD = "Bố"  # Full name - Đại Tá quân đội
         
         CHAR_T31 = "T31"
         
@@ -68,8 +68,9 @@ define mc = Character(GameConfig.CHAR_MAIN, color="#FFFFFF")
 define hainu = Character(GameConfig.CHAR_HAINU, color="#FFFFFF")  # President
 define xiu = Character(GameConfig.CHAR_XIU, color="#FFFFFF")  # Recruits MC
 define dad = Character(GameConfig.CHAR_DAD, color="#FFFFFF")  # Đại Tá
+define pig = Character(GameConfig.CHAR_T31, image="t31")
+define unknown = Character("???")
 define narrator = Character(None)  # Cho narration
-define robot = Character(GameConfig.CHAR_T31, image="t31")
 
 # ========================================
 # AUDIO DEFINITIONS (Tạm sử dụng DDLC audio)

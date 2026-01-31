@@ -11,7 +11,7 @@ label start:
     $ _dismiss_pause = config.developer
 
     # Call Chapter 1 Day 1+2
-    call ch1_day1_day2
+    call day0
     
     # Sau khi ch1 kết thúc, return về main menu
     return

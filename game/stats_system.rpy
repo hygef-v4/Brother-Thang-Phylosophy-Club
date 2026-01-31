@@ -54,6 +54,8 @@ init -1 python:
             stat_multiplier: nhân với stats (Hải Nữ thích học tập, Hương thích đời sống)
             """
             
+            init = self.get_relationship(char_name)
+
             if char_name == "hainu":
                 self.rel_hainu = self.clamp(
                     self.rel_hainu + amount * self.get_stat_multiplier_hainu(),
@@ -67,7 +69,7 @@ init -1 python:
                     GameConfig.REL_MAX
                 )
             
-            return self.get_relationship(char_name)
+            return self.get_relationship(char_name) - init
 
         def get_relationship(self, char_name):
             """Lấy giá trị tình cảm"""

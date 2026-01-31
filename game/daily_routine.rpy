@@ -8,13 +8,15 @@ label daily_routine_morning:
     # MORNING ACTIVITY (SÁNG)
     # ========================================
     
-    scene black
+    $ current_day += 1
+    scene black with dissolve_scene_full
     centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
     $ current_time_slot = 1
     
     # Daily stats update
     $ daily_changes = stats.update_daily()
+    $ show_stat_change("tien", daily_changes)
 
     call daily_dorm
 
@@ -49,10 +51,9 @@ label daily_routine_evening:
     # EVENING DORM (TỐI)
     # ========================================
     
-    scene black with dissolve_scene_full
-    stop music fadeout 2.0
+    scene black
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(1.5, hard=True)
     $current_time_slot = 3
     
     "Về phòng, kết thúc một ngày dài..."
@@ -62,9 +63,7 @@ label daily_routine_evening:
     # ========================================
     # END OF DAY - INCREMENT DAY COUNTER
     # ========================================
-    
-    $ current_day += 1
-    
+        
     # Loop back for next day (Day 4→9)
     jump daily_routine_loop
 
