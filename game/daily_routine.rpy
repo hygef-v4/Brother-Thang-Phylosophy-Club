@@ -111,7 +111,7 @@ label daily_dorm:
         scene bg ktx with wipeleft_scene  # Custom: Ký túc xá FPT
     else:
         scene bg ktx_day with wipeleft_scene
-    play music tense fadein 1.0
+    play music dorm_theme fadein 1.0
 
     menu:
         "Đi ngủ":

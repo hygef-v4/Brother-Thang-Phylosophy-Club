@@ -22,8 +22,8 @@ image dad angry = Transform("images/dad.png", zoom=0.85, xalign=0.5, yalign=1.0)
 
 # Character - Robot T31
 # Character - Robot T31
-image t31 = Transform("images/robot_t31.png", zoom=1.25, xalign=0.5, yalign=1.0)
-image side t31 = Transform("images/robot_t31_side.png", zoom=0.35, xalign=0.0, yalign=1.0)
+image pig = Transform("images/robot_t31.png", zoom=1.25, xalign=0.5, yalign=1.0)
+image pig side = Transform("images/robot_t31_side.png", zoom=0.35, xalign=0.0, yalign=1.0)
 
 # ================================================
 # CHARACTER SPRITES - Võ Minh Xỉu

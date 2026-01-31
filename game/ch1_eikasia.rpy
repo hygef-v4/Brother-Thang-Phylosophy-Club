@@ -231,7 +231,7 @@ label day1_evening:
     $ renpy.pause(1.5, hard=True)
     
     scene bg ktx with wipeleft_scene  # Custom: Ký túc xá FPT
-    play music tense fadein 1.0
+    play music dorm_theme fadein 1.0
     
     "Ngày nhập học đầu tiên kết thúc."
     "Về đến ký túc xá, tôi định ngả lưng nghỉ ngơi chút thì..."
@@ -317,7 +317,7 @@ label day2_morning:
     $ renpy.pause(2.0, hard=True)
 
     scene bg ktx_day with wipeleft_scene
-    play music tense fadein 1.0
+    play music dorm_theme fadein 1.0
     
 
     "\"Hôm qua vừa gia nhập CLB, nay đến xem thử xem sao\"."
@@ -442,7 +442,7 @@ label day2_morning:
             $ show_stat_change("tien", amount)
         
         "Thôi, nay em xin kiếu!":
-            xiu "Chậc... Tuỳ cu."
+            xiu "Thế thôi vậy."
 
     jump day2_afternoon
 
@@ -453,7 +453,7 @@ label day2_afternoon:
     $ renpy.pause(1.5, hard=True)
 
     scene bg fpt_2 with wipeleft_scene
-    play music tense fadein 1.0
+    play music dorm_theme fadein 1.0
 
     show xiu 1b at t11
 
@@ -510,13 +510,14 @@ label day2_afternoon:
     
     # Tour 3: Canteen & Robot T31
     scene bg canteen with fade  # Custom: Canteen FPT
+    play music canteen_theme fadein 1.0 
     
     show xiu 1a at t11
     
     xiu "\"Cuối cùng là căng tin, nơi sinh hoạt văn hoá của hội những người không biết xấu hổ.\""
     
     show xiu 1a at t21
-    show t31 at t22 with dissolve
+    show pig at t22 with dissolve
     
     mc "\"A! Con lợn này.\""
     
@@ -531,7 +532,7 @@ label day2_afternoon:
     
     pig "[t31_voice]"
     
-    hide t31 with dissolve
+    hide pig with dissolve
     
     show xiu 1a
     
