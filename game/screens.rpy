@@ -394,9 +394,9 @@ init -501 screen main_menu():
         add "menu_art_n_ghost"
     else:
         add "menu_bg_blue"
-        add "menu_art_y"
+        add "menu_art_hainu"
         add "menu_art_dad"
-        add "menu_art_m"
+        add "menu_art_xiu"
         frame
         use navigation
 
