@@ -33,37 +33,53 @@ image menu_fade:
     "white"
     menu_fadeout
 
-image menu_art_y:
+image menu_art_hainu:
     subpixel True
-    "gui/menu_art_y.png"
+    "images/hainu/hainu_menu.png"
     xcenter 450
     ycenter 335
-    zoom 0.60
-    menu_art_move(0.54, 450, 0.60)
+    zoom 0.45
+    menu_art_move(0.54, 450, 0.45)
 
-image menu_art_n:
+# image menu_art_y:
+#     subpixel True
+#     "gui/menu_art_y.png"
+#     xcenter 450
+#     ycenter 335
+#     zoom 0.60
+#     menu_art_move(0.54, 450, 0.60)
+
+# image menu_art_n:
+#     subpixel True
+#     "gui/menu_art_n.png"
+#     xcenter 750
+#     ycenter 385
+#     zoom 0.58
+#     menu_art_move(0.58, 750, 0.58)
+
+# image menu_art_s:
+#     subpixel True
+#     "gui/menu_art_s.png"
+#     xcenter 450
+#     ycenter 335
+#     zoom 0.60
+#     menu_art_move(0.54, 450, 0.60)
+
+image menu_art_xiu:
     subpixel True
-    "gui/menu_art_n.png"
-    xcenter 750
+    "images/xiu/xiu_menu.png"
+    xcenter 880
     ycenter 385
-    zoom 0.58
-    menu_art_move(0.58, 750, 0.58)
+    zoom 0.45
+    menu_art_move(0.60, 880, 0.45)
 
-image menu_art_s:
-    subpixel True
-    "gui/menu_art_s.png"
-    xcenter 450
-    ycenter 335
-    zoom 0.60
-    menu_art_move(0.54, 450, 0.60)
-
-image menu_art_m:
-    subpixel True
-    "gui/menu_art_m.png"
-    xcenter 900
-    ycenter 640
-    zoom 1.00
-    menu_art_move(1.00, 900, 1.00)
+# image menu_art_m:
+#     subpixel True
+#     "gui/menu_art_m.png"
+#     xcenter 900
+#     ycenter 640
+#     zoom 1.00
+#     menu_art_move(1.00, 900, 1.00)
 
 image menu_art_dad:
     subpixel True
