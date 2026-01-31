@@ -1,5 +1,3 @@
-default persistent.demo = False
-default persistent.steam = ("steamapps" in config.basedir.lower())
 define config.developer = True
 
 init python:
@@ -9,10 +7,6 @@ init python:
     
     # Negative x-offset moves right body part left to overlap and close vertical seam
     body_offset = (-1, 0)
-    
-    # Yuri specific head offset (needs to move left slightly)
-    # (-1, 1) means: left 1px, down 1px
-    yuri_head_offset = (-1, 1)
 
 # ================================================
 # CUSTOM IMAGE DEFINITIONS (Migrated)
@@ -52,9 +46,6 @@ image hainu 1e = "hainu/hainu_gentle_smile.png"   # Gentle Smile - warm, caring
 image hainu 1f = "hainu/hainu_tired.png"          # Tired - exhausted from work
 image hainu 1g = "hainu/hainu_surprised.png"      # Surprised - shocked
 image hainu 1h = "hainu/hainu_embarrassed.png"    # Embarrassed - shy, flustered
-
-
-
 
 python early:
     import datetime
@@ -269,79 +260,13 @@ define _dismiss_pause = config.developer
 default persistent.playername = ""
 default player = persistent.playername
 default persistent.playthrough = 0
-default persistent.yuri_kill = 0
-default persistent.seen_eyes = None
-default persistent.seen_sticker = None
 default persistent.ghost_menu = None
-default persistent.seen_ghost_menu = None
-default seen_eyes_this_chapter = False
-default persistent.anticheat = 0
-default persistent.clear = [False, False, False, False, False, False, False, False, False, False]
-default persistent.special_poems = None
-default persistent.clearall = None
 default persistent.menu_bg_m = None
 default persistent.first_load = None
-default persistent.first_poem = None
-default persistent.seen_colors_poem = None
-default persistent.monika_back = None
 default persistent.autoload = ""
-default persistent.deleted_saves = False
-default persistent.current_monikatopic = 0
 default persistent.first_run = False
 default persistent.oldversion = ""
-default in_sayori_kill = None
-default in_yuri_kill = None
-default anticheat = 0
 define config.mouse = None
 default allow_skipping = True
 default basedir = config.basedir
-default chapter = 0
 default currentpos = 0
-default faint_effect = None
-
-default s_name = "Sayori"
-default m_name = "Monika"
-default n_name = "Natsuki"
-default y_name = "Yuri"
-
-default n_poemappeal = [0, 0, 0]
-default s_poemappeal = [0, 0, 0]
-default y_poemappeal = [0, 0, 0]
-default m_poemappeal = [0, 0, 0]
-
-default poemwinner = ['sayori', 'sayori', 'sayori']
-
-default s_readpoem = False
-default n_readpoem = False
-default y_readpoem = False
-default m_readpoem = False
-
-default n_read3 = False
-default y_read3 = False
-
-default n_poemearly = False
-
-default poemsread = 0
-
-default n_appeal = 0
-default s_appeal = 0
-default y_appeal = 0
-default m_appeal = 0
-
-default n_exclusivewatched = False
-default y_exclusivewatched = False
-
-default y_gave = False
-default y_ranaway = False
-
-default ch1_choice = "sayori"
-
-default help_sayori = None
-default help_monika = None
-
-default ch4_scene = "yuri"
-default ch4_name = "Yuri"
-default sayori_confess = True
-
-default natsuki_23 = None
-
