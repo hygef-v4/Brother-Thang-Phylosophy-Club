@@ -28,16 +28,8 @@ image side t31 = Transform("images/robot_t31_side.png", zoom=0.35, xalign=0.0, y
 # ================================================
 # CHARACTER SPRITES - Võ Minh Xỉu
 # ================================================
-image xiu 1a = "xiu/xiu_neutral.png"      # Neutral - calm, default
-image xiu 1b = "xiu/xiu_happy.png"        # Happy - cheerful
-image xiu 1c = "xiu/xiu_sad.png"          # Sad - disappointed  
-image xiu 1d = "xiu/xiu_angry.png"        # Angry - frustrated
-image xiu 1e = "xiu/xiu_surprised.png"    # Surprised - shocked
-image xiu 1f = "xiu/xiu_embarrassed.png"  # Embarrassed - shy
-image xiu 1g = "xiu/xiu_smirk.png"        # Smirk - confident, playful
-image xiu 1h = "xiu/xiu_thinking.png"     # Thinking - pondering, contemplative
 
-# Semantic aliases for easy scripting
+# Semantic definitions
 image xiu neutral = "xiu/xiu_neutral.png"
 image xiu happy = "xiu/xiu_happy.png"
 image xiu sad = "xiu/xiu_sad.png"
@@ -47,15 +39,18 @@ image xiu embarrassed = "xiu/xiu_embarrassed.png"
 image xiu smirk = "xiu/xiu_smirk.png"
 image xiu thinking = "xiu/xiu_thinking.png"
 
-# Vũ Hải Nữ (Philosophy Club President) sprite definitions
-image hainu 1a = "hainu/hainu_neutral.png"        # Neutral - calm, observing
-image hainu 1b = "hainu/hainu_thinking.png"       # Thinking - adjusting glasses
-image hainu 1c = "hainu/hainu_explaining.png"     # Explaining - teaching philosophy
-image hainu 1d = "hainu/hainu_stern.png"          # Stern - serious, strict
-image hainu 1e = "hainu/hainu_gentle_smile.png"   # Gentle Smile - warm, caring
-image hainu 1f = "hainu/hainu_tired.png"          # Tired - exhausted from work
-image hainu 1g = "hainu/hainu_surprised.png"      # Surprised - shocked
-image hainu 1h = "hainu/hainu_embarrassed.png"    # Embarrassed - shy, flustered
+# ================================================
+# CHARACTER SPRITES - Vũ Hải Nữ
+# ================================================
+
+image hainu neutral = "hainu/hainu_neutral.png"
+image hainu thinking = "hainu/hainu_thinking.png"
+image hainu explaining = "hainu/hainu_explaining.png"
+image hainu stern = "hainu/hainu_stern.png"
+image hainu smile = "hainu/hainu_gentle_smile.png"
+image hainu tired = "hainu/hainu_tired.png"
+image hainu surprised = "hainu/hainu_surprised.png"
+image hainu embarrassed = "hainu/hainu_embarrassed.png"
 
 # Semantic aliases
 image hainu neutral = "hainu/hainu_neutral.png"

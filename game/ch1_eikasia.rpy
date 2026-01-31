@@ -115,6 +115,7 @@ label day1_morning:
     # Accept call
     "Click."
     
+    show xiu neutral at t11
     unknown "\"Alo Thắng à, em có phải là Thắng không?\""
     
     stop music fadeout 1.0
@@ -163,26 +164,26 @@ label day1_afternoon:
     "Mở cửa ra, trước mặt là một người con gái đứng nhìn xuống dưới sân trường."
     "Đó có lẽ là hội trưởng CLB Triết học Plato – Vũ Hải Nữ."
     
-    show hainu 1a at t11
+    show hainu neutral at t11
     
     hainu "\"Eikasia.\""
     
     mc "\"..?\""
     mc "(Nghe giống như tên một món vũ khí trong game RPG nào đó vậy.)"
     
-    show hainu 1b
+    show hainu thinking
     
     hainu "\"Là cấp độ thấp nhất của nhận thức.\""
     
     "Hội Trưởng quay lại, nhìn thẳng vào tôi."
     
-    show hainu 1c at t11
+    show hainu explaining at t11
     
     hainu "\"Cậu kia. Cậu thấy bầu trời màu gì?\""
     
     mc "(bối rối) \"Ờ… màu xanh ạ.\""
     
-    show hainu 1d
+    show hainu stern
     
     hainu "\"Thiển cận!\""
     hainu "\"Mặt trời không chỉ phát ra một màu, mà là cả một phổ ánh sáng.\""
@@ -190,7 +191,7 @@ label day1_afternoon:
     
     mc "\"…Hả?\""
     
-    show hainu 1c
+    show hainu explaining
     
     hainu "\"Bầu trời vốn không hề xanh.\""
     hainu "\"Màu xanh cậu thấy… Là ánh sáng bị tán xạ… Chỉ là ảo ảnh mà cậu tạo ra để diễn giải về thế giới.\""
@@ -199,17 +200,17 @@ label day1_afternoon:
     
     $ stats.met_hainu = True
     
-    show hainu 1a
+    show hainu neutral
     
     hainu "\"Vậy cậu đến đây làm gì?\""
     
     mc "(Gượng cười) \"Dạ em muốn gia nhập CLB ạ!\""
     
-    show hainu 1b
+    show hainu thinking
     
     hainu "\"…\""
     
-    show hainu 1a
+    show hainu neutral
     
     hainu "\"Được thôi… Cậu được nhận.\""
     
@@ -236,7 +237,7 @@ label day1_evening:
     "Ngày nhập học đầu tiên kết thúc."
     "Về đến ký túc xá, tôi định ngả lưng nghỉ ngơi chút thì..."
     
-    show xiu 1a at t11
+    show xiu neutral at t11
     
     xiu "\"Ê cu.\""
     
@@ -244,14 +245,14 @@ label day1_evening:
     
     $ stats.met_xiu = True
     
-    show xiu 1g
+    show xiu smirk
     
     xiu "(cười đểu) \"Tân sinh viên hả?\""
     xiu "\"Muốn chơi một trò chơi đêm muộn khiến bao con người thổn thức chứ?\""
     
     mc "(Đỏ mặt) \"Dạ?\""
     
-    show xiu 1g
+    show xiu smirk
     
     xiu "\"Đùa xíu thôi! Tối nay đang có trận MU đá với MC, cu em có muốn vào xem cùng chị không nào?\""
     xiu "\"Cơ mà chỉ xem thôi thì chán phèo, hay là chị em mình làm trận cá cược đi nhỉ?\""
@@ -265,7 +266,7 @@ label day1_evening:
             $ gained = stats.modify_relationship("xiu", 6)
             $ show_stat_change("rel_xiu", gained)
 
-            show xiu 1b
+            show xiu happy
             
             xiu "\"Có chí khí đấy, vậy cu em theo đội nào?\""
             
@@ -276,7 +277,7 @@ label day1_evening:
                 "ALL IN GENG!!!":
                     $ xiu_bet_choice = "GENG"
             
-            show xiu 1a
+            show xiu neutral
             
             xiu "\"OK! OK! Vậy thì chị theo đội còn lại.\""
             
@@ -285,11 +286,11 @@ label day1_evening:
             "..."
             
             # Thắng!
-            show xiu 1c
+            show xiu sad
             
             xiu "\"Ây da! Thua mất rồi! Lần này coi như em gặp may.\""
 
-            show xiu 1b
+            show xiu happy
 
             xiu "\"Cu em được đấy! Lần sau lại chơi tiếp nhá.\""
             xiu "\"Chị ở phòng bên cạnh, nếu cần gì cứ sang gọi chị nhá!\""
@@ -339,20 +340,20 @@ label day2_morning:
     
     "Vừa bước vào phòng, tình cờ thế nào lại gặp lại chị gái tối qua."
     
-    show xiu 1a at t11
+    show xiu neutral at t11
     
     xiu "\"Ô! Xem ai đây kìa! Cu em là thành viên mới của cái CLB tẻ nhạt này à?\""
     xiu "\"Trùng hợp ghê, chị cũng là thành viên đó!\""
     
-    show xiu 1b
+    show xiu happy
     
     xiu "\"Hữu duyên thế này thì tối này chị em ta lại phải làm kèo cá độ rồi!\""
     
     mc "\"Dạ vâng…\""
     
     # Hải Nữ xuất hiện
-    show xiu 1a at t21
-    show hainu 1b at t22
+    show xiu neutral at t21
+    show hainu thinking at t22
     
     hainu "\"XỈU!!!\""
     
@@ -362,30 +363,30 @@ label day2_morning:
     
     "Hội trưởng bước vào."
     
-    show hainu 1d at t22
+    show hainu stern at t22
     
     hainu "\"BÀ LẠI ĐI GỌI ĐIỆN CHÈO KÉO THÀNH VIÊN VÀO CLB ĐỂ TIỆN TAY LỪA ĐẢO NỮA HẢ?\""
     hainu "\"HÔM QUA CÓ MỘT NGƯỜI MỚI GIA NHẬP, CÓ PHẢI LÀ DO BÀ DỤ DỖ KHÔNG HẢ?\""
     hainu "\"ĐÂY LÀ CLB TRIẾT CHỨ KHÔNG PHẢI Ổ LỪA ĐẢO CỦA BÀ ĐÂU NHÁ!\""
     
-    show xiu 1d at t21
+    show xiu angry at t21
     
     xiu "(lủi mất) \"Đùa tí, làm gì căng.\""
 
     hide xiu with dissolve
     
-    show hainu 1c at t22
+    show hainu explaining at t22
     
     hainu "\"Còn cả cậu nữa, ai rủ gì cậu cũng làm à? Chính kiến của cậu đâu hả?\""
     
     mc "\"Dạ…. Dạ…. Tại em nghĩ chỉ chơi cho vui thôi chứ đâu có biết là lừa đảo….\""
     
-    show hainu 1d
+    show hainu stern
     
     hainu "\"…. Thật là một niềm tin mù quáng….\""
     hainu "\"Sống trên đời phải biết nghi ngờ, nếu không thì chả khác nào mấy thằng nghe lời người ta cầm 2 tỷ đầu tư vào HDPE để rồi tán gia bại sản.\""
     
-    show hainu 1e
+    show hainu smile
     
     hainu "\"Thôi được rồi… nay cậu về đi.\""
     
@@ -396,21 +397,21 @@ label day2_morning:
     
     scene bg hallway with wipeleft_scene  # Custom: Hành lang FPT
     
-    show xiu 1a at t11
+    show xiu neutral at t11
     
     xiu "\"Cu em chịu khó ngồi nghe cái bà hội trưởng đấy lảm nhảm thế nhỉ?\""
     xiu "\"Phải chị chị làm vội ba giấc rồi!\""
 
     mc "\"Vậy ra chị là người mời em vào CLB sao?\""
 
-    show xiu 1g
+    show xiu smirk
 
     xiu "\"Thấy cu em có vẻ thông minh sáng sủa, chị cũng chỉ muốn mời chú em vào cùng chơi thôi mà.\""
     xiu "\"Thế kèo của chị em mình chú tính thế nào? Chơi hay không chơi nói một lời nào.\""
 
     menu:
         "Chơi thì chơi, sợ gì?":
-            show xiu 1b
+            show xiu happy
             
             xiu "\"Có chí khí đấy, vậy cu em theo đội nào?\""
             # Relationship tăng
@@ -424,7 +425,7 @@ label day2_morning:
                 "ALL IN MC!!!":
                     $ xiu_bet_choice = "MC"
             
-            show xiu 1a
+            show xiu neutral
             
             xiu "\"OK! OK! Vậy thì chị theo đội còn lại.\""
             
@@ -433,7 +434,7 @@ label day2_morning:
             "..."
             
             # Thắng!
-            show xiu 1g
+            show xiu smirk
             
             xiu "\"Ngon, thắng rồi! Tiền cu em chị xin nhá!\""
             
@@ -455,7 +456,7 @@ label day2_afternoon:
     scene bg fpt_2 with wipeleft_scene
     play music tense fadein 1.0
 
-    show xiu 1b at t11
+    show xiu happy at t11
 
     xiu "\"Ây cu.\""
     xiu "\"Đừng giận chị nha.\""
@@ -472,7 +473,7 @@ label day2_afternoon:
             $ show_stat_change("rel_xiu", gained)
         
         "Em cũng tham quan vòng rồi, không cần phiền chị đâu ạ":
-            show xiu 1g
+            show xiu smirk
             
             xiu "\"Thế thôi vậy. Em về nha, chị đi trước đây.\""
             
@@ -485,11 +486,11 @@ label day2_afternoon:
     scene bg library with fade  # Custom: Thư viện FPT
     play music library_theme fadein 1.0 # Reset to happy music
     
-    show xiu 1a at t11
+    show xiu neutral at t11
     
     xiu "\"Đầu tiên là thư viện, là một nơi vô cùng lý tưởng để ngồi ôn lại bài cũ…, hoặc là ngủ.\""
     
-    show xiu 1b
+    show xiu happy
     
     xiu "\"Nghe bảo Hội Trưởng thích mấy anh trai học bá đó, nếu em định tán chị ấy thì tốt nhất thử thông thạo bảy mấy món triết học Mác Leenin hay Tư tưởng Hồ Chí Minh đi.\""
     
@@ -499,28 +500,28 @@ label day2_afternoon:
     scene bg gym with fade  # Custom: Phòng gym FPT
     play music gym_theme fadein 1.0 # Reset to happy music
     
-    show xiu 1g at t11
+    show xiu smirk at t11
     
     xiu "\"Kế đến là phòng Gym, nơi các anh zai sáu múi flex đống cơ của mình.\""
     xiu "\"Gu chị là mấy anh chàng cao to đen hôi thể hình lực lưỡng, thi thoảng ra ngó mấy anh giai chống đẩy mà them chảy nước giãi.\""
     
     mc "\"Tém tém thôi chị ơi, liêm xỉ trôi theo hàng nước của chị rồi kìa.\""
     
-    show xiu 1b
+    show xiu happy
     
     # Tour 3: Canteen & Robot T31
     scene bg canteen with fade  # Custom: Canteen FPT
     
-    show xiu 1a at t11
+    show xiu neutral at t11
     
     xiu "\"Cuối cùng là căng tin, nơi sinh hoạt văn hoá của hội những người không biết xấu hổ.\""
     
-    show xiu 1a at t21
+    show xiu neutral at t21
     show t31 at t22 with dissolve
     
     mc "\"A! Con lợn này.\""
     
-    show xiu 1a at t21
+    show xiu neutral at t21
     
     xiu "\"Đây là robot bán hàng số hiệu T31 tên đầy đủ là DaoChiCuong do tập đoàn FPT sản xuất.\""
     xiu "\"Phế lắm, chị chửi nó suốt. Mong sau này robot xâm chiếm thế giới nó không nhớ mặt chị.\""
@@ -533,7 +534,7 @@ label day2_afternoon:
     
     hide t31 with dissolve
     
-    show xiu 1a
+    show xiu neutral
     
     xiu "\"Thôi muộn rồi, chị té trước đây nha.\""
     
@@ -562,19 +563,19 @@ label day2_evening:
     "Phòng CLB vẫn sáng đèn."
     "Hội Trưởng ở trong phòng, trước mặt là một chồng sổ sách cao chạm trần!!?"
     
-    show hainu 1a at t11
+    show hainu neutral at t11
     
     hainu "\"Cậu là thành viên mới. Muộn rồi còn tới đây làm gì?\""
     
     mc "\"Em để quên chìa khoá ạ.\""
     
-    show hainu 1b
+    show hainu thinking
     
     hainu "\"Chìa khoá hả? Tôi thấy nó nên đặt ở kia kìa.\""
     
     "Đã tìm thấy chìa khoá, đang định đi về…."
     
-    show hainu 1c
+    show hainu explaining
     
     hainu "\"Này.\""
     
@@ -601,13 +602,13 @@ label day2_evening:
     $ stats.modify_tien(50000)
     $ show_stat_change("tien", 50000)
 
-    show hainu 1a
+    show hainu neutral
     
     hainu "\"Nay cảm ơn cậu. Không có cậu chắc tôi bị đống giấy tờ này bán hành đến chết mất!\""
     hainu "\"…\""
     hainu "\"Chiều nay… Tôi có hơi nặng lời.\""
     
-    show hainu 1c
+    show hainu explaining
     
     hainu "\"Nhưng mà… Con người khác với mọi sinh vật ở khả năng suy nghĩ và phản biện.\""
     hainu "\"Suy nghĩ và phản biện là nền móng của triết học.\""

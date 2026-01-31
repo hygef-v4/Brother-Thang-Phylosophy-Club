@@ -126,7 +126,7 @@ label daily_dorm:
                 jump daily_routine_noon
 
         "Nói chuyện với Xỉu" if current_time_slot == 3:
-            show xiu 1a at t11
+            show xiu neutral at t11
             
             xiu "\"Chào mừng đến với dịch vụ Campuchia gì cũng tôn của Xỉu. Cu em cần gì nào?\""
             
