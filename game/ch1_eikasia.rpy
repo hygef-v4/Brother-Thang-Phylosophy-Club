@@ -270,11 +270,11 @@ label day1_evening:
             xiu "\"Có chí khí đấy, vậy cu em theo đội nào?\""
             
             menu:
-                "ALL IN MU!!!":
-                    $ xiu_bet_choice = "MU"
+                "ALL IN T1!!!":
+                    $ xiu_bet_choice = "T1"
                 
-                "ALL IN MC!!!":
-                    $ xiu_bet_choice = "MC"
+                "ALL IN GENG!!!":
+                    $ xiu_bet_choice = "GENG"
             
             show xiu 1a
             
@@ -295,8 +295,8 @@ label day1_evening:
             xiu "\"Chị ở phòng bên cạnh, nếu cần gì cứ sang gọi chị nhá!\""
             
             # Nhận tiền
-            $ stats.modify_tien(stats.tien)
-            $ show_stat_change("tien", stats.tien)
+            $ amount = stats.modify_tien(stats.tien)
+            $ show_stat_change("tien", amount)
     
     hide xiu with dissolve
 
@@ -418,11 +418,11 @@ label day2_morning:
             $ show_stat_change("rel_xiu", gained)
             
             menu:
-                "ALL IN T1!!!":
-                    $ xiu_bet_choice = "T1"
+                "ALL IN MU!!!":
+                    $ xiu_bet_choice = "MU"
                 
-                "ALL IN GENG!!!":
-                    $ xiu_bet_choice = "GENG"
+                "ALL IN MC!!!":
+                    $ xiu_bet_choice = "MC"
             
             show xiu 1a
             
@@ -432,28 +432,14 @@ label day2_morning:
             "Xem trận đấu..."
             "..."
             
-            # Random kết quả (50/50)
-            $ match_result = renpy.random.choice(["T1", "GENG"])
+            # Thắng!
+            show xiu 1g
             
-            if xiu_bet_choice == match_result:
-                # Thắng!
-                show xiu 1g
-                
-                xiu "\"Ngon, thắng rồi! Tiền cu em chị xin nhá!\""
-                
-                # Nhận tiền
-                $ stats.modify_tien(-stats.tien)
-                $ show_stat_change("tien", -stats.tien)
-                
-            else:
-                # Thua
-                show xiu 1c
-                
-                xiu "\"Ây da! Thua mất rồi! Lần này coi như em gặp may.\""
-                
-                # Mất tiền
-                $ stats.modify_tien(stats.tien)
-                $ show_stat_change("tien", stats.tien)
+            xiu "\"Ngon, thắng rồi! Tiền cu em chị xin nhá!\""
+            
+            # Nhận tiền
+            $ amount = stats.modify_tien(-stats.tien)
+            $ show_stat_change("tien", amount)
         
         "Thôi, nay em xin kiếu!":
             xiu "Chậc... Tuỳ cu."
@@ -611,6 +597,9 @@ label day2_evening:
             mc "\"…Thôi được rồi, em sẽ giúp chị.\""
             
     "Tài liệu chất đống như núi, xử lý xong thì cũng đã muộn."
+
+    $ stats.modify_tien(50000)
+    $ show_stat_change("tien", 50000)
 
     show hainu 1a
     
