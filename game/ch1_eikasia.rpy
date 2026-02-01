@@ -16,7 +16,7 @@ label day0:
     scene black with dissolve_scene_full
 
     scene bg yenlang with fade
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(2.0)
     
     scene bg mc_room with wipeleft_scene
     play music club_theme fadein 1.0
@@ -86,7 +86,7 @@ label day1_morning:
 
     scene bg fpt_1 with fade
     centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(2.0)
     
     # ========================================
     # CẢNH 2: SÂN TRƯỜNG - SÁNG (NGÀY 1)
@@ -311,7 +311,7 @@ label day2_morning:
     
     scene bg fpt_4 with fade
     centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(2.0)
 
     scene bg ktx_day with wipeleft_scene
     play music dorm_theme fadein 1.0
