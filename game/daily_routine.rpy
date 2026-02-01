@@ -98,6 +98,8 @@ label daily_activity:
             $ renpy.pause(2.0)
             
             stop music fadeout 2.0
+
+            return
     
 # ========================================
 # EVENING DORM ACTIVITIES
