@@ -41,7 +41,6 @@ label day3:
 
 label plato_cave:
     # Text Scenes: 258-301 (Cave Allegory)
-    scene bg club_day with wipeleft_scene
     play music deep_thought fadein 1.0
 
     show hainu 1a at t11

@@ -146,11 +146,9 @@ label day1_morning:
     
 label day1_afternoon:
     # Scene label
-    stop music fadeout 1.5
-
     scene bg fpt_2 with fade
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(1.5, hard=True)
+    $ renpy.pause(1.0, hard=True)
     
     # ========================================
     # CẢNH 3: CLB - CHIỀU (NGÀY 1)
@@ -224,11 +222,9 @@ label day1_evening:
     # ========================================
     # CẢNH 4: KTX - TỐI (NGÀY 1)
     # ========================================
-    stop music fadeout 1.5
-
     scene bg fpt_3 with fade
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(1.5, hard=True)
+    $ renpy.pause(1.0, hard=True)
     
     scene bg ktx with wipeleft_scene  # Custom: Ký túc xá FPT
     play music dorm_theme fadein 1.0
@@ -312,7 +308,7 @@ label day2_morning:
     scene black with dissolve_scene_full
     stop music fadeout 2.0
     
-    scene bg fpt_4 with dissolve
+    scene bg fpt_4 with fade
     centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(2.0, hard=True)
 
@@ -447,13 +443,11 @@ label day2_morning:
     jump day2_afternoon
 
 label day2_afternoon:
-    stop music fadeout 1.5
-
-    scene bg fpt_2 with dissolve
+    scene bg fpt_2 with fade
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(1.5, hard=True)
+    $ renpy.pause(1.0, hard=True)
 
-    scene bg fpt_2 with wipeleft_scene
+    scene bg fpt_5 with wipeleft_scene
     play music sota_theme fadein 1.0
 
     show xiu 1b at t11
@@ -544,22 +538,20 @@ label day2_afternoon:
     # ========================================
     
 label day2_evening:
-    stop music fadeout 1.5
-    
-    scene bg fpt_3 with dissolve
+    scene bg fpt_3 with fade
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(1.5, hard=True)
+    $ renpy.pause(1.0, hard=True)
     
     # CẢNH 7
     
-    scene bg class_day with wipeleft_scene
+    scene bg class_day with fade
     play music daily_life fadein 1.0
     
     mc "\"Tan học rồi, về thôi.\""
     mc "\"Thôi chết, chìa khoá đâu rồi?\""
     mc "\"Hình như mình để quên trên phòng CLB rồi.\""
     
-    scene bg club_messy with fade  # CLB lộn xộn giấy tờ
+    scene bg club_messy with wipeleft_scene  # CLB lộn xộn giấy tờ
     play music club_theme fadein 1.0 # Yuri theme
     
     "Phòng CLB vẫn sáng đèn."

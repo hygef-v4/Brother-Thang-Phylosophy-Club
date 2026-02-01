@@ -24,7 +24,7 @@ label ch4_path_both:
         "Đến CLB":
             pass
 
-    scene bg club_party with fade
+    scene bg club_party with wipeleft_scene
     play music club_theme fadein 1.0
     
     "Giữa phòng trưng một băng rôn Happy Birthday."
@@ -134,7 +134,7 @@ label ch4_path_hainu:
         "Đến CLB":
             pass
 
-    scene bg club_party with fade
+    scene bg club_party with wipeleft_scene
     play music club_theme fadein 1.0 # Yuri (Hainu)
     
     "Giữa phòng trưng một băng rôn Happy Birthday."
@@ -174,7 +174,7 @@ label ch4_path_hainu:
 # ========================================
 
 label ending_objective_idealism:
-    scene bg ktx with dissolve_scene_full
+    scene bg ktx with wipeleft_scene
     play music deep_thought fadein 1.0 # Eerie/Space
     
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
@@ -245,7 +245,7 @@ label ending_subjective_idealism:
 
 label ending_metaphysical_materialism:
     $ current_day = 14
-    scene bg living_room with fade # Nhà
+    scene bg living_room with wipeleft_scene # Nhà
     play music canteen_theme fadein 1.0 # Normal daily life
     
     centered "{size=30}{color=#ff6600}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
@@ -288,7 +288,7 @@ label ending_metaphysical_materialism:
 
 label ending_dialectical_materialism:
     $ current_day = 14
-    scene bg living_room with fade
+    scene bg living_room with wipeleft_scene
     play music canteen_theme fadein 1.0 # Argument/Tension
     
     centered "{size=30}{color=#ff6600}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
@@ -350,7 +350,7 @@ label ending_dialectical_materialism:
     jump confession
 
 label confession:
-    scene bg club_day with fade
+    scene bg club_day with wipeleft_scene
     play music deep_thought fadein 1.0 # Continue emotional theme
     
     "Làm hoà được với bố, vui vẻ quay lại CLB."
@@ -409,7 +409,6 @@ label ending_fascist:
     scene black with dissolve_scene_full
     stop music fadeout 2.0
     
-    scene bg sota with fade
     centered "{size=30}Nhiều năm sau...{/size}"
     $ renpy.pause(2.0, hard=True)
     
