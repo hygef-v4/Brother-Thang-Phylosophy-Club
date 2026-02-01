@@ -32,12 +32,6 @@ label konami_menu:
         "Jump Chapter 3":
             $ current_day = 6
             jump daily_routine_loop
-        "Jump Xiu's Story":
-            $ current_day = 8
-            jump daily_routine_loop
-        "Jump Hai Nu's Story":
-            $ current_day = 10
-            jump daily_routine_loop
         "Jump Chapter 4":
             $ current_day = 13
             jump daily_routine_evening
