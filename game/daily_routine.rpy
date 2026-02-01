@@ -36,7 +36,7 @@ label daily_routine_morning:
         scene bg fpt_23 with fade
     
     centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(0.5, hard=True)
+    $ renpy.pause(0.5)
     $ current_time_slot = 1
     
     # Daily stats update
@@ -94,7 +94,7 @@ label daily_routine_afternoon:
         scene bg fpt_40 with fade
     
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(0.5, hard=True)
+    $ renpy.pause(0.5)
     $ current_time_slot = 2
     
     call daily_activity
@@ -134,7 +134,7 @@ label daily_routine_evening:
         scene bg fpt_36 with fade
     
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(0.5, hard=True)
+    $ renpy.pause(0.5)
     $current_time_slot = 3
     
     if current_day == 13:
@@ -227,10 +227,10 @@ label daily_dorm:
                         $ stats.modify_tien(-100000)
                         $ show_stat_change("tien", -100000)
                         
-                        $ stats.modify_hoc_tap(10)
-                        $ show_stat_change("hoc_tap", 10)
+                        $ stats.modify_hoc_tap(20)
+                        $ show_stat_change("hoc_tap", 20)
                         
-                        $ gained = stats.modify_relationship("xiu", 6)
+                        $ gained = stats.modify_relationship("xiu", 10)
                         $ show_stat_change("rel_xiu", gained)
                         
                         show xiu happy
@@ -247,7 +247,7 @@ label daily_dorm:
                         $ stats.modify_doi_song(10)
                         $ show_stat_change("doi_song", 10)
                         
-                        $ gained = stats.modify_relationship("xiu", 6)
+                        $ gained = stats.modify_relationship("xiu", 10)
                         $ show_stat_change("rel_xiu", gained)
                         
                         show xiu happy
@@ -280,11 +280,11 @@ label daily_clb:
         hainu "\"Cậu tới rồi à? Giúp tôi một số việc được không?\""
         mc "\"Dạ, vâng ạ.\""
         
-        $ stats.modify_tien(50000)
-        $ show_stat_change("tien", 50000)
+        $ gained = stats.modify_tien(50000)
+        $ show_stat_change("tien", gained)
 
         # Good relationship gains
-        $ gained = stats.modify_relationship("hainu", 6)
+        $ gained = stats.modify_relationship("hainu", 10)
         $ show_stat_change("rel_hainu", gained)
         
         hide hainu with dissolve
@@ -315,8 +315,8 @@ label daily_library:
         mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
     
     # Balanced afternoon study
-    $ stats.modify_hoc_tap(10)
-    $ show_stat_change("hoc_tap", 10)
+    $ gained = stats.modify_hoc_tap(10)
+    $ show_stat_change("hoc_tap", gained)
     
     return
 
@@ -342,7 +342,7 @@ label daily_gym:
         mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
     
     # Good health gains
-    $ stats.modify_doi_song(10)
-    $ show_stat_change("doi_song", 10)
+    $ gained = stats.modify_doi_song(10)
+    $ show_stat_change("doi_song", gained)
 
     return

@@ -153,7 +153,7 @@ label day1_afternoon:
     # Scene label
     scene bg fpt_2 with fade
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(1.0, hard=True)
+    $ renpy.pause(1.0)
     
     # ========================================
     # CẢNH 3: CLB - CHIỀU (NGÀY 1)
@@ -216,7 +216,7 @@ label day1_afternoon:
     hainu "\"Được thôi… Cậu được nhận.\""
     
     # Tăng relationship với Hải Nữ
-    $ gained = stats.modify_relationship("hainu", 6)
+    $ gained = stats.modify_relationship("hainu", 5)
     $ show_stat_change("rel_hainu", gained)
     
     hide hainu with dissolve
@@ -229,7 +229,7 @@ label day1_evening:
     # ========================================
     scene bg fpt_3 with fade
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(1.0, hard=True)
+    $ renpy.pause(1.0)
     
     scene bg ktx with wipeleft_scene  # Custom: Ký túc xá FPT
     play music dorm_theme fadein 1.0
@@ -263,7 +263,7 @@ label day1_evening:
     menu:
         "Chơi thì chơi, sợ gì?":
             # Relationship tăng
-            $ gained = stats.modify_relationship("xiu", 6)
+            $ gained = stats.modify_relationship("xiu", 10)
             $ show_stat_change("rel_xiu", gained)
 
             show xiu 1b
@@ -404,7 +404,7 @@ label day2_morning:
             
             xiu "\"Có chí khí đấy, vậy cu em theo đội nào?\""
             # Relationship tăng
-            $ gained = stats.modify_relationship("xiu", 6)
+            $ gained = stats.modify_relationship("xiu", 10)
             $ show_stat_change("rel_xiu", gained)
             
             menu:
@@ -439,7 +439,7 @@ label day2_morning:
 label day2_afternoon:
     scene bg fpt_6 with fade
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(1.0, hard=True)
+    $ renpy.pause(1.0)
 
     scene bg fpt_5 with wipeleft_scene
     play music sota_theme fadein 1.0
@@ -457,7 +457,7 @@ label day2_afternoon:
             xiu "\"Được rồi, để chị dẫn đoàn nhà mình đi tham quan trường nào!\""
             
             # Relationship tăng
-            $ gained = stats.modify_relationship("xiu", 6)
+            $ gained = stats.modify_relationship("xiu", 5)
             $ show_stat_change("rel_xiu", gained)
         
         "Em cũng tham quan vòng rồi, không cần phiền chị đâu ạ":
@@ -534,7 +534,7 @@ label day2_afternoon:
 label day2_evening:
     scene bg fpt_11 with fade
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(1.0, hard=True)
+    $ renpy.pause(1.0)
     
     # CẢNH 7
     
@@ -587,8 +587,8 @@ label day2_evening:
             
     "Tài liệu chất đống như núi, xử lý xong thì cũng đã muộn."
 
-    $ stats.modify_tien(50000)
-    $ show_stat_change("tien", 50000)
+    $ gained = stats.modify_tien(50000)
+    $ show_stat_change("tien", gained)
 
     show hainu 1a
     
@@ -603,7 +603,7 @@ label day2_evening:
     hainu "\"Nếu cậu thật sự muốn tham gia CLB này, thì mong cậu hãy học cách tư duy…\""
     
     # Relationship tăng mạnh
-    $ gained = stats.modify_relationship("hainu", 6)
+    $ gained = stats.modify_relationship("hainu", 10)
     $ show_stat_change("rel_hainu", gained)
     
     hide hainu with dissolve
