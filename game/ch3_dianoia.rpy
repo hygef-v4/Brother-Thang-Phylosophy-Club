@@ -224,6 +224,9 @@ label day11:
     mc "Em không sao. Thôi, ta vào xem đi!"
     
     "Vào rạp cùng Hội Trưởng để xem phim “The Truman Show”."
+    "Phim kể về Truman, một người đàn ông sống cuộc đời tưởng như bình thường, nhưng thực chất toàn bộ thế giới quanh anh là một chương trình truyền hình trường quaykhổng lồ."
+    "Từ nhỏ đến lớn, cuộc sống của Truman bị phát sóng 24/7 như một chương trình truyền hình thực tế mà anh không hề hay biết."
+    "Đến một ngày, khi Truman bắt đầu nhận ra những điều bất thường, anh cố gắng thoát khỏi cái “thực tại giả” được dựng lên để giành lấy tự do và quyền tự quyết cuộc đời mình."
     "Phim khá ấn tượng, làm mình cũng phải nghi ngờ rằng liệu mình có đang ở trong một con game tình cảm nào đó không…."
     
     show hainu 1a

@@ -275,7 +275,7 @@ label daily_clb:
     show screen stats_display
     show screen konami_listener
 
-    if first_talk:
+    if first_talk or current_day > 11:
         show hainu neutral at t11
         hainu "\"Cậu tới rồi à? Giúp tôi một số việc được không?\""
         mc "\"Dạ, vâng ạ.\""
