@@ -53,18 +53,18 @@ image menu_art_xiu:
 image menu_art_dad:
     subpixel True
     "dad/dad_standing.png"
-    xcenter 450
+    xcenter 1140
     ycenter 335
     zoom 0.45
-    menu_art_move(0.54, 450, 0.45)
+    menu_art_move(0.54, 1200, 0.85)
 
 image menu_art_pig:
     subpixel True
     "robot_t31.png"
-    xcenter 1028
+    xcenter 450
     ycenter 585
     zoom 0.45
-    menu_art_move(0.48, 1200, 0.45)
+    menu_art_move(0.42, 450, 0.65)
 
 # Ghost art and glitch removed for philosophy focus
 
