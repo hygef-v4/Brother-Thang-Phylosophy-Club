@@ -18,14 +18,14 @@ label ending_explanation(ending_id):
     # 2. Define Content Map
     if ending_id == "fascist":
         $ box_color = "#ff0000"
-        $ box_title = "SECRET ENDING: QUÂN CHỦ CHUYÊN CHẾ"
+        $ box_title = "SECRET ENDING: QUYỀN LỰC TUYẾT ĐỐI"
         $ box_philosophy = "TRIẾT LÝ: CHỦ NGHĨA PH*T X*T"
         $ box_message = "Bạn đã giao nộp lý trí cho quyền lực."
         $ box_hint = "Gợi ý: Lần sau hãy dùng lý trí để đối thoại, đừng chỉ biết vâng lời."
         
     elif ending_id == "subjective":
         $ box_color = "#ff66aa"
-        $ box_title = "HAPPY ENDING: CUỘC SỐNG ĐẠI HỌC"
+        $ box_title = "HAPPY ENDING: CUỘC SỐNG TRONG MƠ"
         $ box_philosophy = "TRIẾT LÝ: DUY TÂM CHỦ QUAN"
         $ box_message = "Bạn chọn chiếc hang êm ái thay vì đối mặt thực tại.\nHạnh phúc này chỉ là một liều thuốc tê liệt nhận thức."
         $ box_hint = "Gợi ý: Tìm kiếm niềm vui là tốt, nhưng đừng để nó che mắt sự thật."
@@ -38,7 +38,7 @@ label ending_explanation(ending_id):
         $ box_hint = "Gợi ý: Đừng chỉ nhìn vào 'cái hang giả dối', hãy tìm lối ra."
         
     elif ending_id == "metaphysical":
-        $ box_color = "#f7e7e7"
+        $ box_color = "#ffffdd"
         $ box_title = "NORMAL ENDING: ĐẦU HÀNG THỰC TẠI"
         $ box_philosophy = "TRIẾT LÝ: DUY VẬT SIÊU HÌNH"
         $ box_message = "Bạn nhìn thấy thực tế nhưng cúi đầu trước nó.\nBạn an toàn, nhưng bạn không hề có tự do."

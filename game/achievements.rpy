@@ -29,7 +29,7 @@ screen achievements():
                     padding (20, 20)
                     background Frame(Solid("#ff66aa33"), gui.frame_borders)
                     vbox:
-                        text "{b}HAPPY ENDING: CUỘC SỐNG ĐẠI HỌC{/b}" color "#ff66aa" size 30
+                        text "{b}HAPPY ENDING: CUỘC SỐNG TRONG MƠ{/b}" color "#ff66aa" size 30
                         text "Triết lý: DUY TÂM CHỦ QUAN" color "#ffffff"
                         text "Bạn chọn chiếc hang êm ái thay vì đối mặt thực tại." size 18 color "#aaaaaa"
             else:
@@ -44,9 +44,9 @@ screen achievements():
                 frame:
                     xfill True
                     padding (20, 20)
-                    background Frame(Solid("#ffffff33"), gui.frame_borders)
+                    background Frame(Solid("#ffffdd33"), gui.frame_borders)
                     vbox:
-                        text "{b}NORMAL ENDING: ĐẦU HÀNG THỰC TẠI{/b}" color "#ffffff" size 30
+                        text "{b}NORMAL ENDING: ĐẦU HÀNG THỰC TẠI{/b}" color "#ffffdd" size 30
                         text "Triết lý: Duy Vật Siêu Hình" color "#ffffff"
                         text "Bạn nhìn thấy thực tế nhưng cúi đầu trước nó." size 18 color "#aaaaaa"
             else:
@@ -80,6 +80,6 @@ screen achievements():
                     padding (20, 20)
                     background Frame(Solid("#ff000033"), gui.frame_borders)
                     vbox:
-                        text "{b}SECRET ENDING: QUÂN CHỦ CHUYÊN CHẾ{/b}" color "#ff0000" size 30
-                        text "Triết lý: CHỦ NGHĨA PH*T X*T" color "#ffffff"
+                        text "{b}SECRET ENDING: QUYỀN LỰC TUYỆT ĐỐI/b}" color "#ff0000" size 30
+                        text "Triết lý: CHỦ NGHĨA PHÁT XÍT" color "#ffffff"
                         text "Bạn đã giao nộp lý trí cho quyền lực. " size 18 color "#aaaaaa"
