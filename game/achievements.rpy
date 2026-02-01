@@ -80,6 +80,6 @@ screen achievements():
                     padding (20, 20)
                     background Frame(Solid("#ff000033"), gui.frame_borders)
                     vbox:
-                        text "{b}SECRET ENDING: QUYỀN LỰC TUYỆT ĐỐI/b}" color "#ff0000" size 30
+                        text "{b}SECRET ENDING: QUYỀN LỰC TUYỆT ĐỐI{/b}" color "#ff0000" size 30
                         text "Triết lý: CHỦ NGHĨA PHÁT XÍT" color "#ffffff"
                         text "Bạn đã giao nộp lý trí cho quyền lực. " size 18 color "#aaaaaa"
