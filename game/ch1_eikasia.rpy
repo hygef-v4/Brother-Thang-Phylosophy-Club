@@ -63,6 +63,7 @@ label day0:
     
     mc "\"…?\""
     
+    play sound anhchoemcohoi
     dad "\"Thôi. Trượt rồi thì vào FPT mà học đi.\""
     dad "\"Ít nhất cũng phải lấy được cái bằng Đại học.\""
     
