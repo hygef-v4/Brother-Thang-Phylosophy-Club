@@ -124,7 +124,9 @@ init -501 screen say(who, what):
         if who is not None:
             window:
                 style "namebox"
-                text who id "who"
+                text who id "who":
+                    xalign 0.5
+                    text_align 0.5
 
         # Separator line: Soft blue
         add Solid("#81d4fa") xalign 0.5 yalign 0.77 xsize 0.7 ysize 1 alpha 0.5
@@ -252,6 +254,7 @@ init -1 style choice_button is default:
 init -1 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
     outlines []
+    xsize gui.choice_button_width
 
 init -1 python:
     def RigMouse():
@@ -426,11 +429,6 @@ init -1 style main_menu_text:
 init -1 style main_menu_title:
     size gui.title_text_size
 
-init -501 screen game_menu_m():
-    $ persistent.menu_bg_m = True
-    add "gui/menu_bg_m.png"
-    timer 0.3 action Hide("game_menu_m")
-
 init -501 screen game_menu(title, scroll=None):
     if main_menu:
         add gui.main_menu_background
@@ -469,9 +467,6 @@ init -501 screen game_menu(title, scroll=None):
                 transclude
 
     use navigation
-
-    if not main_menu and persistent.playthrough == 2 and not persistent.menu_bg_m and renpy.random.randint(0, 49) == 0:
-        on "show" action Show("game_menu_m")
 
     textbutton _("Quay Lại"):
         style "return_button"
@@ -566,13 +561,7 @@ init -501 screen load():
 
 init -1 python:
     def FileActionMod(name, page=None, **kwargs):
-        if persistent.playthrough == 1 and not persistent.deleted_saves and renpy.current_screen().screen_name[0] == "load" and FileLoadable(name):
-            return Show(screen="dialog", message="File error: \"characters/sayori.chr\"\n\nThe file is missing or corrupt.",
-                ok_action=Show(screen="dialog", message="The save file is corrupt. Starting a new game.", ok_action=Function(renpy.full_restart, label="start")))
-        elif persistent.playthrough == 3 and renpy.current_screen().screen_name[0] == "save":
-            return Show(screen="dialog", message="There's no point in saving anymore.\nDon't worry, I'm not going anywhere.", ok_action=Hide("dialog"))
-        else:
-            return FileAction(name)
+        return FileAction(name)
 
 init -501 screen file_slots(title):
     default page_name_value = FilePageNameInputValue()
@@ -681,7 +670,6 @@ init -501 screen preferences():
                     style_prefix "check"
                     label _("Bỏ Qua")
                     textbutton _("Chưa Đọc") action Preference("skip", "toggle")
-                    textbutton _("Sau Lựa Chọn") action Preference("after choices", "toggle")
 
             null height (4 * gui.pref_spacing)
             hbox:
@@ -707,15 +695,6 @@ init -501 screen preferences():
 
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
-
-                    if config.has_voice:
-                        label _("Giọng Nói")
-
-                        hbox:
-                            bar value Preference("voice volume")
-
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
