@@ -95,7 +95,7 @@ label plato_cave:
             pass
         
         "Có lẽ là chưa….":
-            $ gained = stats.modify_relationship("hainu", 6)
+            $ gained = stats.modify_relationship("hainu", 5)
             $ show_stat_change("rel_hainu", gained)
             
     show hainu 1e
@@ -105,7 +105,7 @@ label plato_cave:
     hainu "\"Vì vậy, anh ta vẫn chưa thoát khỏi ý niệm của bản thân, vẫn bị kẹt trong Pistis…\""
     hainu "\"Đó chính là cái lồng của niềm tin vào trí tuệ của bản thân, nó giam giữ và ngăn cách anh ta chạm tới chân lý…\""
     
-    $ gained = stats.modify_relationship("hainu", 6)
+    $ gained = stats.modify_relationship("hainu", 10)
     $ show_stat_change("rel_hainu", gained)
 
     $ first_talk = True

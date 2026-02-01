@@ -84,7 +84,7 @@ label day9:
     menu:
         "Nổ cho em cái địa chỉ nào!":
             $ xiu_script = True
-            $ gained = stats.modify_relationship("xiu", 6)
+            $ gained = stats.modify_relationship("xiu", 20)
             $ show_stat_change("rel_xiu", gained)
         "Tiếc quá, nay em lại có việc bận rồi…":
             return
@@ -167,7 +167,7 @@ label day9:
             mc "\"Có lẽ mình nên suy nghĩ một chút.\""
 
             "Có":
-                $ gained = stats.modify_relationship("xiu", 6)
+                $ gained = stats.modify_relationship("xiu", 20)
                 $ show_stat_change("rel_xiu", gained)
                 show xiu 1h
                 xiu "\"Lần này…. Em thắng rồi….\""
@@ -178,7 +178,7 @@ label day9:
                 menu:
                     mc "\"Những lúc say thế này, con người thường rất dễ mềm lòng…\""
                     "Có":
-                        $ gained = stats.modify_relationship("xiu", 6)
+                        $ gained = stats.modify_relationship("xiu", 20)
                         $ show_stat_change("rel_xiu", gained)
                         show xiu 1h
                         xiu "\"Lần này…. Em thắng rồi….\""
@@ -207,7 +207,7 @@ label day11:
     menu:
         "Chị xem rạp nào vậy em tới đây!":
             $ hainu_script = True
-            $ gained = stats.modify_relationship("hainu", 6)
+            $ gained = stats.modify_relationship("hainu", 20)
             $ show_stat_change("rel_hainu", gained)
         "Em cũng muốn đi lắm… Cơ mà tài khoản em lại không cho phép…":
             return
@@ -255,7 +255,7 @@ label day11:
             mc "\"Có lẽ mình nên suy nghĩ một chút.\""
 
             "Là do mong muốn của cậu ta sao?":
-                $ gained = stats.modify_relationship("hainu", 6)
+                $ gained = stats.modify_relationship("hainu", 20)
                 $ show_stat_change("rel_hainu", gained)
             "Ờ… Cậu ta may mắn hơn sao?":
                 pass
@@ -263,7 +263,7 @@ label day11:
                 menu:
                     mc "\"Có lẽ là do điều làm nên sự khác biệt giữa hai nhân vật…\""
                     "Là do mong muốn của cậu ta sao?":
-                        $ gained = stats.modify_relationship("hainu", 6)
+                        $ gained = stats.modify_relationship("hainu", 20)
                         $ show_stat_change("rel_hainu", gained)
                     "Ờ… Cậu ta may mắn hơn sao?":
                         pass

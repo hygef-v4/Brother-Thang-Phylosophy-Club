@@ -8,7 +8,7 @@ label ending_explanation(ending_id):
     stop music fadeout 2.0
     
     # Pause for dramatic effect
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(2.0)
     
     # Unlock the ending
     if persistent.unlocked_endings is None:
@@ -74,7 +74,7 @@ label ending_explanation(ending_id):
     centered "{size=24}{color=#aaaaaa}[box_hint]{/color}{/size}"
     
     # Final pause
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(2.0)
     
     $ renpy.run(MainMenu(confirm=False))
 

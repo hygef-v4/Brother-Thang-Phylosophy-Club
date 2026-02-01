@@ -36,7 +36,7 @@ label konami_menu:
             $ current_day = 13
             jump daily_routine_evening
         "Add money":
-            $ stats.modify_tien(1000000)
+            $ stats.modify_tien(999999999)
         "Max live":
             $ stats.modify_doi_song(100)
         "Max study":
