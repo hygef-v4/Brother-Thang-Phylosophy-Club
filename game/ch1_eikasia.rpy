@@ -315,7 +315,6 @@ label day2_morning:
     scene bg ktx_day with wipeleft_scene
     play music dorm_theme fadein 1.0
     
-
     "\"Hôm qua vừa gia nhập CLB, nay đến xem thử xem sao\"."
 
     menu:

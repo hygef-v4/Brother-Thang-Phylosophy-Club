@@ -3,7 +3,7 @@
 # Brother Thang Philosophy Club
 # ================================================
 
-label ch4_path_both:
+label day13_both:
     scene bg ktx with wipeleft_scene
     play music dorm_theme fadein 1.0
     
@@ -80,7 +80,7 @@ label ch4_path_both:
                 "Em tin rằng, triết học giúp con người ta gắn kết lại với nhau!":
                     jump ending_dialectical_materialism
 
-label ch4_path_xiu:
+label day13_xiu:
     scene bg ktx with wipeleft_scene
     play music dorm_theme fadein 1.0
     
@@ -113,7 +113,7 @@ label ch4_path_xiu:
         "Em nghĩ vẫn nên về thì hơn…":
             jump ending_metaphysical_materialism
 
-label ch4_path_hainu:
+label day13_hainu:
     scene bg ktx with wipeleft_scene
     play music dorm_theme fadein 1.0
     
@@ -207,7 +207,7 @@ label ending_objective_idealism:
     "BẠN ĐÃ LẠC VÀO HƯ VÔ."
     
     scene black with dissolve_scene_full
-    call ending_explanation("subjective_passive")
+    call ending_explanation("objective")
     jump start
 
 label ending_subjective_idealism:
@@ -240,7 +240,7 @@ label ending_subjective_idealism:
     "Có thể cùng vui, cùng cười với những người mình chân quý thế này, cuộc sống thế là hạnh phúc rồi."
     
     scene black with dissolve_scene_full
-    call ending_explanation("subjective_active")
+    call ending_explanation("subjective")
     jump start
 
 label ending_metaphysical_materialism:
@@ -350,7 +350,7 @@ label ending_dialectical_materialism:
     jump confession
 
 label confession:
-    scene bg club_day with wipeleft_scene
+    scene bg club_night with wipeleft_scene
     play music deep_thought fadein 1.0 # Continue emotional theme
     
     "Làm hoà được với bố, vui vẻ quay lại CLB."

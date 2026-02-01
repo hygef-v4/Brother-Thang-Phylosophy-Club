@@ -68,6 +68,9 @@ label day7_evening:
     return
 
 label day9:
+    scene bg ktx_day with wipeleft_scene
+    play music dorm_theme fadein 1.0
+    
     # Text 393
     xiu "Đi uống không cu? Nay chị bao!"
     
@@ -186,6 +189,9 @@ label day9:
     return
 
 label day11:
+    scene bg ktx_day with wipeleft_scene
+    play music dorm_theme fadein 1.0
+    
     # Text 473
     hainu "Đang có một bộ phim khá cuốn mà chị muốn xem, cơ mà đi một mình thì lại hơi ngại, em có muốn đi xem cùng chị không?"
     
@@ -295,6 +301,7 @@ label day13_evening:
     # ========================================
     
     # Check relationships to determine path intro
+    current_chapter = 4
     if stats.rel_xiu > 80 and stats.rel_hainu > 80:
         jump day13_both
     elif stats.rel_xiu > 80:
