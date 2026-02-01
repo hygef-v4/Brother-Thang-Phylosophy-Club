@@ -3,12 +3,12 @@
 # Brother Thang Philosophy Club
 # ================================================
 
-label day7:
-    $ current_chapter = 3
-    
-    scene bg ktx_day with dissolve_scene_full
+label day7:    
+    scene bg ktx_day with wipeleft_scene
     play music dorm_theme fadein 1.0
     
+    $ current_chapter = 3
+
     "Sáng ngày thứ 10."
     "Điện thoại rung."
     
@@ -20,8 +20,7 @@ label day7:
     mc "\"Thôi thì đến hỏi cho ra lẽ vậy.\""
     
     scene bg sota with wipeleft_scene # Trại quân sự
-    stop music fadeout 2.0
-    play music t10 fadein 2.0 # Ominous/Strict
+    play music sota_theme fadein 1.0 # Ominous/Strict
     
     show dad at t11
     
@@ -50,7 +49,7 @@ label day7:
     mc "\"Con muốn trở thành hoạ sĩ để góp phần làm đẹp cho Đất Nước chứ không phải chỉ vì tiền!\""
     
     show dad at s11 # angry shake
-    play music t6 fadein 0.5 # Poem Panic (Argument)
+    play music canteen_theme fadein 1.0 # Poem Panic (Argument)
     
     dad "\"MỚI LÊN ĐẠI HỌC CÓ VÀI NGÀY MÀ CÁI MỒM ĐÃ LEM LẺM, PHÉP TẮC GIA ĐÌNH Ở ĐÂU HẢ?\""
     dad "\"MÀY MÀ KHÔNG NGHE LỜI TAO THÌ MỌI CHUYỆN SAU NÀY TỰ THÂN MÀ LO LẤY, TAO KHÔNG CHU CẤP CHO NỮA.\""
@@ -82,7 +81,7 @@ label day9:
             return
 
     scene bg bar with wipeleft_scene # Quán bar/nhậu
-    play music t3 fadein 1.0
+    play music dorm_theme fadein 1.0
     
     "Đến quán nhậu Xỉu gửi, thấy đàn chị đang say khướt."
     
@@ -99,7 +98,7 @@ label day9:
     mc "\"Chẳng giúp được gì chị đâu, cơ mà đỡ hơn là giữ trong lòng.\""
     
     show xiu 1c
-    play music t9 fadein 1.0 # Sad backstory
+    play music gym_theme fadein 1.0 # Sad backstory
     
     xiu "\"…\""
     xiu "\"Gia đình chị sắp không còn nữa rồi…\""
@@ -147,6 +146,7 @@ label day9:
     # Text 453 Tình cảm > 80 check
     if stats.get_relationship("xiu") >= 80:
         show xiu 1g
+        play music love_theme fadein 1.0
         
         xiu "\"Này, muốn làm một ván cá cược với chị không?\""
         xiu "\"Đoán xem…. Chị có đang phải lòng em không?\""
@@ -199,7 +199,7 @@ label day11:
             return
     
     scene bg cinema with wipeleft_scene # Rạp phim
-    play music t7 fadein 1.0 # Yuri theme (Intellectual/Romance)
+    play music club_theme fadein 1.0 # Yuri theme (Intellectual/Romance)
 
     mc "Em đến rồi đây, chị chờ lâu chưa?"
     show hainu 1e
@@ -211,6 +211,7 @@ label day11:
     "Phim khá ấn tượng, làm mình cũng phải nghi ngờ rằng liệu mình có đang ở trong một con game tình cảm nào đó không…."
     
     show hainu 1a at t11
+    play music library_theme fadein 1.0
     
     hainu "\"Bộ phim hay thật đấy nhỉ?\""
     mc "\"Ừ! Cảnh kết lúc Truman cúi chào khán giả lần cuối quả thật là Absolutely Cinema.\""
@@ -226,6 +227,7 @@ label day11:
     
     if stats.get_relationship("hainu") >= 80:
         show hainu 1c
+        play music deep_thought fadein 1.0
         
         hainu "\"…\""
         hainu "\"Cậu còn nhớ ngụ ngôn về cái hang chứ?\""
@@ -233,13 +235,24 @@ label day11:
         hainu "\"Đều bị mắc kẹt trong những quan niệm, những điều thân thuộc với bản thân.\""
         hainu "\"Tuy nhiên, Truman đã phá bỏ những tưởng chừng như là chân lý để mà đến với thực tiễn.\""
         hainu "\"Theo cậu, tại sao lại có sự khác nhau vậy?\""
+        mc "\"Đây là một câu hỏi triết học sao?\""
         
         menu:
+            mc "\"Có lẽ mình nên suy nghĩ một chút.\""
+
             "Là do mong muốn của cậu ta sao?":
                 $ gained = stats.modify_relationship("hainu", 6)
                 $ show_stat_change("rel_hainu", gained)
             "Ờ… Cậu ta may mắn hơn sao?":
                 pass
+            "Suy Nghĩ":
+                menu:
+                    mc "\"Có lẽ là do điều làm nên sự khác biệt giữa hai nhân vật…\""
+                    "Là do mong muốn của cậu ta sao?":
+                        $ gained = stats.modify_relationship("hainu", 6)
+                        $ show_stat_change("rel_hainu", gained)
+                    "Ờ… Cậu ta may mắn hơn sao?":
+                        pass
                 
         hainu "\"Nó là nhờ khát khao tìm ra chân lý, là nhờ sự tư duy và nhận thức của bản thân cậu ta, là nhờ Dianoia.\""
         hainu "\"…\""
@@ -257,6 +270,7 @@ label day11:
         mc "\"Vì vậy, hành động của ông không hề là vô ích.\""
         
         show hainu 1h
+        play music love_theme fadein 1.0
         
         hainu "\"…\""
         hainu "\"Cảm ơn em.\""

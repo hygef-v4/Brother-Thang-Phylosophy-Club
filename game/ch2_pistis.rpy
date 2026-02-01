@@ -5,7 +5,7 @@
 
 label day3:
     scene bg ktx_day with wipeleft_scene
-    play music tense fadein 1.0
+    play music dorm_theme fadein 1.0
 
     $ current_chapter = 2
     
@@ -23,11 +23,10 @@ label day3:
         "Đi ngủ":
             # End of day summary
             scene black with fade
-            play music sad fadein 1.0
             
-            $ renpy.pause(1.0)
+            $ renpy.pause(2.0)
             
-            stop music fadeout 1.0
+            stop music fadeout 2.0
             if current_time_slot == 1:
                 jump daily_routine_noon
 

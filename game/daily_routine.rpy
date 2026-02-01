@@ -122,11 +122,10 @@ label daily_dorm:
 
             # End of day summary
             scene black with fade
-            play music sad fadein 1.0
             
-            $ renpy.pause(1.0)
+            $ renpy.pause(2.0)
             
-            stop music fadeout 1.0
+            stop music fadeout 2.0
             if current_time_slot == 1:
                 jump daily_routine_noon
 

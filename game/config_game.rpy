@@ -85,7 +85,7 @@ define audio.gym_theme = "<loop 4.499>bgm/4.ogg"  # Calm / Study
 define audio.library_theme = "<loop 4.444>bgm/5.ogg"     # Upbeat / Active (Same as happy for now, or 5_monika)
 define audio.canteen_theme = "<loop 4.444>bgm/6.ogg"       # Tense / Debate (Poem Panic)
 define audio.dorm_theme = "<loop 2.291>bgm/7.ogg"
-define audio.sad = "<loop 9.938>bgm/8.ogg"
+define audio.sota_theme = "<loop 9.938>bgm/8.ogg"
 define audio.deep_thought = "<loop 4.444>bgm/9.ogg"   # Sad / Introspective (My Feelings)
 define audio.love_theme = "<loop 4.444>bgm/10.ogg"   # Very sad / Ending (I Still Love You)
 

@@ -4,14 +4,28 @@
 # ================================================
 
 label ch4_path_both:
-    scene bg ktx_day with wipeleft_scene
-    play music daily_life fadein 1.0
+    scene bg ktx with wipeleft_scene
+    play music dorm_theme fadein 1.0
     
     "Điện thoại rung."
-    xiu "Ây cu. Tới CLB tí đi. Có việc."
+    xiu "\"Ây cu. Tới CLB tí đi. Có việc.\""
+
+    mc "(Giờ này còn gọi gì nữa nhở? Lại ra căng tin hát hò tuyển thành viên à?)"
+    mc "(Thôi thì cứ tới xem sao vậy.)"
     
+    menu:
+        "Ra ngoài":
+            pass
+
+    scene bg class_day with fade
+    play music daily_life fadein 1.0
+    
+    menu:
+        "Đến CLB":
+            pass
+
     scene bg club_party with fade
-    play music t3 fadein 1.0
+    play music club_theme fadein 1.0
     
     "Giữa phòng trưng một băng rôn Happy Birthday."
     
@@ -29,7 +43,7 @@ label ch4_path_both:
     "Đã lâu rồi mới vui như thế này, bạn ăn chơi suýt quên thời gian. Chỉ có điều…"
     
     mc "\"Cơ mà ngày mai mới là sinh nhật em cơ mà, sao nay tổ chức sớm vậy?\""
-    
+    play music love_theme fadein 1.0
     "Cả phòng bỗng im bặt."
     
     show hainu 1b
@@ -68,10 +82,9 @@ label ch4_path_both:
 
 label ch4_path_xiu:
     scene bg ktx with wipeleft_scene
-    play music daily_life fadein 1.0
+    play music dorm_theme fadein 1.0
     
     show xiu 1a at t11
-    play music t5 fadein 1.0 # Playful (Xiu)
     
     xiu "\"Ây cu, về rồi à?\""
     xiu "\"Mai sinh nhật đúng không? »\""
@@ -102,12 +115,27 @@ label ch4_path_xiu:
 
 label ch4_path_hainu:
     scene bg ktx with wipeleft_scene
+    play music dorm_theme fadein 1.0
+    
+    "Điện thoại rung."
+    hainu "\"Em rảnh không. Tới CLB chị nhờ chút với.\""
+
+    mc "(Giờ này còn gọi gì nữa nhở? Lại ra căng tin hát hò tuyển thành viên à?)"
+    mc "(Thôi thì cứ tới xem sao vậy.)"
+    
+    menu:
+        "Ra ngoài":
+            pass
+
+    scene bg class_day with fade
     play music daily_life fadein 1.0
     
-    "Điện thoại rung. Hải Nữ gọi lên CLB."
-    
+    menu:
+        "Đến CLB":
+            pass
+
     scene bg club_party with fade
-    play music t7 fadein 1.0 # Yuri (Hainu)
+    play music club_theme fadein 1.0 # Yuri (Hainu)
     
     "Giữa phòng trưng một băng rôn Happy Birthday."
     
@@ -121,7 +149,7 @@ label ch4_path_hainu:
     hainu "\"Thôi, vào ăn đi em, chị có đặt bánh sinh nhật cỡ bự cho em rồi đấy!\""
     
     "Đã lâu rồi mới vui như thế này, bạn ăn chơi suýt quên thời gian. Chỉ có điều…"
-    
+    play music deep_thought fadein 1.0
     mc "\"Cơ mà ngày mai mới là sinh nhật em cơ mà, sao nay tổ chức sớm vậy?\""
     
     hainu "\"Ngày mai, chị nghĩ em nên về nhà làm hoà với bố.\""
@@ -146,9 +174,8 @@ label ch4_path_hainu:
 # ========================================
 
 label ending_objective_idealism:
-    $ current_day = 14
     scene bg ktx with dissolve_scene_full
-    play music t10 fadein 1.0 # Eerie/Space
+    play music deep_thought fadein 1.0 # Eerie/Space
     
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     
@@ -175,9 +202,9 @@ label ending_objective_idealism:
     mc "\"Nếu thế giới này là giả... Thì ta cần gì phải tuân theo những luân thường đạo lý của nó?\""
     
     scene black with dissolve_scene_full
+    stop music fadeout 1.0
     "NHẬN THỨC CỦA BẠN ĐÃ VƯỢT RA KHỎI THỰC TẠI NÀY."
-    "BẠN CHỌN KHÔNG TIN VÀO THẾ GIỚI."
-    "KẾT THÚC: VÒNG LẶP HƯ VÔ"
+    "BẠN ĐÃ LẠC VÀO HƯ VÔ."
     
     scene black with dissolve_scene_full
     call ending_explanation("subjective_passive")
@@ -186,9 +213,9 @@ label ending_objective_idealism:
 label ending_subjective_idealism:
     $ current_day = 14
     scene bg club_day with fade
-    play music t2 fadein 1.0 # Happy
+    play music club_theme fadein 1.0 # Happy
     
-    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
+    centered "{size=30}{color=#ff6600}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     
     show xiu 1c at t11
     
@@ -219,9 +246,9 @@ label ending_subjective_idealism:
 label ending_metaphysical_materialism:
     $ current_day = 14
     scene bg living_room with fade # Nhà
-    play music t1 fadein 1.0 # Normal daily life
+    play music canteen_theme fadein 1.0 # Normal daily life
     
-    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
+    centered "{size=30}{color=#ff6600}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     
     "Tôi bắt xe về nhà."
     "Bố đang đứng đợi tôi trước cửa."
@@ -243,7 +270,8 @@ label ending_metaphysical_materialism:
     
     dad "\"Hình như là con của ông bác bên cơ quan bố. Nó vào trường sĩ quan thi tiếng anh IELTS gì đó được 10 nên được cất nhắc lên làm thông dịch viên cho thủ trưởng rồi.“\""
     dad "\"Con cũng phải học tập anh đấy, vào quân đội không chỉ được rèn luyện kỷ cương phép nước, mà sau này cũng không phải lo nghĩ gì về cơm ăn áo mặc…\""
-    
+    play music deep_thought fadein 1.0 
+
     mc "\"Chuyện đấy… Con cũng suy nghĩ rồi.\""
     mc "\"Con biết trình độ của con không giỏi như bao người, cũng không có tài năng chạm đến trái tim của người khác.\""
     mc "\"Nhưng hiện tại, con muốn thử sức mình trong lĩnh vực thiết kế đồ hoạ trước đã.\""
@@ -261,9 +289,9 @@ label ending_metaphysical_materialism:
 label ending_dialectical_materialism:
     $ current_day = 14
     scene bg living_room with fade
-    play music t6 fadein 1.0 # Argument/Tension
+    play music canteen_theme fadein 1.0 # Argument/Tension
     
-    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
+    centered "{size=30}{color=#ff6600}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     
     "Tôi bắt xe về nhà."
     "Bố đang đứng đợi tôi trước cửa."
@@ -282,10 +310,9 @@ label ending_dialectical_materialism:
     
     mc "\"Vị cao nhân nào đi thi IELTS được 10.0 vậy bố?\""
     
-    stop music fadeout 2.0 # Silence before serious talk
-    
     dad "\"Hình như là con của ông bác bên cơ quan bố. Nó vào trường sĩ quan thi tiếng anh IELTS gì đó được 10 nên được cất nhắc lên làm thông dịch viên cho thủ trưởng rồi.\""
     dad "\"Con cũng phải học tập anh đấy, vào quân đội không chỉ được rèn luyện kỷ cương phép nước, mà sau này cũng không phải lo nghĩ gì về cơm ăn áo mặc…\""
+    play music deep_thought fadein 1.0 
     
     mc "\"Bố à, trước đây con đã từng nói rồi đó, nghề hoạ sĩ tuy vất vả bộn bề nhưng cũng là một nghề đáng quý, cũng góp phần vào xây dựng Tổ Quốc….\""
     mc "\"Nhất là trong thời buổi hiện nay, còn bao người vẫn còn cổ hủ, lạc hậu, bị kẹt trong cái hang mang tên chân lý.\""
@@ -323,14 +350,8 @@ label ending_dialectical_materialism:
     jump confession
 
 label confession:
-    play music t8 fadein 2.0 # Emotional/Confession theme (My Confession)
-
-    # Transition to Epilogue
-    scene black with dissolve_scene_full
-    centered "{size=40}CẢNH CUỐI{/size}"
-    
     scene bg club_day with fade
-    play music t8 fadein 1.0 # Continue emotional theme
+    play music deep_thought fadein 1.0 # Continue emotional theme
     
     "Làm hoà được với bố, vui vẻ quay lại CLB."
     
@@ -388,11 +409,12 @@ label ending_fascist:
     scene black with dissolve_scene_full
     stop music fadeout 2.0
     
+    scene bg sota with fade
     centered "{size=30}Nhiều năm sau...{/size}"
     $ renpy.pause(2.0, hard=True)
     
-    scene bg sota with fade # Trại quân sự
-    play music t10 fadein 1.0
+    scene bg sota with wipeleft_scene # Trại quân sự
+    play music love_theme fadein 1.0
     
     "Mấy chục năm sau, thế giới bước qua cuộc Chiến tranh Thế Giới thứ 3."
     "Cuộc chiến kết thúc với sự thống trị của một tên độc tài."

@@ -18,7 +18,7 @@ label day0:
     $ renpy.pause(2.0, hard=True)
     
     scene bg mc_room with wipeleft_scene
-    play music daily_life fadein 1.0
+    play music club_theme fadein 1.0
     
     # ========================================
     # CẢNH 1: NHÀ - ĐÊM (NGÀY 1)
@@ -52,8 +52,7 @@ label day0:
     
     dad "\"Trượt rồi à?\""
     
-    stop music fadeout 1.0
-    play music t10 fadein 1.0 # Ominous
+    play music gym_theme fadein 1.0 # Ominous
     
     mc "\"Vâng… con thấy mình làm bài cũng ổn áp mà nhỉ.\""
     
@@ -93,7 +92,7 @@ label day1_morning:
     # ========================================
     
     scene bg fpt_yard with wipeleft_scene  # Custom: Sân trường FPT
-    play music daily_life fadein 1.0
+    play music canteen_theme fadein 1.0
     
     "Tại sân trường FPT."
     "Hôm nay là ngày nhập học đầu tiên."
@@ -117,8 +116,7 @@ label day1_morning:
     
     unknown "\"Alo Thắng à, em có phải là Thắng không?\""
     
-    stop music fadeout 1.0
-    play music t5 fadein 1.0 # Natsuki/Xiu playful theme
+    play music library_theme fadein 1.0 # Natsuki/Xiu playful theme
     
     mc "???" 
     mc "\"Dạ vâng. Cho hỏi ai đấy ạ?\""
@@ -149,6 +147,7 @@ label day1_morning:
 label day1_afternoon:
     # Scene label
     stop music fadeout 1.5
+
     scene bg fpt_2 with fade
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
@@ -226,6 +225,7 @@ label day1_evening:
     # CẢNH 4: KTX - TỐI (NGÀY 1)
     # ========================================
     stop music fadeout 1.5
+
     scene bg fpt_3 with fade
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
@@ -335,7 +335,7 @@ label day2_morning:
     
     # CẢNH 5 CŨ: CLB - SÁNG (Bị mắng)
     scene bg club_day with wipeleft_scene
-    play music t3 fadein 1.0
+    play music club_theme fadein 1.0
     
     "Vừa bước vào phòng, tình cờ thế nào lại gặp lại chị gái tối qua."
     
@@ -358,7 +358,7 @@ label day2_morning:
     
     stop music fadeout 0.5
     play sound "sfx/slap.ogg" # Just for shock effect, or maybe just music stop.
-    play music t6 fadein 0.5 # Poem Panic
+    play music love_theme fadein 0.5 # Poem Panic
     
     "Hội trưởng bước vào."
     
@@ -448,12 +448,13 @@ label day2_morning:
 
 label day2_afternoon:
     stop music fadeout 1.5
+
     scene bg fpt_2 with dissolve
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
 
     scene bg fpt_2 with wipeleft_scene
-    play music dorm_theme fadein 1.0
+    play music sota_theme fadein 1.0
 
     show xiu 1b at t11
 
@@ -544,6 +545,7 @@ label day2_afternoon:
     
 label day2_evening:
     stop music fadeout 1.5
+    
     scene bg fpt_3 with dissolve
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
@@ -558,7 +560,7 @@ label day2_evening:
     mc "\"Hình như mình để quên trên phòng CLB rồi.\""
     
     scene bg club_messy with fade  # CLB lộn xộn giấy tờ
-    play music t7 fadein 1.0 # Yuri theme
+    play music club_theme fadein 1.0 # Yuri theme
     
     "Phòng CLB vẫn sáng đèn."
     "Hội Trưởng ở trong phòng, trước mặt là một chồng sổ sách cao chạm trần!!?"
