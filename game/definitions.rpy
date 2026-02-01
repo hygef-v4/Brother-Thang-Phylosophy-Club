@@ -222,11 +222,11 @@ image bg classroom = "bg/class.png"
 image bg library = "bg/library.png"
 image bg yenlang = "bg/yenlang.jpg"
 image bg house = "bg/house.png"
-image bg fpt_1 = "bg/fpt_1.png"
-image bg fpt_2 = "bg/fpt_2.png"
-image bg fpt_3 = "bg/fpt_3.png"
-image bg fpt_4 = "bg/fpt_4.png"
-image bg fpt_5 = "bg/fpt_5.png"
+image bg fpt_1 = "bg_new/fpt_1.png"
+image bg fpt_2 = "bg_new/fpt_2.png"
+image bg fpt_3 = "bg_new/fpt_3.png"
+image bg fpt_4 = "bg_new/fpt_4.png"
+image bg fpt_5 = "bg_new/fpt_5.png"
 
 
 image bg glitch = Solid("#000")
