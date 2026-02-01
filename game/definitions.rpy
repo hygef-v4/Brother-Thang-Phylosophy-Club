@@ -252,23 +252,23 @@ image bg yenlang:
     zoom 1.25
 
 image bg fpt_1:
-    "bg/fpt_1.png"
+    "bg_new/fpt_1.png"
     zoom 0.9
 
 image bg fpt_2:
-    "bg/fpt_2.png"
+    "bg_new/fpt_2.png"
     zoom 0.9
 
 image bg fpt_3:
-    "bg/fpt_3.png"
+    "bg_new/fpt_3.png"
     zoom 0.85
 
 image bg fpt_4:
-    "bg/fpt_4.png"
+    "bg_new/fpt_4.png"
     zoom 0.85
 
 image bg fpt_5:
-    "bg/fpt_5.png"
+    "bg_new/fpt_5.png"
     zoom 0.85
 
 # =================================================================================
