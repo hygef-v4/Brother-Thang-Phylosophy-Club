@@ -98,7 +98,8 @@ label plato_cave:
             pass
         
         "Có lẽ là chưa….":
-            pass
+            $ gained = stats.modify_relationship("hainu", 6)
+            $ show_stat_change("rel_hainu", gained)
             
     show hainu 1e
     

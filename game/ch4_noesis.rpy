@@ -3,59 +3,28 @@
 # Brother Thang Philosophy Club
 # ================================================
 
-label ch4_noesis:
-    
-    # Show stats UI just in case
-    show screen stats_display
-
-    $ current_chapter = 4
-    $ current_day = 14
-    
-    scene black with dissolve_scene_full
-    stop music fadeout 2.0
-    
-    centered "{size=40}Ngày 14 - Tối{/size}"
-    
-    $ renpy.pause(2.0, hard=True)
-    
-    play music t2 fadein 1.0
-    
-    # ========================================
-    # NGÀY 14: TIỆC SINH NHẬT SỚM & QUYẾT ĐỊNH
-    # ========================================
-    
-    # Check relationships to determine path intro
-    if stats.rel_xiu > 80 and stats.rel_hainu > 80:
-        jump ch4_path_both
-    elif stats.rel_xiu > 80:
-        jump ch4_path_xiu
-    elif stats.rel_hainu > 80:
-        jump ch4_path_hainu
-    else:
-        jump ch4_path_lonely
-
 label ch4_path_both:
-    scene bg ktx with wipeleft_scene
+    scene bg ktx_day with wipeleft_scene
     play music daily_life fadein 1.0
     
     "Điện thoại rung."
-    "VÕ MINH XỈU: <Ây cu. Tới CLB tí đi. Có việc.>"
+    xiu "Ây cu. Tới CLB tí đi. Có việc."
     
     scene bg club_party with fade
     play music t3 fadein 1.0
     
-    "Giữa phòng trưng một băng rôn Happy Birthday (Sớm)."
+    "Giữa phòng trưng một băng rôn Happy Birthday."
     
     show hainu 1a at t21
     show xiu 1c at t22
     
-    "VŨ HẢI NỮ: \"snvv nghen.\""
-    "VÕ MINH XỈU: \"Em bé tuổi mới hay ăn chóng lớn nhá.\""
+    hainu "\"snvv nghen.\""
+    xiu "\"Em bé tuổi mới hay ăn chóng lớn nhá.\""
     
     mc "\"…\""
     mc "\"Dạ em cảm ơn ạ.\""
     
-    "VÕ MINH XỈU: \"Thôi vào phòng đi, để chị bật Happy Birthday to You cho bé này thổi nến nhá.\""
+    xiu "\"Thôi vào phòng đi, để chị bật Happy Birthday to You cho bé này thổi nến nhá.\""
     
     "Đã lâu rồi mới vui như thế này, bạn ăn chơi suýt quên thời gian. Chỉ có điều…"
     
@@ -65,8 +34,8 @@ label ch4_path_both:
     
     show hainu 1b
     
-    "VŨ HẢI NỮ: \"Ngày mai, chị nghĩ em nên về nhà làm hoà với bố.\""
-    "VŨ HẢI NỮ: \"Dù sao cũng là gia đình, bố em thực sự chỉ lo cho em mà thôi….\""
+    hainu "\"Ngày mai, chị nghĩ em nên về nhà làm hoà với bố.\""
+    hainu "\"Dù sao cũng là gia đình, bố em thực sự chỉ lo cho em mà thôi….\""
     
     show xiu 1d
     
@@ -80,19 +49,22 @@ label ch4_path_both:
     hainu "\"Vậy… Mong muốn của em là gì?\""
     
     menu:
-        "Quyết định của bạn (Sẽ thực hiện vào sáng mai - Ngày 15)?"
-        
         "Vậy thì… Để em về nói chuyện với bố…":
-            mc "\"Vậy thì… Để em về nói chuyện với bố…\""
             jump ending_metaphysical_materialism
             
         "Không cần đâu, em tin thời gian sẽ chữa lành tất cả.":
-            mc "\"Không cần đâu, em tin thời gian sẽ chữa lành tất cả.\""
-            jump ending_subjective_idealism_xiu
+            jump ending_subjective_idealism
             
-        "Triết học giúp gắn kết (Duy vật biện chứng)" if stats.unlocked_dialectics:
-            mc "\"Những thứ mà mình học được… Em tin rằng, triết học giúp con người ta gắn kết lại với nhau!\""
-            jump ending_dialectical_materialism
+        "Những thứ mà mình học được những ngày qua, có lẽ sẽ giúp bố hiểu mình…":
+            menu:
+                "Vậy thì… Để em về nói chuyện với bố…":
+                    jump ending_metaphysical_materialism
+                    
+                "Không cần đâu, em tin thời gian sẽ chữa lành tất cả.":
+                    jump ending_subjective_idealism
+
+                "Em tin rằng, triết học giúp con người ta gắn kết lại với nhau!":
+                    jump ending_dialectical_materialism
 
 label ch4_path_xiu:
     scene bg ktx with wipeleft_scene
@@ -101,17 +73,17 @@ label ch4_path_xiu:
     show xiu 1a at t11
     play music t5 fadein 1.0 # Playful (Xiu)
     
-    "VÕ MINH XỈU: \"Ây cu, về rồi à?\""
-    "VÕ MINH XỈU: \"Mai sinh nhật đúng không? »\""
-    "VÕ MINH XỈU: \"Chương trình thế nào đây nhỉ?\""
+    xiu "\"Ây cu, về rồi à?\""
+    xiu "\"Mai sinh nhật đúng không? »\""
+    xiu "\"Chương trình thế nào đây nhỉ?\""
     
     mc "\"…\""
     mc "\"Có lẽ em sẽ về nhà.\""
     mc "\"Từ hồi cãi nhau với bố em vẫn chưa về rồi…\""
     
-    "VÕ MINH XỈU: \"Có ông bô như thế mà cậu vẫn chịu được thì đúng là thiếu mỗi cái áo cà sa là thành phật đấy.\""
-    "VÕ MINH XỈU: \"Làm người phải biết tự lo cho bản thân, trước tiên cứ chill đi cái đã, những cái khác ắt sẽ tự dưng tốt lên thôi.\""
-    "VÕ MINH XỈU: \"Như Nguyễn Du nói ấy: 'Người buồn cảnh có vui đâu bao giờ?'\""
+    xiu "\"Có ông bô như thế mà cậu vẫn chịu được thì đúng là thiếu mỗi cái áo cà sa là thành phật đấy.\""
+    xiu "\"Làm người phải biết tự lo cho bản thân, trước tiên cứ chill đi cái đã, những cái khác ắt sẽ tự dưng tốt lên thôi.\""
+    xiu "\"Như Nguyễn Du nói ấy: 'Người buồn cảnh có vui đâu bao giờ?'\""
     
     mc "\"Nhưng mà… Như thế có sợ ăn gậy vì vi phạm tiêu chuẩn cộng đồng không?\""
     mc "\"Dù sao thì em thấy, vẫn nên về xin lỗi bố một câu chứ, sợ sau này bố con nhìn mặt nhau cũng khó…\""
@@ -122,14 +94,10 @@ label ch4_path_xiu:
     xiu "\"Chị nghĩ em cứ kệ nó đi, rồi thời gian sẽ chữa lành tất cả mà.\""
     
     menu:
-        "Quyết định (Sáng mai - Ngày 15)?"
-        
-        "Nghe lời chị Xỉu (Duy tâm chủ quan)":
-            mc "\"Dạ vâng, thế thì em nghe lời chị vậy. Mai em sẽ ở lại đây.\""
-            jump ending_subjective_idealism_xiu
-             
-        "Về nhà (Duy vật siêu hình)":
-            mc "\"Em nghĩ vẫn nên về thì hơn...\""
+        "Dạ vâng, thế thì em nghe lời chị vậy.":
+            jump ending_subjective_idealism
+            
+        "Em nghĩ vẫn nên về thì hơn…":
             jump ending_metaphysical_materialism
 
 label ch4_path_hainu:
@@ -145,12 +113,12 @@ label ch4_path_hainu:
     
     show hainu 1a at t11
     
-    "VŨ HẢI NỮ: \"snvv nghen.\""
+    hainu "\"snvv nghen.\""
     
     mc "\"…\""
     mc "\"Dạ em cảm ơn ạ.\""
     
-    "VŨ HẢI NỮ: \"Thôi, vào ăn đi em, chị có đặt bánh sinh nhật cỡ bự cho em rồi đấy!\""
+    hainu "\"Thôi, vào ăn đi em, chị có đặt bánh sinh nhật cỡ bự cho em rồi đấy!\""
     
     "Đã lâu rồi mới vui như thế này, bạn ăn chơi suýt quên thời gian. Chỉ có điều…"
     
@@ -161,37 +129,28 @@ label ch4_path_hainu:
     
     mc "\"Chuyện đó… Không phải em không muốn làm hoà với bố, mà là do nguyên nhân xuất phát từ áp lực bố em tạo ra, chỉ làm hoà thôi em nghĩ không ăn thua….\""
     
-    "VŨ HẢI NỮ: \"Đúng là áp lực từ kỳ vọng của phụ huynh là rất lớn, nhưng nó là một động lực để ta có thể phát triển.\""
-    "VŨ HẢI NỮ: \"Mọi vật nếu muốn tồn tại, đều phải vận động mà phát triển, không thể cứ mãi trì trệ như thế được!\""
+    hainu "\"Đúng là áp lực từ kỳ vọng của phụ huynh là rất lớn, nhưng nó là một động lực để ta có thể phát triển.\""
+    hainu "\"Mọi vật nếu muốn tồn tại, đều phải vận động mà phát triển, không thể cứ mãi trì trệ như thế được!\""
     
     menu:
         "Quyết định (Sáng mai - Ngày 15)?"
         
-        "Về nói chuyện với bố (Duy vật siêu hình)":
-            mc "\"Vậy thì… Để em về nói chuyện với bố…\""
+        "Vậy thì… Để em về nói chuyện với bố…":
             jump ending_metaphysical_materialism
-             
-        "Không, em chịu đủ rồi (Duy tâm khách quan)":
-            mc "\"Không, em đã chịu đựng quá đủ rồi!\""
+            
+        "Không, em đã chịu đựng quá đủ rồi!":
             jump ending_objective_idealism
-
-label ch4_path_lonely:
-    scene bg ktx with fade
-    "Ngày sinh nhật đến gần, nhưng tôi cảm thấy trống trải."
-    "Có lẽ mình nên về nhà xin lỗi bố..."
-    
-    jump ending_metaphysical_materialism
 
 # ========================================
 # ENDINGS (NGÀY 15)
 # ========================================
 
 label ending_objective_idealism:
-    $ current_day = 15
+    $ current_day = 14
     scene bg ktx with dissolve_scene_full
     play music t10 fadein 1.0 # Eerie/Space
     
-    centered "{size=40}Ngày 15{/size}"
+    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     
     "Đêm khuya, không ngủ được nằm trằn trọc suy nghĩ"
     
@@ -222,26 +181,26 @@ label ending_objective_idealism:
     
     scene black with dissolve_scene_full
     call ending_explanation("subjective_passive")
-    return
+    jump start
 
-label ending_subjective_idealism_xiu:
-    $ current_day = 15
+label ending_subjective_idealism:
+    $ current_day = 14
     scene bg club_day with fade
     play music t2 fadein 1.0 # Happy
     
-    centered "{size=40}Ngày 15{/size}"
+    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     
     show xiu 1c at t11
     
-    "VÕ MINH XỈU: \"Ái chà, bé Thắng hôm nay lớn thế nhở.\""
-    "VÕ MINH XỈU: \"Sang tuổi mới có khác trông đĩnh đạc hẳn ra, 10 điểm không có nhưng.\""
+    xiu "\"Ái chà, bé Thắng hôm nay lớn thế nhở.\""
+    xiu "\"Sang tuổi mới có khác trông đĩnh đạc hẳn ra, 10 điểm không có nhưng.\""
     
     mc "\"Dạ vâng cảm ơn chị. Nhờ ơn chị tận tình chăm sóc mà thằng bé mới lớn thế này ạ.\""
     
-    "VÕ MINH XỈU: \"Chú cứ quá lời. Chị có làm gì đâu. Thằng bé nó tự lớn lên đấy chứ.\""
-    "VÕ MINH XỈU: \"Theo như bà chị triết gia nhà chị thì chắc chắn đây là duy tâm rồi.\""
-    "VÕ MINH XỈU: \"Bởi vì thằng bé nó muốn đi khám phá thế giới mới nên nó mới tự lớn lên.\""
-    "VÕ MINH XỈU: \"Đúng nhận sai cãi nào?\""
+    xiu "\"Chú cứ quá lời. Chị có làm gì đâu. Thằng bé nó tự lớn lên đấy chứ.\""
+    xiu "\"Theo như bà chị triết gia nhà chị thì chắc chắn đây là duy tâm rồi.\""
+    xiu "\"Bởi vì thằng bé nó muốn đi khám phá thế giới mới nên nó mới tự lớn lên.\""
+    xiu "\"Đúng nhận sai cãi nào?\""
     
     mc "\"Đúng vậy. Em đã chọn rồi. Kệ bố đi.\""
     mc "\"Sống cho bản thân mình mới là quan trọng nhất.\""
@@ -255,14 +214,14 @@ label ending_subjective_idealism_xiu:
     
     scene black with dissolve_scene_full
     call ending_explanation("subjective_active")
-    return
+    jump start
 
 label ending_metaphysical_materialism:
-    $ current_day = 15
+    $ current_day = 14
     scene bg living_room with fade # Nhà
     play music t1 fadein 1.0 # Normal daily life
     
-    centered "{size=40}Ngày 15{/size}"
+    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     
     "Tôi bắt xe về nhà."
     "Bố đang đứng đợi tôi trước cửa."
@@ -297,14 +256,14 @@ label ending_metaphysical_materialism:
     
     scene black with dissolve_scene_full
     call ending_explanation("metaphysical")
-    return
+    jump start
 
 label ending_dialectical_materialism:
-    $ current_day = 15
+    $ current_day = 14
     scene bg living_room with fade
     play music t6 fadein 1.0 # Argument/Tension
     
-    centered "{size=40}Ngày 15{/size}"
+    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     
     "Tôi bắt xe về nhà."
     "Bố đang đứng đợi tôi trước cửa."
@@ -360,7 +319,10 @@ label ending_dialectical_materialism:
     dad "\"Vậy… Sao…\""
     dad "\"Thôi được rồi, tuỳ con quyết định.\""
     dad "\"Nhưng hay nhớ, bố… luôn ở sau lưng con.\""
-    
+
+    jump confession
+
+label confession:
     play music t8 fadein 2.0 # Emotional/Confession theme (My Confession)
 
     # Transition to Epilogue
@@ -374,11 +336,11 @@ label ending_dialectical_materialism:
     
     show hainu 1a at t11
     
-    "VŨ HẢI NỮ: \"Em về rồi à, chuyện với bố em thế nào rồi?\""
+    hainu "\"Em về rồi à, chuyện với bố em thế nào rồi?\""
     
     mc "\"Cũng em xuôi cả rồi ạ.\""
     
-    "VŨ HẢI NỮ: \"Thế thì tốt…\""
+    hainu "\"Thế thì tốt…\""
     
     "Căn phòng lại rơi vào im lặng."
     
@@ -416,4 +378,38 @@ label ending_dialectical_materialism:
     
     scene black with dissolve_scene_full
     call ending_explanation("dialectical")
-    return
+    jump start
+
+# ========================================
+# ENDING: PHÁT XÍT (FASCIST ENDING)
+# ========================================
+
+label ending_fascist:
+    scene black with dissolve_scene_full
+    stop music fadeout 2.0
+    
+    centered "{size=30}Nhiều năm sau...{/size}"
+    $ renpy.pause(2.0, hard=True)
+    
+    scene bg sota with fade # Trại quân sự
+    play music t10 fadein 1.0
+    
+    "Mấy chục năm sau, thế giới bước qua cuộc Chiến tranh Thế Giới thứ 3."
+    "Cuộc chiến kết thúc với sự thống trị của một tên độc tài."
+    "Khi ấy, tên độc tài ấy đang trong một bong ke chuẩn bị cho buổi tử hình tập thể các nhà triết gia."
+    
+    # show mc_dictator at t11 # Nếu có sprite MC độc tài
+    
+    mc "\"Khi đứng đây thì tôi muốn nói chuyện với bố tôi!\""
+    mc "\"Bố ơi, bố ơi, bố thấy đúng khi cho con nghỉ học chưa.\""
+    mc "\"Năm xưa các người chê nghệ thuật của tôi không nhìn xa trông rộng, nay tôi vẽ lại cả bản đồ thế giới, các người thấy đã đủ rộng rồi chứ?\""
+    
+    "Hắn chỉ tay vào đám tù nhân."
+    
+    mc "\"Còn những tên triết gia này, chỉ giỏi kích động mõm.\""
+    mc "\"Thế giới mới do ta xây dựng không cần tranh luận, không cần biện chứng, không cần triết học.\""
+    mc "\"Chỉ cần một chân lý duy nhất, chính là ta.\""
+    
+    scene black with dissolve_scene_full
+    call ending_explanation("fascist")
+    jump start

@@ -30,7 +30,17 @@ label konami_menu:
             $ current_day = 2
             jump daily_routine_loop
         "Jump Chapter 3":
-            jump ch3_dianoia
+            $ current_day = 6
+            jump daily_routine_loop
+        "Jump Xiu's Story":
+            $ current_day = 8
+            jump daily_routine_loop
+        "Jump Hai Nu's Story":
+            $ current_day = 10
+            jump daily_routine_loop
+        "Jump Chapter 4":
+            $ current_day = 13
+            jump daily_routine_evening
         "Add money":
             $ stats.modify_tien(1000000)
         "Max live":

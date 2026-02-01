@@ -87,7 +87,7 @@ define audio.canteen_theme = "<loop 4.444>bgm/6.ogg"       # Tense / Debate (Poe
 define audio.dorm_theme = "<loop 2.291>bgm/7.ogg"
 define audio.sad = "<loop 9.938>bgm/8.ogg"
 define audio.deep_thought = "<loop 4.444>bgm/9.ogg"   # Sad / Introspective (My Feelings)
-define audio.love_theme = "<loop 4.444>bgm/10.ogg"    # Very sad / Ending (I Still Love You)
+define audio.love_theme = "<loop 4.444>bgm/10.ogg"   # Very sad / Ending (I Still Love You)
 
 # SFX
 define audio.phone_ring = "sfx/fall.ogg"  # Placeholder

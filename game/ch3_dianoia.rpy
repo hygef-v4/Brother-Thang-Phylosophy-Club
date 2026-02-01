@@ -3,33 +3,17 @@
 # Brother Thang Philosophy Club
 # ================================================
 
-label ch3_dianoia:
-    
-    # Show stats UI
-    show screen stats_display
-    
+label day7:
     $ current_chapter = 3
-    $ current_day = 10
-    
-    scene black with dissolve_scene_full
-    stop music fadeout 2.0
-    
-    centered "{size=40}Ngày 10{/size}"
-    
-    $ renpy.pause(2.0, hard=True)
-    
-    # ========================================
-    # NGÀY 10: BIẾN CỐ (BỐ GỌI & TRẠI QUÂN SỰ)
-    # ========================================
     
     scene bg ktx_day with dissolve_scene_full
-    play music t2 fadein 1.0
+    play music dorm_theme fadein 1.0
     
     "Sáng ngày thứ 10."
     "Điện thoại rung."
     
     # Text 336
-    dad "\<Đóng gói hành lý đi. Chiều về trại quân sự để làm thủ tục đi lính.\>"
+    dad "\Đóng gói hành lý đi. Chiều về trại quân sự để làm thủ tục đi lính.\""
     
     mc "\"..?\""
     mc "\"Đang yên đang lành sao tự nhiên bố lại bảo đi lính?\""
@@ -72,62 +56,30 @@ label ch3_dianoia:
     dad "\"MÀY MÀ KHÔNG NGHE LỜI TAO THÌ MỌI CHUYỆN SAU NÀY TỰ THÂN MÀ LO LẤY, TAO KHÔNG CHU CẤP CHO NỮA.\""
     
     menu:
-        dad "\"Mày chọn đi!\""
-        
         "Dạ… Vâng ạ….":
-            mc "\"Dạ… Vâng ạ….\""
             jump ending_fascist
-             
+        
         "Con có thể tự lo cho bản thân mình rồi!":
-            mc "\"Con có thể tự lo cho bản thân mình rồi, không cần bố bao bọc nữa!\""
-            
-            dad "\"Mày... Mày được lắm!\""
-            dad "\"Cút cho khuất mắt tao!\""
-            
             jump ch3_day10_night
 
-label ch3_day10_night:
-
-    scene bg ktx with fade
-    play music t9 fadein 1.0 # Sayo-nara (Sad/Tense)
-    
+label day7_evening:
     # Text 375
     mc "\"Không còn tiền chu cấp, áp lực tài chính của mình tăng lên rồi, từ ngày mai phải tiết kiệm lại thôi.\""
     
-    scene black with dissolve_scene_full
-    
-    # ========================================
-    # NGÀY 11: TRỐN CHẠY (ESCAPISM)
-    # ========================================
-    
-    centered "{size=40}Ngày 11{/size}"
-    $ renpy.pause(1.5, hard=True)
-    $ current_day = 11
+    return
 
-    scene bg ktx_day with dissolve_scene_full
-    
-    "Điện thoại rung."
-    
-    # CHECK AFFINITY TO DECIDE EVENT
-    if stats.rel_xiu > stats.rel_hainu:
-        jump ch3_day11_xiu_drunk
-    else:
-        jump ch3_day11_hainu_movie
-
-label ch3_day11_xiu_drunk:
+label day9:
     # Text 393
-    xiu "\<Đi uống không cu? Nay chị bao!\>"
+    xiu "Đi uống không cu? Nay chị bao!"
     
     mc "\"Của rẻ là của công an… Có khi nào chị ấy bị bắt nên khai ra mình không nhỉ?\""
     
     menu:
-        "\<Nổ cho em cái địa chỉ nào!\>":
-            pass
-        "\<Tiếc quá, nay em lại có việc bận rồi…\>":
-            # Force go anyway due to script logic simplicity? Or skip?
-            # Text implies scene happens. Let's assume he goes.
-            mc "\"Mà thôi... Chị ấy mời nhiệt tình thế mà.\""
-            pass
+        "Nổ cho em cái địa chỉ nào!":
+            $ gained = stats.modify_relationship("xiu", 6)
+            $ show_stat_change("rel_xiu", gained)
+        "Tiếc quá, nay em lại có việc bận rồi…":
+            return
 
     scene bg bar with wipeleft_scene # Quán bar/nhậu
     play music t3 fadein 1.0
@@ -136,7 +88,7 @@ label ch3_day11_xiu_drunk:
     
     show xiu 1a at t11
     
-    xiu "\"Cu em đến rồi à? Lại đây uống với chị nào!\""
+    xiu "\"Cu em đến rồi à? Nghe bảo dạo này em cãi nhau với bố hả? Thế thì lại đây uống với chị nào!\""
     mc "\"Chị ổn chứ, trông chị say lắm rồi đấy.\""
     xiu "\"Chị mày vẫn uống được, bà chủ, dâng tửu.\""
     mc "\"Nay có chuyện gì buồn sao?\""
@@ -192,64 +144,70 @@ label ch3_day11_xiu_drunk:
     
     "Không khí cả buổi đi chơi bỗng rơi vào trầm tư, nhưng rất thích hợp để tịnh tâm suy nghĩ."
     
-    # Text 453 Tình cảm > 80 check (Assuming high enough here for the scene)
-    
-    show xiu 1g
-    
-    xiu "\"Này, muốn làm một ván cá cược với chị không?\""
-    xiu "\"Đoán xem…. Chị có đang phải lòng em không?\""
-    
-    mc "\"Chị ấy có tình cảm với mình sao? Có lẽ mình nên suy nghĩ một chút.\""
-    
-    menu:
-        "Có":
-            mc "\"Có.\""
-            # If romance logic needed, set flags here
-            
-        "Không":
-            mc "\"Không.\""
-            
-        "Suy nghĩ":
-            mc "\"Những lúc say thế này, con người thường rất dễ mềm lòng…\""
+    # Text 453 Tình cảm > 80 check
+    if stats.get_relationship("xiu") >= 80:
+        show xiu 1g
+        
+        xiu "\"Này, muốn làm một ván cá cược với chị không?\""
+        xiu "\"Đoán xem…. Chị có đang phải lòng em không?\""
+        
+        mc "\"Chị ấy có tình cảm với mình sao?\""
+        mc "\"Dạo gần đây mình nhận ra phải nghĩ kỹ trước khi trả lời.\""
+        
+        menu:
+            mc "\"Có lẽ mình nên suy nghĩ một chút.\""
 
-    # Text 464 (Assuming 'Có' or positive outcome for drama)
-    
-    show xiu 1c
-    
-    xiu "\"Lần này…. Em thắng rồi….\""
-    
-    "..."
-    
-    xiu "\"Thôi vậy chị về trước đây.\""
-    xiu "\"Nay cảm ơn cu em nhiều nha!\""
-    
-    jump ch3_reflection
+            "Có":
+                $ gained = stats.modify_relationship("xiu", 6)
+                $ show_stat_change("rel_xiu", gained)
+                show xiu 1h
+                xiu "\"Lần này…. Em thắng rồi….\""
+            "Không":
+                show xiu 1a
+                xiu "\"Tiếc quá…\""
+            "Suy nghĩ":
+                mc "\"Những lúc say thế này, con người thường rất dễ mềm lòng…\""
+                menu:
+                    "Có":
+                        $ gained = stats.modify_relationship("xiu", 6)
+                        $ show_stat_change("rel_xiu", gained)
+                        show xiu 1h
+                        xiu "\"Lần này…. Em thắng rồi….\""
+                    "Không":
+                        show xiu 1c
+                        xiu "\"Tiếc quá…\""
 
-label ch3_day11_hainu_movie:
+        mc "…"
+
+    show xiu 1a
+    
+    xiu "\"Thôi vậy chị về trước đây nha.\""
+    
+    return
+
+label day11:
     # Text 473
-    hainu "\<Đang có một bộ phim khá cuốn mà chị muốn xem, cơ mà đi một mình thì lại hơi ngại, em có muốn đi xem cùng chị không?\>"
+    hainu "Đang có một bộ phim khá cuốn mà chị muốn xem, cơ mà đi một mình thì lại hơi ngại, em có muốn đi xem cùng chị không?"
     
     mc "\"Lâu rồi mình chưa đi xem phim, nhưng mà giá vé lại đắt quá…. Nên làm gì đây?\""
     
     menu:
-        "\<Chị xem rạp nào vậy em tới đây\>":
-            $ ticket_price = 100000
-            if stats.tien >= ticket_price:
-                mc "\"Được rồi, mình vẫn đủ tiền. Đi thôi!\""
-                $ stats.modify_tien(-ticket_price)
-                $ show_stat_change("tien", -ticket_price)
-            else:
-                mc "\"Chết dở, mình không đủ tiền vé rồi...\""
-                mc "\"Thành thật với chị ấy vậy.\""
-                mc "Nhưng rồi Hải Nữ nhắn lại: <Tôi bao.>"
-        
-        "\<Em cũng muốn đi lắm… Cơ mà tài khoản em lại không cho phép…\>":
-            mc "Nhưng rồi Hải Nữ nhắn lại: <Tôi bao.>"
+        "Chị xem rạp nào vậy em tới đây!":
+            $ gained = stats.modify_relationship("hainu", 6)
+            $ show_stat_change("rel_hainu", gained)
+        "Em cũng muốn đi lắm… Cơ mà tài khoản em lại không cho phép…":
+            return
     
     scene bg cinema with wipeleft_scene # Rạp phim
     play music t7 fadein 1.0 # Yuri theme (Intellectual/Romance)
+
+    mc "Em đến rồi đây, chị chờ lâu chưa?"
+    show hainu 1e
+    hainu "Chị cũng vừa tới thôi."
+    mc "Nghe bảo em cãi nhau với bố hả? Có ổn không?"
+    mc "Em không sao. Thôi, ta vào xem đi!"
     
-    "Đến rạp chiếu phim cùng Hội Trưởng để xem phim “The Truman Show”."
+    "Vào rạp cùng Hội Trưởng để xem phim “The Truman Show”."
     "Phim khá ấn tượng, làm mình cũng phải nghi ngờ rằng liệu mình có đang ở trong một con game tình cảm nào đó không…."
     
     show hainu 1a at t11
@@ -263,124 +221,73 @@ label ch3_day11_hainu_movie:
     hainu "\"Cảnh đó… Cậu có nghĩ rằng, quyết định bước ra khỏi trường quay là đúng đắn chứ?\""
     mc "\"Chắc chắn rồi, sao lại không chứ?\""
     
-    "VŨ HẢI NỮ: \"Theo tôi thì, nếu lơ những điều kỳ lạ xung quanh đi, có lẽ cuộc sống của cậu ấy sẽ hạnh phúc hơn.\""
-    "VŨ HẢI NỮ: \"Nhưng nó chỉ là một hạnh phúc giả tạo, theo kịch bản chứ không thực sự là điều cậu ta muốn.\""
+    hainu "\"Theo tôi thì, nếu lơ những điều kỳ lạ xung quanh đi, có lẽ cuộc sống của cậu ấy sẽ hạnh phúc hơn.\""
+    hainu "\"Nhưng nó chỉ là một hạnh phúc giả tạo, theo kịch bản chứ không thực sự là điều cậu ta muốn.\""
     
-    show hainu 1c
-    
-    hainu "\"…\""
-    hainu "\"Cậu còn nhớ ngụ ngôn về cái hang chứ?\""
-    hainu "\"Tình cảnh của Truman giống như những người cổ đại vậy.\""
-    hainu "\"Đều bị mắc kẹt trong những quan niệm, những điều thân thuộc với bản thân.\""
-    hainu "\"Tuy nhiên, Truman đã phá bỏ những tưởng chừng như là chân lý để mà đến với thực tiễn.\""
-    hainu "\"Theo cậu, tại sao lại có sự khác nhau vậy?\""
-    
-    menu:
-        "Là do mong muốn của cậu ta sao?":
-            pass
-        "Ờ… Cậu ta may mắn hơn sao?":
-            pass
-        "Có lẽ là do điều làm nên sự khác biệt giữa hai nhân vật…":
-            pass
-            
-    hainu "\"Nó là nhờ khát khao tìm ra chân lý, là nhờ sự tư duy và nhận thức của bản thân cậu ta, là nhờ Dianoia.\""
-    hainu "\"…\""
-    
-    show hainu 1e
-    
-    hainu "\"Ông tôi là một nhà triết gia…. Cả đời ông đi giao giảng về tầm quan trọng của triết học cho mọi người…\""
-    hainu "\"Nhưng họ lại nghĩ ông chỉ là một lão già lắm lời, cho rằng ông bị điên…. Họ cho rằng ông chỉ làm những điều vô nghĩa….\""
-    
-    mc "\"…\""
-    mc "\"Em không nghĩ thế đâu!\""
-    mc "\"Có thể không phải tất cả, nhưng chắc chắn có nhiều người đã tìm được sự hứng thú với triết học nhờ ông….\""
-    mc "\"…Trong đó có cả chị nữa…\""
-    mc "\"…Và nhờ chị, em cũng đã yêu thích môn này rồi…\""
-    mc "\"Vì vậy, hành động của ông không hề là vô ích.\""
-    
-    show hainu 1e
-    
-    hainu "\"…\""
-    hainu "\"Cảm ơn em.\""
-    hainu "\"Em đã từng nghe đến hiện tượng vướng víu lượng tử chưa?\""
-    hainu "\"Có những hạt liên kết với nhau dù ở cách xa bao nhiêu, khi tính chất một hạt thay đổi thì cái kia cũng đổi theo.\""
-    hainu "\"Tôi từng không tin một vật có thể tác động đến vật khác ở khoảng cách xa vậy.\""
-    hainu "\"Cho đến khi, em tác động vào cuộc đời tôi….\""
-    
-    mc "\"…\""
+    if stats.get_relationship("hainu") >= 80:
+        show hainu 1c
+        
+        hainu "\"…\""
+        hainu "\"Cậu còn nhớ ngụ ngôn về cái hang chứ?\""
+        hainu "\"Tình cảnh của Truman giống như những người cổ đại vậy.\""
+        hainu "\"Đều bị mắc kẹt trong những quan niệm, những điều thân thuộc với bản thân.\""
+        hainu "\"Tuy nhiên, Truman đã phá bỏ những tưởng chừng như là chân lý để mà đến với thực tiễn.\""
+        hainu "\"Theo cậu, tại sao lại có sự khác nhau vậy?\""
+        
+        menu:
+            "Là do mong muốn của cậu ta sao?":
+                $ gained = stats.modify_relationship("hainu", 6)
+                $ show_stat_change("rel_hainu", gained)
+            "Ờ… Cậu ta may mắn hơn sao?":
+                pass
+                
+        hainu "\"Nó là nhờ khát khao tìm ra chân lý, là nhờ sự tư duy và nhận thức của bản thân cậu ta, là nhờ Dianoia.\""
+        hainu "\"…\""
+        
+        show hainu 1e
+        
+        hainu "\"Ông tôi là một nhà triết gia…. Cả đời ông đi giao giảng về tầm quan trọng của triết học cho mọi người…\""
+        hainu "\"Nhưng họ lại nghĩ ông chỉ là một lão già lắm lời, cho rằng ông bị điên…. Họ cho rằng ông chỉ làm những điều vô nghĩa….\""
+        
+        mc "\"…\""
+        mc "\"Em không nghĩ thế đâu!\""
+        mc "\"Có thể không phải tất cả, nhưng chắc chắn có nhiều người đã tìm được sự hứng thú với triết học nhờ ông….\""
+        mc "\"…Trong đó có cả chị nữa…\""
+        mc "\"…Và nhờ chị, em cũng đã yêu thích môn này rồi…\""
+        mc "\"Vì vậy, hành động của ông không hề là vô ích.\""
+        
+        show hainu 1h
+        
+        hainu "\"…\""
+        hainu "\"Cảm ơn em.\""
+        hainu "\"…\""
+        hainu "\"Em đã từng nghe đến hiện tượng vướng víu lượng tử chưa?\""
+        hainu "\"Có những hạt liên kết với nhau dù ở cách xa bao nhiêu, khi tính chất một hạt thay đổi thì cái kia cũng đổi theo.\""
+        hainu "\"Tôi từng không tin một vật có thể tác động đến vật khác ở khoảng cách xa vậy.\""
+        hainu "\"Cho đến khi, em tác động vào cuộc đời tôi….\""
+        
+        mc "\"…\""
+        mc "(Vừa nãy, có phải ý chị ấy là….)"
+
+    show hainu 1a
     
     hainu "\"Thôi muộn rồi…. Tôi về trước đây.\""
     
-    mc "(Vừa nãy, có phải ý chị ấy là….)"
-    
-    jump ch3_reflection
-
-label ch3_reflection:
-    
-    # ========================================
-    # NGÀY 12 & 13: TỰ VẤN
-    # ========================================
-    
-    hide xiu
-    hide hainu
-    with dissolve
-    
-    scene black with dissolve_scene_full
-    stop music fadeout 2.0
-    
-    centered "{size=40}Ngày 12 & 13{/size}"
-    $ renpy.pause(2.0, hard=True)
-    
-    scene bg ktx_day with dissolve_scene_full
-    play music t4 fadein 1.0 # Monika theme (Piano/Thinking)
-    
-    $ current_day = 13
-    
-    mc "Hai ngày trôi qua, tôi nhốt mình trong phòng."
-    mc "\"Lời chị Xỉu nói... Lời Hội Trưởng nói...\""
-    mc "\"Và cả mệnh lệnh của Bố.\""
-    
-    mc "\"Ngày mai là sinh nhật mình...\""
-    mc "\"Cũng là hạn chót phải trả lời bố.\""
-    mc "\"Mình phải quyết định thôi.\""
-    
-    # Transition to Chapter 4
-    call ch4_noesis
-    
     return
 
-# ========================================
-# ENDING: PHÁT XÍT (FASCIST ENDING)
-# ========================================
+label day13_evening:
+    # ========================================
+    # NGÀY 14: TIỆC SINH NHẬT SỚM & QUYẾT ĐỊNH
+    # ========================================
+    
+    # Check relationships to determine path intro
+    if stats.rel_xiu > 80 and stats.rel_hainu > 80:
+        jump day13_both
+    elif stats.rel_xiu > 80:
+        jump day13_xiu
+    elif stats.rel_hainu > 80:
+        jump day13_hainu
+    else:
+        jump ending_objective_idealism
 
-label ending_fascist:
-    scene black with dissolve_scene_full
-    stop music fadeout 2.0
-    
-    centered "{size=40}Nhiều năm sau...{/size}"
-    $ renpy.pause(2.0, hard=True)
-    
-    scene bg sota with fade # Trại quân sự
-    play music t10 fadein 1.0
-    
-    "Mấy chục năm sau, thế giới bước qua cuộc Chiến tranh Thế Giới thứ 3."
-    "Cuộc chiến kết thúc với sự thống trị của một tên độc tài."
-    "Khi ấy, tên độc tài ấy đang trong một bong ke chuẩn bị cho buổi tử hình tập thể các nhà triết gia."
-    
-    # show mc_dictator at t11 # Nếu có sprite MC độc tài
-    
-    mc "\"Khi đứng đây thì tôi muốn nói chuyện với bố tôi!\""
-    mc "\"Bố ơi, bố ơi, bố thấy đúng khi cho con nghỉ học chưa.\""
-    mc "\"Năm xưa các người chê nghệ thuật của tôi không nhìn xa trông rộng, nay tôi vẽ lại cả bản đồ thế giới, các người thấy đã đủ rộng rồi chứ?\""
-    
-    "Hắn chỉ tay vào đám tù nhân."
-    
-    mc "\"Còn những tên triết gia này, chỉ giỏi kích động mõm.\""
-    mc "\"Thế giới mới do ta xây dựng không cần tranh luận, không cần biện chứng, không cần triết học.\""
-    mc "\"Chỉ cần một chân lý duy nhất, chính là ta.\""
-    
-    scene black with dissolve_scene_full
-    # Philosophical Recap
-    call ending_explanation("fascist")
-    
-    return
+

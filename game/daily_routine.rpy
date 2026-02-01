@@ -18,7 +18,14 @@ label daily_routine_morning:
     $ daily_changes = stats.update_daily()
     $ show_stat_change("tien", daily_changes)
 
-    call daily_dorm
+    if current_day == 7:
+        call day7
+    elif current_day == 9:
+        call day9
+    elif current_day == 11:
+        call day11
+    else:
+        call daily_dorm
 
     return
 
@@ -56,9 +63,11 @@ label daily_routine_evening:
     $ renpy.pause(1.5, hard=True)
     $current_time_slot = 3
     
-    "Về phòng, kết thúc một ngày dài..."
-
-    call daily_dorm
+    if current_day == 13:
+        call day13_evening
+    else:
+        "Về phòng, kết thúc một ngày dài..."
+        call daily_dorm
 
     # ========================================
     # END OF DAY - INCREMENT DAY COUNTER
@@ -68,13 +77,6 @@ label daily_routine_evening:
     jump daily_routine_loop
 
 label daily_routine_loop:
-    if current_day >= 10:
-        # Transition to Chapter 3
-        jump ch3_dianoia
-    elif current_day >= 14:
-        # Transition to Chapter 3
-        jump ch4_noesis
-
     call daily_routine_morning
 
     call daily_routine_afternoon
@@ -115,6 +117,9 @@ label daily_dorm:
 
     menu:
         "Đi ngủ":
+            if current_day == 7:
+                call day7_evening
+
             # End of day summary
             scene black with fade
             play music sad fadein 1.0
