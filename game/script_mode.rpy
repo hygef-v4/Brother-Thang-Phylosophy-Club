@@ -1,5 +1,6 @@
 label script_mode:
     $ script_m = True
+    $ quick_menu = True
     $ restore_all_characters()
     $ style.say_dialogue = style.normal
     $ config.allow_skipping = True

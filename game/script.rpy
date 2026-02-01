@@ -5,6 +5,7 @@
 label start:
     # Entry point của game
     # Reset characters and styles to ensure clean state for New Game
+    $ quick_menu = True
     $ restore_all_characters()
     $ style.say_dialogue = style.normal
     $ config.allow_skipping = True
