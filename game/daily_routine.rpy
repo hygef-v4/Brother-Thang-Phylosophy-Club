@@ -188,24 +188,21 @@ label daily_clb:
     scene bg club_day with wipeleft_scene
     play music club_theme fadein 1.0
     
-    menu:
-        "Giúp đỡ Hải Nữ" if first_talk or current_day < 5:
-            show hainu neutral at t11
-            hainu "\"Cậu tới rồi à? Giúp tôi một số việc được không?\""
-            mc "\"Dạ, vâng ạ.\""
-            
-            $ stats.modify_tien(50000)
-            $ show_stat_change("tien", 50000)
+    if first_talk or current_day < 5:
+        show hainu neutral at t11
+        hainu "\"Cậu tới rồi à? Giúp tôi một số việc được không?\""
+        mc "\"Dạ, vâng ạ.\""
+        
+        $ stats.modify_tien(50000)
+        $ show_stat_change("tien", 50000)
 
-            # Good relationship gains
-            $ gained = stats.modify_relationship("hainu", 6)
-            $ show_stat_change("rel_hainu", gained)
-            
-            hide hainu with dissolve
-        "Nói chuyện với Hải Nữ" if not first_talk and current_day >= 5:
-            call plato_cave
-        "Quay lại":
-            jump daily_activity
+        # Good relationship gains
+        $ gained = stats.modify_relationship("hainu", 6)
+        $ show_stat_change("rel_hainu", gained)
+        
+        hide hainu with dissolve
+    else:
+        call plato_cave
     
     return
 
