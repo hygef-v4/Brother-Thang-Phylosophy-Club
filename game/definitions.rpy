@@ -140,6 +140,8 @@ init python:
         renpy.pause(time)
 
         _windows_hidden = False
+
+define alovuavu = "sfx/alovuavu.ogg"
 define anhchoemcohoi = "sfx/anhchoemcohoi.ogg"
 define siuuu = "sfx/siuuu.ogg"
 define emoichoilamsaoduoc = "sfx/emoichoilamsaoduoc.ogg"
