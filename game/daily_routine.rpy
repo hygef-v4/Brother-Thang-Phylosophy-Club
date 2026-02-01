@@ -92,7 +92,12 @@ label daily_activity:
             jump daily_gym
 
         "Về KTX ngủ":
-            jump daily_dorm
+            # End of day summary
+            scene black with fade
+            
+            $ renpy.pause(2.0)
+            
+            stop music fadeout 2.0
     
 # ========================================
 # EVENING DORM ACTIVITIES
