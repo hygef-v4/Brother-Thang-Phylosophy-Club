@@ -30,7 +30,7 @@ label day13_both:
     "Giữa phòng trưng một băng rôn Happy Birthday."
     
     show hainu 1a at t21
-    show xiu 1c at t22
+    show xiu 1a at t22
     
     hainu "\"snvv nghen.\""
     xiu "\"Em bé tuổi mới hay ăn chóng lớn nhá.\""
@@ -39,6 +39,7 @@ label day13_both:
     mc "\"Dạ em cảm ơn ạ.\""
     
     xiu "\"Thôi vào phòng đi, để chị bật Happy Birthday to You cho bé này thổi nến nhá.\""
+    show xiu 1b
     
     "Đã lâu rồi mới vui như thế này, bạn ăn chơi suýt quên thời gian. Chỉ có điều…"
     
@@ -69,14 +70,9 @@ label day13_both:
         "Không cần đâu, em tin thời gian sẽ chữa lành tất cả.":
             jump ending_subjective_idealism
             
-        "Những thứ mà mình học được những ngày qua, có lẽ sẽ giúp bố hiểu mình…":
+        "Suy Nghĩ":
             menu:
-                "Vậy thì… Để em về nói chuyện với bố…":
-                    jump ending_metaphysical_materialism
-                    
-                "Không cần đâu, em tin thời gian sẽ chữa lành tất cả.":
-                    jump ending_subjective_idealism
-
+                mc "\"Những thứ mà mình học được những ngày qua, có lẽ sẽ giúp bố hiểu mình…\""
                 "Em tin rằng, triết học giúp con người ta gắn kết lại với nhau!":
                     jump ending_dialectical_materialism
 
@@ -208,7 +204,6 @@ label ending_objective_idealism:
     
     scene black with dissolve_scene_full
     call ending_explanation("objective")
-    jump start
 
 label ending_subjective_idealism:
     $ current_day = 14
@@ -241,7 +236,6 @@ label ending_subjective_idealism:
     
     scene black with dissolve_scene_full
     call ending_explanation("subjective")
-    jump start
 
 label ending_metaphysical_materialism:
     $ current_day = 14
@@ -284,7 +278,6 @@ label ending_metaphysical_materialism:
     
     scene black with dissolve_scene_full
     call ending_explanation("metaphysical")
-    jump start
 
 label ending_dialectical_materialism:
     $ current_day = 14
@@ -351,7 +344,7 @@ label ending_dialectical_materialism:
 
 label confession:
     scene bg club_night with wipeleft_scene
-    play music deep_thought fadein 1.0 # Continue emotional theme
+    play music love_theme fadein 1.0 # Continue emotional theme
     
     "Làm hoà được với bố, vui vẻ quay lại CLB."
     
@@ -399,7 +392,6 @@ label confession:
     
     scene black with dissolve_scene_full
     call ending_explanation("dialectical")
-    jump start
 
 # ========================================
 # ENDING: PHÁT XÍT (FASCIST ENDING)
@@ -433,4 +425,3 @@ label ending_fascist:
     
     scene black with dissolve_scene_full
     call ending_explanation("fascist")
-    jump start

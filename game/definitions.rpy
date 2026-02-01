@@ -279,6 +279,7 @@ default persistent.first_load = None
 default persistent.autoload = ""
 default persistent.first_run = False
 default persistent.oldversion = ""
+default persistent.deleted_saves = False
 define config.mouse = None
 default allow_skipping = True
 default basedir = config.basedir

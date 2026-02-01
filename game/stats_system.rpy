@@ -3,6 +3,8 @@
 # ================================================
 
 init -1 python:
+    import math
+
     class StatsManager:
         """Quản lý tất cả stats của game"""
         
@@ -60,17 +62,17 @@ init -1 python:
             init = self.get_relationship(char_name)
 
             if char_name == "hainu":
-                self.rel_hainu = self.clamp(
+                self.rel_hainu = math.ceil(self.clamp(
                     self.rel_hainu + amount * self.get_stat_multiplier_hainu(),
                     GameConfig.REL_MIN,
                     GameConfig.REL_MAX
-                )
+                ))
             elif char_name == "xiu":
-                self.rel_xiu = self.clamp(
+                self.rel_xiu = math.ceil(self.clamp(
                     self.rel_xiu + amount * self.get_stat_multiplier_xiu(),
                     GameConfig.REL_MIN,
                     GameConfig.REL_MAX
-                )
+                ))
             
             return self.get_relationship(char_name) - init
 

@@ -3,6 +3,9 @@
 # Brother Thang Philosophy Club
 # ================================================
 
+init python:
+    import random
+
 label day0:
     
     # Show stats UI
@@ -92,7 +95,7 @@ label day1_morning:
     # ========================================
     
     scene bg fpt_yard with wipeleft_scene  # Custom: Sân trường FPT
-    play music canteen_theme fadein 1.0
+    play music main_theme fadein 1.0
     
     "Tại sân trường FPT."
     "Hôm nay là ngày nhập học đầu tiên."
@@ -390,6 +393,7 @@ label day2_morning:
     # CẢNH 6 CŨ: TOUR TRƯỜNG (Chiều Ngày 2)
     
     scene bg hallway with wipeleft_scene  # Custom: Hành lang FPT
+    play music canteen_theme
     
     show xiu 1a at t11
     
@@ -520,7 +524,7 @@ label day2_afternoon:
     xiu "\"Đây là robot bán hàng số hiệu T31 tên đầy đủ là DaoChiCuong do tập đoàn FPT sản xuất.\""
     xiu "\"Phế lắm, chị chửi nó suốt. Mong sau này robot xâm chiếm thế giới nó không nhớ mặt chị.\""
     
-    $ t31_voice = renpy.random.choice(["\"Hasta la vista, baby.\"", "\"I'll be back.\""])
+    $ t31_voice = random.choice(["\"I'll be back.\"", "\"Hasta la vista, baby.\""])
     
     play sound "sfx/glitch1.ogg"
     

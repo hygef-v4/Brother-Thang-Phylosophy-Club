@@ -76,4 +76,4 @@ label ending_explanation(ending_id):
     # Final pause
     $ renpy.pause(2.0, hard=True)
     
-    return
+    action MainMenu()

@@ -9,7 +9,6 @@ label day7:
     
     $ current_chapter = 3
 
-    "Sáng ngày thứ 10."
     "Điện thoại rung."
     
     # Text 336
@@ -55,11 +54,11 @@ label day7:
     dad "\"MÀY MÀ KHÔNG NGHE LỜI TAO THÌ MỌI CHUYỆN SAU NÀY TỰ THÂN MÀ LO LẤY, TAO KHÔNG CHU CẤP CHO NỮA.\""
     
     menu:
-        "Dạ… Vâng ạ….":
+        "Dạ… Vâng ạ…." if stats.doi_song == 0 and stats.hoc_tap == 0:
             jump ending_fascist
         
         "Con có thể tự lo cho bản thân mình rồi!":
-            jump ch3_day10_night
+            return
 
 label day7_evening:
     # Text 375
@@ -72,6 +71,7 @@ label day9:
     play music dorm_theme fadein 1.0
     
     # Text 393
+    "Điện thoại rung."
     xiu "Đi uống không cu? Nay chị bao!"
     
     mc "\"Của rẻ là của công an… Có khi nào chị ấy bị bắt nên khai ra mình không nhỉ?\""
@@ -169,8 +169,8 @@ label day9:
                 show xiu 1a
                 xiu "\"Tiếc quá…\""
             "Suy nghĩ":
-                mc "\"Những lúc say thế này, con người thường rất dễ mềm lòng…\""
                 menu:
+                    mc "\"Những lúc say thế này, con người thường rất dễ mềm lòng…\""
                     "Có":
                         $ gained = stats.modify_relationship("xiu", 6)
                         $ show_stat_change("rel_xiu", gained)
@@ -193,7 +193,8 @@ label day11:
     play music dorm_theme fadein 1.0
     
     # Text 473
-    hainu "Đang có một bộ phim khá cuốn mà chị muốn xem, cơ mà đi một mình thì lại hơi ngại, em có muốn đi xem cùng chị không?"
+    "Điện thoại rung."
+    hainu "Chào buổi sáng. Đang có một bộ phim khá cuốn mà chị muốn xem, cơ mà đi một mình thì lại hơi ngại, em có muốn đi xem cùng chị không?"
     
     mc "\"Lâu rồi mình chưa đi xem phim, nhưng mà giá vé lại đắt quá…. Nên làm gì đây?\""
     
@@ -208,7 +209,7 @@ label day11:
     play music club_theme fadein 1.0 # Yuri theme (Intellectual/Romance)
 
     mc "Em đến rồi đây, chị chờ lâu chưa?"
-    show hainu 1e
+    show hainu 1e at t11
     hainu "Chị cũng vừa tới thôi."
     mc "Nghe bảo em cãi nhau với bố hả? Có ổn không?"
     mc "Em không sao. Thôi, ta vào xem đi!"
@@ -216,7 +217,7 @@ label day11:
     "Vào rạp cùng Hội Trưởng để xem phim “The Truman Show”."
     "Phim khá ấn tượng, làm mình cũng phải nghi ngờ rằng liệu mình có đang ở trong một con game tình cảm nào đó không…."
     
-    show hainu 1a at t11
+    show hainu 1a
     play music library_theme fadein 1.0
     
     hainu "\"Bộ phim hay thật đấy nhỉ?\""
@@ -301,7 +302,7 @@ label day13_evening:
     # ========================================
     
     # Check relationships to determine path intro
-    current_chapter = 4
+    $ current_chapter = 4
     if stats.rel_xiu > 80 and stats.rel_hainu > 80:
         jump day13_both
     elif stats.rel_xiu > 80:

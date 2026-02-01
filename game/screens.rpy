@@ -388,17 +388,12 @@ init -501 screen main_menu():
     tag menu
     style_prefix "main_menu"
 
-    if persistent.ghost_menu:
-        add "white"
-        add "menu_art_y_ghost"
-        add "menu_art_n_ghost"
-    else:
-        add "menu_bg_blue"
-        add "menu_art_hainu"
-        add "menu_art_dad"
-        add "menu_art_xiu"
-        frame
-        use navigation
+    add "menu_bg_blue"
+    add "menu_art_hainu"
+    add "menu_art_dad"
+    add "menu_art_xiu"
+    frame
+    use navigation
 
     if gui.show_name:
         vbox:
@@ -407,14 +402,8 @@ init -501 screen main_menu():
             text "[config.version]":
                 style "main_menu_version"
 
-    if not persistent.ghost_menu:
-        add "menu_logo"
-
-    if persistent.ghost_menu:
-        add "menu_art_m_ghost"
-    else:
-        add "menu_particles"
-        add "menu_fade"
+    add "menu_particles"
+    add "menu_fade"
 
     key "K_ESCAPE" action Quit(confirm=False)
 

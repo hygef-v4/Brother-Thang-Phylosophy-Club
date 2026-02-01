@@ -141,12 +141,6 @@ screen coming_soon():
                 color "#ffffff"
                 font "DejaVuSans.ttf"
             
-            text "Ngày 1 của Chapter 1: EIKASIA đã hoàn thành.":
-                size 18 
-                xalign 0.5 
-                color "#aaaaaa"
-                font "DejaVuSans.ttf"
-            
             null height 20
             
             text "Các ngày tiếp theo sẽ được cập nhật sớm!":
@@ -162,84 +156,3 @@ screen coming_soon():
                 action Return()
                 text_font "DejaVuSans-Bold.ttf"
                 text_size 24
-
-# Coming Soon Chapter 3 screen
-screen coming_soon_ch3():
-    modal True
-    
-    frame:
-        xalign 0.5
-        yalign 0.5
-        xsize 700
-        ysize 500
-        background "#000000dd"
-        padding (30, 30)
-        
-        vbox:
-            spacing 20
-            xalign 0.5
-            
-            text "CHAPTER 2: PISTIS":
-                size 32
-                xalign 0.5 
-                color "#ff6b9d" 
-                bold True
-                font "DejaVuSans-Bold.ttf"
-            
-            text "HOÀN THÀNH!":
-                size 40 
-                xalign 0.5 
-                color "#00ff88" 
-                bold True
-                font "DejaVuSans-Bold.ttf"
-            
-            null height 20
-            
-            text "Cảm ơn bạn đã chơi!":
-                size 24 
-                xalign 0.5 
-                color "#ffffff"
-                font "DejaVuSans.ttf"
-            
-            text "Bạn đã hoàn thành Chapter 2: PISTIS (Niềm Tin).":
-                size 18 
-                xalign 0.5 
-                color "#aaaaaa"
-                font "DejaVuSans.ttf"
-            
-            text "Đã học được về ngụ ngôn Hang động của Plato và con đường từ Eikasia đến Pistis.":
-                size 16 
-                xalign 0.5 
-                color "#aaaaaa"
-                font "DejaVuSans.ttf"
-            
-            null height 30
-            
-            text "COMING SOON":
-                size 36 
-                xalign 0.5 
-                color "#ffdd00" 
-                bold True
-                font "DejaVuSans-Bold.ttf"
-            
-            text "Chapter 3: DIANOIA (Lý Trí)":
-                size 24 
-                xalign 0.5 
-                color "#33ccff"
-                bold True
-                font "DejaVuSans-Bold.ttf"
-            
-            text "Những ngày tiếp theo với các nhân vật...":
-                size 16 
-                xalign 0.5 
-                color "#aaaaaa"
-                font "DejaVuSans.ttf"
-            
-            null height 30
-            
-            textbutton "Về Menu Chính":
-                xalign 0.5
-                action Return()
-                text_font "DejaVuSans-Bold.ttf"
-                text_size 24
-

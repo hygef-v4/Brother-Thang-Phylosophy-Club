@@ -106,8 +106,6 @@ label plato_cave:
     hainu "\"Vì vậy, anh ta vẫn chưa thoát khỏi ý niệm của bản thân, vẫn bị kẹt trong Pistis…\""
     hainu "\"Đó chính là cái lồng của niềm tin vào trí tuệ của bản thân, nó giam giữ và ngăn cách anh ta chạm tới chân lý…\""
     
-    "Bàn luận về triết học cùng Hội Trưởng cả buổi sáng."
-    
     $ gained = stats.modify_relationship("hainu", 6)
     $ show_stat_change("rel_hainu", gained)
 

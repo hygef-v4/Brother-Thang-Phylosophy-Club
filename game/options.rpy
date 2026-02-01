@@ -25,7 +25,6 @@ define config.predict_statements = 50
 define config.rollback_enabled = config.developer
 define config.menu_clear_layers = ["front"]
 define config.gl_test_image = "white"
-define build.itch_project = "teamsalvato/ddlc"
 default preferences.text_cps = 50
 default preferences.afm_time = 15
 default preferences.music_volume = 0.75
