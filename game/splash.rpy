@@ -83,10 +83,10 @@ image menu_art_xiu:
 
 image menu_art_dad:
     subpixel True
-    "images/dad.png"
+    "dad/dad_sitting.png"
     xcenter 640
     ycenter 385
-    zoom 0.50
+    zoom 1
     menu_art_move(0.50, 640, 0.50)
 
 # Ghost art and glitch removed for philosophy focus

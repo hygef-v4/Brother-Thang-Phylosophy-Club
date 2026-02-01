@@ -67,6 +67,14 @@ image hainu tired = "hainu/hainu_tired.png"
 image hainu surprised = "hainu/hainu_surprised.png"
 image hainu embarrassed = "hainu/hainu_embarrassed.png"
 
+# Võ Quang Hưng (Dad - Major General) sprite definitions
+image dad 1a = "dad/dad_sitting.png"       # Neutral Sitting - talking on phone  # Surprised Sitting - hearing unexpected news
+image dad 1d = "dad/dad_standing.png"      # Standing Neutral - standard pose
+
+# Semantic aliases
+image dad sitting = "dad/dad_sitting.png
+image dad standing = "dad/dad_standing.png"  # Default to standing
+
 python early:
     import datetime
 

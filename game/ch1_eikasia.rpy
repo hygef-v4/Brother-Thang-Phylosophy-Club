@@ -51,7 +51,7 @@ label day0:
     
     "Bố tôi, Võ Quang Hưng, một Đại Tá quân đội, bước vào."
     
-    show dad at t11
+    show dad sitting at t11
     
     dad "\"Trượt rồi à?\""
     
