@@ -31,6 +31,7 @@ label day7:
     mc "\"Sao tự nhiên lại nghỉ học hả bố?\""
     mc "\"Trên trường việc học của con vẫn ổn mà?\""
     
+    play sound emoichoilamsaoduoc
     dad "\"Thời buổi nào rồi mà còn học Đại học nữa.\""
     dad "\"Mỹ đang lục đục đánh nhau với Cuba rồi.\""
     dad "\"Con phải vào quân đội để lên đường bảo vệ Tổ Quốc.\""
