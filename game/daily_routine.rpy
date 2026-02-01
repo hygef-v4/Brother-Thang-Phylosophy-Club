@@ -10,6 +10,31 @@ label daily_routine_morning:
     
     $ current_day += 1
     scene black with dissolve_scene_full
+    
+    # Dynamic background selection (Day 4-13)
+    if current_day == 4:
+        scene bg fpt_7 with fade
+    elif current_day == 5:
+        scene bg fpt_8 with fade
+    elif current_day == 6:
+        scene bg fpt_9 with fade
+    elif current_day == 7:
+        scene bg fpt_10 with fade
+    elif current_day == 8:
+        scene bg fpt_14 with fade
+    elif current_day == 9:
+        scene bg fpt_15 with fade
+    elif current_day == 10:
+        scene bg fpt_16 with fade
+    elif current_day == 11:
+        scene bg fpt_20 with fade
+    elif current_day == 12:
+        scene bg fpt_21 with fade
+    elif current_day == 13:
+        scene bg fpt_22 with fade
+    else:
+        scene bg fpt_23 with fade
+    
     centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
     $ current_time_slot = 1
@@ -43,6 +68,31 @@ label daily_routine_afternoon:
     if script_m:
         return
     scene black
+    
+    # Dynamic background selection (Day 4-13)
+    if current_day == 4:
+        scene bg fpt_24 with fade
+    elif current_day == 5:
+        scene bg fpt_25 with fade
+    elif current_day == 6:
+        scene bg fpt_26 with fade
+    elif current_day == 7:
+        scene bg fpt_27 with fade
+    elif current_day == 8:
+        scene bg fpt_29 with fade
+    elif current_day == 9:
+        scene bg fpt_30 with fade
+    elif current_day == 10:
+        scene bg fpt_31 with fade
+    elif current_day == 11:
+        scene bg fpt_37 with fade
+    elif current_day == 12:
+        scene bg fpt_38 with fade
+    elif current_day == 13:
+        scene bg fpt_39 with fade
+    else:
+        scene bg fpt_40 with fade
+    
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
     $ current_time_slot = 2
@@ -58,6 +108,31 @@ label daily_routine_evening:
     if script_m and current_day != 13:
         return
     scene black
+    
+    # Dynamic background selection (Day 4-13)
+    if current_day == 4:
+        scene bg fpt_12 with fade
+    elif current_day == 5:
+        scene bg fpt_13 with fade
+    elif current_day == 6:
+        scene bg fpt_17 with fade
+    elif current_day == 7:
+        scene bg fpt_18 with fade
+    elif current_day == 8:
+        scene bg fpt_19 with fade
+    elif current_day == 9:
+        scene bg fpt_28 with fade
+    elif current_day == 10:
+        scene bg fpt_32 with fade
+    elif current_day == 11:
+        scene bg fpt_33 with fade
+    elif current_day == 12:
+        scene bg fpt_34 with fade
+    elif current_day == 13:
+        scene bg fpt_35 with fade
+    else:
+        scene bg fpt_36 with fade
+    
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
     $current_time_slot = 3
