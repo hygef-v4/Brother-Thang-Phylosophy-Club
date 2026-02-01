@@ -70,10 +70,20 @@ image hainu embarrassed = "hainu/hainu_embarrassed.png"
 # Võ Quang Hưng (Dad - Major General) sprite definitions
 image dad 1a = "dad/dad_sitting.png"       # Neutral Sitting - talking on phone  # Surprised Sitting - hearing unexpected news
 image dad 1b = "dad/dad_standing.png"      # Standing Neutral - standard pose
+image dad 1c = "dad/dad_concerned_sitting.png"
+image dad 1d = "dad/dad_proud_sitting.png"
+image dad 1e = "dad/dad_stern_sitting.png"
+image dad 1g = "dad/dad_surprised_sitting.png"
+image dad 1h = "dad/dad_thinking_sitting.png"
 
 # Semantic aliases
 image dad sitting = "dad/dad_sitting.png"
 image dad standing = "dad/dad_standing.png" 
+image dad concern = "dad/dad_concerned_sitting.png"
+image dad pround = "dad/dad_proud_sitting.png"
+image dad stern = "dad/dad_stern_sitting.png"
+image dad suprise = "dad/dad_surprised_sitting.png"
+image dad thinking = "dad/dad_thinking_sitting.png"
 
 python early:
     import datetime

@@ -36,7 +36,7 @@ label daily_routine_morning:
         scene bg fpt_23 with fade
     
     centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(1.5)
+    $ renpy.pause(0.5, hard=True)
     $ current_time_slot = 1
     
     # Daily stats update
@@ -94,7 +94,7 @@ label daily_routine_afternoon:
         scene bg fpt_40 with fade
     
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(1.5)
+    $ renpy.pause(0.5, hard=True)
     $ current_time_slot = 2
     
     call daily_activity
@@ -134,7 +134,7 @@ label daily_routine_evening:
         scene bg fpt_36 with fade
     
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(1.5)
+    $ renpy.pause(0.5, hard=True)
     $current_time_slot = 3
     
     if current_day == 13:
