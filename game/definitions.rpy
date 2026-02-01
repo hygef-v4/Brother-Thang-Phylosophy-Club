@@ -222,11 +222,7 @@ image bg classroom = "bg/class.png"
 image bg library = "bg/library.png"
 image bg yenlang = "bg/yenlang.jpg"
 image bg house = "bg/house.png"
-image bg fpt_1 = "bg_new/fpt_1.png"
-image bg fpt_2 = "bg_new/fpt_2.png"
-image bg fpt_3 = "bg_new/fpt_3.png"
-image bg fpt_4 = "bg_new/fpt_4.png"
-image bg fpt_5 = "bg_new/fpt_5.png"
+
 
 
 image bg glitch = Solid("#000")
@@ -270,6 +266,156 @@ image bg fpt_4:
 image bg fpt_5:
     "bg_new/fpt_5.png"
     zoom 0.85
+
+# ================================================
+# NIGHT TRANSITION BACKGROUNDS (TỐI - 13 ảnh)
+# fpt_3, 11-13, 17-19, 28, 32-36
+# ================================================
+
+image bg fpt_11:
+    "bg_new/fpt_11.png"
+    zoom 0.85
+
+image bg fpt_12:
+    "bg_new/fpt_12.png"
+    zoom 0.85
+
+image bg fpt_13:
+    "bg_new/fpt_13.png"
+    zoom 0.9
+
+image bg fpt_17:
+    "bg_new/fpt_17.png"
+    zoom 0.85
+
+image bg fpt_18:
+    "bg_new/fpt_18.png"
+    zoom 0.9
+
+image bg fpt_19:
+    "bg_new/fpt_19.png"
+    zoom 0.85
+
+image bg fpt_28:
+    "bg_new/fpt_28.png"
+    zoom 0.9
+
+image bg fpt_32:
+    "bg_new/fpt_32.png"
+    zoom 0.85
+
+image bg fpt_33:
+    "bg_new/fpt_33.png"
+    zoom 0.9
+
+image bg fpt_34:
+    "bg_new/fpt_34.png"
+    zoom 0.85
+
+image bg fpt_35:
+    "bg_new/fpt_35.png"
+    zoom 0.9
+
+image bg fpt_36:
+    "bg_new/fpt_36.png"
+    zoom 0.85
+
+# ================================================
+# DAY/AFTERNOON TRANSITION BACKGROUNDS (SÁNG/CHIỀU - 27 ảnh)
+# fpt_1-2, 4-10, 14-16, 20-27, 29-31, 37-40
+# ================================================
+
+image bg fpt_6:
+    "bg_new/fpt_6.png"
+    zoom 0.9
+
+image bg fpt_7:
+    "bg_new/fpt_7.png"
+    zoom 0.85
+
+image bg fpt_8:
+    "bg_new/fpt_8.png"
+    zoom 0.9
+
+image bg fpt_9:
+    "bg_new/fpt_9.png"
+    zoom 0.85
+
+image bg fpt_10:
+    "bg_new/fpt_10.png"
+    zoom 0.9
+
+image bg fpt_14:
+    "bg_new/fpt_14.png"
+    zoom 0.85
+
+image bg fpt_15:
+    "bg_new/fpt_15.png"
+    zoom 0.9
+
+image bg fpt_16:
+    "bg_new/fpt_16.png"
+    zoom 0.85
+
+image bg fpt_20:
+    "bg_new/fpt_20.png"
+    zoom 0.9
+
+image bg fpt_21:
+    "bg_new/fpt_21.png"
+    zoom 0.85
+
+image bg fpt_22:
+    "bg_new/fpt_22.png"
+    zoom 0.9
+
+image bg fpt_23:
+    "bg_new/fpt_23.png"
+    zoom 0.85
+
+image bg fpt_24:
+    "bg_new/fpt_24.png"
+    zoom 0.9
+
+image bg fpt_25:
+    "bg_new/fpt_25.png"
+    zoom 0.85
+
+image bg fpt_26:
+    "bg_new/fpt_26.png"
+    zoom 0.9
+
+image bg fpt_27:
+    "bg_new/fpt_27.png"
+    zoom 0.85
+
+image bg fpt_29:
+    "bg_new/fpt_29.png"
+    zoom 0.9
+
+image bg fpt_30:
+    "bg_new/fpt_30.png"
+    zoom 0.85
+
+image bg fpt_31:
+    "bg_new/fpt_31.png"
+    zoom 0.9
+
+image bg fpt_37:
+    "bg_new/fpt_37.png"
+    zoom 0.85
+
+image bg fpt_38:
+    "bg_new/fpt_38.png"
+    zoom 0.9
+
+image bg fpt_39:
+    "bg_new/fpt_39.png"
+    zoom 0.85
+
+image bg fpt_40:
+    "bg_new/fpt_40.png"
+    zoom 0.9
 
 # =================================================================================
 # REMOVED DEPRECATED CHARACTER DEFINITIONS (Sayori, Natsuki, Old Yuri, Old Monika)
