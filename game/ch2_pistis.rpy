@@ -45,9 +45,8 @@ label plato_cave:
 
     show hainu 1a at t11
 
-    hainu "\"Cậu… Có vẻ đã thoát khỏi cái hang của mình rồi nhỉ?\""
+    hainu "\"Cậu tới rồi à?\""
     
-    mc "(bối rối) \"Ơ… Dạ?\""
     mc "\"…\""
     mc "\"Chuyện lần trước… Cảm ơn chị đã nhắc em về trò lừa bịp của chị Xỉu.\""
     

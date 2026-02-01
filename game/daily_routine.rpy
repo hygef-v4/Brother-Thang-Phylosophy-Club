@@ -102,7 +102,7 @@ label daily_activity:
             stop music fadeout 2.0
 
             return
-        
+
         "Đến Thư viện ngồi học":
             jump daily_library
         
@@ -191,7 +191,7 @@ label daily_clb:
     scene bg club_day with wipeleft_scene
     play music club_theme fadein 1.0
     
-    if first_talk or current_day < 5:
+    if first_talk:
         show hainu neutral at t11
         hainu "\"Cậu tới rồi à? Giúp tôi một số việc được không?\""
         mc "\"Dạ, vâng ạ.\""
