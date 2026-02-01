@@ -57,11 +57,12 @@ label day7:
         "Dạ… Vâng ạ…." if stats.doi_song == 0 and stats.hoc_tap == 0:
             jump ending_fascist
         
-        "Con có thể tự lo cho bản thân mình rồi!":
+        "Con có thể tự lo cho bản thân mình rồi!" if stats.doi_song != 0 or stats.hoc_tap != 0:
             jump daily_routine_evening
 
 label day7_evening:
     # Text 375
+    $ stats.dad_cutoff = True
     mc "\"Không còn tiền chu cấp, áp lực tài chính của mình tăng lên rồi, từ ngày mai phải tiết kiệm lại thôi.\""
     
     return

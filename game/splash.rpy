@@ -1,5 +1,6 @@
 init python:
     import datetime
+    import random
     menu_trans_time = 1
 
     splash_message_default = "Trải nghiệm này không nhằm giải trí.\nHãy đọc chậm, và tự suy nghĩ."
@@ -200,9 +201,8 @@ label splashscreen:
                 pass
 
     # First run check using persistent only
-    if not persistent.first_run:
-        $ quick_menu = False
-        scene black
+    $ quick_menu = False
+    scene black
         
         # Show TOS or warning directly
         
@@ -213,41 +213,30 @@ label splashscreen:
 
 
 
-    if not persistent.first_run:
-        python:
-            restore_all_characters()
+    python:
+        restore_all_characters()
 
-        # Quick menu enabled for ESC access
+    # Quick menu enabled for ESC access
 
-        scene white
+    scene white
 
-        pause 0.5
+    pause 0.5
 
-        scene tos
-        with Dissolve(1.0)
+    scene tos
+    with Dissolve(1.0)
 
-        pause 1.0
+    pause 1.0
 
-        "Trải nghiệm này chứa các nội dung mang tính triết học và tự vấn."
+    "Trải nghiệm này chứa các nội dung mang tính triết học và tự vấn."
 
-        "Nó không đưa ra câu trả lời, chỉ đặt ra câu hỏi."
+    "Nó không đưa ra câu trả lời, chỉ đặt ra câu hỏi."
 
-        menu:
+    scene tos2
+    with Dissolve(1.5)
 
-            "Bằng cách tiếp tục, bạn đồng ý rằng đây là một trải nghiệm tư duy, không phải giải trí thụ động."
+    pause 1.0
 
-            "Tôi đồng ý.":
-
-                pass
-
-        $ persistent.first_run = True
-
-        scene tos2
-        with Dissolve(1.5)
-
-        pause 1.0
-
-        scene white
+    scene white
 
 
 
@@ -262,7 +251,7 @@ label splashscreen:
 
     show white
 
-    $ splash_message = renpy.random.choice(splash_messages)  # Always show philosophical message
+    $ splash_message = random.choice(splash_messages)  # Always show philosophical message
     $ config.main_menu_music = audio.t1
 
     $ renpy.music.play(config.main_menu_music)
@@ -287,8 +276,7 @@ label splashscreen:
 
 label after_load:
 
-    if persistent.playthrough == 0:
-        $ restore_all_characters()
+    $ restore_all_characters()
 
     $ config.allow_skipping = True  # Always allow skipping
     $ _dismiss_pause = config.developer
@@ -296,9 +284,7 @@ label after_load:
     $ style.say_dialogue = style.normal
 
     # Yuri kill and anticheat removed for philosophy focus
-    if persistent.playthrough == 0 and not persistent.first_load and not config.developer:
-        $ persistent.first_load = True
-
+    if not config.developer:
         call screen dialog("Hint: You can use the \"Skip\" button to\nfast-forward through text you've already read.", ok_action=Return())
 
     return
