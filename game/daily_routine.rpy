@@ -92,6 +92,9 @@ label daily_activity:
     scene bg class_day with fade
     play music daily_life fadein 1.0
     
+    show screen stats_display
+    show screen konami_listener
+
     menu:
         "Về KTX ngủ":
             # End of day summary
@@ -122,6 +125,9 @@ label daily_dorm:
     else:
         scene bg ktx_day with wipeleft_scene
     play music dorm_theme fadein 1.0
+
+    show screen stats_display
+    show screen konami_listener
 
     menu:
         "Đi ngủ":
@@ -191,6 +197,9 @@ label daily_clb:
     scene bg club_day with wipeleft_scene
     play music club_theme fadein 1.0
     
+    show screen stats_display
+    show screen konami_listener
+
     if first_talk:
         show hainu neutral at t11
         hainu "\"Cậu tới rồi à? Giúp tôi một số việc được không?\""
@@ -213,6 +222,9 @@ label daily_library:
     scene bg library with wipeleft_scene  # Custom: Thư viện FPT
     play music library_theme fadein 1.0
     
+    show screen stats_display
+    show screen konami_listener
+
     "Giở sách vở ra, ôn lại bài cũ..."
     
     # Stat-dependent dialogue (học tập)
@@ -237,6 +249,9 @@ label daily_gym:
     scene bg gym with wipeleft_scene  # Custom: Phòng gym FPT
     play music gym_theme fadein 1.0
     
+    show screen stats_display
+    show screen konami_listener
+
     "Rèn luyện cơ thể, giải toả tinh thần..."
     
     # Stat-dependent dialogue (sức khoẻ = đời sống)

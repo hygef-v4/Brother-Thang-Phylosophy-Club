@@ -47,7 +47,7 @@ init -1 python:
         # ========================================
         # TIME SYSTEM
         # ========================================
-        TIME_SLOTS = ["morning", "afternoon", "evening", "night"]
+        TIME_SLOTS = ["Sáng", "Chiều", "Tối"]
         CURRENT_CHAPTER = 1
         CURRENT_DAY = 1
 

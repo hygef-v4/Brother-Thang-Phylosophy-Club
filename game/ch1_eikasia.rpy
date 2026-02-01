@@ -9,8 +9,6 @@ init python:
 label day0:
     
     # Show stats UI
-    show screen stats_display
-    show screen konami_listener
     
     $ current_chapter = 1
     
