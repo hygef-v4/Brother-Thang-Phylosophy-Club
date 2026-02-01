@@ -389,6 +389,8 @@ init -501 screen main_menu():
             text "[config.version]":
                 style "main_menu_version"
 
+    add "menu_logo"
+
     add "menu_particles"
     add "menu_fade"
 
