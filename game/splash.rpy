@@ -37,34 +37,10 @@ image menu_fade:
 image menu_art_hainu:
     subpixel True
     "images/hainu/hainu_menu.png"
-    xcenter 450
-    ycenter 335
+    xcenter 640
+    ycenter 385
     zoom 0.45
-    menu_art_move(0.54, 450, 0.45)
-
-# image menu_art_y:
-#     subpixel True
-#     "gui/menu_art_y.png"
-#     xcenter 450
-#     ycenter 335
-#     zoom 0.60
-#     menu_art_move(0.54, 450, 0.60)
-
-# image menu_art_n:
-#     subpixel True
-#     "gui/menu_art_n.png"
-#     xcenter 750
-#     ycenter 385
-#     zoom 0.58
-#     menu_art_move(0.58, 750, 0.58)
-
-# image menu_art_s:
-#     subpixel True
-#     "gui/menu_art_s.png"
-#     xcenter 450
-#     ycenter 335
-#     zoom 0.60
-#     menu_art_move(0.54, 450, 0.60)
+    menu_art_move(0.50, 640, 0.45)
 
 image menu_art_xiu:
     subpixel True
@@ -74,21 +50,21 @@ image menu_art_xiu:
     zoom 0.45
     menu_art_move(0.60, 880, 0.45)
 
-# image menu_art_m:
-#     subpixel True
-#     "gui/menu_art_m.png"
-#     xcenter 900
-#     ycenter 640
-#     zoom 1.00
-#     menu_art_move(1.00, 900, 1.00)
-
 image menu_art_dad:
     subpixel True
-    "dad/dad_sitting.png"
-    xcenter 640
-    ycenter 385
-    zoom 1
-    menu_art_move(0.50, 640, 0.50)
+    "dad/dad_standing.png"
+    xcenter 450
+    ycenter 335
+    zoom 0.45
+    menu_art_move(0.54, 450, 0.45)
+
+image menu_art_pig:
+    subpixel True
+    "robot_t31.png"
+    xcenter 1028
+    ycenter 585
+    zoom 0.45
+    menu_art_move(0.48, 1200, 0.45)
 
 # Ghost art and glitch removed for philosophy focus
 

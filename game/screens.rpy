@@ -377,6 +377,7 @@ init -501 screen main_menu():
     add "menu_art_hainu"
     add "menu_art_dad"
     add "menu_art_xiu"
+    add "menu_art_pig"
     frame
     use navigation
 
