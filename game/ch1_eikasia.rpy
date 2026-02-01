@@ -319,17 +319,6 @@ label day2_morning:
     play music dorm_theme fadein 1.0
     
     "\"Hôm qua vừa gia nhập CLB, nay đến xem thử xem sao\"."
-
-    menu:
-        "Ra ngoài":
-            pass
-
-    scene bg class_day with fade
-    play music daily_life fadein 1.0
-    
-    menu:
-        "Đến CLB":
-            pass
     
     # CẢNH 5 CŨ: CLB - SÁNG (Bị mắng)
     scene bg club_day with wipeleft_scene

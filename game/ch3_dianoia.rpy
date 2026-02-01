@@ -58,7 +58,7 @@ label day7:
             jump ending_fascist
         
         "Con có thể tự lo cho bản thân mình rồi!":
-            return
+            jump daily_routine_evening
 
 label day7_evening:
     # Text 375
@@ -186,7 +186,7 @@ label day9:
     
     xiu "\"Thôi vậy chị về trước đây nha.\""
     
-    return
+    jump daily_routine_evening
 
 label day11:
     scene bg ktx_day with wipeleft_scene
@@ -294,7 +294,7 @@ label day11:
     
     hainu "\"Thôi muộn rồi…. Tôi về trước đây.\""
     
-    return
+    jump daily_routine_evening
 
 label day13_evening:
     # ========================================

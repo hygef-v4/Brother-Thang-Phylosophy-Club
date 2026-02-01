@@ -12,17 +12,6 @@ label day13_both:
 
     mc "(Giờ này còn gọi gì nữa nhở? Lại ra căng tin hát hò tuyển thành viên à?)"
     mc "(Thôi thì cứ tới xem sao vậy.)"
-    
-    menu:
-        "Ra ngoài":
-            pass
-
-    scene bg class_day with fade
-    play music daily_life fadein 1.0
-    
-    menu:
-        "Đến CLB":
-            pass
 
     scene bg club_party with wipeleft_scene
     play music club_theme fadein 1.0
@@ -119,17 +108,6 @@ label day13_hainu:
     mc "(Giờ này còn gọi gì nữa nhở? Lại ra căng tin hát hò tuyển thành viên à?)"
     mc "(Thôi thì cứ tới xem sao vậy.)"
     
-    menu:
-        "Ra ngoài":
-            pass
-
-    scene bg class_day with fade
-    play music daily_life fadein 1.0
-    
-    menu:
-        "Đến CLB":
-            pass
-
     scene bg club_party with wipeleft_scene
     play music club_theme fadein 1.0 # Yuri (Hainu)
     

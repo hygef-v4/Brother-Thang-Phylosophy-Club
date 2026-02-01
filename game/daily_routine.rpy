@@ -25,19 +25,9 @@ label daily_routine_morning:
     elif current_day == 11:
         call day11
     else:
-        call daily_dorm
+        call daily_activity
 
     return
-
-label daily_routine_noon:
-    scene black
-    centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(1.5, hard=True)
-    $ current_time_slot = 2
-    
-    call daily_dorm
-
-    jump daily_routine_evening
 
 label daily_routine_afternoon:
     # ========================================
@@ -92,7 +82,7 @@ label daily_activity:
     play music daily_life fadein 1.0
     
     menu:
-        "Đến CLB":
+        "Đến CLB gặp Hội Trưởng":
             jump daily_clb
         
         "Đến Thư viện ngồi học":
@@ -101,7 +91,7 @@ label daily_activity:
         "Đến Gym luyện tập":
             jump daily_gym
 
-        "Về KTX":
+        "Về KTX ngủ":
             jump daily_dorm
     
 # ========================================
@@ -126,10 +116,8 @@ label daily_dorm:
             $ renpy.pause(2.0)
             
             stop music fadeout 2.0
-            if current_time_slot == 1:
-                jump daily_routine_noon
 
-        "Nói chuyện với Xỉu" if current_time_slot == 3:
+        "Nói chuyện với Xỉu":
             show xiu 1a at t11
             
             xiu "\"Chào mừng đến với dịch vụ Campuchia gì cũng tôn của Xỉu. Cu em cần gì nào?\""
@@ -174,9 +162,6 @@ label daily_dorm:
                     xiu "\"Thế thôi...\""
             
             hide xiu with dissolve
-
-        "Ra ngoài" if current_time_slot != 3:
-            jump daily_activity
     
     return
 
