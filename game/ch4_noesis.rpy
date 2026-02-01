@@ -192,7 +192,7 @@ label ending_subjective_idealism:
     
     scene bg fpt_23 with fade
     centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(2.0)
     
     scene bg club_day with fade
     play music club_theme fadein 1.0 # Happy
@@ -225,7 +225,7 @@ label ending_metaphysical_materialism:
     
     scene bg fpt_40 with fade
     centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(2.0)
     
     scene bg living_room with wipeleft_scene # Nhà
     play music canteen_theme fadein 1.0 # Normal daily life
@@ -280,7 +280,7 @@ label ending_dialectical_materialism:
     $ renpy.show("bg " + random_day_bg)
     with fade
     centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(2.0)
     
     scene bg living_room with wipeleft_scene
     play music canteen_theme fadein 1.0 # Argument/Tension
@@ -409,7 +409,7 @@ label ending_fascist:
     stop music fadeout 2.0
     
     centered "{size=30}Nhiều năm sau...{/size}"
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(2.0)
     
     scene bg sota with wipeleft_scene # Trại quân sự
     play music love_theme fadein 1.0
