@@ -12,6 +12,7 @@ label day7:
     "Điện thoại rung."
     
     # Text 336
+    play sound alovuavu
     dad "\Đóng gói hành lý đi. Chiều về trại quân sự để làm thủ tục đi lính.\""
     
     mc "\"..?\""
