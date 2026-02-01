@@ -33,6 +33,7 @@ label day7:
     
     show dad 1e
 
+    play sound emoichoilamsaoduoc
     dad "\"Thời buổi nào rồi mà còn học Đại học nữa.\""
     dad "\"Mỹ đang gây hấn với các nước XHCN rồi.\""
     dad "\"Con phải vào quân đội để lên đường bảo vệ Tổ Quốc.\""
