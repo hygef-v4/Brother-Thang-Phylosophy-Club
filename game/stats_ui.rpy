@@ -153,6 +153,6 @@ screen coming_soon():
             
             textbutton "Về Menu Chính":
                 xalign 0.5
-                action Return()
+                action MainMenu()
                 text_font "DejaVuSans-Bold.ttf"
                 text_size 24
