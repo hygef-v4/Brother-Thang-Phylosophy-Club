@@ -409,7 +409,8 @@ label day2_morning:
             
             menu:
                 "ALL IN MU!!!":
-                    $ xiu_bet_choice = "MU"
+                    $ xiu_bet_choice = "MU" 
+                    play sound siuuu
                 
                 "ALL IN Chealsea!!!":
                     $ xiu_bet_choice = "Chealsea"
