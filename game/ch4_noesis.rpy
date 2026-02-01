@@ -148,14 +148,8 @@ label day13_hainu:
 # ========================================
 
 label ending_objective_idealism:
-    $ current_day = 14
-    
     scene black with dissolve_scene_full
     stop music fadeout 2.0
-    
-    scene bg fpt_5 with fade
-    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
-    $ renpy.pause(2.0, hard=True)
     
     scene bg ktx with wipeleft_scene
     play music deep_thought fadein 1.0 # Eerie/Space
@@ -203,24 +197,19 @@ label ending_subjective_idealism:
     scene bg club_day with fade
     play music club_theme fadein 1.0 # Happy
     
-    show xiu 1c at t11
+    show xiu 1a at t11
     
     xiu "\"Ái chà, bé Thắng hôm nay lớn thế nhở.\""
     xiu "\"Sang tuổi mới có khác trông đĩnh đạc hẳn ra, 10 điểm không có nhưng.\""
     
     mc "\"Dạ vâng cảm ơn chị. Nhờ ơn chị tận tình chăm sóc mà thằng bé mới lớn thế này ạ.\""
+
+    show xiu 1g
     
     xiu "\"Chú cứ quá lời. Chị có làm gì đâu. Thằng bé nó tự lớn lên đấy chứ.\""
     xiu "\"Theo như bà chị triết gia nhà chị thì chắc chắn đây là duy tâm rồi.\""
     xiu "\"Bởi vì thằng bé nó muốn đi khám phá thế giới mới nên nó mới tự lớn lên.\""
     xiu "\"Đúng nhận sai cãi nào?\""
-    
-    mc "\"Đúng vậy. Em đã chọn rồi. Kệ bố đi.\""
-    mc "\"Sống cho bản thân mình mới là quan trọng nhất.\""
-    mc "\"Gia đình mà chỉ đem lại áp lực và khổ đau thì có cần thiết phải níu giữ không?\""
-    mc "\"Em thà làm đứa con bất hiếu mà vui vẻ, còn hơn làm đứa con ngoan mà tâm hồn chết lặng.\""
-    
-    xiu "\"Chuẩn! Chị em mình cứ thế mà sống thôi!\""
     
     "Cả hai cùng cười phá lên."
     "Có thể cùng vui, cùng cười với những người mình chân quý thế này, cuộc sống thế là hạnh phúc rồi."
@@ -254,6 +243,8 @@ label ending_metaphysical_materialism:
     
     mc "\"Con được tận 8.0 lận đó.\""
     
+    show dad 1e
+
     dad "\"Sao có 8.0 hả? Con nhà người ta đi thi toàn khoe 9, 10, đằng này…\""
     
     mc "\"!!?\""
@@ -268,6 +259,8 @@ label ending_metaphysical_materialism:
     mc "\"Nhưng hiện tại, con muốn thử sức mình trong lĩnh vực thiết kế đồ hoạ trước đã.\""
     mc "\"Đời còn dài mà, sau khi học xong, lấy được cái bằng đã, rồi con sẽ suy nghĩ lại nghiêm túc xem có nên vào quân đội hay không?\""
     
+    show dad 1d
+
     dad "\"…\""
     dad "\"Con nhìn vào thực tại được như vậy là tốt.\""
     dad "\"Con… Cũng đã trưởng thành rồi.\""
@@ -304,6 +297,8 @@ label ending_dialectical_materialism:
     dad "\"Thế học hành dạo này thế nào. Điểm thi IELTS đợt trước được bao nhiêu hả con?\""
     
     mc "\"Con được tận 8.0 lận đó.\""
+
+    show dad 1e
     
     dad "\"Sao có 8.0 hả? Con nhà người ta đi thi toàn khoe 9, 10, đằng này…\""
     
@@ -317,12 +312,16 @@ label ending_dialectical_materialism:
     mc "\"Nhất là trong thời buổi hiện nay, còn bao người vẫn còn cổ hủ, lạc hậu, bị kẹt trong cái hang mang tên chân lý.\""
     mc "\"Con có một ước mơ. Đó là… Mang triết học đến gần hơn với mọi người bằng con đường hội hoạ!\""
     
+    show dad 1g
+
     dad "\"Con thật sự nghĩ là chỉ cần có ước mơ là sẽ thành công à? Danh tiếng không có, tiền thì càng không, con định làm gì để cạnh tranh chứ?\""
     
     mc "\"Có thể không ai để ý, nhưng nó không phải là vô ích, mà nó là nền móng cho sự thay đổi.\""
     mc "\"Sự thay đổi không hề diễn ra từ từ, liên tục mà nó là những bước nhảy vọt!\""
     mc "\"Tuy ban đầu có thể con chỉ là một hạt cát nhỏ nhoi giữa biển trời rộng lớn, nhưng cứ dần dần tích luỹ, khi đến điểm nút, con tin rằng khát khao của con sẽ chạm đến mọi người!\""
     
+    show dad 1h
+
     dad "\"Không phải cứ tin là nó sẽ thành thật đâu! Những ý kiến mà con cho là cổ hủ lạc hậu đó với người khác nó lại là chân lý đấy. Một mình con làm sao có thể thay đổi được chứ?\""
     
     mc "\"Cái này…, nó thuộc phàm trù về cái chung và cái riêng.\""
@@ -332,6 +331,8 @@ label ending_dialectical_materialism:
     mc "\"Chính con đã thay đổi nhờ sự tác động của người khác, vì thế nên con tin mong ước của con một ngày nào đó sẽ tác động được đến một ai đó, rồi người đó sẽ lại tác động đến người khác.\""
     mc "\"Rồi một ngày, con tin mong ước của con sẽ lan toả được tới mọi người!\""
     
+    show dad 1c
+
     dad "\"Nhưng mà con ơi! Từ bao đời nay biết bao tư tưởng dậy lên rồi lại chìm xuống.\""
     dad "\"Có thể tư tưởng của con nó sẽ lan rộng, nhưng rồi một ngày nó cùng sẽ lắng xuống, thậm chí bị lãng quên, khi đấy con còn lại gì?\""
     
@@ -340,7 +341,7 @@ label ending_dialectical_materialism:
     mc "\"Sự phát triển không phải là phủ định hoàn toàn cái cũ, mà là kế thừa và lặp lại những cái cũ trên cơ sở cao hơn.\""
     mc "\"Khi đó, con sẽ có thể tự hào nói rằng mình đã góp một công sức nhỏ nhoi nào đấy vào việc dựng xây Đất Nước.\""
     
-    show dad 1b at s11 # small shake or emotion
+    show dad 1d # small shake or emotion
     
     dad "\"Vậy… Sao…\""
     dad "\"Thôi được rồi, tuỳ con quyết định.\""

@@ -336,7 +336,7 @@ init -501 screen navigation():
                 textbutton _("Lịch Sử") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
                 textbutton _("Lưu Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
 
-            textbutton _("Tiếp Tục") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+            textbutton _("Tải Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
 
             if main_menu:
                 textbutton _("Thành Tựu") action ShowMenu("achievements")
@@ -344,18 +344,13 @@ init -501 screen navigation():
             if _in_replay:
                 textbutton _("Kết Thúc Replay") action EndReplay(confirm=True)
             elif not main_menu:
-                if persistent.playthrough != 3:
-                    textbutton _("Menu Chính") action MainMenu()
-                else:
-                    textbutton _("Menu Chính") action NullAction()
+                textbutton _("Menu Chính") action MainMenu()
 
             textbutton _("Cài Đặt") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
 
             if renpy.variant("pc"):
                 textbutton _("Trợ Giúp") action [Help("README.html"), Show(screen="dialog", message="File hướng dẫn đã được mở trong trình duyệt của bạn.", ok_action=Hide("dialog"))]
                 textbutton _("Thoát") action Quit(confirm=not main_menu)
-        else:
-            timer 1.75 action Start("autoload_yurikill")
 
 init -1 style navigation_button is gui_button
 init -1 style navigation_button_text is gui_button_text
@@ -557,7 +552,7 @@ init -501 screen save():
 
 init -501 screen load():
     tag menu
-    use file_slots(_("Tiếp Tục"))
+    use file_slots(_("Tải Game"))
 
 init -1 python:
     def FileActionMod(name, page=None, **kwargs):

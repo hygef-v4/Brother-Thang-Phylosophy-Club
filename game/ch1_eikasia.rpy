@@ -57,6 +57,8 @@ label day0:
     
     mc "\"Vâng… con thấy mình làm bài cũng ổn áp mà nhỉ.\""
     
+    show dad 1h
+
     dad "\"Ừ. Ổn cái đầu mày ý!\""
     
     mc "\"…?\""
@@ -65,6 +67,8 @@ label day0:
     dad "\"Ít nhất cũng phải lấy được cái bằng Đại học.\""
     
     mc "\"Nhưng…\""
+    
+    show dad 1e
     
     dad "\"Nhưng nhị cái gì!\""
     dad "\"Mày có nghe lời tao không thì bảo hả?\""

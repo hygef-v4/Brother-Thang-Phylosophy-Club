@@ -31,8 +31,10 @@ label day7:
     mc "\"Sao tự nhiên lại nghỉ học hả bố?\""
     mc "\"Trên trường việc học của con vẫn ổn mà?\""
     
+    show dad 1e
+
     dad "\"Thời buổi nào rồi mà còn học Đại học nữa.\""
-    dad "\"Mỹ đang lục đục đánh nhau với Cuba rồi.\""
+    dad "\"Mỹ đang gây hấn với các nước XHCN rồi.\""
     dad "\"Con phải vào quân đội để lên đường bảo vệ Tổ Quốc.\""
     dad "\"Chứ cứ ru rú ở hậu phương thì làm được gì?\""
     
@@ -41,13 +43,15 @@ label day7:
     mc "\"Đất Nước cũng là một thực thể triết học, nó cần phải vận động để có thể tồn tại, sự vận động đó không chỉ đến từ việc bảo vệ mà còn phải đến từ việc phát triển để tiến bộ.\""
     mc "\"Nó tạo ra cho chúng ta những tri thức, mà tri thức là sức mạnh giúp cho Đất Nước hùng cường hơn.\""
     
+    show dad 1c
+
     dad "\"Chỉ có những nhà khoa học xuất sắc mới đủ sức tạo ra tri thức, loại hoạ sĩ quèn như mày thì làm ăn được cái gì cho Tổ Quốc?\""
     dad "\"Thôi! Vào quân đội rèn luyện kỷ luật, chứ làm hoạ sĩ ra ngoài lương được mấy đồng?\""
     
     mc "\"Hoạ sĩ nước mình vất vả, nhưng họ dâng hiến tất cả!\""
     mc "\"Con muốn trở thành hoạ sĩ để góp phần làm đẹp cho Đất Nước chứ không phải chỉ vì tiền!\""
     
-    show dad 1b at s11 # angry shake
+    show dad 1e # angry shake
     play music canteen_theme fadein 1.0 # Poem Panic (Argument)
     
     dad "\"MỚI LÊN ĐẠI HỌC CÓ VÀI NGÀY MÀ CÁI MỒM ĐÃ LEM LẺM, PHÉP TẮC GIA ĐÌNH Ở ĐÂU HẢ?\""
