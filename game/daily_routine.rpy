@@ -206,9 +206,6 @@ label daily_dorm:
 
     menu:
         "Đi ngủ":
-            if current_day == 7:
-                call day7_evening
-
             # End of day summary
             scene black with fade
             
@@ -227,10 +224,10 @@ label daily_dorm:
                         $ stats.modify_tien(-100000)
                         $ show_stat_change("tien", -100000)
                         
-                        $ stats.modify_hoc_tap(20)
-                        $ show_stat_change("hoc_tap", 20)
+                        $ gained = stats.modify_hoc_tap(15)
+                        $ show_stat_change("hoc_tap", gained)
                         
-                        $ gained = stats.modify_relationship("xiu", 10)
+                        $ gained = stats.modify_relationship("xiu", 15)
                         $ show_stat_change("rel_xiu", gained)
                         
                         show xiu happy
@@ -244,10 +241,10 @@ label daily_dorm:
                         $ stats.modify_tien(-100000)
                         $ show_stat_change("tien", -100000)
                         
-                        $ stats.modify_doi_song(10)
-                        $ show_stat_change("doi_song", 10)
+                        $ gained = stats.modify_doi_song(15)
+                        $ show_stat_change("doi_song", gained)
                         
-                        $ gained = stats.modify_relationship("xiu", 10)
+                        $ gained = stats.modify_relationship("xiu", 15)
                         $ show_stat_change("rel_xiu", gained)
                         
                         show xiu happy
@@ -262,6 +259,9 @@ label daily_dorm:
             
             hide xiu with dissolve
     
+    if current_day == 7:
+        call day7_evening
+
     return
 
 # ========================================

@@ -367,8 +367,8 @@ label confession:
     
     hainu "\"Này…\""
     hainu "\"Lại nói về chuyện các tầng của nhận thức của Plato…\""
-    hainu "\"Chị đã giải thích cho em về eikasia, pistis và dianoia rồi nhỉ?\""
-    hainu "\"Còn lại là noesis, em biết nó là gì rồi chứ?\""
+    hainu "\"Chị đã giải thích cho em về Eikasia, Pistis và Dianoia rồi nhỉ?\""
+    hainu "\"Còn lại là Noesis, em biết nó là gì rồi chứ?\""
     
     mc "\"Là chân lý.\""
     

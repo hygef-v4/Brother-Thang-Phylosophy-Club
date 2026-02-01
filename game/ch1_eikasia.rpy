@@ -263,7 +263,7 @@ label day1_evening:
     menu:
         "Chơi thì chơi, sợ gì?":
             # Relationship tăng
-            $ gained = stats.modify_relationship("xiu", 10)
+            $ gained = stats.modify_relationship("xiu", 15)
             $ show_stat_change("rel_xiu", gained)
 
             show xiu 1b
@@ -404,7 +404,7 @@ label day2_morning:
             
             xiu "\"Có chí khí đấy, vậy cu em theo đội nào?\""
             # Relationship tăng
-            $ gained = stats.modify_relationship("xiu", 10)
+            $ gained = stats.modify_relationship("xiu", 15)
             $ show_stat_change("rel_xiu", gained)
             
             menu:

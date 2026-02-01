@@ -21,7 +21,7 @@ label day7:
     scene bg sota with wipeleft_scene # Trại quân sự
     play music sota_theme fadein 1.0 # Ominous/Strict
     
-    show dad 1b at t11
+    show dad 1a at t11
     
     dad "\"Con tới rồi hả?\""
     dad "\"Bố chuẩn bị sẵn thủ tục nghĩa vụ quân sự rồi.\""
@@ -85,7 +85,7 @@ label day9:
     menu:
         "Nổ cho em cái địa chỉ nào!":
             $ xiu_script = True
-            $ gained = stats.modify_relationship("xiu", 20)
+            $ gained = stats.modify_relationship("xiu", 10)
             $ show_stat_change("rel_xiu", gained)
         "Tiếc quá, nay em lại có việc bận rồi…":
             return
@@ -208,7 +208,7 @@ label day11:
     menu:
         "Chị xem rạp nào vậy em tới đây!":
             $ hainu_script = True
-            $ gained = stats.modify_relationship("hainu", 20)
+            $ gained = stats.modify_relationship("hainu", 10)
             $ show_stat_change("rel_hainu", gained)
         "Em cũng muốn đi lắm… Cơ mà tài khoản em lại không cho phép…":
             return
