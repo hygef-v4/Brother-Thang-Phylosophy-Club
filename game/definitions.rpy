@@ -279,13 +279,9 @@ image bg fpt_5:
 # =================================================================================
 
 define _dismiss_pause = config.developer
-default persistent.playername = ""
-default player = persistent.playername
 default persistent.playthrough = 0
 default persistent.menu_bg_m = None
-default persistent.first_load = None
 default persistent.autoload = ""
-default persistent.first_run = False
 default persistent.oldversion = ""
 default persistent.deleted_saves = False
 define config.mouse = None

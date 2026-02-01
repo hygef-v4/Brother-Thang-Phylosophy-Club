@@ -318,17 +318,6 @@ init -1 style quick_button_text:
     properties gui.button_text_properties("quick_button")
     outlines []
 
-init -1 python:
-    def FinishEnterName():
-        if not player:
-            return
-
-        persistent.playername = player
-
-        renpy.save_persistent()
-        renpy.hide_screen("name_input")
-        renpy.jump_out_of_context("start")
-
 init -501 screen navigation():
     vbox:
         style_prefix "navigation"
