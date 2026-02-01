@@ -33,8 +33,7 @@ screen stats_display():
             # Day - minimal
             hbox:
                 spacing 3
-                text "Ngày" size 9 color "#ffffffdd" outlines [(1, "#00000030", 0, 1)]
-                text "[current_day]" size 10 bold True color "#e3f2fd" outlines [(1, "#00000040", 0, 1)]
+                text "Ngày [current_day] - [GameConfig.TIME_SLOTS[current_time_slot-1]]" size 9 color "#ffffffdd" outlines [(1, "#00000030", 0, 1)]
             
             null height 4
             

@@ -12,7 +12,10 @@ label daily_routine_morning:
     scene black with dissolve_scene_full
     
     # Dynamic background selection (Day 4-13)
-    if current_day == 4:
+    if current_day == 3:
+        scene bg fpt_6 with fade
+        centered "{size=40}{color=#aa0000}Chapter 2: {/color}Πίστις (Niềm Tin){/size}"
+    elif current_day == 4:
         scene bg fpt_7 with fade
     elif current_day == 5:
         scene bg fpt_8 with fade
@@ -20,6 +23,7 @@ label daily_routine_morning:
         scene bg fpt_9 with fade
     elif current_day == 7:
         scene bg fpt_10 with fade
+        centered "{size=40}{color=#aa0000}Chapter 3: {/color}Διάνοια (Trí Tuệ){/size}"
     elif current_day == 8:
         scene bg fpt_14 with fade
     elif current_day == 9:
@@ -130,6 +134,7 @@ label daily_routine_evening:
         scene bg fpt_34 with fade
     elif current_day == 13:
         scene bg fpt_35 with fade
+        centered "{size=40}{color=#aa0000}Chapter 4: {/color}Νόησις (Chân Lý){/size}"
     else:
         scene bg fpt_36 with fade
     

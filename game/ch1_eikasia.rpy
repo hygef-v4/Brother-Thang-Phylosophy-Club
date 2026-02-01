@@ -16,6 +16,7 @@ label day0:
     scene black with dissolve_scene_full
 
     scene bg yenlang with fade
+    centered "{size=40}{color=#aa0000}Chapter 1: {/color}Εἰκασία (Ảo Ảnh){/size}"
     $ renpy.pause(2.0)
     
     scene bg mc_room with wipeleft_scene
@@ -264,7 +265,7 @@ label day1_evening:
     menu:
         "Chơi thì chơi, sợ gì?":
             # Relationship tăng
-            $ gained = stats.modify_relationship("xiu", 15)
+            $ gained = stats.modify_relationship("xiu", 5)
             $ show_stat_change("rel_xiu", gained)
 
             show xiu 1b
@@ -405,7 +406,7 @@ label day2_morning:
             
             xiu "\"Có chí khí đấy, vậy cu em theo đội nào?\""
             # Relationship tăng
-            $ gained = stats.modify_relationship("xiu", 15)
+            $ gained = stats.modify_relationship("xiu", 5)
             $ show_stat_change("rel_xiu", gained)
             
             menu:
@@ -439,11 +440,11 @@ label day2_morning:
     jump day2_afternoon
 
 label day2_afternoon:
-    scene bg fpt_6 with fade
+    scene bg fpt_5 with fade
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.0)
 
-    scene bg fpt_5 with wipeleft_scene
+    scene bg fpt_yard with wipeleft_scene
     play music sota_theme fadein 1.0
 
     show xiu 1b at t11
