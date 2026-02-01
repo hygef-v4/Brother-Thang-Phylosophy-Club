@@ -93,15 +93,6 @@ label daily_activity:
     play music daily_life fadein 1.0
     
     menu:
-        "Đến CLB gặp Hội Trưởng":
-            jump daily_clb
-        
-        "Đến Thư viện ngồi học":
-            jump daily_library
-        
-        "Đến Gym luyện tập":
-            jump daily_gym
-
         "Về KTX ngủ":
             # End of day summary
             scene black with fade
@@ -111,6 +102,15 @@ label daily_activity:
             stop music fadeout 2.0
 
             return
+        
+        "Đến Thư viện ngồi học":
+            jump daily_library
+        
+        "Đến Gym luyện tập":
+            jump daily_gym
+
+        "Đến CLB gặp Hội Trưởng":
+            jump daily_clb
     
 # ========================================
 # EVENING DORM ACTIVITIES

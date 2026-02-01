@@ -225,7 +225,7 @@ label ending_metaphysical_materialism:
     "Tôi bắt xe về nhà."
     "Bố đang đứng đợi tôi trước cửa."
     
-    show dad at t11
+    show dad 1b at t11
     
     dad "\"Vừa về hả con. Sao nhìn xanh sao gầy gò vậy, dạo này ăn uống có điều độ không đấy hả?\""
     
@@ -267,7 +267,7 @@ label ending_dialectical_materialism:
     "Tôi bắt xe về nhà."
     "Bố đang đứng đợi tôi trước cửa."
     
-    show dad at t11
+    show dad 1b at t11
     
     dad "\"Vừa về hả con. Sao nhìn xanh sao gầy gò vậy, dạo này ăn uống có điều độ không đấy hả?\""
     
@@ -312,7 +312,7 @@ label ending_dialectical_materialism:
     mc "\"Sự phát triển không phải là phủ định hoàn toàn cái cũ, mà là kế thừa và lặp lại những cái cũ trên cơ sở cao hơn.\""
     mc "\"Khi đó, con sẽ có thể tự hào nói rằng mình đã góp một công sức nhỏ nhoi nào đấy vào việc dựng xây Đất Nước.\""
     
-    show dad at s11 # small shake or emotion
+    show dad 1b at s11 # small shake or emotion
     
     dad "\"Vậy… Sao…\""
     dad "\"Thôi được rồi, tuỳ con quyết định.\""

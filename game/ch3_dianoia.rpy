@@ -21,7 +21,7 @@ label day7:
     scene bg sota with wipeleft_scene # Trại quân sự
     play music sota_theme fadein 1.0 # Ominous/Strict
     
-    show dad at t11
+    show dad 1b at t11
     
     dad "\"Con tới rồi hả?\""
     dad "\"Bố chuẩn bị sẵn thủ tục nghĩa vụ quân sự rồi.\""
@@ -47,7 +47,7 @@ label day7:
     mc "\"Hoạ sĩ nước mình vất vả, nhưng họ dâng hiến tất cả!\""
     mc "\"Con muốn trở thành hoạ sĩ để góp phần làm đẹp cho Đất Nước chứ không phải chỉ vì tiền!\""
     
-    show dad at s11 # angry shake
+    show dad 1b at s11 # angry shake
     play music canteen_theme fadein 1.0 # Poem Panic (Argument)
     
     dad "\"MỚI LÊN ĐẠI HỌC CÓ VÀI NGÀY MÀ CÁI MỒM ĐÃ LEM LẺM, PHÉP TẮC GIA ĐÌNH Ở ĐÂU HẢ?\""
