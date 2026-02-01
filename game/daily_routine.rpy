@@ -227,7 +227,7 @@ label daily_dorm:
                         $ gained = stats.modify_hoc_tap(15)
                         $ show_stat_change("hoc_tap", gained)
                         
-                        $ gained = stats.modify_relationship("xiu", 15)
+                        $ gained = stats.modify_relationship("xiu", 10)
                         $ show_stat_change("rel_xiu", gained)
                         
                         show xiu happy
@@ -244,7 +244,7 @@ label daily_dorm:
                         $ gained = stats.modify_doi_song(15)
                         $ show_stat_change("doi_song", gained)
                         
-                        $ gained = stats.modify_relationship("xiu", 15)
+                        $ gained = stats.modify_relationship("xiu", 10)
                         $ show_stat_change("rel_xiu", gained)
                         
                         show xiu happy

@@ -493,7 +493,7 @@ label day2_afternoon:
     show xiu 1g at t11
     
     xiu "\"Kế đến là phòng Gym, nơi các anh zai sáu múi flex đống cơ của mình.\""
-    xiu "\"Gu chị là mấy anh chàng cao to đen hôi thể hình lực lưỡng, thi thoảng ra ngó mấy anh giai chống đẩy mà them chảy nước giãi.\""
+    xiu "\"Gu chị là mấy anh chàng cao to đen hôi thể hình lực lưỡng, thi thoảng ra ngó mấy anh giai chống đẩy mà thèm rỉ nước giãi.\""
     
     mc "\"Tém tém thôi chị ơi, liêm xỉ trôi theo hàng nước của chị rồi kìa.\""
     
@@ -605,7 +605,7 @@ label day2_evening:
     hainu "\"Nếu cậu thật sự muốn tham gia CLB này, thì mong cậu hãy học cách tư duy…\""
     
     # Relationship tăng mạnh
-    $ gained = stats.modify_relationship("hainu", 10)
+    $ gained = stats.modify_relationship("hainu", 5)
     $ show_stat_change("rel_hainu", gained)
     
     hide hainu with dissolve
