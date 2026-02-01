@@ -606,4 +606,7 @@ label day2_evening:
     
     hide hainu with dissolve
     
-    jump daily_routine_evening
+    if not script_m:
+        jump daily_routine_evening
+    else:
+        return

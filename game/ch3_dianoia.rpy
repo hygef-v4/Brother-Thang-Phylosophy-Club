@@ -78,6 +78,7 @@ label day9:
     
     menu:
         "Nổ cho em cái địa chỉ nào!":
+            $ xiu_script = True
             $ gained = stats.modify_relationship("xiu", 6)
             $ show_stat_change("rel_xiu", gained)
         "Tiếc quá, nay em lại có việc bận rồi…":
@@ -167,7 +168,7 @@ label day9:
                 xiu "\"Lần này…. Em thắng rồi….\""
             "Không":
                 show xiu 1a
-                xiu "\"Tiếc quá…\""
+                xiu "\"Tiếc quá…. Chị thắng rồi…\""
             "Suy nghĩ":
                 menu:
                     mc "\"Những lúc say thế này, con người thường rất dễ mềm lòng…\""
@@ -178,7 +179,7 @@ label day9:
                         xiu "\"Lần này…. Em thắng rồi….\""
                     "Không":
                         show xiu 1c
-                        xiu "\"Tiếc quá…\""
+                        xiu "\"Tiếc quá…. Chị thắng rồi…\""
 
         mc "…"
 
@@ -200,6 +201,7 @@ label day11:
     
     menu:
         "Chị xem rạp nào vậy em tới đây!":
+            $ hainu_script = True
             $ gained = stats.modify_relationship("hainu", 6)
             $ show_stat_change("rel_hainu", gained)
         "Em cũng muốn đi lắm… Cơ mà tài khoản em lại không cho phép…":

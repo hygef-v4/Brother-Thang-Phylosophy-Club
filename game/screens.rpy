@@ -338,10 +338,8 @@ init -501 screen navigation():
 
         if not persistent.autoload or not main_menu:
             if main_menu:
-                if persistent.playthrough == 1:
-                    textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action Start()
-                else:
-                    textbutton _("Chơi Mới") action Start()
+                textbutton _("Chế độ cốt truyện") action Start("script_mode")
+                textbutton _("Chế độ thường") action Start()
             else:
                 textbutton _("Lịch Sử") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
                 textbutton _("Lưu Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]

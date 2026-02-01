@@ -62,6 +62,9 @@ default current_chapter = 1
 default current_time_slot = 1
 
 default first_talk = False
+default script_m = False
+default xiu_script = False
+default hainu_script = False
 
 # ========================================
 # DEFINE CHARACTERS

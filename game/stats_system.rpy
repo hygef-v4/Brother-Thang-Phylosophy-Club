@@ -46,6 +46,8 @@ init -1 python:
             return self.doi_song - init
         
         def modify_tien(self, amount):
+            if script_m:
+                return 0
             """Thay đổi tiền"""
             init = self.tien
             self.tien = max(0, self.tien + amount)
@@ -111,6 +113,8 @@ init -1 python:
                 return 1.0
         
         def update_daily(self):
+            if script_m:
+                return 0
             """Gọi mỗi ngày mới - Returns money changes for display"""
             
             # Nhận tiền (nếu không bị cắt)

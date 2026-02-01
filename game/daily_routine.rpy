@@ -18,7 +18,14 @@ label daily_routine_morning:
     $ daily_changes = stats.update_daily()
     $ show_stat_change("tien", daily_changes)
 
-    if current_day == 7:
+    if current_day == 3 and script_m:
+        scene bg club_day with wipeleft_scene
+        play music club_theme fadein 1.0
+
+        call plato_cave
+
+        return
+    elif current_day == 7:
         call day7
     elif current_day == 9:
         call day9
@@ -33,7 +40,8 @@ label daily_routine_afternoon:
     # ========================================
     # AFTERNOON ACTIVITY (CHIỀU)
     # ========================================
-    
+    if script_m:
+        return
     scene black
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
@@ -47,7 +55,8 @@ label daily_routine_evening:
     # ========================================
     # EVENING DORM (TỐI)
     # ========================================
-    
+    if script_m and current_day != 13:
+        return
     scene black
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.5, hard=True)
@@ -68,6 +77,8 @@ label daily_routine_evening:
 
 label daily_routine_loop:
     call daily_routine_morning
+    if script_m:
+        return
 
     call daily_routine_afternoon
 
