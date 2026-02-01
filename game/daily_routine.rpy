@@ -95,10 +95,10 @@ label daily_activity:
         "Đến CLB":
             jump daily_clb
         
-        "Đến Thư viện":
+        "Đến Thư viện ngồi học":
             jump daily_library
         
-        "Đến Gym":
+        "Đến Gym luyện tập":
             jump daily_gym
 
         "Về KTX":
@@ -213,27 +213,23 @@ label daily_library:
     scene bg library with wipeleft_scene  # Custom: Thư viện FPT
     play music library_theme fadein 1.0
     
-    menu:
-        "Ôn bài":
-            "Giở sách vở ra, ôn lại bài cũ..."
-            
-            # Stat-dependent dialogue (học tập)
-            if stats.hoc_tap < 20:
-                mc "\"Ra là thế… Chả hiểu gì cả.\""
-            elif stats.hoc_tap < 50:
-                mc "\"Hừm…. Bài này khó hiểu quá…\""
-            elif stats.hoc_tap < 80:
-                mc "\"Có một số chỗ chưa hiểu lắm, lần sau lên lớp hỏi lại cô vậy.\""
-            elif stats.hoc_tap < 100:
-                mc "\"Ồ, kiến thức mới đã được tiếp thu.\""
-            else:
-                mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
-            
-            # Balanced afternoon study
-            $ stats.modify_hoc_tap(10)
-            $ show_stat_change("hoc_tap", 10)
-        "Quay lại":
-            jump daily_activity
+    "Giở sách vở ra, ôn lại bài cũ..."
+    
+    # Stat-dependent dialogue (học tập)
+    if stats.hoc_tap < 20:
+        mc "\"Ra là thế… Chả hiểu gì cả.\""
+    elif stats.hoc_tap < 50:
+        mc "\"Hừm…. Bài này khó hiểu quá…\""
+    elif stats.hoc_tap < 80:
+        mc "\"Có một số chỗ chưa hiểu lắm, lần sau lên lớp hỏi lại cô vậy.\""
+    elif stats.hoc_tap < 100:
+        mc "\"Ồ, kiến thức mới đã được tiếp thu.\""
+    else:
+        mc "\"Mấy bài này dễ quá, có lẽ mình nên tìm thứ khác khó hơn.\""
+    
+    # Balanced afternoon study
+    $ stats.modify_hoc_tap(10)
+    $ show_stat_change("hoc_tap", 10)
     
     return
 
@@ -241,26 +237,22 @@ label daily_gym:
     scene bg gym with wipeleft_scene  # Custom: Phòng gym FPT
     play music gym_theme fadein 1.0
     
-    menu:
-        "Luyện tập":
-            "Rèn luyện cơ thể, giải toả tinh thần..."
-            
-            # Stat-dependent dialogue (sức khoẻ = đời sống)
-            if stats.doi_song < 20:
-                mc "\"Mệt quá… Chịu rồi...\""
-            elif stats.doi_song < 50:
-                mc "\"Phù… Nay đến đây thôi vậy.\""
-            elif stats.doi_song < 80:
-                mc "\"Cố thêm… Một xíu nữa thôi…\""
-            elif stats.doi_song < 100:
-                mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
-            else:
-                mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
-            
-            # Good health gains
-            $ stats.modify_doi_song(10)
-            $ show_stat_change("doi_song", 10)
-        "Quay lại":
-            jump daily_activity
+    "Rèn luyện cơ thể, giải toả tinh thần..."
     
+    # Stat-dependent dialogue (sức khoẻ = đời sống)
+    if stats.doi_song < 20:
+        mc "\"Mệt quá… Chịu rồi...\""
+    elif stats.doi_song < 50:
+        mc "\"Phù… Nay đến đây thôi vậy.\""
+    elif stats.doi_song < 80:
+        mc "\"Cố thêm… Một xíu nữa thôi…\""
+    elif stats.doi_song < 100:
+        mc "\"Chà, tập xong nhìn mình có vẻ đẹp trai hơn rồi đấy.\""
+    else:
+        mc "\"Mấy cái này nhẹ quá, hết cái nặng hơn rồi à?\""
+    
+    # Good health gains
+    $ stats.modify_doi_song(10)
+    $ show_stat_change("doi_song", 10)
+
     return
