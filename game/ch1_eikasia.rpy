@@ -252,7 +252,7 @@ label day1_evening:
     
     show xiu 1g
     
-    xiu "\"Đùa xíu thôi! Tối nay đang có trận MU đá với MC, cu em có muốn vào xem cùng chị không nào?\""
+    xiu "\"Đùa xíu thôi! Tối nay đang có trận T1 với GENG, cu em có muốn vào xem cùng chị không nào?\""
     xiu "\"Cơ mà chỉ xem thôi thì chán phèo, hay là chị em mình làm trận cá cược đi nhỉ?\""
     xiu "\"Nhóc thấy thế nào?\""
     
@@ -333,7 +333,7 @@ label day2_morning:
     
     show xiu 1b
     
-    xiu "\"Hữu duyên thế này thì tối này chị em ta lại phải làm kèo cá độ rồi!\""
+    xiu "\"Hữu duyên thế này thì tối này chị em ta lại phải làm kèo cá độ rồi! Vừa hay nay lại có kèo MU với Chealsea\""
     
     mc "\"Dạ vâng…\""
     
@@ -409,8 +409,8 @@ label day2_morning:
                 "ALL IN MU!!!":
                     $ xiu_bet_choice = "MU"
                 
-                "ALL IN MC!!!":
-                    $ xiu_bet_choice = "MC"
+                "ALL IN Chealsea!!!":
+                    $ xiu_bet_choice = "Chealsea"
             
             show xiu 1a
             

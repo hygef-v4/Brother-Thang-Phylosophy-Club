@@ -21,7 +21,7 @@ label day13_both:
     show hainu 1a at t21
     show xiu 1a at t22
     
-    hainu "\"snvv nghen.\""
+    hainu "\"Snvv nghen.\""
     xiu "\"Em bé tuổi mới hay ăn chóng lớn nhá.\""
     
     mc "\"…\""
@@ -115,7 +115,7 @@ label day13_hainu:
     
     show hainu 1a at t11
     
-    hainu "\"snvv nghen.\""
+    hainu "\"Snvv nghen.\""
     
     mc "\"…\""
     mc "\"Dạ em cảm ơn ạ.\""
