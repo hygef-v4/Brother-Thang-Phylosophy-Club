@@ -280,7 +280,6 @@ image bg fpt_5:
 
 define _dismiss_pause = config.developer
 default persistent.playthrough = 0
-default persistent.menu_bg_m = None
 default persistent.autoload = ""
 default persistent.oldversion = ""
 default persistent.deleted_saves = False
