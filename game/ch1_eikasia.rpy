@@ -433,7 +433,7 @@ label day2_morning:
     jump day2_afternoon
 
 label day2_afternoon:
-    scene bg fpt_2 with fade
+    scene bg fpt_6 with fade
     centered "{size=30}{color=#ffaa00}CHIỀU{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.0, hard=True)
 
@@ -528,7 +528,7 @@ label day2_afternoon:
     # ========================================
     
 label day2_evening:
-    scene bg fpt_3 with fade
+    scene bg fpt_11 with fade
     centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     $ renpy.pause(1.0, hard=True)
     

@@ -148,10 +148,17 @@ label day13_hainu:
 # ========================================
 
 label ending_objective_idealism:
+    $ current_day = 14
+    
+    scene black with dissolve_scene_full
+    stop music fadeout 2.0
+    
+    scene bg fpt_5 with fade
+    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
+    $ renpy.pause(2.0, hard=True)
+    
     scene bg ktx with wipeleft_scene
     play music deep_thought fadein 1.0 # Eerie/Space
-    
-    centered "{size=30}{color=#ff6600}TỐI{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     
     "Đêm khuya, không ngủ được nằm trằn trọc suy nghĩ"
     
@@ -185,10 +192,16 @@ label ending_objective_idealism:
 
 label ending_subjective_idealism:
     $ current_day = 14
+    
+    scene black with dissolve_scene_full
+    stop music fadeout 2.0
+    
+    scene bg fpt_23 with fade
+    centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
+    $ renpy.pause(2.0, hard=True)
+    
     scene bg club_day with fade
     play music club_theme fadein 1.0 # Happy
-    
-    centered "{size=30}{color=#ff6600}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     
     show xiu 1c at t11
     
@@ -217,10 +230,16 @@ label ending_subjective_idealism:
 
 label ending_metaphysical_materialism:
     $ current_day = 14
+    
+    scene black with dissolve_scene_full
+    stop music fadeout 2.0
+    
+    scene bg fpt_40 with fade
+    centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
+    $ renpy.pause(2.0, hard=True)
+    
     scene bg living_room with wipeleft_scene # Nhà
     play music canteen_theme fadein 1.0 # Normal daily life
-    
-    centered "{size=30}{color=#ff6600}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     
     "Tôi bắt xe về nhà."
     "Bố đang đứng đợi tôi trước cửa."
@@ -259,10 +278,19 @@ label ending_metaphysical_materialism:
 
 label ending_dialectical_materialism:
     $ current_day = 14
+    
+    scene black with dissolve_scene_full
+    stop music fadeout 2.0
+    
+    # Random selection from SÁNG/CHIỀU backgrounds (all unique ones used)
+    $ random_day_bg = renpy.random.choice(["fpt_1", "fpt_2", "fpt_4", "fpt_6", "fpt_7", "fpt_8", "fpt_9", "fpt_10", "fpt_14", "fpt_15", "fpt_16", "fpt_20", "fpt_21", "fpt_22", "fpt_23", "fpt_24", "fpt_25", "fpt_26", "fpt_27", "fpt_29", "fpt_30", "fpt_31", "fpt_37", "fpt_38", "fpt_39", "fpt_40"])
+    $ renpy.show("bg " + random_day_bg)
+    with fade
+    centered "{size=30}{color=#ffdd00}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
+    $ renpy.pause(2.0, hard=True)
+    
     scene bg living_room with wipeleft_scene
     play music canteen_theme fadein 1.0 # Argument/Tension
-    
-    centered "{size=30}{color=#ff6600}SÁNG{/color}{/size}\n{size=20}Ngày [current_day]{/size}"
     
     "Tôi bắt xe về nhà."
     "Bố đang đứng đợi tôi trước cửa."
