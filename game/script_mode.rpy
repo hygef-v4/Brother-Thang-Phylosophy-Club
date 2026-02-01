@@ -1,5 +1,9 @@
 label script_mode:
     $ script_m = True
+    $ restore_all_characters()
+    $ style.say_dialogue = style.normal
+    $ config.allow_skipping = True
+    $ _dismiss_pause = config.developer
 
     $ stats.modify_doi_song(100)
     $ stats.modify_hoc_tap(100)
