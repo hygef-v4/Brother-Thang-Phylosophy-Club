@@ -506,6 +506,7 @@ label day2_afternoon:
     
     show xiu 1a at t11
     
+    play sound noshy
     xiu "\"Cuối cùng là căng tin, nơi sinh hoạt văn hoá của hội những người không biết xấu hổ.\""
     
     show xiu 1a at t21

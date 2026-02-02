@@ -141,6 +141,7 @@ init python:
 
         _windows_hidden = False
 
+define noshy = "sfx/emuocmoduocvaonoshy.ogg"
 define alovuavu = "sfx/alovuavu.ogg"
 define anhchoemcohoi = "sfx/anhchoemcohoi.ogg"
 define siuuu = "sfx/siuuu.ogg"
